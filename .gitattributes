@@ -1,0 +1,2 @@
+# Preserve the exact bytes recorded in the source snapshot hash manifest.
+data/heritability/** -text

@@ -1,0 +1,36 @@
+{
+  "files": [
+    {
+      "original_path": "data/sampled_leaderboard.csv",
+      "path": "data/heritability/sampled_leaderboard.csv",
+      "sha256": "6c151515ae35b97ce7679e5bd93fe2d42287012bf9a9ac16484e25cf49fa392a",
+      "size_bytes": 1203180
+    },
+    {
+      "original_path": "data/sampled_metadata.csv",
+      "path": "data/heritability/sampled_metadata.csv",
+      "sha256": "0435a2b6f93f6dbdf928b1012676af4f5c8807d4ea19a32c77582ab442c4c7d4",
+      "size_bytes": 427384
+    },
+    {
+      "original_path": "data/sampled_model_subgraph.json",
+      "path": "data/heritability/sampled_model_subgraph.json",
+      "sha256": "c03ac5f7ba295748da12a6a7d23fb9175108df0877ab5f85a1af8431d6de0f89",
+      "size_bytes": 9086669
+    },
+    {
+      "original_path": "data/curated/phase2_v3/model_zoo_phase2_leaderboard_raw.csv",
+      "path": "data/heritability/model_zoo_phase2_leaderboard_raw.csv",
+      "sha256": "9f4ab480be89f831b0b7f4b1ba9330bb08675f8e8a4eb84b10b4dec71c6fa3df",
+      "size_bytes": 1282943
+    },
+    {
+      "original_path": "configs/htsr_combined_study_v4.json",
+      "path": "data/heritability/htsr_combined_study_v4.json",
+      "sha256": "d4523876420650645aff11d24e7145347c774274a22a03384654645236dd8933",
+      "size_bytes": 512
+    }
+  ],
+  "source_root": "Model-Research",
+  "source_root_semantics": "documented sibling repository"
+}

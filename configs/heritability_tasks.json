@@ -1,0 +1,99 @@
+{
+  "notes": [
+    "Generation is not benchmark version evidence.",
+    "Harness and quantization are absent; no verified deployment joins are inferred.",
+    "All denominator and sampling-variance evidence is unavailable pending audit.",
+    "Caller-supplied v1 sources require explicit schema mappings; no v1 source is fabricated."
+  ],
+  "schema_version": 1,
+  "schemas": {
+    "leaderboard_v2_raw": {
+      "columns": {
+        "eval_name": "eval_name",
+        "precision": "Precision",
+        "repo_id": "model_id",
+        "revision": "Model sha"
+      },
+      "tasks": [
+        {
+          "availability": "variance_unavailable",
+          "benchmark": "v2",
+          "column": "IFEval Raw",
+          "denominator_evidence": null,
+          "harness": "",
+          "harness_status": "version_unrecorded_in_source",
+          "kind": "composite",
+          "n_items": null,
+          "scale": "raw_accuracy",
+          "task": "ifeval",
+          "variance_evidence": null
+        },
+        {
+          "availability": "variance_unavailable",
+          "benchmark": "v2",
+          "column": "BBH Raw",
+          "denominator_evidence": null,
+          "harness": "",
+          "harness_status": "version_unrecorded_in_source",
+          "kind": "composite",
+          "n_items": null,
+          "scale": "raw_accuracy",
+          "task": "bbh",
+          "variance_evidence": null
+        },
+        {
+          "availability": "variance_unavailable",
+          "benchmark": "v2",
+          "column": "MATH Lvl 5 Raw",
+          "denominator_evidence": null,
+          "harness": "",
+          "harness_status": "version_unrecorded_in_source",
+          "kind": "binary",
+          "n_items": null,
+          "scale": "raw_accuracy",
+          "task": "math_lvl5",
+          "variance_evidence": null
+        },
+        {
+          "availability": "variance_unavailable",
+          "benchmark": "v2",
+          "column": "GPQA Raw",
+          "denominator_evidence": null,
+          "harness": "",
+          "harness_status": "version_unrecorded_in_source",
+          "kind": "binary",
+          "n_items": null,
+          "scale": "raw_accuracy",
+          "task": "gpqa",
+          "variance_evidence": null
+        },
+        {
+          "availability": "variance_unavailable",
+          "benchmark": "v2",
+          "column": "MUSR Raw",
+          "denominator_evidence": null,
+          "harness": "",
+          "harness_status": "version_unrecorded_in_source",
+          "kind": "composite",
+          "n_items": null,
+          "scale": "raw_accuracy",
+          "task": "musr",
+          "variance_evidence": null
+        },
+        {
+          "availability": "variance_unavailable",
+          "benchmark": "v2",
+          "column": "MMLU-PRO Raw",
+          "denominator_evidence": null,
+          "harness": "",
+          "harness_status": "version_unrecorded_in_source",
+          "kind": "binary",
+          "n_items": null,
+          "scale": "raw_accuracy",
+          "task": "mmlu_pro",
+          "variance_evidence": null
+        }
+      ]
+    }
+  }
+}
