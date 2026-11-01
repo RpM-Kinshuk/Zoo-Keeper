@@ -2,7 +2,7 @@
 
 > **For agentic workers:** Execute one task at a time using the lean loop in `handoff/PROMPTS.md`. The person reviews this plan before implementation. Agents never stage, commit, merge, or push; commit messages below are suggestions for the person.
 
-**Status:** S1 approved by the owner on 2026-10-31. Code and draft batch ready on `track-c` (102 tests pass); empirical S3/S4 estimates remain unavailable in the frozen partial audit because evidence is missing.
+**Status:** S1 approved by the owner on 2026-10-31. Code and draft committed and merged locally at `0a457b9` on the owner's request (combined suite416 tests pass); empirical S3/S4 estimates remain unavailable in the frozen partial audit because evidence is missing.
 
 **Goal:** Measure per-skill familial inheritance with measurement error accounted for, then price the audited September predictions in equivalent evaluation items for estimation and selection. Produce a reproducible first exchange-rate table and an ICLR 2027 workshop draft, including unavailable and negative results.
 

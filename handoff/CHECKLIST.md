@@ -299,7 +299,7 @@ works with agent sessions.
 
 ### Track C: study, baselines, audit (the study plan is written first)
 
-- [r] **CS Set up track C** (C, first). Needs P0-3.
+- [x] **CS Set up track C** (C, first). Needs P0-3.
   - Create branch `track-c` and its worktree in `Zoo-Keeper` from the latest
     `main`:
     `git -C Zoo-Keeper worktree add ../worktrees/Zoo-Keeper-track-c -b track-c main`.
@@ -307,7 +307,7 @@ works with agent sessions.
   - Track C's code lives in Zoo-Keeper, including the baselines. Port what
     it needs from the frozen Model-Research; never import from it.
 
-- [r] **S1 Write the study plan: heritability plus a first exchange-rate pass**
+- [x] **S1 Write the study plan: heritability plus a first exchange-rate pass**
   (C, due Nov 4; a person reviews it by Nov 6).
   - Sources: §5.1, §5.4, and §9 ideas 2–3.
   - **Data:** leaderboard v1 and v2 per-task Raw scores, Model Atlas edges, and
@@ -324,7 +324,7 @@ works with agent sessions.
   - **The exchange rate:** for estimation and for selection (within and across
     families), with the strict bound.
   - **Rules and output:** a frozen config, and the workshop target.
-- [r] **S2 Data assembly and audit** (C, due Nov 10).
+- [x] **S2 Data assembly and audit** (C, due Nov 10).
   - Count the verified revision joins, and treat zero-byte files as missing.
   - Locate the September study outputs (`research_runs/` on the cluster copy;
     they are not in the local checkout). If they cannot be found, ask a
@@ -335,11 +335,16 @@ works with agent sessions.
 - [ ] **S5 Trace and Spectral Signatures baselines** (C, due Nov 13). Port
   them from `Model-Research/spectral_research/` into `Zoo-Keeper/baselines/`,
   and run them on the new fingerprints and T2 spectra.
+  - Nov1 readiness: porting unblocked by merged extractor/lineage foundations;
+    real evaluation still needs T2 spectra and measured related-model pairs.
 - [ ] **S6 Blind laundering subset** (C, due Nov 20).
   - Part of the lab's 20 laundering transforms, written under
     `$ZOO_DATA/lab_blind`, outside git (D8.8).
   - Track B never sees it before evaluation.
-- [r] **S7 Workshop paper draft** (C, due Nov 27).
+  - Nov1 readiness: merged transform/validator code and a staged pinned source
+    permit private preparation; verify weight hashes and freeze validation inputs
+    before real generation.
+- [x] **S7 Workshop paper draft** (C, due Nov 27).
 - [ ] **S8 Hub query set for P1** (C, due Dec 4).
   - 2–5k labeled queries.
   - Verified-Hub truth:
