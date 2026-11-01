@@ -2,7 +2,7 @@
 
 > **For agentic workers:** Execute one task at a time using the lean loop in `handoff/PROMPTS.md`. The person reviews this plan before implementation. Agents never stage, commit, merge, or push; commit messages below are suggestions for the person.
 
-**Status:** S1 approved by the owner on 2026-10-31. Code and draft committed and merged locally at `0a457b9` on the owner's request (combined suite416 tests pass); empirical S3/S4 estimates remain unavailable in the frozen partial audit because evidence is missing.
+**Status:** S1 approved by the owner on 2026-10-31. Initial code/draft merged locally at `0a457b9` (416 tests passed). Exploratory S3/legacy S4 follow-up is ready on 2026-11-01: final2,000-draw run157.10s; combined suite436 passed. The original selected-input audit remains PARTIAL; verified, measurement-error-corrected claims still require specific evidence.
 
 **Goal:** Measure per-skill familial inheritance with measurement error accounted for, then price the audited September predictions in equivalent evaluation items for estimation and selection. Produce a reproducible first exchange-rate table and an ICLR 2027 workshop draft, including unavailable and negative results.
 
@@ -15,6 +15,8 @@
 ## Source inventory and boundaries
 
 Inspected at planning time; presence is not evidence of revision verification:
+
+**2026-11-01 scope expansion requested by the owner:** first reconcile existing `Model-Zoo/output/`, `Model-Zoo/analysis_runs/`, `data/ablation/{ablation_selected,ablation_overlap_audit}.csv`, curated phase2 scores and cluster `research_runs/` targets/predictions/family/profile/fold ledgers. The reconciliation report is `$ZOO_DATA/studies/heritability/local-reconciliation-v1/report.md`. It validates a 3,515-model legacy prediction cohort and identifies 14 contemporary score/measurement SHA matches. These are exploratory/candidate cohorts, with historical weight identity, sampling-error and deployment limitations stated separately. Do not interpret the initial two-snapshot strict zero as absence of usable data, or assume a new collection/refit is necessary. Original source snapshots/freezes remain immutable; this extension changes no frozen interface or strict-primary verification rule.
 
 - `Model-Research/data/sampled_leaderboard.csv` (~1.2 MB) has `Model sha`, `Precision`, `eval_name`, and `IFEval Raw`, `BBH Raw`, `MATH Lvl 5 Raw`, `GPQA Raw`, `MUSR Raw`, `MMLU-PRO Raw`. Raw values inspected are on [0, 1]. Its `Generation` field is not sufficient evidence that a row belongs to leaderboard v1.
 - `Model-Research/data/sampled_metadata.csv` (~0.4 MB) has `model_id`, `source_model`, `base_model_relation`.
@@ -281,6 +283,41 @@ Suggested message: `docs(study): draft workshop findings and baseline handoffs`.
 
 ## Input evidence and approved modeling choices
 
-- A validated v1 Raw source, benchmark item/variance evidence and an independent pinned deployment index remain unavailable in this frozen audit. The code supports explicit future mappings; unsupported tasks remain reported gaps.
-- September `research_runs/` outputs were located and audited read-only. The frozen first-pass audit contains original artifacts and records 290,496 historical rows without claiming eligible Raw semantics or verified joins. Modern normalized targets cannot be relabeled Raw; legacy semantics remain distinct and unvalidated.
+- The original frozen audit had no validated v1 source. Expanded reconciliation now validates saved legacy targets against local legacy score vectors and 3,515 models of saved per-task predictions. Benchmark variance/count/design evidence and complete deployment verification remain missing for corrected/verified claims; they do not prevent explicitly exploratory score analysis.
+- September outputs were reconciled read-only: all290,496 per-task rows match targets/folds and all methods share baseline support. Legacy observed-score errors are valid exploratory analyses after percentage-unit conversion; no clipping inversion is involved. Modern IFEval/MATH agree with Raw×100 on3,796 unambiguous source records each, while four other tasks require separate mapping and floor handling. Preserve group/cluster split labels and unknown historical revisions.
 - The owner approved the stated first-pass modeling calls and routine implementation autonomy: raw primary/logit sensitivity; unit network increments; unknown merge weights excluded from the primary network fit with equal-weight sensitivity; source-root cluster bootstrap; independent-item selection equivalence when paired responses are absent. These are draft choices for this implementation, not changes to a frozen project interface.
+
+## Approved exploratory follow-up (2026-11-01)
+
+The owner approved targeted six-task legacy metadata recovery, the existing
+prediction estimation/selection pass, and observed-parent associations before
+assuming new collection or predictor reruns. Implemented separately as
+`studies/heritability/legacy_associations.py` and `legacy_exchange.py`, with
+matching focused tests. The primary CLI's verified gates remain unchanged.
+
+The archived v1 recipe pins harness `b281b0921b636bc36ad05c0b0b0763bd6dd43463`.
+ARC, HellaSwag, Winogrande and GSM8K support explicitly conditional binary-item
+plug-in equivalences; MMLU and TruthfulQA do not get point k from aggregate p.
+Nominal counts/default harnesses never become row-specific variance evidence.
+No corrected slope or REML fit is made without D.
+
+The separate final freeze is
+`2db36eb15bcf12bec9ad8fa7ee1e013047ec40f824eef836199abd5cbeb77748`, under
+`$ZOO_DATA/studies/heritability/legacy-first-pass-v1`. It fixes 2,000 draws and
+seed20261028; original exact predictor keys, all four methods and folds; up to
+100,000 uniformly sampled pairs per original fold/ancestry stratum; inverse
+pair-inclusion pooling; and same known spectral-profile hash exclusion, disclosed
+as a proxy. S4 uncertainty conditions on stored split groups and fixed samples;
+internal pair blocks get m_g, cross blocks m_g*m_h. S3 excludes conflicting
+repository/task scores and resamples connected declared-parent components over
+the full accepted graph, including unscored/multi-parent connectors. Excluded
+multi-parent children never become single-parent regressions. Sparse declared
+root labels and family leakage are explicit, without a root-held-out claim.
+
+The full six-task S4 timing pass (20 draws) took140.35s before the final run;
+its retained record is `legacy-first-pass-timing-v1`, clearly separate from the
+final2,000-draw analysis. No weights, GPUs, refits or new benchmark evaluations
+are involved. Captured runner, metadata/source extracts, tables and hashes stay
+outside git. One shared core review covered both modules; its conservative
+component-linking observation was fixed once with a regression. Final batch
+verification and empirical results are recorded in the handoff.

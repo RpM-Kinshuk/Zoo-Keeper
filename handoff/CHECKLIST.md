@@ -158,18 +158,18 @@ works with agent sessions.
 
 ### Track A: zoo v0 (build in `Model-Zoo/zoo/`, queries in `Zoo-Keeper/zoo_keeper/`; zoo plan)
 
-- [ ] **Z1 Task 1: schema, model keys, architecture signatures, `universe`
+- [x] **Z1 Task 1: schema, model keys, architecture signatures, `universe`
   fixture** (A, due Nov 23). Needs X6, because the fixture uses
   `fingerprint_tensors`.
-- [ ] **Z2 Task 2: score sources with revision-verified joins** (A, due
+- [x] **Z2 Task 2: score sources with revision-verified joins** (A, due
   Nov 24). Needs Z1.
-- [ ] **Z3 Task 3: in-memory tables** (A, due Nov 25). Needs Z1, Z2, X5, X6,
+- [x] **Z3 Task 3: in-memory tables** (A, due Nov 25). Needs Z1, Z2, X5, X6,
   and X7.
-- [ ] **Z4 Task 4: retrieval matrices and exact similarity** (A, due Nov 26).
+- [x] **Z4 Task 4: retrieval matrices and exact similarity** (A, due Nov 26).
   Needs Z3.
-- [ ] **Z5 Task 5: v0 lineage edges** (A, due Nov 27). Needs Z4, plus X8's
+- [x] **Z5 Task 5: v0 lineage edges** (A, due Nov 27). Needs Z4, plus X8's
   `pair_similarity` and calibration format.
-- [ ] **Z6 Task 6: atomic deterministic build** (A, due Dec 1). Needs Z3–Z5.
+- [x] **Z6 Task 6: atomic deterministic build** (A, due Dec 1). Needs Z3–Z5.
 - [ ] **Z7 Task 7: query API (`Zoo`), in Zoo-Keeper** (A, due Dec 2). Needs Z6
   and X8, committed and merged into Model-Zoo's `main` by the person, then
   `pip install -e Model-Zoo` (D10.1).
@@ -248,7 +248,7 @@ works with agent sessions.
     `--all_experts`, and `--sketch_k 128`.
   - Before X8's `batch` command exists, agents provide a short Python loop over
     `fingerprint_model`.
-- [!] **L13 Lab scorer** (B, due Dec 4). Waiting for A's Z1 schema.
+- [r] **L13 Lab scorer** (B, due Dec 4). Implemented against merged schema.
   - It takes `lab/edges.csv` and predicted edges in Parquet with the zoo's
     `LINEAGE_COLUMNS`.
   - It reports per-estimand AUROC, false matches per query at TPR 0.9,
@@ -293,8 +293,8 @@ works with agent sessions.
 - [x] **E7 Calibration** (B, due Dec 4).
   - An empirical null, a GPD tail, and per-query FDR.
   - Agree with X9 on the calibration statistic and `sketch_k = 64`.
-- [!] **E8 Lineage edges into the zoo** (B, due Dec 4). Extractor adapter
-  ready; zoo integration waits for Z1/Z4/Z6. Parquet with
+- [r] **E8 Lineage edges into the zoo** (B, due Dec 4). Inference, atomic
+  publication, CLI and upstream build integration ready. Parquet with
   `LINEAGE_COLUMNS`, loaded with `zoo build --lineage_edges`.
 
 ### Track C: study, baselines, audit (the study plan is written first)
@@ -329,14 +329,27 @@ works with agent sessions.
   - Locate the September study outputs (`research_runs/` on the cluster copy;
     they are not in the local checkout). If they cannot be found, ask a
     person.
-- [!] **S3 Heritability statistics** (C, due Nov 13).
-- [!] **S4 First exchange-rate pass** (C, due Nov 20). Use the existing
+- [~] **S3 Heritability statistics** (C, due Nov 13).
+  - Exploratory observed-parent run complete:128 legacy pairs/task over49
+    declared components;403–419 v2 Raw pairs/task over102–104 components after
+    conflicting-score exclusions. Conditional2,000-draw intervals recorded.
+    Corrected slopes/REML still require row sampling-error and identity evidence.
+- [r] **S4 First exchange-rate pass** (C, due Nov 20). Use the existing
   September predictions, per skill, for estimation and for selection.
+  - Exploratory legacy pass ready:3,515 models, six tasks, four saved methods,
+    two original split designs;48 estimation/192 selection rows, matched
+    baseline increments/bounds and2,000 conditional bootstrap draws. Four binary
+    task definitions support plug-in k; MMLU/TruthfulQA point k unavailable.
+    Family coverage/leakage and negative selection increments retained. Frozen
+    legacy-first-pass-v1 report outside git;436 tests pass. Modern Raw mapping
+    and verified/calibrated claims remain separate. No predictor rerun performed.
 - [ ] **S5 Trace and Spectral Signatures baselines** (C, due Nov 13). Port
   them from `Model-Research/spectral_research/` into `Zoo-Keeper/baselines/`,
   and run them on the new fingerprints and T2 spectra.
-  - Nov1 readiness: porting unblocked by merged extractor/lineage foundations;
-    real evaluation still needs T2 spectra and measured related-model pairs.
+  - Nov1 correction: porting is unblocked, and 98 existing collector HDF5 files
+    contain spectrum groups. Validate their adapter/identity/pair compatibility
+    before assuming new extraction is required; extractor filename globs were
+    not a census of available spectra.
 - [ ] **S6 Blind laundering subset** (C, due Nov 20).
   - Part of the lab's 20 laundering transforms, written under
     `$ZOO_DATA/lab_blind`, outside git (D8.8).
@@ -361,17 +374,27 @@ works with agent sessions.
 
 ### Pilot and gate G0 (A, with the person)
 
-- [ ] **R1 Frame and pilot draw** (A, due Nov 24).
+- [x] **R1 Frame and pilot draw** (A, completed Nov 1; due Nov 24).
   - `python -m evidence.cli frame ...`, then
     `sample --plan pilot --seed 20261028`.
   - For models with leaderboard scores, fill the `revision` column with the
     leaderboard's `Model sha`. Then the zoo's score joins verify; pinning
     today's `main` would leave almost every score unverified.
   - No weights are read, so agents may run it.
-- [ ] **R2 T0 manifests** for the 320-model Hub pilot
+  - Completed: 320 models, all twelve quotas met, seed 20261028. Frozen draw,
+    inclusion probabilities and hashes verified. No exact repository matches
+    in available local leaderboard exports; no evaluation SHA substituted.
+    See [run report](../../runs/pilot-r1-r2-20261101.6jl1dxrv/REPORT.md).
+- [~] **R2 T0 manifests** for the 320-model Hub pilot
   (`manifest --include_declared_bases`; A, due Nov 25). It is metadata only,
   so agents run it. The lab's manifests,
   including its Hub bases and the independents, are done earlier under L12.
+  - Nov 1: execution finished; coverage remains partial. Pilot: 301 complete,
+    6 denied, 13 validation failures. Direct bases: 133 complete, 2 denied,
+    29 other failures. See the R1 run report and STATUS.md for follow-up.
+  - Remaining: investigate file-set/metadata validation and HTTP 307/401
+    handling in the main conversation, then rerun affected metadata requests.
+    Preserve the draw and denied-access gaps; do not resample.
 - [ ] **R3 [HUMAN] T2 run** (due Dec 1).
   - Covers the independents, the Hub related pairs, and 10 models per stratum
     above 9B: about 4 TB.
