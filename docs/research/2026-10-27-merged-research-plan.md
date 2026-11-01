@@ -1572,6 +1572,14 @@ by the deferred Hub-wide T0, and C's leaderboard work fills the `scores` table.
 | Storage | — | Lab checkpoints 1–2 TB; parent-block cache and T2 scratch with a bounded size; spectra about 0.2 TB; fingerprints about 0.4 TB per 100k models at k = 64; headers about 4 GB |
 | Claude API | — | Evaluation: at most about $20 a day, and only once judge-scored evaluation starts in a later stage (local judges first). Coding agents: ample, not infinite (section 15.3). |
 
+Day-one measurement (2026-10-31, Track A): on voyager, CPU `svdvals` for a
+3584×18944 float32 matrix took **19.20 seconds** with four CPU threads
+(torch 2.10.0+cu130, seed 20261028). HTTPS and Xet metadata were reachable.
+This replaces the untested per-matrix timing assumption; the per-model T2
+estimate above still needs a representative full-model measurement. The report
+is `$ZOO_DATA/runs/track-a-day-one/voyager.json`; a separate CPU-node check
+remains pending because this session exposes no cluster scheduler.
+
 Plan A's 1.73 PB figure applies only if every model gets T2. Plan B's GPU table
 assumed GPU spectral computation for every model. On CPU, with row blocks, both
 binding constraints relax.

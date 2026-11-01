@@ -233,7 +233,7 @@ in the `STATUS.md` change log (D7.12).
 | Model key `"<repo_id>@<revision>"`, where the revision is a 40-character SHA or `local:<sha256>` | zoo plan, Global Constraints | now |
 | Artifact file names, built from `safe_filename(f"{repo_id}@{revision}")` | extractor plan, Global Constraints | now |
 | Manifest JSON keys | extractor plan, Task 5 | Nov 13 |
-| Fingerprint file layout and the `Fingerprint` fields | extractor plan, Task 6 | **Nov 6** |
+| Fingerprint file layout and the `Fingerprint` fields | extractor plan, Task 6 (dtype-aware block hashes, v1) | **2026-10-31: XF approved** |
 | Coverage vocabulary (statuses `measured`, `consumed`, `skipped`, and `duplicate`, plus the closed list of reasons) | extractor plan, Task 4b | Nov 12 |
 | Calibration file JSON (`statistic`, `sketch_k`, `row_block`, `tier`, `n_pairs`, `null_quantiles`, `related_threshold`), and the one statistic it describes (`pair_similarity`'s median cosine) | extractor plan, Tasks 8–9 | Nov 27 |
 | `diff`/`check` JSON (`relatedness.verdict`; the top-level `verdict` for `check` via `check_verdict`) | extractor plan, Task 8 | Nov 27 |

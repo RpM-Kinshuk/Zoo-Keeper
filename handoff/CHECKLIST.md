@@ -52,14 +52,14 @@ In Zoo-Keeper, the full suite is `python -m pytest tests -q`.
 Tokens and roles need no item: the tokens are in place, and one person
 works with agent sessions.
 
-- [ ] **P0-3 [HUMAN] Commit the starting documents.**
+- [x] **P0-3 [HUMAN] Commit the starting documents.**
   - In `Model-Zoo`: the two plans (`docs/superpowers/plans/`).
   - In `Zoo-Keeper`: `handoff/`, `docs/research/` (the merged plan and Plans A
     and B), `scripts/` (the access scripts), and the README.
   - In `Model-Research`: the removal of the moved plans, and the pointer edits
     to its READMEs.
   - Branches are not created here; each track creates its own (AS, BS, CS).
-- [ ] **P0-4 Environment and baseline** (A).
+- [x] **P0-4 Environment and baseline** (A).
   - Use the existing `esd_ind` conda environment on the work machine
     (`conda activate esd_ind`). More packages may be installed into it as
     needed (D7.5).
@@ -78,14 +78,14 @@ works with agent sessions.
 
 ### Track A: extractor (`Model-Zoo/evidence/`; extractor plan)
 
-- [ ] **AS Set up track A** (A, first). Needs P0-3.
+- [x] **AS Set up track A** (A, first). Needs P0-3.
   - Create branch `track-a` and a worktree from the latest `main` in both
     repositories (paths relative to the workspace root):
     - `git -C Model-Zoo worktree add ../worktrees/Model-Zoo-track-a -b track-a main`
     - `git -C Zoo-Keeper worktree add ../worktrees/Zoo-Keeper-track-a -b track-a main`
   - Record the branches and worktree paths in `STATUS.md`.
 
-- [ ] **A0 Day-one checks** (A, due Nov 4).
+- [!] **A0 Day-one checks** (A, due Nov 4).
   - Write `evidence/scripts/day_one_checks.py` exactly as extractor Task 10
     specifies. It has no dependencies on other tasks, so write it now.
   - It is a diagnostic script with no unit test, so item 1 of the definition
@@ -97,12 +97,15 @@ works with agent sessions.
     `$ZOO_DATA`, and whether
     Xet metadata is reachable. The CPU timing replaces the estimate in the
     merged plan's §13; note it there and log the change in `STATUS.md`.
-- [ ] **X1 Task 1: safetensors headers and plain decoding** (A, due Nov 3).
+- [x] **X1 Task 1: safetensors headers and plain decoding** (A, due Nov 3).
   Includes F8_E8M0 decoding for block scales.
-- [ ] **X3 Task 3: orthonormal nested sketches and row blocks** (A, due Nov 5).
+- [x] **X3 Task 3: orthonormal nested sketches and row blocks** (A, due Nov 5).
   It can run in parallel with X1.
-- [ ] **X2 Task 2: Hub reader** (A, due Nov 10). Needs X1.
-- [ ] **XF [HUMAN] Freeze the fingerprint format** (due **Nov 6**).
+- [x] **X2 Task 2: Hub reader** (A, due Nov 10). Needs X1.
+- [x] **XF [HUMAN] Freeze the fingerprint format** (approved **Oct 31**; originally due Nov 6).
+  - Owner approved after a reasoned technical check. Initial v1 hash definition
+    includes the effective storage dtype; the existing file/field layout is
+    retained. Approval is effective; these documentation edits await commit.
   - A person confirms that extractor Task 6's file layout and `Fingerprint`
     fields are frozen as written.
   - The same person approves or rejects every 2026-10-31 row of the
@@ -110,11 +113,11 @@ works with agent sessions.
     plans, and marks each row.
   - From then on, track B builds on that layout. Before X6 lands, B writes
     synthetic fingerprints with a small writer that follows it.
-- [ ] **X4 Task 4: block delta and rank with abstention** (A, due Nov 13).
+- [x] **X4 Task 4: block delta and rank with abstention** (A, due Nov 13).
   Needs X1.
   - If the heteroscedastic test fails, report the measured ranks. Never loosen
     the test (D7.3).
-- [ ] **X4b Task 4b: decode × geometry view table** (A, due Nov 12). Needs X1.
+- [x] **X4b Task 4b: decode × geometry view table** (A, due Nov 12). Needs X1.
   - It includes the rows added on 2026-10-31 for System One and trending
     models (merged plan §6.8):
     - the `head` geometry;
@@ -130,25 +133,25 @@ works with agent sessions.
   - Use transformers' MXFP4 code as the reference. If NVIDIA ModelOpt is
     needed for NVFP4, install it into `esd_ind` only if that changes no
     installed version; otherwise ask (D7.5).
-- [ ] **X5 Task 5: T0 manifest with file-set selection** (A, due Nov 13). Needs
+- [x] **X5 Task 5: T0 manifest with file-set selection** (A, due Nov 13). Needs
   X2 and X4b. The manifest keys freeze when it is done.
   - It includes the `decision` block, GGUF metadata from the Hub API,
     ONNX-only as T0-only, and the `precision_variant`, `bundled_adapter`, and
     `pickle_not_read` file reasons.
-- [ ] **X6 Task 6: fingerprints, `fingerprint_tensors`, `load_fingerprint`** (A,
+- [x] **X6 Task 6: fingerprints, `fingerprint_tensors`, `load_fingerprint`** (A,
   due Nov 20). Needs X1–X5.
-- [ ] **X7 Task 7: selection frame and pilot draw** (A, due Nov 20). Needs
+- [x] **X7 Task 7: selection frame and pilot draw** (A, due Nov 20). Needs
   X1.
   - The modalities include `video`, `3d`, and `robotics`. System One models
     form a `decision` stratum, and the pilot is 320 models.
   - Download `cfahlgren1/hub-stats` `models.parquet` and record its size in
     `STATUS.md`.
   - Pin `pyarrow`.
-- [ ] **X8 Task 8: CLI, `diff_fingerprints`, `pair_similarity`, resumable
+- [x] **X8 Task 8: CLI, `diff_fingerprints`, `pair_similarity`, resumable
   batch** (A, due Nov 25). Needs X5–X7.
-- [ ] **X9 Task 9: pilot analysis, G0 report, calibration file** (A, due
+- [x] **X9 Task 9: pilot analysis, G0 report, calibration file** (A, due
   Nov 27). Needs X6, X8, and L2 (the lab tables, `GUIDANCE.md` 4.4).
-- [ ] **X10 Task 10: documentation, runbook, full suite, network smoke test**
+- [x] **X10 Task 10: documentation, runbook, full suite, network smoke test**
   (A, due Nov 27). Needs X1–X9.
   - The network smoke test needs `HF_TOKEN` set in the environment. If it is
     not set, mark the item blocked and ask (D2.3).
@@ -296,7 +299,7 @@ works with agent sessions.
 
 ### Track C: study, baselines, audit (the study plan is written first)
 
-- [ ] **CS Set up track C** (C, first). Needs P0-3.
+- [r] **CS Set up track C** (C, first). Needs P0-3.
   - Create branch `track-c` and its worktree in `Zoo-Keeper` from the latest
     `main`:
     `git -C Zoo-Keeper worktree add ../worktrees/Zoo-Keeper-track-c -b track-c main`.
@@ -304,7 +307,7 @@ works with agent sessions.
   - Track C's code lives in Zoo-Keeper, including the baselines. Port what
     it needs from the frozen Model-Research; never import from it.
 
-- [ ] **S1 Write the study plan: heritability plus a first exchange-rate pass**
+- [r] **S1 Write the study plan: heritability plus a first exchange-rate pass**
   (C, due Nov 4; a person reviews it by Nov 6).
   - Sources: §5.1, §5.4, and §9 ideas 2–3.
   - **Data:** leaderboard v1 and v2 per-task Raw scores, Model Atlas edges, and
@@ -321,13 +324,13 @@ works with agent sessions.
   - **The exchange rate:** for estimation and for selection (within and across
     families), with the strict bound.
   - **Rules and output:** a frozen config, and the workshop target.
-- [ ] **S2 Data assembly and audit** (C, due Nov 10).
+- [r] **S2 Data assembly and audit** (C, due Nov 10).
   - Count the verified revision joins, and treat zero-byte files as missing.
   - Locate the September study outputs (`research_runs/` on the cluster copy;
     they are not in the local checkout). If they cannot be found, ask a
     person.
-- [ ] **S3 Heritability statistics** (C, due Nov 13).
-- [ ] **S4 First exchange-rate pass** (C, due Nov 20). Use the existing
+- [!] **S3 Heritability statistics** (C, due Nov 13).
+- [!] **S4 First exchange-rate pass** (C, due Nov 20). Use the existing
   September predictions, per skill, for estimation and for selection.
 - [ ] **S5 Trace and Spectral Signatures baselines** (C, due Nov 13). Port
   them from `Model-Research/spectral_research/` into `Zoo-Keeper/baselines/`,
@@ -336,7 +339,7 @@ works with agent sessions.
   - Part of the lab's 20 laundering transforms, written under
     `$ZOO_DATA/lab_blind`, outside git (D8.8).
   - Track B never sees it before evaluation.
-- [ ] **S7 Workshop paper draft** (C, due Nov 27).
+- [r] **S7 Workshop paper draft** (C, due Nov 27).
 - [ ] **S8 Hub query set for P1** (C, due Dec 4).
   - 2–5k labeled queries.
   - Verified-Hub truth:
