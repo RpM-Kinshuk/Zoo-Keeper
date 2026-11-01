@@ -175,13 +175,13 @@ works with agent sessions.
 
 ### Track B: genealogy lab (the plan is written first)
 
-- [ ] **BS Set up track B** (B, first). Needs P0-3.
+- [x] **BS Set up track B** (B, first). Needs P0-3.
   - Create branch `track-b` and its worktree in `Zoo-Keeper` from the latest
     `main`:
     `git -C Zoo-Keeper worktree add ../worktrees/Zoo-Keeper-track-b -b track-b main`.
   - Record the branch and the worktree path in `STATUS.md`.
 
-- [ ] **L1 Write the lab implementation plan** (B, due Nov 4; a person reviews
+- [x] **L1 Write the lab implementation plan** (B, due Nov 4; a person reviews
   it by Nov 6).
   - Use the existing plans' format and save it to `Zoo-Keeper/docs/plans/`.
   - Sources: §12 (minimum lab), §10 (truth tiers and the blind set), and §6.5.
@@ -194,44 +194,44 @@ works with agent sessions.
     - which jobs a person launches;
     - a scorer (L13);
     - how the lab is later released as a benchmark.
-- [ ] **L2 Lab tables and validator** (B, due Nov 9). Needs L1 to be
+- [x] **L2 Lab tables and validator** (B, due Nov 9). Needs L1 to be
   reviewed.
   - `lab/models.csv` and `lab/edges.csv` use the columns in `GUIDANCE.md` 4.4.
   - A validator checks types, IDs, and acyclicity.
   - The validator defines `LAB_SCHEMA_VERSION`, and the tables cover every
     planned model except the blind subset, which C validates separately.
   - Lab scripts write each checkpoint's `lineage.json`.
-- [ ] **L3 Bases pinned** (B, due Nov 9).
+- [x] **L3 Bases pinned** (B, due Nov 9).
   - At least 6 bases from at least 3 families, chosen from Qwen2.5-0.5B, 1.5B,
     and 7B; Qwen3-0.6B and 1.7B; SmolLM2; and OLMo-2-1B.
   - **Never Qwen2.5-3B.**
   - Record each base's commit and license.
-- [ ] **L4 Merges: at least 30** (B; configs due Nov 11; done by Nov 13).
+- [~] **L4 Merges: at least 30** (B; configs due Nov 11; done by Nov 13).
   Agents may run the merges if they fit D4.1's limits; otherwise a person
   launches them.
   - Linear, SLERP, TIES, and DARE, with 2–4 parents each.
   - Some with per-layer `t`.
   - Use mergekit configs and keep each config's hash.
-- [ ] **L5 LoRA: at least 24 runs at ranks 8, 64, and 256** (B; queued in week
+- [~] **L5 LoRA: at least 24 runs at ranks 8, 64, and 256** (B; queued in week
   1; [HUMAN] launches; done by Nov 20).
-- [ ] **L6 Full fine-tunes: at least 8 SFT and 8 DPO at ≤1.7B** (B; [HUMAN]
+- [~] **L6 Full fine-tunes: at least 8 SFT and 8 DPO at ≤1.7B** (B; [HUMAN]
   launches; done by Nov 20).
-- [ ] **L7 Abliterations: at least 8, classic and Heretic** (B, due Nov 20).
-- [ ] **L8 Simulated quantizations: at least 12** (B, due Nov 20). Each model is
+- [~] **L7 Abliterations: at least 8, classic and Heretic** (B, due Nov 20).
+- [~] **L8 Simulated quantizations: at least 12** (B, due Nov 20). Each model is
   quantized, dequantized, and saved as bf16.
-- [ ] **L9 Laundering transforms: at least 20** (B, due Nov 13).
+- [~] **L9 Laundering transforms: at least 20** (B, due Nov 13).
   - Function-preserving permutation, rescaling, rotation, and targeted
     perturbation.
   - S6 (C) contributes the blind part. G1 counts L9 and S6 together toward
     the 20.
-- [ ] **L10 Chains: at least 3 of depth ≥3** (B, due Nov 20).
-- [ ] **L14 Decision heads: at least 6** (B, due Nov 20).
+- [~] **L10 Chains: at least 3 of depth ≥3** (B, due Nov 20).
+- [~] **L14 Decision heads: at least 6** (B, due Nov 20).
   - Sequence-classification fine-tunes: 4 on lab decoder bases and 2 on
     ModernBERT-base (apache-2.0).
   - One is stored as PEFT factors inside a full checkpoint, as many System One
     models ship.
   - Each costs minutes of GPU time, so agents may run the batch (D4.1).
-- [ ] **L11 Hard negatives** (B, due Nov 20).
+- [x] **L11 Hard negatives** (B, due Nov 20).
   - The PolyPythias seed variants (5 sizes × 9 seeds) and same-series siblings,
     listed in `lab/models.csv` as independents with no edges.
   - Pin each one's commit.
@@ -245,7 +245,7 @@ works with agent sessions.
     `--all_experts`, and `--sketch_k 128`.
   - Before X8's `batch` command exists, agents provide a short Python loop over
     `fingerprint_model`.
-- [ ] **L13 Lab scorer** (B, due Dec 4).
+- [!] **L13 Lab scorer** (B, due Dec 4). Waiting for A's Z1 schema.
   - It takes `lab/edges.csv` and predicted edges in Parquet with the zoo's
     `LINEAGE_COLUMNS`.
   - It reports per-estimand AUROC, false matches per query at TPR 0.9,
@@ -256,7 +256,7 @@ works with agent sessions.
 
 ### Track B: P1 lineage engine (the plan is written first)
 
-- [ ] **E1 Write the P1 engine plan** (B, due Nov 6; a person reviews it by
+- [x] **E1 Write the P1 engine plan** (B, due Nov 6; a person reviews it by
   Nov 9).
   Sources: §9 ideas 7–11, §10, and §11 (P1 row). It must cover:
   - **Problem setup:** the nested estimands, and retrieval over fingerprints.
@@ -280,17 +280,18 @@ works with agent sessions.
     curves, and the baseline interface.
   - **Rules:** local mode only, and no access to `$ZOO_DATA/lab_blind` before
     evaluation.
-- [ ] **E2 Engine skeleton on synthetic fingerprints** (B, due Nov 13).
-- [ ] **E3 Merge regression** (B, due Nov 20). Target effective coefficients
+- [x] **E2 Engine skeleton on synthetic fingerprints** (B, due Nov 13).
+- [x] **E3 Merge regression** (B, due Nov 20). Target effective coefficients
   within ±0.05 on lab merges, and agreement with the mergekit configs.
-- [ ] **E4 Rank and edge typing** (B, due Nov 20).
-- [ ] **E5 Stacked abliteration test** (B, due Nov 27).
-- [ ] **E6 Tree-likeness on lab trees** (B, due **Nov 27**). A person makes
+- [x] **E4 Rank and edge typing** (B, due Nov 20).
+- [x] **E5 Stacked abliteration test** (B, due Nov 27).
+- [~] **E6 Tree-likeness on lab trees** (B, due **Nov 27**). A person makes
   the pivot decision on the thresholds in `GUIDANCE.md` 5.2.
-- [ ] **E7 Calibration** (B, due Dec 4).
+- [x] **E7 Calibration** (B, due Dec 4).
   - An empirical null, a GPD tail, and per-query FDR.
   - Agree with X9 on the calibration statistic and `sketch_k = 64`.
-- [ ] **E8 Lineage edges into the zoo** (B, due Dec 4). Parquet with
+- [!] **E8 Lineage edges into the zoo** (B, due Dec 4). Extractor adapter
+  ready; zoo integration waits for Z1/Z4/Z6. Parquet with
   `LINEAGE_COLUMNS`, loaded with `zoo build --lineage_edges`.
 
 ### Track C: study, baselines, audit (the study plan is written first)
