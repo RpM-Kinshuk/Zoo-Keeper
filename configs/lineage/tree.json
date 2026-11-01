@@ -1,0 +1,19 @@
+{
+  "method_version": "p1-0",
+  "seed": 20261028,
+  "four_point_tolerance": 0.000001,
+  "max_quartets": 10000,
+  "distance_kind": "squared_sketch",
+  "assembly": "Chu-Liu/Edmonds",
+  "direction_status_required": "resolved",
+  "cost": "negative log frozen parent plausibility plus declared priors",
+  "upload_time_prior_weight": 0.0,
+  "quantized_leaf_prior_weight": 0.0,
+  "prior_status": "assumptions; incorporated upstream into cost",
+  "exclude_reticulation_and_descendants": true,
+  "four_point_pivot_threshold_strict_gt": 0.20,
+  "normalized_rf_pivot_threshold_strict_gt": 0.20,
+  "pivot_decision_owner": "person",
+  "actual_lab_pivot_status": "NOT_EVALUABLE",
+  "actual_lab_pivot_reason": "No actual lab trees evaluated; synthetic tests are not lab measurements."
+}

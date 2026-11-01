@@ -1,0 +1,15 @@
+{
+  "schema_version": "1",
+  "steps": 128,
+  "effective_batch": 8,
+  "sequence_length": 512,
+  "learning_rate": 5e-06,
+  "optimizer": "adamw",
+  "scheduler": "constant",
+  "dropout": 0,
+  "max_parameters": 1700000000,
+  "device": "cpu",
+  "torch_dtype": "bfloat16",
+  "inputs_state": "awaiting_verified_dataset_license_and_frozen_splits",
+  "beta": 0.1
+}

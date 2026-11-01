@@ -1,0 +1,13 @@
+{
+  "schema_version": "1",
+  "device": "cpu",
+  "torch_dtype": "bfloat16",
+  "inputs_state": "awaiting_verified_dataset_license_and_frozen_splits",
+  "heretic_package": "heretic-llm",
+  "heretic_version": "1.4.0",
+  "heretic_config": {
+    "n_trials": 200,
+    "quantization": "none"
+  },
+  "heretic_status": "blocked_installed_loader_lacks_safe_local_enforcement"
+}

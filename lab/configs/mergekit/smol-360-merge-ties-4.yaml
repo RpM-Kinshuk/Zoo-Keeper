@@ -1,0 +1,20 @@
+base_model: smol-360
+dtype: float32
+merge_method: ties
+models:
+- model: smol-360-lora-dialogue-r8
+  parameters:
+    density: 0.5
+    weight: 0.25
+- model: smol-360-lora-dialogue-r64
+  parameters:
+    density: 0.5
+    weight: 0.25
+- model: smol-360-lora-dialogue-r256
+  parameters:
+    density: 0.5
+    weight: 0.25
+- model: smol-360-lora-instruction-r8
+  parameters:
+    density: 0.5
+    weight: 0.25

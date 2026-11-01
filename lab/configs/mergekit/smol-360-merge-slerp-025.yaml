@@ -1,0 +1,8 @@
+base_model: smol-360-lora-dialogue-r8
+dtype: float32
+merge_method: slerp
+models:
+- model: smol-360-lora-dialogue-r8
+- model: smol-360-lora-dialogue-r64
+parameters:
+  t: 0.25

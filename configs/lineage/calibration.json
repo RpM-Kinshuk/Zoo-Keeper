@@ -1,0 +1,51 @@
+{
+  "method_version": "lineage-calibration-v1",
+  "status": "protocol_only_unfitted",
+  "seed": 20261028,
+  "statistic": "median_cosine",
+  "sketch_k": 64,
+  "tier": "t1",
+  "row_block": 256,
+  "tail_quantile": 0.9,
+  "minimum_gpd_exceedances": 50,
+  "gpd_validity": "approximate_gpd",
+  "permutation_assumption": "conditional exchangeability of candidate labels under a recorded justified design",
+  "p_to_e": "0.5 / sqrt(p)",
+  "query_control": "e-BH with full candidate pool, unretrieved e=0",
+  "required_p_validity": "exchangeable",
+  "estimands": {
+    "same_root": [
+      "independent"
+    ],
+    "ancestor": [
+      "independent",
+      "sibling"
+    ],
+    "parent": [
+      "independent",
+      "sibling",
+      "non_immediate_ancestor"
+    ]
+  },
+  "composite_p": "maximum_required_stratum_p; abstain if any missing",
+  "cluster_unit": "query_root_seed",
+  "conformal": {
+    "alpha": 0.1,
+    "method": "Mondrian within supported families",
+    "quantile_rank": "ceil((n+1)*(1-alpha)); infinity beyond n",
+    "nonconformity": "maximum 1-p over the whole true label set",
+    "not_in_reference": "real held-out roots absent from the reference pool",
+    "unknown_family": "full augmented set, transfer_unvalidated",
+    "scorer": "development-only fitted positive temperature and not_in_reference intercept; freeze before calibration",
+    "report": [
+      "whole_true_set_inclusion",
+      "marginal_candidate_coverage"
+    ],
+    "fit_provenance": "DataFrame attrs require frozen SHA256 scorer_hash and candidate_universe_hash",
+    "application_provenance": "matching scorer_hash and candidate_universe_hash keywords required; otherwise full set, uncalibrated_provenance, no guarantee",
+    "integrity": "complete fitted artifact content hash verified before application, including family thresholds and finite/infinite quantiles"
+  },
+  "source_hashes": {},
+  "upstream_x9": "separate immutable source; require its hash when fitting; do not overwrite",
+  "null_application_provenance": "settings.architecture must match the fitted family architecture signature"
+}

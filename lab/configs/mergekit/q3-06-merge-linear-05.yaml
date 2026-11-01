@@ -1,0 +1,9 @@
+dtype: float32
+merge_method: linear
+models:
+- model: q3-06-lora-dialogue-r8
+  parameters:
+    weight: 0.5
+- model: q3-06-lora-dialogue-r64
+  parameters:
+    weight: 0.5

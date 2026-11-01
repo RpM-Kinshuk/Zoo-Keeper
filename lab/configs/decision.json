@@ -1,0 +1,16 @@
+{
+  "schema_version": "1",
+  "steps": 32,
+  "effective_batch": 16,
+  "sequence_length": 128,
+  "label_names": ["negative", "positive"],
+  "pad_token_id": 0,
+  "optimizer": "adamw",
+  "scheduler": "constant",
+  "dropout": 0,
+  "rslora": false,
+  "target_modules": ["q_proj", "v_proj"],
+  "inputs_state": "awaiting_verified_dataset_license_and_frozen_splits",
+  "device": "cpu",
+  "torch_dtype": "bfloat16"
+}

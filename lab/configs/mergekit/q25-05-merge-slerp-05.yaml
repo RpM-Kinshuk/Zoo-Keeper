@@ -1,0 +1,8 @@
+base_model: q25-05-lora-dialogue-r8
+dtype: float32
+merge_method: slerp
+models:
+- model: q25-05-lora-dialogue-r8
+- model: q25-05-lora-dialogue-r64
+parameters:
+  t: 0.5

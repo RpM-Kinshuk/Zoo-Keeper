@@ -1,0 +1,9 @@
+dtype: float32
+merge_method: linear
+models:
+- model: smol-360-lora-dialogue-r8
+  parameters:
+    weight: 0.75
+- model: smol-360-lora-dialogue-r64
+  parameters:
+    weight: 0.25

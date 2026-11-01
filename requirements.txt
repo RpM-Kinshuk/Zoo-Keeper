@@ -1,0 +1,14 @@
+numpy==2.2.6
+pandas==2.3.3
+safetensors==0.7.0
+huggingface-hub==1.11.0
+torch==2.10.0+cu130
+transformers==5.9.0
+peft==0.18.1
+networkx==3.4.2
+scipy==1.15.3
+mergekit==0.1.5
+heretic-llm==1.4.0
+pyarrow==23.0.1
+immutables==0.21
+PyYAML==6.0.3

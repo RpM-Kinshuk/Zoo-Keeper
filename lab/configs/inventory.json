@@ -1,0 +1,16 @@
+{
+  "schema_version": "1",
+  "seed": 20261028,
+  "bases": [
+    {"model_id": "q25-05", "repo_id": "Qwen/Qwen2.5-0.5B", "base_family": "qwen2.5", "license_candidate": "apache-2.0"},
+    {"model_id": "q25-15", "repo_id": "Qwen/Qwen2.5-1.5B", "base_family": "qwen2.5", "license_candidate": "apache-2.0"},
+    {"model_id": "q3-06", "repo_id": "Qwen/Qwen3-0.6B", "base_family": "qwen3", "license_candidate": "apache-2.0"},
+    {"model_id": "smol-135", "repo_id": "HuggingFaceTB/SmolLM2-135M", "base_family": "smollm2", "license_candidate": "apache-2.0"},
+    {"model_id": "smol-360", "repo_id": "HuggingFaceTB/SmolLM2-360M", "base_family": "smollm2", "license_candidate": "apache-2.0"},
+    {"model_id": "olmo-1b", "repo_id": "allenai/OLMo-2-0425-1B", "base_family": "olmo2", "license_candidate": "apache-2.0"},
+    {"model_id": "modernbert", "repo_id": "answerdotai/ModernBERT-base", "base_family": "modernbert", "license_candidate": "apache-2.0"}
+  ],
+  "anchors": ["q25-05", "q3-06", "smol-360", "olmo-1b"],
+  "merge_anchors": ["q25-05", "q3-06", "smol-360"],
+  "reference_slots": {"published_size_slots": 5, "published_seed_slots": 9, "sibling_slots": 2}
+}

@@ -1,0 +1,7 @@
+{
+  "schema_version": "1",
+  "anchors": ["q25-05", "q3-06", "smol-360"],
+  "path": ["base", "sft-s0", "dpo-s0", "quantization-s8"],
+  "minimum_depth": 3,
+  "blind_count_source": "C aggregate attestation only"
+}

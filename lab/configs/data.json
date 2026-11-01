@@ -1,0 +1,92 @@
+{
+  "state": "awaiting_license_evidence_and_selected_index_hashes",
+  "entries": [
+    {
+      "model_id": "instruction",
+      "repo_id": "HuggingFaceH4/ultrachat_200k",
+      "kind": "dataset",
+      "revision": "main",
+      "split": "train_sft",
+      "preprocessing": {
+        "seed": 20261028,
+        "sequence_length": 512
+      },
+      "selection": {
+        "training": [
+          0,
+          4096
+        ],
+        "direction": [
+          4096,
+          4352
+        ],
+        "validation": [
+          4352,
+          4608
+        ],
+        "scoring": [
+          4608,
+          4864
+        ]
+      }
+    },
+    {
+      "model_id": "preference",
+      "repo_id": "trl-lib/ultrafeedback_binarized",
+      "kind": "dataset",
+      "revision": "main",
+      "split": "train",
+      "preprocessing": {
+        "seed": 20261028,
+        "sequence_length": 512
+      },
+      "selection": {
+        "training": [
+          0,
+          4096
+        ],
+        "direction": [
+          4096,
+          4352
+        ],
+        "validation": [
+          4352,
+          4608
+        ],
+        "scoring": [
+          4608,
+          4864
+        ]
+      }
+    },
+    {
+      "model_id": "decision",
+      "repo_id": "stanfordnlp/sst2",
+      "kind": "dataset",
+      "revision": "main",
+      "split": "train",
+      "preprocessing": {
+        "seed": 20261028,
+        "sequence_length": 128
+      },
+      "selection": {
+        "training": [
+          0,
+          4096
+        ],
+        "direction": [
+          4096,
+          4352
+        ],
+        "validation": [
+          4352,
+          4608
+        ],
+        "scoring": [
+          4608,
+          4864
+        ]
+      }
+    }
+  ]
+}
