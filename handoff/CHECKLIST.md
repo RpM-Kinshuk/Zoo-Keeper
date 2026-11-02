@@ -170,7 +170,7 @@ works with agent sessions.
 - [x] **Z5 Task 5: v0 lineage edges** (A, due Nov 27). Needs Z4, plus X8's
   `pair_similarity` and calibration format.
 - [x] **Z6 Task 6: atomic deterministic build** (A, due Dec 1). Needs Z3–Z5.
-- [ ] **Z7 Task 7: query API (`Zoo`), in Zoo-Keeper** (A, due Dec 2). Needs Z6
+- [~] **Z7 Task 7: query API (`Zoo`), in Zoo-Keeper** (A, due Dec 2). Needs Z6
   and X8, committed and merged into Model-Zoo's `main` by the person, then
   `pip install -e Model-Zoo` (D10.1).
 - [ ] **Z8 Task 8: CLIs and docs** (A, due Dec 4): `build` in Model-Zoo, and
@@ -245,10 +245,13 @@ works with agent sessions.
   - The PolyPythias seed variants (5 sizes × 9 seeds) and same-series siblings,
     listed in `lab/models.csv` as independents with no edges.
   - Pin each one's commit.
-- [ ] **L12 [HUMAN] Fingerprint lab v0** (A, due Nov 20).
+- [~] **L12 [HUMAN] Fingerprint lab v0** (A, due Nov 20).
   - [x] X5 selector follow-up: merged into Model-Zoo main at `00ad4af`; selects merged primary weights, excludes saved adapter factors, preserves adapter-only checkpoints. Exact B reproducer PASS; handoff: `handoff/track-b-incremental-l12.md`.
-  - [ ] A next: fingerprint B's6 pending LoRAs, then run the prepared2-model T2/k128 pilot with free T1 blocks128/256/512. Preserve B's frozen k64 evaluation and trained outputs.
-  - B has27 unique measured real models with T1 k64/block256: original22 plus5 newly trained non-LoRA outputs (new run also repeats existing Smol base). Six additional trained LoRAs await A fingerprinting; the selector dependency is resolved.
+  - [x] Six LoRA T1 fingerprints complete at k64/block256; all33 ready real models now have T1. Original six trained/source evidence files unchanged.
+  - [x] Two-model T2/k128 pilot complete; expected identities, full HDF5 spectra and free T1 blocks128/256/512 verified.
+  - [x] T2/k128 complete for43 real checkpoints (all33 ready plus10 readable formal sources), full HDF5 spectra and T1 blocks128/256/512 verified and published. All54 formal external T0 manifests complete at original pins.
+  - Remaining formal coverage:15/166 measured;109 checkpoints not generated and42 external pins T0-only. Whole L12 stays in progress. Exact gap/artifact tables and B/C handoff: `runs/track-a-l12-20261102.mnbqfy_y/REPORT.md`.
+  - B has33 unique ready models with T1 k64/block256 (original22 plus11 trained outputs). All33 also have T2/freeT1 at k128;10 additional formal sources have T2/freeT1 at k128. The selector dependency is resolved.
     Incremental T2/k128 handoff and exact launch are in `handoff/track-b-incremental-l12.md`;
     this does not complete whole-lab L12.
   - First, the lab's manifests:

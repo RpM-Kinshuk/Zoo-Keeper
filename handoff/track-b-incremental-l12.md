@@ -192,3 +192,47 @@ Release staging remains deferred.
 Integration checkpoint2026-11-02: B source merged locally as `f6f3e08`; full
 CPU/offline suite494 PASS. L13/E8 complete; L12 remains A-owned and incomplete.
 The GPU completion pointer is `lab/configs/launches/track-b-gpu-v1.json`.
+
+## Active A execution,2026-11-02
+
+Owner authorized six LoRA T1, two-model T2 and L12. A claims six missing T1
+outputs and progress rows in the training run; the six prior rows and frozen
+evaluation stay unchanged. T2 uses separate outputs; exact freeze/logs at
+`runs/track-a-l12-20261102.mnbqfy_y`. GPU launch rule: utilization<80% and
+occupied-memory fraction<80%, checked twice five seconds apart. Prepared
+pilot source/derivative identities are retained. Full inventory coverage and
+missing inputs will be reported separately; no duplicate B writer should run.
+
+## B can consume six LoRA T1 outputs now
+
+A completed all6 pending LoRAs (k64/block256, matched parent), preserving the
+original6 evidence files. All12 source/training models now have evidence.
+Actual keys/hashes plus12-model/11-edge tables: `runs/track-a-l12-20261102.mnbqfy_y/t1-training-12`.
+B should freeze a new scoped evaluation output before refreshing scores; the
+original six-model evaluation remains unchanged. A's two-model T2/k128 pilot
+also passed;33-model full-spectrum extension is running separately. All54
+formal external T0 manifests completed at original pins,42 T0-only.
+
+## Completed A handoff,2026-11-02
+
+All43 readable checkpoints are published at T2/k128, with full HDF5 spectra
+and free T1 blocks128/256/512. This covers the original33-model union and10
+additional exact-pin formal sources. All6 pending LoRAs also have T1 k64/b256;
+the earlier6 artifacts and frozen evaluation remain unchanged.
+
+- Primary report: `runs/track-a-l12-20261102.mnbqfy_y/REPORT.md`.
+- Exact keys/manifest/T2/HDF5/freeT1 paths: `artifact-index43.csv` in that run.
+- Observed construction truth: `construction-edges27.csv`; reference/sibling
+  metadata does not invent immediate parents or certify independent roots.
+- B's12-model training T1 inputs: `t1-training-12/`. Freeze a new scoped
+  evaluation rather than overwriting the original six-model report.
+- C can use matched spectra for S5. Published artifacts were SHA-verified.
+- Formal166 coverage:15 measured,109 checkpoints not generated,42 original
+  pins T0-only. Exact gaps: `formal-coverage166.csv`. B owns generation/source
+  readiness; A retains incremental fingerprinting as new ready inputs arrive.
+
+Optional source-weight cache copying was stopped to avoid delaying delivery;
+partial caches are outside this completion contract. GPU option source is
+reviewed/uncommitted on Model-Zoo track-a. All execution workers have finished.
+
+Integration checkpoint,2026-11-02: optional CUDA spectrum support is now committed/merged in Model-Zoo main as `48a70fc`. All43 published artifacts and original evaluation freezes are unchanged. B/C may consume the published paths/keys; A continues with Z7 queries while L12 awaits the explicit remaining inputs.
