@@ -217,18 +217,25 @@ works with agent sessions.
   - Use mergekit configs and keep each config's hash.
 - [~] **L5 LoRA: at least 24 runs at ranks 8, 64, and 256** (B; queued in week
   1; [HUMAN] launches; done by Nov 20).
+  - 2026-11-02:6 extra Smol135 GPU runs complete (instruction/dialogue, ranks8/64/256), exact scoped verification PASS. No formal quota credit; their fingerprints await A nested-adapter selector fix.
 - [~] **L6 Full fine-tunes: at least 8 SFT and 8 DPO at ≤1.7B** (B; [HUMAN]
   launches; done by Nov 20).
+  - 2026-11-02:2 extra Smol135 SFT and2 matching DPO GPU jobs complete, full frozen steps and unchanged DPO references; scoped verification/T1/scoring complete. No formal quota credit.
 - [~] **L7 Abliterations: at least 8, classic and Heretic** (B, due Nov 20).
 - [~] **L8 Simulated quantizations: at least 12** (B, due Nov 20). Each model is
   quantized, dequantized, and saved as bf16.
+  - Three exact planned OLMo outputs are complete. Scoped Smol/Pythia extras
+    are recorded separately and do not silently replace the minimum inventory.
 - [~] **L9 Laundering transforms: at least 20** (B, due Nov 13).
+  - Real scoped Smol rescaling/perturbation complete; rejected MLP permutation
+    is excluded. Whole-lab and blind counts remain open.
   - Function-preserving permutation, rescaling, rotation, and targeted
     perturbation.
   - S6 (C) contributes the blind part. G1 counts L9 and S6 together toward
     the 20.
 - [~] **L10 Chains: at least 3 of depth ≥3** (B, due Nov 20).
 - [~] **L14 Decision heads: at least 6** (B, due Nov 20).
+  - 2026-11-02:1 extra Smol135/Amazon Polarity classifier complete; held-out scoring183/256=71.48%, majority137/256=53.52%; verification/T1 complete. No formal quota credit.
   - Sequence-classification fine-tunes: 4 on lab decoder bases and 2 on
     ModernBERT-base (apache-2.0).
   - One is stored as PEFT factors inside a full checkpoint, as many System One
@@ -239,6 +246,10 @@ works with agent sessions.
     listed in `lab/models.csv` as independents with no edges.
   - Pin each one's commit.
 - [ ] **L12 [HUMAN] Fingerprint lab v0** (A, due Nov 20).
+  - [ ] X5 follow-up: commit/merge A's existing R2 selector repair, excluding nested adapter factors when merged primary weights exist while preserving adapter-only checkpoints; then fingerprint B's6 pending LoRAs. Reproducer/current branch check: `handoff/track-b-incremental-l12.md`.
+  - B has27 unique measured real models with T1 k64/block256: original22 plus5 newly trained non-LoRA outputs (new run also repeats existing Smol base). Six additional trained LoRAs await A primary-weight selector fix.
+    Incremental T2/k128 handoff and exact launch are in `handoff/track-b-incremental-l12.md`;
+    this does not complete whole-lab L12.
   - First, the lab's manifests:
     - local checkpoints: agents build these in local mode, which reads only
       local headers;
@@ -248,7 +259,7 @@ works with agent sessions.
     `--all_experts`, and `--sketch_k 128`.
   - Before X8's `batch` command exists, agents provide a short Python loop over
     `fingerprint_model`.
-- [r] **L13 Lab scorer** (B, due Dec 4). Implemented against merged schema.
+- [x] **L13 Lab scorer** (B, due Dec 4). Implemented against merged schema.
   - It takes `lab/edges.csv` and predicted edges in Parquet with the zoo's
     `LINEAGE_COLUMNS`.
   - It reports per-estimand AUROC, false matches per query at TPR 0.9,
@@ -293,7 +304,7 @@ works with agent sessions.
 - [x] **E7 Calibration** (B, due Dec 4).
   - An empirical null, a GPD tail, and per-query FDR.
   - Agree with X9 on the calibration statistic and `sketch_k = 64`.
-- [r] **E8 Lineage edges into the zoo** (B, due Dec 4). Inference, atomic
+- [x] **E8 Lineage edges into the zoo** (B, due Dec 4). Inference, atomic
   publication, CLI and upstream build integration ready. Parquet with
   `LINEAGE_COLUMNS`, loaded with `zoo build --lineage_edges`.
 
@@ -442,7 +453,8 @@ works with agent sessions.
   size reached.
 - [ ] **S10 Baselines: modelDNA, Witness Overlap, MoTHer** (C, Dec 7–11).
 - [ ] **H2 Byte curves and the T2 subset** (A, Dec 14–18).
-- [ ] **E9 Full P1 evaluation** (B, Dec 14–18). It covers:
+- [~] **E9 Full P1 evaluation** (B, Dec 14–18). Harness and first real
+  held-out cohort report ready; large-pool/T2/baseline gates pending. It covers:
   - three estimands and three truth tiers;
   - false parents per query against pool size, from 10² up to the pool
     reached, extrapolated with the calibrated null;
