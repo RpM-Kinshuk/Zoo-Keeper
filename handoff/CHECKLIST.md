@@ -400,12 +400,13 @@ works with agent sessions.
   (`manifest --include_declared_bases`; A, due Nov 25). It is metadata only,
   so agents run it. The lab's manifests,
   including its Hub bases and the independents, are done earlier under L12.
-  - Nov 1: execution finished; coverage remains partial. Pilot: 301 complete,
-    6 denied, 13 validation failures. Direct bases: 133 complete, 2 denied,
-    29 other failures. See the R1 run report and STATUS.md for follow-up.
-  - Remaining: investigate file-set/metadata validation and HTTP 307/401
-    handling in the main conversation, then rerun affected metadata requests.
-    Preserve the draw and denied-access gaps; do not resample.
+  - Nov2 targeted retry:30 of42 unresolved requests recovered. Pilot:309
+    complete,6 denied,5 unresolved. Direct bases:155 complete,2 denied,7
+    unresolved.472 pinned manifests; frozen draw and all442 originals unchanged.
+  - Remaining:6 ambiguous collections,1 unsupported compound layout and5
+    unavailable references;8 confirmed access denials remain. HTTP307/401 and
+    metadata-type failures recovered. No resampling. See the run report and
+    STATUS.md; R2 remains partial.
 - [ ] **R3 [HUMAN] T2 run** (due Dec 1).
   - Covers the independents, the Hub related pairs, and 10 models per stratum
     above 9B: about 4 TB.

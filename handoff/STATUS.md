@@ -7,7 +7,7 @@ entry and name the agent or person.
 ## Snapshot
 
 **2026-11-02.**
-- Pilot R1 complete (320 models, all quotas); R2 partial (301 pilot manifests complete, 6 denied, 13 validation failures). Execution finished; metadata validation/HTTP follow-up remains. See "Pilot runs" below.
+- Pilot R1 complete (320 models, all quotas); R2 partial after targeted repair:309 pilot manifests complete,6 denied,5 unresolved;155 direct bases complete,2 denied,7 unresolved. Recovered30 of42 affected requests; remaining gaps are source/layout decisions. See "Pilot runs" below.
 - Track A extractor X1–X10 committed and merged locally into Model-Zoo `main` at `0d24eda` on the owner's request. Real G0/calibration still needs measured pilot outputs.
 - Track A zoo builder Z1–Z6 committed and merged locally into Model-Zoo `main` at `cda3705` on the owner's request. Merged-checkout full suite1,156 PASS,1 skipped; stored-T1/shared-filesystem and full-T2 publication smokes passed before merge.
 - R1/R2 and current cross-track progress are recorded in this documentation checkpoint on Zoo-Keeper `main`. Ready or ongoing Track B/C source work remains in its own worktrees.
@@ -66,6 +66,26 @@ The work runs on a remote Linux server: workspace `zoo/`, data under
 
 ## Pilot runs
 
+**2026-11-02, Codex Track A: targeted R2 repair/retry finished.**
+Recovered **30 of42** unresolved requests after fixing authenticated same-origin
+range reads, bounded redirects, null safetensors metadata and canonical root
+checkpoint selection. Pilot: **309 complete,6 denied,5 unresolved**; direct
+bases: **155 complete,2 denied,7 unresolved**. There are472 pinned manifests
+(464 complete,8 confirmed denied). Remaining:6 ambiguous checkpoint collections,
+1 unsupported base/adapter/head composition and5 unavailable HTTP404 references.
+R2 stays partial. All prior307/401 and metadata-type failures recovered.
+
+The frozen draw/source files and all442 original manifests are byte-identical;
+confirmed denials were not retried. Previously failed requests had no recorded
+commit, so reachable repos were resolved once to explicit Nov2 retry pins.
+Historical failures.csv remains untouched; current-failures.csv describes the
+remaining gaps. Baseline copies,42 retry outcomes, source diff and review are
+under `runs/pilot-r1-r2-20261101.6jl1dxrv/attempt-2-20261102-q1wymhoy/`.
+Additional retry reads:5,389,796 metadata/header bytes,342 ranges,225 resolves;
+SDK responses and separate diagnostic probes excluded. No tensor payload/GPU
+work, resampling, commit or push. The repair is uncommitted on Model-Zoo track-a;
+final suite evidence is recorded in Ready for review. No retry job remains.
+
 **2026-11-01, Codex (R1/R2 side conversation), recorded at the owner's request.**
 R1 is complete; R2 remains in progress with partial coverage. No job remains running.
 Execution used Model-Zoo `cda3705`; no source changes or commits were made.
@@ -98,6 +118,8 @@ Execution used Model-Zoo `cda3705`; no source changes or commits were made.
 ## Ready for review
 
 - 2026-11-02, Codex Track B, **recorded and merged at the owner's explicit request**: source commit `f6f3e08` (`feat: add real lab cohorts and frozen lineage evaluation`),31 files/4306 insertions/23 deletions, fast-forwarded Zoo-Keeper main from7c8b603. Covers L13 scorer, E8 inference/publication, E9 frozen evaluation harness, safe real cohorts, quantization guards and CPU/GPU launch tooling; `lab/configs/launches/track-b-gpu-v1.json` pins13 runtime artifacts and all11 completed training jobs. **Fresh full suite494 passed,0 warnings,507.68s**, CPU/offline; merged code is identical to the tested branch, no second full suite. L13/E8 marked complete; E9/E6/official lab quotas remain open. A dependency is X5 file selection→L12: A's existing uncommitted R2 batch already passes B's merged-primary/nested-adapter-only reproducer; A needs to finish/publish that batch, then resume6 LoRA extractions and queued T2 pilot. Next B: scoped depth-three chains L10 and E6 tree/direction evaluation, E9 refresh after A measurements, official-anchor weights/tokenization for formal L5/L6/L14. Original trained outputs/frozen reports untouched, no release staging/push. A's independent R2 source and shared-log edits preserved uncommitted; this checkpoint stages only B handoff edits. Keep track-b/worktree for remaining tasks.
+
+- 2026-11-02, Codex Track A: **R2 repair batch ready; targeted retry recovered30/42.** Model-Zoo track-a changes `evidence/{hub,manifest,safetensors_header}.py` and their three test files. Repairs authenticated same-origin307/401 handling, nullable/string-valued metadata and canonical checkpoint selection; preserves explicit ambiguity for collections and omitted auxiliary heads. One fresh combined review found an excluded nested checkpoint suppressing a root adapter; regression reproduced and fixed once. Scoped Hub58 PASS/1 opt-in skip; layout/header72 PASS. Final full suite **1,218 PASS,1 opt-in network skip,38 warnings,424.36s**, CPU threads1. Runtime preservation and current309 pilot/155 base complete counts are recorded above and in the run report. Suggested message: `fix(evidence): repair Hub metadata transport and canonical checkpoint selection`. Source remains uncommitted; no schema change, tensor extraction, GPU work or push. R2 remains partial for explicit source/access gaps; no owned jobs remain.
 
 - 2026-11-02, Codex Track B: **new trained real inference/scoring pass COMPLETE.** Base+2SFT+2DPO+decision:6 measured models/5 direct edges,870,584,832 selected tensor bytes including parent reads; actual extractor keys/T1 k64 block256 and30 same-root prediction rows,0 calibrated claims. Fixed0.75 same-root TPR1.0; AUROC undefined (30 positive/0 negative pairs). Parent truth5 positives/25 negatives, ancestor7/23; both heads abstain, AUROC.5 tied missing scores, deployedTPR0/coverage0; no successful direction/calibration claim. Pre-score ready/code/selection/threshold freeze and exact six-model evaluation tables/universe/report saved under `runs/track-b-training-gpu-v1/{pre-score-freeze.json,evaluation}`; original independent Pythia control report unchanged. CPU session38579 exited0; no owned jobs remain. Total unique real models33, unique measured27; six LoRA extractions explicitly await A selector fix, with actionable handoff. Combined training/task/evidence report: `runs/track-b-training-gpu-v1/TRAINING-REPORT.md`. Changes uncommitted; no release staging, version upgrades or push.
 
@@ -231,6 +253,7 @@ Execution used Model-Zoo `cda3705`; no source changes or commits were made.
 
 | Item | Agent | Branch | Started | Notes |
 | --- | --- | --- | --- | --- |
+| R2 source gaps | Codex Track A | `track-a` | 2026-11-02 | Targeted retry recovered30/42;309 pilot and155 base manifests complete. R2 remains partial:6 ambiguous collections,1 unsupported compound layout,5 unavailable references;8 confirmed denials preserved. No retry job running. |
 | S3 corrected / S4 verified extensions | Codex (Track C lead) | `track-c` | 2026-11-01 | Exploratory legacy exchange and observed-parent pass ready for review. Row-specific D/deployment identities and modern forecast mappings remain targeted gaps; nominal counts never fill D. S5 porting is the next unblocked checklist task. No owned process remains. |
 | L4–L10/L14 | Codex Track B | `track-b` | 2026-10-31 | Real scoped L8/L9 outputs now available; only3 OLMo L8 IDs are exact original-inventory quota rows. Extra Smol/Pythia cohorts do not silently replace full166-table obligations.All11 extra GPU jobs complete/verified, including resolved DPO;6 LoRA fingerprints await A's existing R2 selector repair to be merged.46 official jobs still need anchor-specific inputs. |
 | E6/E9/L12 incremental | Codex Track B | `track-b` | 2026-11-01 | Evaluation/freeze harness and first held-out real report complete; direction abstains and full gates remain NOT_EVALUABLE. A handoff queues small T2+k128/free128/256/512 blocks in separate output; actual full tree/pool/T2/baseline results remain pending. Release staging deferred. |
