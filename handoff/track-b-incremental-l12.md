@@ -94,7 +94,25 @@ after its manifest handoff has completed.
 
 ## GPU training follow-up: primary checkpoint selection (2026-11-02)
 
-The committed extractor currently selects both the merged checkpoint and the
+**Resolved and merged,2026-11-02 (Codex A):** Model-Zoo main `00ad4af`
+contains the reviewed R2/X5 repair. The exact reproducer below now selects only
+`model.safetensors`, records saved factors as `bundled_adapter`, and preserves
+a standalone nested adapter-only checkpoint. No duplicate fix is needed; B can
+consume committed upstream code. The original six-model evidence/scoring freeze
+and all trained files remain unchanged.
+
+**Next writer/handoff:** A fingerprints the six pending LoRAs at existing
+T1 k64/block256 settings, without repeating the six completed non-LoRA/source
+outputs. A then measures the prepared two-model T2/k128 pilot in its separate
+output directory above. Claim output ownership and freeze exact inputs before
+launch; no such run was launched during integration. B consumes the six added
+fingerprints for a new scoped evaluation; C uses identity-matched T2 spectra for
+S5. Keep the original held-out controls and reports immutable. Whole-lab L12,
+E6/E9, G0 and P1 remain incomplete.
+
+The following describes the pre-integration reproducer and diagnosis.
+
+Before this integration, the extractor selected both the merged checkpoint and the
 provenance adapter factors written by B's LoRA trainer. The following pure
 selector reproducer uses the installed committed Model-Zoo sources:
 
@@ -104,7 +122,9 @@ select_file_set([
     'model.safetensors', 'config.json', 'training.json',
     'adapter/adapter_model.safetensors', 'adapter/adapter_config.json',
 ])
-# (['adapter/adapter_model.safetensors', 'model.safetensors'], [])
+# Before 00ad4af: both files selected.
+# Now: (['model.safetensors'],
+#       [{'filename': 'adapter/adapter_model.safetensors', 'reason': 'bundled_adapter'}])
 ```
 
 `training.json` explicitly declares `primary_weights: ['model.safetensors']`

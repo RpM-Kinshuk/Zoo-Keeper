@@ -246,8 +246,9 @@ works with agent sessions.
     listed in `lab/models.csv` as independents with no edges.
   - Pin each one's commit.
 - [ ] **L12 [HUMAN] Fingerprint lab v0** (A, due Nov 20).
-  - [ ] X5 follow-up: commit/merge A's existing R2 selector repair, excluding nested adapter factors when merged primary weights exist while preserving adapter-only checkpoints; then fingerprint B's6 pending LoRAs. Reproducer/current branch check: `handoff/track-b-incremental-l12.md`.
-  - B has27 unique measured real models with T1 k64/block256: original22 plus5 newly trained non-LoRA outputs (new run also repeats existing Smol base). Six additional trained LoRAs await A primary-weight selector fix.
+  - [x] X5 selector follow-up: merged into Model-Zoo main at `00ad4af`; selects merged primary weights, excludes saved adapter factors, preserves adapter-only checkpoints. Exact B reproducer PASS; handoff: `handoff/track-b-incremental-l12.md`.
+  - [ ] A next: fingerprint B's6 pending LoRAs, then run the prepared2-model T2/k128 pilot with free T1 blocks128/256/512. Preserve B's frozen k64 evaluation and trained outputs.
+  - B has27 unique measured real models with T1 k64/block256: original22 plus5 newly trained non-LoRA outputs (new run also repeats existing Smol base). Six additional trained LoRAs await A fingerprinting; the selector dependency is resolved.
     Incremental T2/k128 handoff and exact launch are in `handoff/track-b-incremental-l12.md`;
     this does not complete whole-lab L12.
   - First, the lab's manifests:
