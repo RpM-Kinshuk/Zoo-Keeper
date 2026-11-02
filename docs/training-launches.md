@@ -1,6 +1,6 @@
 # Frozen training launch bundles
 
-The extra GPU cohort completed on2026-11-02:11 real checkpoints,3,379,938,264 output-weight bytes,0.743 aggregate worker wall-hours and scoped verification PASS. The held-out classifier scored71.48% on256 excluded examples (majority baseline53.52%). See `$ZOO_DATA/runs/track-b-training-gpu-v1/TRAINING-REPORT.md` and `decision-heldout-score.json`. Six LoRA fingerprints await A's nested-adapter file-selection fix; trained checkpoints remain intact.
+The extra GPU cohort completed on2026-11-02:11 real checkpoints,3,379,938,264 output-weight bytes,0.743 aggregate worker wall-hours and scoped verification PASS. The held-out classifier scored71.48% on256 excluded examples (majority baseline53.52%). See `$ZOO_DATA/runs/track-b-training-gpu-v1/TRAINING-REPORT.md` and `decision-heldout-score.json`. A's merged selector repair and completed six LoRA fingerprints are consumed in the new36-model analysis; see `docs/l12-evaluation.md`. Trained checkpoints remain intact.
 
 The tracked completion pointer is `lab/configs/launches/track-b-gpu-v1.json`; it binds thirteen run artifacts by SHA256, the completed counts and remaining A dependency.
 

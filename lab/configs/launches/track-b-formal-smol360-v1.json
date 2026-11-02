@@ -1,0 +1,40 @@
+{
+  "artifact_sha256": {
+    "execution/REPORT.md": "65bda9f9b919f34081dc5f0b15c85c38d8d39ad7df094d9f1823ab7d1f1c6ff0",
+    "execution/fingerprint-summary.json": "f590bae555b02a5cf4a08d3d8807cc2fa97b8f9d66914426536a523a7900c982",
+    "execution/formal-minimum-progress.json": "41e09a9b61817d2009125090da8f25327665c352a16eceaa28f427fce46e4ddb",
+    "execution/model-id-map.json": "7b5dfe9f300a269f4084cf3fc43475defd680b3e3f312bfcf21f86596e16614a",
+    "execution/ready.json": "b3b8d6f12847102c586f9c7312af4ac77ae2f4ff071b8366535a2f5a24e6534d",
+    "execution/summary.json": "3afc57063d908ef68bc66f4fafe168fda46ac172edef503898f69a2c49e7c29f",
+    "execution/tree-diagnostics.json": "56d43228e41eff2a25cbaad3ea8157d2ae8c8ea1ab3475f0bb446c58457a1b97",
+    "execution/verification.json": "7fc4cf7ac4fbec8b6254348e84793d38d9eb9ea59a44859f86f7d2dad0ea6a3e",
+    "gpu-manifest.json": "ee9eff71cdd374e79388892a0d0de8af8ed3ca6d02ca1a360319e2f58233eae0",
+    "incremental-A-l12-launch.json": "bdef7805fd94c7957b0425f0f16b7ce1dc11d4f8bb59e0ee8ae8f4ab487533c4",
+    "incremental-A-t2/A-report.json": "a732ebeb759ad80c31a5c6ebd8a723d03e2ee7d1032bd8787014a2391fec0828",
+    "incremental-A-t2/REPORT.md": "654b89b7f29b788917642140cd56ff139bbacd1eb874cf9c65f1f3a15e0c4c50",
+    "incremental-A-t2/artifact-index3.csv": "4881eaf0a012dad1f77734fd2bb68e7f456240904a0af48ce3b15d87777b91fe",
+    "incremental-A-t2/formal-coverage166.csv": "7ab7ea46cd4caf62dcf5878eca7371c39a2fa64305732f592390037f080d017e",
+    "source-verification.json": "5c2b00c36bf0ab4d53e475e60a58240ca0c145c7b161c77736b6282688530f64"
+  },
+  "bundle": "runs/track-b-formal-smol360-launches-v1",
+  "formal_T2_rows": 18,
+  "formal_chain_count": 1,
+  "formal_chain_minimum": 3,
+  "formal_generated_ids": [
+    "smol-360-sft-s0",
+    "smol-360-dpo-s0",
+    "smol-360-quantization-s8"
+  ],
+  "formal_verified_ids_total": 18,
+  "full_lab_status": "INCOMPLETE",
+  "new_T2_status": "COMPLETE_BY_A",
+  "quantization_outputs_additional": 1,
+  "remaining_dependent": 1,
+  "remaining_ready": 8,
+  "schema_version": "1",
+  "scope": "exact official IDs/pins/seeds; earlier scoped Smol135 experiments remain separate",
+  "state": "FIRST_FORMAL_CHAIN_COMPLETE",
+  "training_jobs_completed": 2,
+  "training_jobs_prepared": 11,
+  "training_jobs_remaining": 9
+}

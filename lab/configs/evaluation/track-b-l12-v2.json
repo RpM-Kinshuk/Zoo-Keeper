@@ -1,0 +1,35 @@
+{
+  "additional_A_code_needed": false,
+  "artifact_sha256": {
+    "REPORT.md": "78b2d05cbbae4b59c6b60ffb6c5ab036c6def26522cacad862281ddcf48b1075",
+    "pre-score-freeze.json": "e40e674164f13ebe1dd428f03cc0573c354cf1120df005c05071960b188a4630",
+    "report.json": "5bbe3fa1a91247acde5b285e632f523e2ee7b62ad96e087c5e49b2ffd66fdc44",
+    "training-12/input-index.json": "2cd1c6376bbdc2d66dfcc2d36eeb29f38f97b9afb8c0e29642a64f581a2b81be",
+    "training-12/metrics.json": "ac0e9f91f546b422651e61a4b2b6f6eebec9c41f2c3f142922f6586f5f879a78",
+    "tree-diagnostics.json": "417f20547f57308a30770c4278d76a8f30d2cd18d9fd7b00bfc5b7e016930d99"
+  },
+  "chain_run": "runs/track-b-chain-cohort-v1",
+  "comparison": {
+    "all_pairs_spearman": 0.9595105672969967,
+    "full_g0": "NOT_EVALUABLE",
+    "heldout_same_root_auroc_t1": 1.0,
+    "heldout_same_root_auroc_t2": 1.0,
+    "n_pairs": 60,
+    "n_related_pairs": 24,
+    "related_pair_spearman": 0.9370629370629371,
+    "status": "SMALL_SCOPE_DIAGNOSTIC"
+  },
+  "construction_edges": 30,
+  "depth_three_scoped_paths": 3,
+  "formal_chain_credit": 0,
+  "full_gates": "NOT_EVALUABLE",
+  "new_terminal_t2_models": 3,
+  "normalized_rf": null,
+  "parent_direction": "abstains",
+  "ready_models": 36,
+  "ready_t2_models": 36,
+  "run": "runs/track-b-l12-evaluation-v2",
+  "schema_version": "1",
+  "status": "REAL_SCOPED_DESCRIPTIVE",
+  "unique_global_t2_models": 46
+}

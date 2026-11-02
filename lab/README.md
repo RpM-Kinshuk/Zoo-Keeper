@@ -116,3 +116,9 @@ The planned inventory needs matching manifests for every row before real lab
 scoring. No metrics are claimed from the checked-in inventory alone. Local
 benchmark release staging remains the next lab tooling task; all publication
 remains a person's action.
+
+
+The completed L12 delivery and real depth-three-chain evaluation are described
+in `docs/l12-evaluation.md`. `lab.scripts.chain_cohort` creates the three
+scoped extra endpoints; `lab.scripts.evaluate_delivery` consumes A artifacts
+and publishes a new immutable report without changing old held-out protocols.
