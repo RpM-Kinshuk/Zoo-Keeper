@@ -89,7 +89,30 @@ opens the blind directory or declares G1 itself.
 `lab.cli export-models` writes an invocation-only CSV for the extractor. Local
 paths are absolute only in that temporary CSV; durable manifests use portable
 `lab/<model_id>@local:<sha256>` identities. Put the CSV in temporary scratch or
-`$ZOO_DATA/cache`, and remove it after manifest extraction. The scorer and zoo
-integration wait for the required Model-Zoo packages to be committed and merged
-into its main checkout. Benchmark release staging follows the scorer; all
-publication remains a person's action.
+`$ZOO_DATA/cache`, and remove it after manifest extraction. The scorer and
+lineage runner now import the committed Model-Zoo schema/retrieval/build APIs.
+See [the lineage runbook](../docs/operations/lineage.md) for inference and edge
+publication. Score existing predictions with:
+
+```bash
+python -m lab.cli score --models lab/models.csv --edges lab/edges.csv \
+  --predictions "$ZOO_DATA/runs/p1/edges.parquet" \
+  --manifests "$ZOO_DATA/runs/lab/manifests" \
+  --universe "$ZOO_DATA/runs/p1/universe.parquet" \
+  --config lab/configs/scoring.json --output "$ZOO_DATA/runs/p1/lab-scores.json"
+```
+
+The universe must explicitly list query/candidate keys and boolean eligibility.
+Join external reference labels from `reference_pairs.json` into its nullable
+`truth_parent`, `truth_ancestor`, `truth_same_root`, and `truth_tier` columns
+before scoring. Missing external labels stay unknown; an absent edge is not a
+negative. Construction truth, verified Hub evidence and declarations are
+reported separately. Missing predictions remain abstentions in coverage and
+ranking. TPR90 thresholds are descriptive, including ties; an optional supplied
+development threshold gives frozen-threshold metrics. An all-abstention cutoff
+is represented as the JSON string `"-inf"`, and undefined metrics are null.
+
+The planned inventory needs matching manifests for every row before real lab
+scoring. No metrics are claimed from the checked-in inventory alone. Local
+benchmark release staging remains the next lab tooling task; all publication
+remains a person's action.

@@ -1,0 +1,30 @@
+{
+  "artifact_files": 75,
+  "bundle": "runs/track-b-training-launches-v1",
+  "bundle_index_sha256": "e2b2b95287f67c51642a79485bb859a6755e6881f76565d4afe64fad90dcb75a",
+  "commands_sha256": "4d68ac44e8bdd54768ed9b6ba356545fa4e84cc836441f387335cb992309095a",
+  "dataset_replacements": [
+    {
+      "original": "trl-lib/ultrafeedback_binarized@47124cb5778f5d50de1c7676a412828f3ea7c555",
+      "reason": "publisher license absent",
+      "replacement": "HuggingFaceH4/ultrafeedback_binarized"
+    },
+    {
+      "original": "stanfordnlp/sst2@8d51e7e4887a4caaa95b3fbebbf53c0490b58bbb",
+      "reason": "publisher license unknown",
+      "replacement": "fancyzhx/amazon_polarity"
+    }
+  ],
+  "dependent_dpo_jobs": 2,
+  "final_tests": "6 passed",
+  "helper_source_sha256": {
+    "lab/launches.py": "d00a0cf971dd0a7a7e1d0a9a218742f267884dca015ebd2cbcbc812eb741b33b",
+    "lab/scripts/prepare_training.py": "dbc48ca6c9736440a7185b1175358fe2d4110e28026b108c6578eac052744ac9"
+  },
+  "manifest_sha256": "9ad638c2200105a588d917c703354254abf0d32d19c550743114e63bc20855b7",
+  "official_blocked_jobs": 46,
+  "python": "/scratch/kinshuk/anaconda3/envs/esd_ind/bin/python",
+  "quota_credit": false,
+  "ready_extra_jobs": 9,
+  "training_executed": false
+}

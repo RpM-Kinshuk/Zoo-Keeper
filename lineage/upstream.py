@@ -112,6 +112,8 @@ def load_records(manifests: Path, fingerprints: Path, *, data_root: Path) -> lis
     fingerprint_dir = Path(fingerprints).resolve()
     if not manifest_path.is_relative_to(root) or not fingerprint_dir.is_relative_to(root):
         raise ValueError('local input paths must remain within data_root')
+    if manifest_path.is_dir():
+        return load_directory(manifest_path, fingerprint_dir, data_root=root)
     entries = json.loads(manifest_path.read_text())
     if not isinstance(entries, list):
         raise ValueError('fingerprint input index must be a JSON list')
@@ -140,6 +142,45 @@ def load_records(manifests: Path, fingerprints: Path, *, data_root: Path) -> lis
         data['meta']['scoring_callable'] = synthetic_median
         result.append(FingerprintRecord(**data))
     return result
+
+
+def load_directory(manifests, fingerprints, *, data_root):
+    """Use the merged zoo's authoritative identities and architecture signatures."""
+    import numpy as np
+    from zoo.schema import arch_signature
+    from zoo.tables import build_tables
+    root = Path(data_root).resolve()
+    models = build_tables(Path(manifests), [Path(fingerprints)], data_root=root)['models']
+    manifest_by_key = {}
+    for path in sorted(Path(manifests).glob('*.manifest.json')):
+        resolved = path.resolve()
+        if not resolved.is_relative_to(root):
+            raise ValueError('manifest symlink escapes data_root')
+        data = json.loads(resolved.read_text())
+        key = _identity(data)
+        if key in manifest_by_key:
+            raise ValueError('duplicate manifest identity')
+        manifest_by_key[key] = resolved
+    records = []
+    for row in models.sort_values('model_key').itertuples():
+        if row.fingerprint_t1:
+            path = _relative(root, row.fingerprint_t1)
+            if not path.is_relative_to(Path(fingerprints).resolve()):
+                raise ValueError('fingerprint artifact escapes fingerprints directory')
+            record = _load_real(dict(key=row.model_key, arch=row.arch_signature,
+                manifest=manifest_by_key[row.model_key].relative_to(root).as_posix()), path, root)
+            # dup_group means identical measured blocks, not full checkpoint bytes.
+            record.meta.update(duplicate_group=row.dup_group,
+                               duplicate_scope='all_measured_T1_blocks')
+        else:
+            record = FingerprintRecord(key=row.model_key, arch=row.arch_signature or arch_signature({}, []),
+                names=(), shapes=np.empty((0, 2), dtype=np.int64), rows=np.empty((0, 2), dtype=np.int64),
+                geometry=(), sketches=np.empty((0, 64, 64), dtype=np.float32), delta={},
+                meta=dict(tier='t0', synthetic=False, access=row.access,
+                          manifest_sha256=hashlib.sha256(manifest_by_key[row.model_key].read_bytes()).hexdigest()),
+                coverage=[])
+        records.append(record)
+    return records
 
 
 def median_similarity(a, b, k=64):
@@ -178,6 +219,14 @@ def retrieve_real(query, candidates, *, limit=50):
     from .retrieval import exclusion_reason
     eligible = {c.key: c for c in candidates if not exclusion_reason(query, c)
                 and compatible_views(query, c)}
+    if not eligible:
+        return []
+    matrix, metadata = retrieval._paths(Path(query.meta['zoo_dir']), query.arch)
+    present = [path.exists() for path in (matrix, metadata)]
+    if not any(present):
+        return []
+    if not all(present):
+        raise ValueError('incomplete upstream retrieval index')
     # Ask for the whole index before filtering to the explicit candidate list.
     rows = retrieval.nearest(Path(query.meta['zoo_dir']), query.key, query.arch,
                              int(query.meta['zoo_index_size']))

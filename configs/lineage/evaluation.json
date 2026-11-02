@@ -1,0 +1,10 @@
+{
+  "schema_version": "1",
+  "deployment_threshold": 0.75,
+  "deployment_threshold_status": "development_example_requires_pre_evaluation_choice",
+  "seed": 20261031,
+  "pool_sizes": [2, 4, 8, 100, 500, 1000, 5000, 10000, 20000],
+  "baseline_results": {},
+  "scope": "public_lab_development",
+  "prospective_cutoff": "2026-12-04"
+}

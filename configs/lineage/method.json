@@ -1,0 +1,14 @@
+{
+  "method_version": "p1-0",
+  "sketch_k": 64,
+  "reporting_threshold": 0.0,
+  "retrieval_limit": 50,
+  "ancestor_decay": 0.95,
+  "alpha": 0.05,
+  "direction_method_hash": null,
+  "residual_views": [],
+  "typing_rules": null,
+  "merge_proposals": [],
+  "assemble_tree": false,
+  "roots": []
+}

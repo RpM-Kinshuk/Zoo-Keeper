@@ -47,14 +47,46 @@ def main(argv=None):
     _table_arguments(export)
     export.add_argument('--lab-root', type=Path, required=True)
     export.add_argument('--output', type=Path, required=True)
-    for name in ['score', 'release-stage']:
-        commands.add_parser(name, add_help=False)
+    score = commands.add_parser('score')
+    _table_arguments(score)
+    score.add_argument('--predictions', type=Path, required=True)
+    score.add_argument('--manifests', type=Path, required=True)
+    score.add_argument('--universe', type=Path, required=True,
+                       help='Explicit pairs with any external truth labels already joined')
+    score.add_argument('--config', type=Path, default=Path(__file__).parent / 'configs/scoring.json')
+    score.add_argument('--threshold', type=float, help='Frozen development threshold; overrides config')
+    score.add_argument('--output', type=Path, required=True)
+    commands.add_parser('release-stage', add_help=False)
     args, extra = parser.parse_known_args(argv)
-    if args.command in {'score', 'release-stage'}:
+    if args.command == 'release-stage':
         parser.error(f'{args.command} requires its later genealogy lab implementation task')
     if extra:
         parser.error('unrecognized arguments: ' + ' '.join(extra))
     try:
+        if args.command == 'score':
+            from .score import score_lab
+
+            def strict_json(path):
+                def reject_constant(value):
+                    raise ValueError('nonfinite JSON constant: ' + value)
+                return json.loads(path.read_text(), parse_constant=reject_constant)
+
+            config = strict_json(args.config)
+            if (not isinstance(config, dict) or config.get('schema_version') != '1'
+                    or set(config) - {'schema_version', 'threshold'}):
+                raise ValueError('unsupported scoring config')
+            if not args.manifests.is_dir():
+                raise ValueError('manifests must be an existing directory')
+            manifests = [strict_json(path) for path in sorted(args.manifests.glob('*.json'))]
+            def read_evaluation(path):
+                return pd.read_csv(path) if path.suffix == '.csv' else pd.read_parquet(path)
+            models, edges = _load_tables(args)
+            report = score_lab(models, edges, read_evaluation(args.predictions), manifests,
+                               read_evaluation(args.universe),
+                               threshold=args.threshold if args.threshold is not None else config.get('threshold'))
+            atomic_json(args.output, report)
+            print(canonical_json({'status': 'SCORED', 'output': str(args.output)}))
+            return 0
         if args.command == 'export-models':
             from .export import export_models
             models, edges = _load_tables(args)

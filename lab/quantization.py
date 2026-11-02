@@ -121,8 +121,9 @@ def run_quantization(recipe: dict, inputs: dict, output: Path) -> None:
     with torch.device('meta'):
         skeleton = AutoModelForCausalLM.from_config(model_config, trust_remote_code=False)
         skeleton.tie_weights()
-    groups = {}
+    groups, parameter_names = {}, set()
     for name, parameter in skeleton.named_parameters(remove_duplicate=False):
+        parameter_names.add(name)
         groups.setdefault(id(parameter), []).append(name)
         if name in shapes and shapes[name] != tuple(parameter.shape):
             raise ValueError('checkpoint shape mismatch: '+name)
@@ -145,13 +146,23 @@ def run_quantization(recipe: dict, inputs: dict, output: Path) -> None:
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
     numerator, denominator, matrices = 0., 0., 0
+    preserved_masks = {}
     total_size = 0
     for filename in sorted(expected):
         result = {}
         with safe_open(str(path/filename), framework='pt', device='cpu') as stream:
             for name in sorted(stream.keys()):
                 source = stream.get_tensor(name)
-                if source.is_floating_point():
+                legacy_mask = re.fullmatch(r'gpt_neox\.layers\.(0|[1-9][0-9]*)\.attention\.masked_bias', name)
+                if (config.get('model_type') == 'gpt_neox' and legacy_mask
+                        and int(legacy_mask.group(1)) < config['num_hidden_layers']
+                        and name not in parameter_names and source.is_floating_point()
+                        and source.ndim == 0 and bool(torch.isneginf(source))):
+                    # Old GPTNeoX checkpoints serialize this structural causal
+                    # mask sentinel. It is not a weight or part of the norm.
+                    transformed = source.contiguous()
+                    preserved_masks[name] = dict(dtype=str(source.dtype).removeprefix('torch.'), value='-inf')
+                elif source.is_floating_point():
                     if not torch.isfinite(source).all():
                         raise ValueError('nonfinite source tensor: '+name)
                     transformed = simulate_quantization(source, recipe['bits']) if source.ndim == 2 else source
@@ -182,13 +193,16 @@ def run_quantization(recipe: dict, inputs: dict, output: Path) -> None:
                 value = json.loads(source.read_text())
                 value.pop('name_or_path', None)
                 value.pop('auto_map', None)
-                _portable(value)
+                # Vocabulary and added-token strings (e.g. "/") are data,
+                # not provenance paths. Model config remains checked above;
+                # executable tokenizer metadata is still removed here.
                 atomic_json(output/filename, value)
             else:
                 shutil.copyfile(source, output/filename)
     atomic_json(output/'quantization.json', dict(quantizer='symmetric_signed_per_row_round_ties_even',
         bits=recipe['bits'], scaling_axis=1, qmax=2**(recipe['bits']-1)-1,
         format='safetensors', output_dtype='bfloat16', input_hashes=expected,
-        matrices=matrices, tied_alias_groups=tied,
+        matrices=matrices, tied_alias_groups=tied, preserved_legacy_attention_masks=preserved_masks,
         relative_weight_change=math.sqrt(numerator/denominator) if denominator else 0.,
-        metric='relative Frobenius change of all saved floating values including bf16 cast'))
+        metric=('relative Frobenius change of finite saved floating values including bf16 cast; legacy mask sentinels excluded'
+                if preserved_masks else 'relative Frobenius change of all saved floating values including bf16 cast')))

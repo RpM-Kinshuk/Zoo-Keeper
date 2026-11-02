@@ -1,0 +1,63 @@
+{
+  "artifact_sha256": {
+    "TRAINING-REPORT.md": "5be68eea261729b44c13025528bd36711ec406b882273555daeaec910ddcb1e2",
+    "batch-progress.json": "1de36c5e3bd310348ada4e115948c76004fb3c55c15a35b55a839031c9469cfa",
+    "decision-heldout-score.json": "b12350427c4407b321efce06a6207a9ee61ef2bcaae925dcc96b797102f33b62",
+    "evaluation/edges.csv": "4e1671f0aafa6948f4231a14387202c5dc73dc00f75a3f33bf523a6d67b06ef4",
+    "evaluation/models.csv": "541ad2493d610f44d113bfed9d5dbc541c8e48db91ebfb54cf18f3883d6e1631",
+    "evaluation/scoring-report.json": "22a2ca52f2ebc83eadb6b220bdbda9c50e2dcc7401533d95ce063a46a18a2f37",
+    "evidence/progress.json": "a0db57c930488669d9a9cb2b92baea19bbfb9a3da9165763bd34c281b0b1e461",
+    "execution-environment.json": "14945d1ba70e2a6c0543e66f8fcf9be957b4f9e563b9fece5e4fded436966077",
+    "manifest.json": "d98e19063b720ce01392851f915e50b76a43aaaeb512d276f1beaa7b7b1533b4",
+    "pre-score-freeze.json": "4cb27eb88d84acce5b67226eb32dc65912ef857f7bf141df442cd8fb5a3d6261",
+    "ready.json": "8d6d2e7e787b9d511f8eb081067cb1ca27d522ba2eb8de8ee89a72a9ca81da36",
+    "training-report.json": "e0808b123cfeb35a3ad74c5c15672f080ba6210284099cf865ce66213913ac57",
+    "verification.json": "1e7314b3885c6735c0751a95a86fc34c0956e761e1927559a978bed82553cb84"
+  },
+  "bundle": "runs/track-b-training-gpu-v1",
+  "genealogy": {
+    "calibrated": false,
+    "direction": "abstains",
+    "gate_status": "NOT_EVALUABLE",
+    "scope": "single-root descriptive; original Pythia held-out controls remain separate"
+  },
+  "gpu_selection": {
+    "check_interval_seconds": 5,
+    "consecutive_checks": 2,
+    "max_concurrent_jobs": 2,
+    "memory_fraction_below": 0.8,
+    "minimum_free_mib": 24576,
+    "utilization_percent_below": 80
+  },
+  "heldout_task": {
+    "accuracy": 0.71484375,
+    "correct": 183,
+    "majority_accuracy": 0.53515625,
+    "prediction_rule": "fixed argmax",
+    "rows": 256,
+    "source": "decision-heldout-score.json"
+  },
+  "lora_fingerprinting": {
+    "blocked": 6,
+    "checklist": "L12",
+    "code": "Model-Zoo/evidence/manifest.py:select_file_set",
+    "handoff": "handoff/track-b-incremental-l12.md",
+    "owner": "A",
+    "required_change": "Select merged primary weights only; retain nested adapter factors as excluded provenance. Preserve adapter-only checkpoints."
+  },
+  "measured_models": 6,
+  "output_weight_bytes": 3379938264,
+  "quota_credit": false,
+  "schema_version": "1",
+  "status": "COMPLETE",
+  "trained_jobs": 11,
+  "trainers": {
+    "decision": 1,
+    "dpo": 2,
+    "lora": 6,
+    "sft": 2
+  },
+  "training_executed": true,
+  "worker_wall_scope": "sum of worker checks/loading/training/export wall time, not exclusive GPU utilization",
+  "worker_wall_seconds": 2673.19808045181
+}
