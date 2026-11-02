@@ -170,11 +170,21 @@ works with agent sessions.
 - [x] **Z5 Task 5: v0 lineage edges** (A, due Nov 27). Needs Z4, plus X8's
   `pair_similarity` and calibration format.
 - [x] **Z6 Task 6: atomic deterministic build** (A, due Dec 1). Needs Z3–Z5.
-- [~] **Z7 Task 7: query API (`Zoo`), in Zoo-Keeper** (A, due Dec 2). Needs Z6
+- [x] **Z7 Task 7: query API (`Zoo`), in Zoo-Keeper** (A, due Dec 2). Needs Z6
   and X8, committed and merged into Model-Zoo's `main` by the person, then
   `pip install -e Model-Zoo` (D10.1).
-- [ ] **Z8 Task 8: CLIs and docs** (A, due Dec 4): `build` in Model-Zoo, and
+  - Nov2: implemented and reviewed;22 focused/516 full repository tests PASS.
+    Real85-model snapshot exercises all6 queries, including42 T0-only models
+    and43 full-spectrum links. Merged locally at `485783e`; combined A+B
+    repository suite550 PASS,93.12s before merge.
+- [x] **Z8 Task 8: CLIs and docs** (A, due Dec 4): `build` in Model-Zoo, and
   the query commands in Zoo-Keeper. Step 5 (the real-data smoke build) is R6.
+  - Nov2: CLI source/docs ready; Model-Zoo338 PASS,1 opt-in skip;
+    Zoo-Keeper536 PASS. Real85-model CLI smoke passed all6 commands and
+    preserved43 full-spectrum links;18 score rows,6 revision-verified.
+    Source/docs merged locally: Model-Zoo `31b86dd`, Zoo-Keeper `485783e`.
+    Combined A+B suite550 PASS; full pilot/calibrated R6 remains open and
+    owner-paused. No push.
 
 ### Track B: genealogy lab (the plan is written first)
 
@@ -217,14 +227,15 @@ works with agent sessions.
   - Use mergekit configs and keep each config's hash.
 - [~] **L5 LoRA: at least 24 runs at ranks 8, 64, and 256** (B; queued in week
   1; [HUMAN] launches; done by Nov 20).
-  - 2026-11-02:6 extra Smol135 GPU runs complete (instruction/dialogue, ranks8/64/256), exact scoped verification PASS. No formal quota credit; their fingerprints await A nested-adapter selector fix.
+  - 2026-11-02:6 extra Smol135 GPU runs complete (instruction/dialogue, ranks8/64/256), exact scoped verification PASS. No formal quota credit; their T1/T2 fingerprints are complete and consumed in the new12-model report.
 - [~] **L6 Full fine-tunes: at least 8 SFT and 8 DPO at ≤1.7B** (B; [HUMAN]
   launches; done by Nov 20).
+  - First formal Smol360 SFTs0/DPOs0 complete and T1 measured:1/8SFT,1/8DPO. Exact source/native token inputs and original seeds; eight ready training jobs plus one parent-dependent DPO remain in its prepared11-job bundle.
   - 2026-11-02:2 extra Smol135 SFT and2 matching DPO GPU jobs complete, full frozen steps and unchanged DPO references; scoped verification/T1/scoring complete. No formal quota credit.
 - [~] **L7 Abliterations: at least 8, classic and Heretic** (B, due Nov 20).
 - [~] **L8 Simulated quantizations: at least 12** (B, due Nov 20). Each model is
   quantized, dequantized, and saved as bf16.
-  - Three exact planned OLMo outputs are complete. Scoped Smol/Pythia extras
+  - Four exact planned outputs are complete:3 OLMo plus Smol360 chain q8 (4/12). Scoped Smol/Pythia extras
     are recorded separately and do not silently replace the minimum inventory.
 - [~] **L9 Laundering transforms: at least 20** (B, due Nov 13).
   - Real scoped Smol rescaling/perturbation complete; rejected MLP permutation
@@ -234,6 +245,8 @@ works with agent sessions.
   - S6 (C) contributes the blind part. G1 counts L9 and S6 together toward
     the 20.
 - [~] **L10 Chains: at least 3 of depth ≥3** (B, due Nov 20).
+  - First formal path complete/verified/T1:smol-360→SFTs0→DPOs0→quantization-s8 (1/3). Qwen2.5-0.5B and Qwen3-0.6B paths remain. First formal four-node diagnostic violates1/1quartets; no asymmetric tree assembly/pivot decision.
+  - 2026-11-02:3 scoped Smol135 depth3paths generated/verified/T1+T2 measured; no formalquota (prescribed anchors remain q25-05,q3-06,smol-360). New real36-model E6/E9 experiment recorded in `docs/l12-evaluation.md`.
 - [~] **L14 Decision heads: at least 6** (B, due Nov 20).
   - 2026-11-02:1 extra Smol135/Amazon Polarity classifier complete; held-out scoring183/256=71.48%, majority137/256=53.52%; verification/T1 complete. No formal quota credit.
   - Sequence-classification fine-tunes: 4 on lab decoder bases and 2 on
@@ -246,11 +259,18 @@ works with agent sessions.
     listed in `lab/models.csv` as independents with no edges.
   - Pin each one's commit.
 - [~] **L12 [HUMAN] Fingerprint lab v0** (A, due Nov 20).
+  - Nov2: new3 formal Smol360 T2/k128/full HDF5/freeT1 complete in507.56s;
+    exact keys/parents verified. Formal fullT2 coverage18/166; B's new3 extra
+    Smol135 endpoints already have T2 and were not rerun. Latest report/index:
+    `runs/track-b-formal-smol360-launches-v1/incremental-A-t2/REPORT.md`.
   - [x] X5 selector follow-up: merged into Model-Zoo main at `00ad4af`; selects merged primary weights, excludes saved adapter factors, preserves adapter-only checkpoints. Exact B reproducer PASS; handoff: `handoff/track-b-incremental-l12.md`.
   - [x] Six LoRA T1 fingerprints complete at k64/block256; all33 ready real models now have T1. Original six trained/source evidence files unchanged.
   - [x] Two-model T2/k128 pilot complete; expected identities, full HDF5 spectra and free T1 blocks128/256/512 verified.
   - [x] T2/k128 complete for43 real checkpoints (all33 ready plus10 readable formal sources), full HDF5 spectra and T1 blocks128/256/512 verified and published. All54 formal external T0 manifests complete at original pins.
-  - Remaining formal coverage:15/166 measured;109 checkpoints not generated and42 external pins T0-only. Whole L12 stays in progress. Exact gap/artifact tables and B/C handoff: `runs/track-a-l12-20261102.mnbqfy_y/REPORT.md`.
+  - Remaining formal coverage:18/166 fullT2;106 checkpoints not generated and42
+    external pins T0-only. Whole L12 stays in progress. Updated gap ledger:
+    `runs/track-b-formal-smol360-launches-v1/incremental-A-t2/formal-coverage166.csv`.
+    Original43-model delivery/report remains unchanged.
   - B has33 unique ready models with T1 k64/block256 (original22 plus11 trained outputs). All33 also have T2/freeT1 at k128;10 additional formal sources have T2/freeT1 at k128. The selector dependency is resolved.
     Incremental T2/k128 handoff and exact launch are in `handoff/track-b-incremental-l12.md`;
     this does not complete whole-lab L12.
@@ -305,6 +325,7 @@ works with agent sessions.
 - [x] **E5 Stacked abliteration test** (B, due Nov 27).
 - [~] **E6 Tree-likeness on lab trees** (B, due **Nov 27**). A person makes
   the pivot decision on the thresholds in `GUIDANCE.md` 5.2.
+  - Scoped real diagnostics now available:20-node Smol violations4193/4845(T1),4201/4845(T2) at1e-6, nRFnull/unresolveddirection; flagsreported, no formal pivot or threshold change. Original17-node/OLMo and tolerance sensitivity retained.
 - [x] **E7 Calibration** (B, due Dec 4).
   - An empirical null, a GPD tail, and per-query FDR.
   - Agree with X9 on the calibration statistic and `sketch_k = 64`.
@@ -411,21 +432,39 @@ works with agent sessions.
     unavailable references;8 confirmed access denials remain. HTTP307/401 and
     metadata-type failures recovered. No resampling. See the run report and
     STATUS.md; R2 remains partial.
-- [ ] **R3 [HUMAN] T2 run** (due Dec 1).
+- [~] **R3 [HUMAN] T2 run** (due Dec 1).
   - Covers the independents, the Hub related pairs, and 10 models per stratum
     above 9B: about 4 TB.
   - Not the lab: L12 already fingerprinted it, and running it again would
     collide with L12's files.
   - Free T1 blocks at 128, 256, and 512, with `--with_parent`.
-- [ ] **R4 [HUMAN] T1 run** on the rest of the 320-model Hub pilot (due Dec 1).
-- [ ] **R5 G0 report and calibration file** (A, due Dec 2).
+- [~] **R4 [HUMAN] T1 run** on the rest of the 320-model Hub pilot (due Dec 1).
+  - **Paused by owner Nov2; resume only on a new explicit instruction.**
+    Saved83/97 completed new T1 jobs and85/287 completed new T2 jobs, with85
+    full-spectrum HDF5 files. T1:4 interrupted,9 unstarted,1 short-read failure;
+    T2:4 interrupted,198 unstarted. Six prior T2 measurements reused separately.
+    No controller, worker or report/build continuation remains active.
+    Frozen inputs/original results preserved; `OWNER_PAUSED.json` guards both
+    launchers. Exact checkpoint/508-file inventory:
+    `runs/track-a-r3-r6-20261102.rcsy95ap/PAUSE_REPORT.md`.
+- [!] **R5 G0 report and calibration file** (A, due Dec 2).
   - `write_g0_report` and `write_calibration` at `sketch_k = 64`.
   - These read existing outputs, so agents may run them.
+  - Nov2: full calibration preflight blocked:57/166 formal manifests mapped,
+    109 generated checkpoints missing. Original-pin T0 reference gaps persist;
+    no partial-cohort null substituted. Pilot R3/R4 measurements are separate.
+    That preflight is frozen at pilot start; three new formal L12 outputs are
+    now published separately, reducing current ungenerated count to106.
 - [ ] **R6 Zoo v0 smoke build** on the pilot outputs, with `--leaderboard_v2`
   and the calibration file (A, due Dec 3). It reads fingerprints, not
   weights, so agents run it.
   - Run each query once on a known derivative pair.
   - Record the outputs in `docs/operations/zoo.md`.
+  - Nov2: scoped existing-artifact CLI smoke passed at
+    `runs/track-a-z8-cli-20261102.c45u9pog`; this is not R6 completion.
+    R3/R4 pilot measurements and R5 G0 calibration are still required.
+    Owner halted the pilot; queued G0 report/database continuation is stopped.
+    No G0 report, calibration file or pilot zoo was produced by that run.
 - [ ] **G0 [HUMAN] Decide gate G0** (**Dec 4**). Use the thresholds below.
   Record the decisions in the merged plan's §12 and in `STATUS.md`.
   - **Cost:**
