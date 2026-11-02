@@ -13,3 +13,5 @@ pyarrow==23.0.1
 immutables==0.21
 PyYAML==6.0.3
 pytest==9.0.3
+duckdb==1.5.6
+# Query evidence APIs: pip install -e ../Model-Zoo
