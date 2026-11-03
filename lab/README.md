@@ -53,15 +53,42 @@ python -m lab.scripts.lora --config lab/configs/lora.json \
 Real recipes require prepared local inputs, immutable parent identities,
 expected configuration and weight hashes, and frozen data selections. Loaders
 reject missing or mismatched provenance before training. No script implicitly
-downloads a model or executes checkpoint code. The training configurations
-remain explicitly unfrozen: the proposed DPO and decision datasets lack clear
-license evidence, and token selections/preprocessing still need freezing.
+downloads a model or executes checkpoint code. Approved launch bundles freeze
+licensed data, tokenizer-native selections, held-out splits and preprocessing
+separately for each source. An inventory entry alone does not make a run ready.
 
-Real LoRA/SFT/DPO batches are launched by a person. Other runs require a measured
-projection within both limits: at most 100 weight models and two hours. Select
-an already allocated device explicitly and obey the shared-GPU checks. No large training or full generation batch has been launched. A bounded OLMo
-quantization attempt was interrupted before derivative verification; its frozen
-configuration and partial source are recorded in the main handoff status.
+Real LoRA/SFT/DPO batches require the person's authorization. Runs require a
+measured projection within both limits: at most100 weight models and two hours,
+within the authorized scope. Select an allocated
+device explicitly and obey the shared-GPU checks. Completed runs, exact pins,
+counts and artifact locations are recorded in the main handoff status.
+
+Full SFT/DPO can use two GPUs through `lab.scripts.distributed_training`.
+Its caller must reserve both physical UUID locks and check each GPU's
+utilization and occupied-memory fraction below80% twice, at least5s apart,
+with enough free memory for the measured recipe. Freeze a new config with
+`recipe.distributed` containing `world_size=2`, `backend="nccl"`, the original
+`global_batch`, half-sized `local_batch`, and
+`partition_policy="contiguous_global_step_batch_v1"`. Keep global batch,
+steps, learning rate, data and seeds unchanged. DDP replicates model/optimizer
+state; models exceeding one replica's memory need a separate sharding path.
+
+After CPU preflight and GPU admission, the reserved caller sets
+`CUDA_VISIBLE_DEVICES` to the two UUIDs and starts the worker:
+
+```bash
+timeout --signal=TERM --kill-after=30s 7200s \
+  python -m torch.distributed.run --standalone --nnodes=1 \
+  --nproc_per_node=2 --max_restarts=0 -m lab.scripts.distributed_training \
+  --config "$CONFIG" --expected-config-sha256 "$CONFIG_SHA256" \
+  --data-root "$ZOO_DATA" --profile "$NEW_PROFILE" --execute --resume
+```
+
+Resolve the actual completed SFT parent before admitting DPO. Each launch
+attempt needs a new profile path. Rank0 alone publishes the atomic checkpoint;
+rank1 writes a separate profile. Profiles report phases, step progress,
+synchronized timing, actual runtime, current GPU allocation/reservation and
+per-rank peaks. GPU tensors are released before CPU checkpoint serialization.
 
 The installed Heretic 1.4.0 loader lacks the required safe local-loading
 controls. Its adapter refuses execution; synthetic dispatch tests are not
