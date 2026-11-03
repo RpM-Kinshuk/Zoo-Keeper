@@ -341,3 +341,56 @@ original results and completed artifacts are preserved. Exact identities and
 508 artifact paths: `runs/track-a-r3-r6-20261102.rcsy95ap/PAUSE_REPORT.md`.
 The three formal Smol360 outputs above remain complete and ready to consume;
 formal fullT2 coverage remains18/166. No report/calibration/fullR6 gate claim.
+
+
+## Nine more formal Smol360 outputs ready,2026-11-03
+
+All remaining11-job-bundle training is now complete (nine new plus two prior).
+The nine new checkpoints and T1/k64 fingerprints passed final audit; all61
+prior frozen artifacts are unchanged. Scoped registry has13 models/12 edges.
+New T1 selected2,599,329,280 bytes in102.34s; training wall788.19s, active661.07s,
+maximum allocated23.08GiB. No new T2 was launched and no Smol worker remains.
+
+A can claim the new9-child writer using
+`runs/track-b-formal-smol360-launches-v1/resume-20261103/incremental-A-l12-launch.json`.
+It binds exact child keys, existing manifest/index hashes, one-child SFTs1 pilot
+and full9 commands, full HDF5/freeT1 blocks, original pinned source mirror,
+paired GPU checks and <2h projection guard. Reuse all prior base/child T1/T2.
+Formal coverage is now27/166 at T1-or-T2,18/166 at fullT2,97 ungenerated and42
+external T0-only. Whole L12 remains in progress. Qwen two-GPU chains are in a
+separate active run and will be handed off only after actual outputs verify.
+
+## Qwen2.5 chain ready for incremental T2,2026-11-03
+
+The exact q25-05→SFTs0→DPOs0→quantization-s8 chain is complete. Both training
+jobs ran on two L40 GPUs through NCCL, unchanged global batches16/8 and full
+256/128 steps; frozen DPO reference unchanged. Verified4-model/3-edge tables,
+safe BF16 q8 reload and3 new T1 fingerprints are at
+`runs/track-b-formal-q2505-launches-v1/execution/`. New T1 selected691,666,944
+bytes in72.51s; A existing base/k128 is reused. Three-child T2 launch:
+`runs/track-b-formal-q2505-launches-v1/incremental-A-l12-launch.json`,
+PREPARED_NOT_LAUNCHED. It binds exact keys, manifests and CSV hashes, firstSFT
+pilot and full3 batch; standard k128/full HDF5/freeT1 blocks and admission
+policy apply. No base/T1 rerun. Together with Smol360 new9,12 children await A
+writer claim; Qwen3 is still training and is not yet in this queue.
+
+## All three prescribed chains complete;15 new children queued,2026-11-03
+
+Qwen3 is now also complete:4-model/3-edge registry,256-step SFT,128-step DPO
+with unchanged reference, official q8 safe BF16 reload and3 new T1 fingerprints.
+New T1 selected883,949,568 bytes in65.04s; existing A base evidence reused.
+Its exact three-child T2 launch is
+`runs/track-b-formal-q306-launches-v1/incremental-A-l12-launch.json`,
+PREPARED_NOT_LAUNCHED. No B workers remain; driver/launcher/rank PIDs absent
+and both GPU locks released. CPU and training sessions exited zero.
+
+Together the three incremental queues cover15 new formal children (9+3+3).
+No base or completed B T1/T2 should be repeated. New report, exact queue paths,
+checksums, minimum verdict and166-row coverage:
+`runs/track-b-resume-20261103/{REPORT.md,summary.json,minimum.json,formal-coverage166.csv}`.
+All3 prescribed depth-three paths are verified; whole public minimum remains
+incomplete. Formal T1-or-T2 is33/166; fullT2 remains18/166,91 derivatives are
+ungenerated and42 external inputs are T0-only. A needs these incremental
+measurements; no A source/interface change is blocking B. Re-evaluate new
+formal chains in a new freeze after T2; retain original36-model evaluation
+and independent-root held-out control splits/thresholds unchanged.

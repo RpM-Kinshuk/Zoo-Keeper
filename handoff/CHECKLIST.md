@@ -225,17 +225,19 @@ works with agent sessions.
   - Linear, SLERP, TIES, and DARE, with 2–4 parents each.
   - Some with per-layer `t`.
   - Use mergekit configs and keep each config's hash.
+  - Nov3 scope review:next batch is exact Smol360 merges using completed official LoRA parents. Freeze inputs; linear05 pilot, then ten recipes only if measured<2h and storage fits. E3 reports conditioning/effective coefficients/CIs/nonidentifiability.
 - [~] **L5 LoRA: at least 24 runs at ranks 8, 64, and 256** (B; queued in week
   1; [HUMAN] launches; done by Nov 20).
+  - Nov3:6 official Smol360 instruction/dialogue runs at ranks8/64/256 complete, safely published and T1 measured (6/24 formal).
   - 2026-11-02:6 extra Smol135 GPU runs complete (instruction/dialogue, ranks8/64/256), exact scoped verification PASS. No formal quota credit; their T1/T2 fingerprints are complete and consumed in the new12-model report.
 - [~] **L6 Full fine-tunes: at least 8 SFT and 8 DPO at ≤1.7B** (B; [HUMAN]
   launches; done by Nov 20).
-  - First formal Smol360 SFTs0/DPOs0 complete and T1 measured:1/8SFT,1/8DPO. Exact source/native token inputs and original seeds; eight ready training jobs plus one parent-dependent DPO remain in its prepared11-job bundle.
+  - Nov3: both official Smol360 SFT/DPO seed pairs complete and T1 measured:2/8 SFT,2/8 DPO. All11 prepared training jobs complete. Both Qwen seed0 SFT/DPO pairs now complete on two GPUs with native pinned inputs; total4/8 SFT and4/8 DPO.
   - 2026-11-02:2 extra Smol135 SFT and2 matching DPO GPU jobs complete, full frozen steps and unchanged DPO references; scoped verification/T1/scoring complete. No formal quota credit.
 - [~] **L7 Abliterations: at least 8, classic and Heretic** (B, due Nov 20).
 - [~] **L8 Simulated quantizations: at least 12** (B, due Nov 20). Each model is
   quantized, dequantized, and saved as bf16.
-  - Four exact planned outputs are complete:3 OLMo plus Smol360 chain q8 (4/12). Scoped Smol/Pythia extras
+  - Six exact planned outputs are complete:3 OLMo plus Smol360/Qwen2.5/Qwen3 chain q8 (6/12). Scoped Smol/Pythia extras
     are recorded separately and do not silently replace the minimum inventory.
 - [~] **L9 Laundering transforms: at least 20** (B, due Nov 13).
   - Real scoped Smol rescaling/perturbation complete; rejected MLP permutation
@@ -244,10 +246,11 @@ works with agent sessions.
     perturbation.
   - S6 (C) contributes the blind part. G1 counts L9 and S6 together toward
     the 20.
-- [~] **L10 Chains: at least 3 of depth ≥3** (B, due Nov 20).
-  - First formal path complete/verified/T1:smol-360→SFTs0→DPOs0→quantization-s8 (1/3). Qwen2.5-0.5B and Qwen3-0.6B paths remain. First formal four-node diagnostic violates1/1quartets; no asymmetric tree assembly/pivot decision.
+- [x] **L10 Chains: at least 3 of depth ≥3** (B, due Nov 20).
+  - Nov3:all3 prescribed formal paths complete/verified/T1:smol-360,q25-05,q3-06 each→SFTs0→DPOs0→quantization-s8. Existing minimum checker confirms3/3; scoped registries/provenance/held-out checks PASS. First Smol four-node diagnostic violates1/1 quartets; no asymmetric tree assembly/pivot decision. Consolidated report: `runs/track-b-resume-20261103/REPORT.md`.
   - 2026-11-02:3 scoped Smol135 depth3paths generated/verified/T1+T2 measured; no formalquota (prescribed anchors remain q25-05,q3-06,smol-360). New real36-model E6/E9 experiment recorded in `docs/l12-evaluation.md`.
 - [~] **L14 Decision heads: at least 6** (B, due Nov 20).
+  - Nov3:official Smol360 decision-s0 full32-step run complete, safely published and T1 measured (1/6 formal).
   - 2026-11-02:1 extra Smol135/Amazon Polarity classifier complete; held-out scoring183/256=71.48%, majority137/256=53.52%; verification/T1 complete. No formal quota credit.
   - Sequence-classification fine-tunes: 4 on lab decoder bases and 2 on
     ModernBERT-base (apache-2.0).
@@ -259,6 +262,7 @@ works with agent sessions.
     listed in `lab/models.csv` as independents with no edges.
   - Pin each one's commit.
 - [~] **L12 [HUMAN] Fingerprint lab v0** (A, due Nov 20).
+  - Nov3:15 new formal outputs/T1 complete (Smol3609,Qwen2.5/Qwen3 six). Three exact incremental T2 pilot/full queues prepared; writers pending. FullT2 remains18, T1-or-T2 now33,91 ungenerated and42 external T0-only. Queue paths and166-row coverage: `runs/track-b-resume-20261103/REPORT.md`.
   - Nov2: new3 formal Smol360 T2/k128/full HDF5/freeT1 complete in507.56s;
     exact keys/parents verified. Formal fullT2 coverage18/166; B's new3 extra
     Smol135 endpoints already have T2 and were not rerun. Latest report/index:
@@ -267,9 +271,9 @@ works with agent sessions.
   - [x] Six LoRA T1 fingerprints complete at k64/block256; all33 ready real models now have T1. Original six trained/source evidence files unchanged.
   - [x] Two-model T2/k128 pilot complete; expected identities, full HDF5 spectra and free T1 blocks128/256/512 verified.
   - [x] T2/k128 complete for43 real checkpoints (all33 ready plus10 readable formal sources), full HDF5 spectra and T1 blocks128/256/512 verified and published. All54 formal external T0 manifests complete at original pins.
-  - Remaining formal coverage:18/166 fullT2;106 checkpoints not generated and42
+  - Current formal coverage:18/166 fullT2,33/166 at T1-or-T2;91 checkpoints not generated and42
     external pins T0-only. Whole L12 stays in progress. Updated gap ledger:
-    `runs/track-b-formal-smol360-launches-v1/incremental-A-t2/formal-coverage166.csv`.
+    `runs/track-b-resume-20261103/formal-coverage166.csv`.
     Original43-model delivery/report remains unchanged.
   - B has33 unique ready models with T1 k64/block256 (original22 plus11 trained outputs). All33 also have T2/freeT1 at k128;10 additional formal sources have T2/freeT1 at k128. The selector dependency is resolved.
     Incremental T2/k128 handoff and exact launch are in `handoff/track-b-incremental-l12.md`;
