@@ -296,7 +296,19 @@ def run_merge(recipe: dict, lab_root: Path, output: Path) -> None:
                     for key in ('_name_or_path', 'name_or_path'):
                         if key in value:
                             value[key] = ''
-                _portable(value)
+                checked = value
+                if (file.name == 'tokenizer.json' and isinstance(value, dict)
+                        and isinstance(value.get('model'), dict) and 'merges' in value['model']):
+                    rules = value['model']['merges']
+                    valid = isinstance(rules, list) and all(
+                        isinstance(rule, str) or (isinstance(rule, list) and len(rule) == 2
+                            and all(isinstance(token, str) for token in rule)) for rule in rules)
+                    if not valid:
+                        raise ValueError('tokenizer BPE merges must be token strings or pairs')
+                    # BPE rules contain literal slash/backslash tokens. Validate
+                    # all metadata, retaining these lexical rules unchanged.
+                    checked = {**value, 'model': {k:v for k,v in value['model'].items() if k != 'merges'}}
+                _portable(checked)
                 atomic_json(output/file.name, value)
             elif file.is_file() and file.suffix in {'.safetensors','.model','.txt'}:
                 shutil.copyfile(file, output/file.name)

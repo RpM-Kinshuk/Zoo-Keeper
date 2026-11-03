@@ -285,3 +285,26 @@ def test_real_cli_uses_transient_argument_array(tmp_path, monkeypatch):
     assert len(called) == 1 and not Path(called[0][3]).exists()
     assert str(tmp_path) not in (tmp_path/'out/config.json').read_text()
     assert not list((tmp_path/'out').glob('*.yml'))
+
+
+@pytest.mark.parametrize('unsafe_file', [None, 'config.json', 'tokenizer.json'])
+def test_merge_tokenizer_rules_are_text_and_metadata_paths_stay_rejected(tmp_path, monkeypatch, unsafe_file):
+    rec = real_fixture(tmp_path)
+    tokenizer = {'model': {'type': 'BPE', 'vocab': {'/': 0, '\\': 1},
+                          'merges': ['/ /', 'Ġ \\', '[: ,', '~ ~', ['/', '/']]}}
+    def runner(argv, **kwargs):
+        target = Path(argv[4])
+        save_file({'model.layers.0.weight': torch.ones(4, 4)}, str(target / 'model.safetensors'))
+        values = {'config.json': {'model_type': 'llama'}, 'tokenizer.json': tokenizer}
+        if unsafe_file:
+            values[unsafe_file] = {**values[unsafe_file], 'cache_dir': '/private/runtime/cache'}
+        for name, value in values.items():
+            (target / name).write_text(json.dumps(value))
+    monkeypatch.setattr('subprocess.run', runner)
+    output = tmp_path / 'out'
+    if unsafe_file:
+        with pytest.raises(ValueError, match='nonportable path'):
+            run_merge(rec, tmp_path, output)
+    else:
+        run_merge(rec, tmp_path, output)
+        assert json.loads((output / 'tokenizer.json').read_text()) == tokenizer
