@@ -107,6 +107,17 @@ def _sha(path):
     return digest.hexdigest()
 
 
+def _architecture_config(config):
+    # Local config constructors resolve default fields and legacy RoPE aliases
+    # exactly as the installed model loader does, without fetching repo code.
+    from transformers import AutoConfig
+    ignored = {'_name_or_path', 'torch_dtype', 'dtype', 'architectures', 'transformers_version'}
+    fields = {k: v for k, v in config.items() if k not in ignored}
+    model_type = fields.pop('model_type')
+    normalized = AutoConfig.for_model(model_type, **fields).to_dict()
+    return {k: v for k, v in normalized.items() if k not in ignored}
+
+
 def _checked_inputs(recipe, root):
     _lineage(recipe['model_id'], recipe)
     names = recipe['parents'] + [recipe['reference']]
@@ -190,7 +201,11 @@ def _checked_inputs(recipe, root):
     if any(shape != shapes[0] for shape in shapes[1:]):
         raise ValueError('incompatible parent tensor names or shapes')
     if any(config != configs[0] for config in configs[1:]):
-        raise ValueError('incompatible parent architecture configs')
+        # Identical dictionaries already satisfy the existing contract, including
+        # the deliberately minimal matrix fixtures. Normalize only export drift.
+        configs = [_architecture_config(config) for config in configs]
+        if any(config != configs[0] for config in configs[1:]):
+            raise ValueError('incompatible parent architecture configs')
     return paths
 
 

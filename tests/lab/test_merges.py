@@ -203,6 +203,51 @@ def real_fixture(root):
     return rec
 
 
+def normalized_config_fixture(root):
+    from transformers import LlamaConfig
+    rec = real_fixture(root)
+    raw = dict(model_type='llama', hidden_size=4, intermediate_size=8,
+               num_hidden_layers=2, num_attention_heads=2, num_key_value_heads=1,
+               vocab_size=16, rope_theta=100000., rope_scaling=None)
+    exported = LlamaConfig(**raw).to_dict()
+    for name in [*rec['parents'], rec['reference']]:
+        config = raw if name == rec['reference'] else exported
+        path = root / name / 'config.json'
+        path.write_text(json.dumps(config))
+        rec['inputs'][name].update(config_sha256=content_hash(config),
+            config_file_sha256=hashlib.sha256(path.read_bytes()).hexdigest())
+    return rec
+
+
+def test_real_inputs_accept_equivalent_serialized_config(tmp_path):
+    from lab.merges import _checked_inputs
+    rec = normalized_config_fixture(tmp_path)
+    before = {name: (tmp_path / name / 'config.json').read_bytes()
+              for name in rec['inputs']}
+    assert set(_checked_inputs(rec, tmp_path)) == set(rec['inputs'])
+    assert before == {name: (tmp_path / name / 'config.json').read_bytes()
+                      for name in rec['inputs']}
+
+
+@pytest.mark.parametrize('change', ['rope', 'heads', 'bias'])
+def test_real_inputs_reject_architecture_changes_after_normalization(tmp_path, change):
+    from lab.merges import _checked_inputs
+    rec = normalized_config_fixture(tmp_path)
+    path = tmp_path / rec['parents'][0] / 'config.json'
+    config = json.loads(path.read_text())
+    if change == 'rope':
+        config['rope_parameters']['rope_theta'] = 200000.
+    elif change == 'heads':
+        config['num_attention_heads'] = 1
+    else:
+        config['mlp_bias'] = True
+    path.write_text(json.dumps(config))
+    rec['inputs'][rec['parents'][0]].update(config_sha256=content_hash(config),
+        config_file_sha256=hashlib.sha256(path.read_bytes()).hexdigest())
+    with pytest.raises(ValueError, match='incompatible parent architecture configs'):
+        _checked_inputs(rec, tmp_path)
+
+
 @pytest.mark.parametrize('mutation', ['unfinished','input_hash','license','yaml_hash'])
 def test_real_inputs_require_completed_provenance(tmp_path, mutation, monkeypatch):
     monkeypatch.setattr('subprocess.run', lambda *a, **k: pytest.fail('execution before validation'))
