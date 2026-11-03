@@ -343,6 +343,16 @@ The three formal Smol360 outputs above remain complete and ready to consume;
 formal fullT2 coverage remains18/166. No report/calibration/fullR6 gate claim.
 
 
+## Owner resumed the Hub pilot,2026-11-03
+
+R3/R4 resumed on eniac; original83 T1/85 T2 outputs preserved and only
+unfinished/failed work retried. Eligible current-node L40s0/1/6/7 used with
+paired<80% load/memory checks. Formal coverage remains18/166. CPU/I/O/CUDA
+profiles, exact counts and hardware/throughput context are at
+`runs/track-a-r3-r6-20261102.rcsy95ap/RESUME_REPORT.md`. New full spectra are
+retained. Report/partial build follow after measurements; full calibration
+still needs formal lab/reference inputs. No core/source interface changes.
+
 ## Nine more formal Smol360 outputs ready,2026-11-03
 
 All remaining11-job-bundle training is now complete (nine new plus two prior).
@@ -394,7 +404,6 @@ ungenerated and42 external inputs are T0-only. A needs these incremental
 measurements; no A source/interface change is blocking B. Re-evaluate new
 formal chains in a new freeze after T2; retain original36-model evaluation
 and independent-root held-out control splits/thresholds unchanged.
-
 
 ## Ten official Smol360 merge outputs ready for incremental T2,2026-11-03
 

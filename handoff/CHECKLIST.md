@@ -443,12 +443,22 @@ works with agent sessions.
   - Not the lab: L12 already fingerprinted it, and running it again would
     collide with L12's files.
   - Free T1 blocks at 128, 256, and 512, with `--with_parent`.
-- [~] **R4 [HUMAN] T1 run** on the rest of the 320-model Hub pilot (due Dec 1).
-  - **Paused by owner Nov2; resume only on a new explicit instruction.**
+- [r] **R4 [HUMAN] T1 run** on the rest of the 320-model Hub pilot (due Dec 1).
+  - Nov3 readable batch finished:97/97 completed, no extraction failures;
+    129 requested rows retain28 T0-only,2 denied,2 missing-manifest gaps.
+    Original83 completions preserved;14 unfinished/failed jobs completed.
+    `runs/track-a-r3-r6-20261102.rcsy95ap/R4-report.md` and descriptive cost CSV
+    record counts/host context. This does not certify full coverage or G0.
+  - **Owner authorized resume Nov3 on eniac; frozen inputs/results retained.**
+    Previous pause checkpoint below is preserved; selective remaining work is
+    resumed with currentGPU checks and CPU/I/O/CUDA-stage profiling.
+    Live Nov3 checkpoint:T1 97/97, T2 106/287 new jobs complete; fullspectra
+    retained. Active details:`runs/track-a-r3-r6-20261102.rcsy95ap/RESUME_REPORT.md`.
     Saved83/97 completed new T1 jobs and85/287 completed new T2 jobs, with85
     full-spectrum HDF5 files. T1:4 interrupted,9 unstarted,1 short-read failure;
     T2:4 interrupted,198 unstarted. Six prior T2 measurements reused separately.
-    No controller, worker or report/build continuation remains active.
+    At the Nov2 pause, no controller/worker/continuation remained; all were
+    explicitly resumed Nov3 with completed output preservation.
     Frozen inputs/original results preserved; `OWNER_PAUSED.json` guards both
     launchers. Exact checkpoint/508-file inventory:
     `runs/track-a-r3-r6-20261102.rcsy95ap/PAUSE_REPORT.md`.
@@ -468,7 +478,8 @@ works with agent sessions.
   - Nov2: scoped existing-artifact CLI smoke passed at
     `runs/track-a-z8-cli-20261102.c45u9pog`; this is not R6 completion.
     R3/R4 pilot measurements and R5 G0 calibration are still required.
-    Owner halted the pilot; queued G0 report/database continuation is stopped.
+    Owner halted the pilot Nov2; report/build continuation was stopped, then
+    explicitly resumed Nov3 to follow the unfinished measurements.
     No G0 report, calibration file or pilot zoo was produced by that run.
 - [ ] **G0 [HUMAN] Decide gate G0** (**Dec 4**). Use the thresholds below.
   Record the decisions in the merged plan's §12 and in `STATUS.md`.
