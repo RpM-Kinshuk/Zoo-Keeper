@@ -394,3 +394,27 @@ ungenerated and42 external inputs are T0-only. A needs these incremental
 measurements; no A source/interface change is blocking B. Re-evaluate new
 formal chains in a new freeze after T2; retain original36-model evaluation
 and independent-root held-out control splits/thresholds unchanged.
+
+
+## Ten official Smol360 merge outputs ready for incremental T2,2026-11-03
+
+B completed10 official L4 recipes (8 unique primary-weight sets), safely
+reloaded the models and available native tokenizers, verified a17-model/41-edge
+scoped DAG, and measured10 raw T1 fingerprints in84.05s (2,736,128,000bytes).
+Seven existing base/LoRA fingerprints and all construction truth are reused.
+Exact duplicate groups are recorded; these are correlated recipe cases.
+
+A can claim `runs/track-b-formal-smol360-merges-v1/incremental-A-l12-launch.json`
+(PREPARED_NOT_LAUNCHED). It binds the exact10 keys, child/prior manifest metadata,
+CSV/index hashes, linear05 pilot and full10 commands for k128/full HDF5/freeT1
+blocks128/256/512. No base/LoRA/T1 rerun. The existing --with_parent CLI selects
+the first declared parent; label that delta coverage explicitly, retain the
+full merge DAG/reference, and never describe it as a unique-parent inference.
+
+Together with the prior three queues,25 new children await A. Global formal
+coverage is43/166 measured model IDs (18 fullT2 plus25 T1-only),81 ungenerated
+and42 external T0-only. Updated proof/minimum/coverage and detailed E3 report
+are under the new run directory. All10 individual E3 fits abstain under the
+existing correlation guard despite full numerical rank; combined layer CIs
+are available. No new calibration/direction/coefficient-recovery claim.
+No B worker, GPU allocation or T2 run remains.

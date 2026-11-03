@@ -226,6 +226,7 @@ works with agent sessions.
   - Some with per-layer `t`.
   - Use mergekit configs and keep each config's hash.
   - Nov3 scope review:next batch is exact Smol360 merges using completed official LoRA parents. Freeze inputs; linear05 pilot, then ten recipes only if measured<2h and storage fits. E3 reports conditioning/effective coefficients/CIs/nonidentifiability.
+  - Nov3 follow-through:10/30 official recipes complete/verified/T1;8 unique primary-weight sets, duplicate pairs explicit. E3 individual attribution abstains10/10 under existing correlation guard despite full numerical rank; combined-attribution CIs10/10. Report:`runs/track-b-formal-smol360-merges-v1/REPORT.md`. Next12 Qwen LoRA outputs unlock other20 merges.
 - [~] **L5 LoRA: at least 24 runs at ranks 8, 64, and 256** (B; queued in week
   1; [HUMAN] launches; done by Nov 20).
   - Nov3:6 official Smol360 instruction/dialogue runs at ranks8/64/256 complete, safely published and T1 measured (6/24 formal).
@@ -262,7 +263,7 @@ works with agent sessions.
     listed in `lab/models.csv` as independents with no edges.
   - Pin each one's commit.
 - [~] **L12 [HUMAN] Fingerprint lab v0** (A, due Nov 20).
-  - Nov3:15 new formal outputs/T1 complete (Smol3609,Qwen2.5/Qwen3 six). Three exact incremental T2 pilot/full queues prepared; writers pending. FullT2 remains18, T1-or-T2 now33,91 ungenerated and42 external T0-only. Queue paths and166-row coverage: `runs/track-b-resume-20261103/REPORT.md`.
+  - Nov3:25 new formal outputs/T1 ready for A (prior15 plus10 Smol merge recipes;8 unique new merge weight sets). Four exact incremental T2 queues prepared; writers pending. FullT2 remains18, T1-or-T2 now43 model IDs,81 ungenerated and42 external T0-only. New queue/166-row coverage:`runs/track-b-formal-smol360-merges-v1/`.
   - Nov2: new3 formal Smol360 T2/k128/full HDF5/freeT1 complete in507.56s;
     exact keys/parents verified. Formal fullT2 coverage18/166; B's new3 extra
     Smol135 endpoints already have T2 and were not rerun. Latest report/index:
@@ -271,11 +272,11 @@ works with agent sessions.
   - [x] Six LoRA T1 fingerprints complete at k64/block256; all33 ready real models now have T1. Original six trained/source evidence files unchanged.
   - [x] Two-model T2/k128 pilot complete; expected identities, full HDF5 spectra and free T1 blocks128/256/512 verified.
   - [x] T2/k128 complete for43 real checkpoints (all33 ready plus10 readable formal sources), full HDF5 spectra and T1 blocks128/256/512 verified and published. All54 formal external T0 manifests complete at original pins.
-  - Current formal coverage:18/166 fullT2,33/166 at T1-or-T2;91 checkpoints not generated and42
+  - Current formal coverage:18/166 fullT2,43/166 model IDs at T1-or-T2;81 checkpoints not generated and42
     external pins T0-only. Whole L12 stays in progress. Updated gap ledger:
-    `runs/track-b-resume-20261103/formal-coverage166.csv`.
+    `runs/track-b-formal-smol360-merges-v1/formal-coverage166.csv`.
     Original43-model delivery/report remains unchanged.
-  - B has33 unique ready models with T1 k64/block256 (original22 plus11 trained outputs). All33 also have T2/freeT1 at k128;10 additional formal sources have T2/freeT1 at k128. The selector dependency is resolved.
+  - B's original cohort has33 unique ready models with T1 k64/block256 (original22 plus11 trained outputs). All33 also have T2/freeT1 at k128;10 additional formal sources have T2/freeT1 at k128. The selector dependency is resolved.
     Incremental T2/k128 handoff and exact launch are in `handoff/track-b-incremental-l12.md`;
     this does not complete whole-lab L12.
   - First, the lab's manifests:

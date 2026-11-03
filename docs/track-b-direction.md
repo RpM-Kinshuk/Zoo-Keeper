@@ -15,7 +15,7 @@ memory failure. Full-parameter 7B training remains excluded.
 
 Run the existing L4 Smol360 merges before adding more SFT/DPO seeds. Six
 completed official LoRA parents are available, while formal merge coverage is
-zero. Freeze their real manifests, source license/config/weight hashes and
+zero at review time. Freeze their real manifests, source license/config/weight hashes and
 provenance, then run the official linear-0.5 pilot. Extend to the ten Smol360
 recipes only if measured runtime projects below two hours and storage fits.
 The recipes include linear, layerwise SLERP, TIES and DARE-TIES.
@@ -52,3 +52,13 @@ Sources: [merged goals and committed order](research/2026-10-27-merged-research-
 [lab plan](plans/2026-10-31-genealogy-lab.md),
 [engine plan](plans/2026-10-31-p1-lineage-engine.md),
 [directives](../handoff/DIRECTIVES.md).
+
+## Follow-through
+
+The first ten official Smol360 merge recipes are complete with eight unique
+primary-weight sets and ten new T1 measurements. Individual E3 fits abstain
+under the existing near-collinearity guard despite full numerical rank;
+combined-attribution layer-bootstrap intervals are available for all ten.
+This is a measured limitation of the current method, not a successful
+configured-weight recovery result. Exact duplicate groups remain explicit.
+Next, the twelve Qwen LoRA outputs unlock the other twenty merge recipes.
