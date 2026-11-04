@@ -262,6 +262,7 @@ works with agent sessions.
     listed in `lab/models.csv` as independents with no edges.
   - Pin each one's commit.
 - [~] **L12 [HUMAN] Fingerprint lab v0** (A, due Nov 20).
+  - Nov4 approved source amendment applied/merged at7a0d786:129/166 formal fullT2;47/47 references and180 independent pairs mapped,0 T0-only,37 ungenerated B checkpoints. Original pins and prior held-outs preserved;62 focused checks PASS. Exact current map/status: `runs/track-a-r5-readiness-20261104T092928Z/`. No calibration fitted.
   - Nov4 next priority: all42 required pickle-only references have explicit upstream safe-conversion candidates;38 new manifests granted,4 prior scoped aliases reusable. All38 new candidate T2 bundles complete;4 old aliases reused. Prospective129/166 mapping and180 independent pairs verified; no formal source amendment or credit yet. Prior held-outs preserved. Roadmap: `handoff/track-a-roadmap.md`; evidence: `runs/track-a-r5-readiness-20261104T092928Z/`.
   - Nov4: A delivered all44 prepared children, upgrading formal fullT2 coverage43→87/166; all87 exact-key manifest/T2/HDF paths verified. Four writer locks released, full spectra and three companions retained. Global proof PASS;37 ungenerated+42 T0-only still prevent whole-lab completion. Delivery: runs/track-a-formal44-20261104T042230Z/artifact-index44.csv and REPORT.md. Authoritative additive coverage refresh is beside that index; old v3 omits the new deliveries.
   - Nov3 current reconciliation: original25-child queue COMPLETE in2129.44s, all artifacts verified, controller exited and all writer/GPU locks free. Global coverage87 measured formal IDs/43 fullT2,37 ungenerated and42 external T0-only. Next44 CUDA T2 cases (12 Qwen LoRA+6 quantization+20 Qwen merges+6 OLMo LoRA) prepared, unclaimed and unlaunched; frozen queue hashes/ownership/admission requirements in `runs/track-b-reconciliation-20261103/next44-T2-ready.json`. Reuse existing base/T1/T2 artifacts and leave A Hub farm separate.
@@ -274,7 +275,7 @@ works with agent sessions.
   - [x] Six LoRA T1 fingerprints complete at k64/block256; all33 ready real models now have T1. Original six trained/source evidence files unchanged.
   - [x] Two-model T2/k128 pilot complete; expected identities, full HDF5 spectra and free T1 blocks128/256/512 verified.
   - [x] T2/k128 complete for43 real checkpoints (all33 ready plus10 readable formal sources), full HDF5 spectra and T1 blocks128/256/512 verified and published. All54 formal external T0 manifests complete at original pins.
-  - Current formal coverage:87/166 fullT2;37 checkpoints ungenerated and42 original-pin T0-only references. Whole L12 stays in progress. Current additive ledger: `runs/track-b-reconciliation-20261103/formal-coverage166-current.csv`. Earlier delivery ledgers remain historical.
+  - Current formal coverage:129/166 fullT2;37 checkpoints ungenerated and0 formal T0-only references after the approved source amendment. Whole L12 stays in progress. Current additive ledger: `runs/track-b-reconciliation-20261103/formal-coverage166-current.csv`. Earlier delivery ledgers remain historical.
   - B's original cohort has33 unique ready models with T1 k64/block256 (original22 plus11 trained outputs). All33 also have T2/freeT1 at k128;10 additional formal sources have T2/freeT1 at k128. The selector dependency is resolved.
     Incremental T2/k128 handoff and exact launch are in `handoff/track-b-incremental-l12.md`;
     this does not complete whole-lab L12.
@@ -471,6 +472,7 @@ works with agent sessions.
     launchers. Exact checkpoint/508-file inventory:
     `runs/track-a-r3-r6-20261102.rcsy95ap/PAUSE_REPORT.md`.
 - [!] **R5 G0 report and calibration file** (A, due Dec 2).
+  - Nov4 after source approval:129 exact manifest/fullT2 mappings;47 references complete and180 independent pairs verified. Remaining blocker is37 ungenerated B checkpoints. Preserve held-out allocation before any fit. Current preflight: `runs/track-a-r5-readiness-20261104T092928Z/calibration-status-current.json`.
   - Nov4 current preflight:87 formal identities have verified manifests and fullT2;79 required measurements remain missing (37 ungenerated,42 T0-only). New exact artifact map includes the earlier3 chain endpoints. No partial null written; current preflight: runs/track-a-r3-r6-20261102.rcsy95ap/recovery-20261104T042716Z/calibration-status-current.json. Original57-mapped snapshot is historical.
   - Nov3: descriptive G0 report now written from completed pilot outputs; formal calibration still blocked. Frozen57/166 manifest mapping is historical, distinct from B current coverage. No partial null substituted; report: runs/track-a-r3-r6-20261102.rcsy95ap/G0-report.md.
   - `write_g0_report` and `write_calibration` at `sketch_k = 64`.
