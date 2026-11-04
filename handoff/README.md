@@ -1,5 +1,7 @@
 # Handoff: building the Model Zoo (start here)
 
+**Continuing Track A:** start with [TRACK-A.md](TRACK-A.md). The dated orientation below is historical.
+
 This folder holds what a new group of agents needs to continue the Model Zoo
 work: what we are building and why, the rules, and the checklist of all the
 work. It was written on 2026-10-31, when the plans were complete and no code
