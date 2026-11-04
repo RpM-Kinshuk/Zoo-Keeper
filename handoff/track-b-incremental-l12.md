@@ -567,3 +567,59 @@ A audited all42 original-pin T0-only PolyPythias references. Every root has an e
 Owner approved all42 explicit safe-source mappings; merged into main at7a0d786. **Formal fullT2 is129/166; references47/47;180 independent pairs;0 T0-only.** Original pin provenance and prior14M seed3/4 held-outs are retained. B's37 ungenerated checkpoints are now the remaining generation dependency. Do not refit on prior held-outs.
 
 Current exact map and full-spectrum paths: `runs/track-a-r5-readiness-20261104T092928Z/formal129-artifact-map.json`. Approved42-row index:`formal-reference-index42.csv` beside it. Current calibration preflight:`calibration-status-current.json`. Authoritative additive refresh:`refresh-reference-coverage.py` in that directory; supersedes A44's refresh and old v3 for current coverage (they omit the approved references). Global proof/ledger paths in `runs/track-b-reconciliation-20261103/` remain unchanged; pre-amendment snapshots are archived. No new measurements or active writers.
+
+
+## Six new L6 outputs ready for A, 2026-11-04
+
+A's44 upgrades and approved reference amendment7a0d786 are accepted:129 formal
+fullT2 identities,47 references and180 independent pairs. B then completed
+six exact new outputs: OLMo SFTs0/s1, Qwen2.5 SFTs1/DPOs1 and Qwen3 SFTs1/DPOs1.
+All fixed steps, safe BF16 primary reload, full-parameter update, finite loss,
+held-out exclusion, actual parent identity and frozen DPO references pass.
+Native tokens and existing bases were reused. New6T1:2,069,626,880 selected
+bytes/115.248 seconds, scope9models/6edges.
+
+Separate A6 queue: `runs/track-b-l6-remaining-20261104/execution6/incremental-A-l12-launch.json`,
+SHA `b61158f42089c3e22465ca87efb9a8532fca3f0eff9436de367f9d13db49f4fc`.
+Status **PREPARED_NOT_LAUNCHED; unclaimed**. Exact model keys, native parent
+manifests, existing source mirrors, CUDA argv and per-file hashes are bound in
+the queue and adjacent `artifact-index6.csv`. Use the merged extractor; claim
+output and GPU locks, paired utilization/memory<80% admission and measured
+whole-action<2h before extension. Retain full spectra and free128/256/512
+companions. Do not repeat old bases, fingerprints or completed checkpoints.
+
+Current ledger:135 measured,129 fullT2,31 ungenerated,0 T0-only. The missing37
+fullT2 cases consist of these six ready upgrades plus31 ungenerated models.
+Authoritative additive refresh: `runs/track-b-next-20261104/refresh-l6-coverage.py`;
+proof remains `runs/track-b-reconciliation-20261103/global-coverage-proof-current.json`.
+All B workers exited and locks are free. SFT minimum8/8; DPO6/8. Two OLMo DPOs
+await four eligible GPUs after preserved2rankOOM and admission-only failures;
+future commands are frozen in `runs/track-b-l6-remaining-20261104/world4/future-capacity-proposal.json`.
+No calibrated G0/R6 or completed whole-lab claim.
+
+
+## Final two OLMo DPOs ready; L6 complete, 2026-11-04
+
+Both previously blocked OLMo DPOs completed128 steps on four freshly admitted
+GPUs3/4/6/7. Saved BF16 checkpoints, exact actual SFT parents, full-parameter
+updates, frozen references, finite loss, provenance and held-out exclusions
+all pass. Globalbatch8/localbatch2 and the scientific recipes are unchanged.
+New2T1:679,477,248 selected bytes/22.710s. Existing base/SFT and prior six
+measurements were reused. Exact16-key minimum proof confirms8SFT+8DPO.
+
+Separate A2 queue:
+`runs/track-b-l6-remaining-20261104/world4/future-capacity/execution2/incremental-A-l12-launch.json`.
+SHA `078266720e9b90033cf2f1d01a7d94dad2d0f45d21bee30b6f4b178f403bef5f`.
+Status **PREPARED_NOT_LAUNCHED; unclaimed**. Adjacent `artifact-index2.csv`
+binds exact keys, manifests and new T1. The queue records actual SFT parent
+keys, local source mirrors, pilot/batch CUDA argv and input hashes. Keep
+output/GPU ownership checks, paired<80% utilization/memory, measured bounds,
+full spectra and free T1 blocks128/256/512. No base or completed measurement
+needs repeating. This is separate from the prior A6 queue; eight upgrades
+are now ready in total.
+
+Current ledger137 measured/129 fullT2/29 ungenerated/0 T0-only. Required
+fullT2 missing37=8ready upgrades+29 ungenerated. Authoritative additive
+refresh: `runs/track-b-olmo-dpo-finish-20261104/refresh-coverage.py`; older
+refreshers omit the final2. All owned workers exited and locks are free.
+Full lab/C blind/calibration/G0 remain incomplete.
