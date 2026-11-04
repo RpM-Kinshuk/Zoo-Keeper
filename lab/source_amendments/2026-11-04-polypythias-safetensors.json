@@ -1,0 +1,654 @@
+{
+  "schema_version": "1",
+  "status": "APPROVED_APPLIED",
+  "approved_on": "2026-11-04",
+  "approval_basis": "Owner explicitly replied approved to the prepared42-reference formal source amendment.",
+  "applied_at": "2026-11-04T10:07:06.845565+00:00",
+  "proposal_path": "runs/track-a-r5-readiness-20261104T092928Z/source-amendment-proposal.json",
+  "proposal_sha256": "614d1b714a7560cd62c2eeade5d574a6ee9072f8ed7afa6923b590752046d015",
+  "original_registry_sha256": {
+    "models.csv": "f8c4643340a77b74f934b5dc64b4c4a527f9f4a17469839966dc0ea51ec00610",
+    "pins.json": "e88e0e2879ad8c8acd930edb29e6e79a9f78baeb025db50e39582d8daec1fdba",
+    "reference_pairs.json": "b81d55bf1b5e2f979bcafb6e1227ed172830772df23c3492a42108fe05a0b228",
+    "configs/negatives.json": "add48474dc91258b56557274da7ac018c5ab62daefdc9eb42e5993732fb51b78",
+    "edges.csv": "d4b0460b1007ddd4c1c35ca9c8c6bcb292fae5c0b4f246c21107a8a8cab8acac"
+  },
+  "preserves": {
+    "model_ids": true,
+    "edges": true,
+    "root_membership": true,
+    "truth_labels": true,
+    "original_provenance": true,
+    "prior_heldouts": true
+  },
+  "calibration_fitted": false,
+  "artifact_index": "runs/track-a-r5-readiness-20261104T092928Z/candidate-artifact-index42.csv",
+  "rows": [
+    {
+      "model_id": "poly-size-slot-0-seed-slot-0",
+      "original_key": "EleutherAI/pythia-14m-seed1@0c929f682ef6f3c6582c3f0518713b53117225e2",
+      "candidate_key": "EleutherAI/pythia-14m-seed1@d69651876749bd56b006b4d7ac3b10f8bcd2c976",
+      "candidate_ref": "refs/pr/1",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "sha256": "e2b4ee00f11ffe900ba2e5cd22b914fe36305bc754a7e56b3d96a8178d6ca04d"
+        }
+      ],
+      "preserve_prior_split": "development"
+    },
+    {
+      "model_id": "poly-size-slot-0-seed-slot-1",
+      "original_key": "EleutherAI/pythia-14m-seed2@d34e2feab87a7f8631f7335aac4d85aafbe47663",
+      "candidate_key": "EleutherAI/pythia-14m-seed2@05775313619da467a1f6410c3b222bf8295eadb3",
+      "candidate_ref": "refs/pr/1",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "sha256": "5f83b47a3b7dab9a408f739cf9e6799f47090f186680a6f7c5e8fb7a03a61b22"
+        }
+      ],
+      "preserve_prior_split": "development"
+    },
+    {
+      "model_id": "poly-size-slot-0-seed-slot-2",
+      "original_key": "EleutherAI/pythia-14m-seed3@296092457f9e92450383421fc13c7601cdebba76",
+      "candidate_key": "EleutherAI/pythia-14m-seed3@4d76e6305ed0b03d02994ed6923062662901386c",
+      "candidate_ref": "refs/pr/1",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "sha256": "4e3f72b8fbac1f2545f6c442daa2c2693eb58db2e337968ed58806523b0ec2d6"
+        }
+      ],
+      "preserve_prior_split": "heldout_test"
+    },
+    {
+      "model_id": "poly-size-slot-0-seed-slot-3",
+      "original_key": "EleutherAI/pythia-14m-seed4@c1d2ccdcd54c661e5536c41e185fd97698e0f38d",
+      "candidate_key": "EleutherAI/pythia-14m-seed4@02643ed0e972f30f506ef334dfc532ad8f576522",
+      "candidate_ref": "refs/pr/1",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "sha256": "3e7a7ea6cbec5b5595a2ed72c5ff61202f578baaa6c9a8cc9e652c641bc60f7c"
+        }
+      ],
+      "preserve_prior_split": "heldout_test"
+    },
+    {
+      "model_id": "poly-size-slot-0-seed-slot-4",
+      "original_key": "EleutherAI/pythia-14m-seed5@b86476f2829441a386c32f330d45e06c79699db5",
+      "candidate_key": "EleutherAI/pythia-14m-seed5@518e79ccb1c9a6a9151ca81f705acc157bb2db42",
+      "candidate_ref": "refs/pr/1",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "size": 53311764,
+          "sha256": "5f956d477aa344f949688d8c8444883914016eb820dfa1fc40ab1ec1e9340d15"
+        }
+      ],
+      "preserve_prior_split": "No prior scoped split in existing evidence; freeze formal allocation before calibration"
+    },
+    {
+      "model_id": "poly-size-slot-0-seed-slot-5",
+      "original_key": "EleutherAI/pythia-14m-seed6@cb8e821ea1e0237339e2ea59cf2666cdf2e9b73b",
+      "candidate_key": "EleutherAI/pythia-14m-seed6@c3b68c12ca3e7fe280307a3a35764a6cbe28cac3",
+      "candidate_ref": "refs/pr/1",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "size": 53311764,
+          "sha256": "48b251daf3f03c4fbcce5277307ecadc02163d6676901e913a69d095f6f324d9"
+        }
+      ],
+      "preserve_prior_split": "No prior scoped split in existing evidence; freeze formal allocation before calibration"
+    },
+    {
+      "model_id": "poly-size-slot-0-seed-slot-6",
+      "original_key": "EleutherAI/pythia-14m-seed7@7bafc17291b96a924536134ced88a045e5152a51",
+      "candidate_key": "EleutherAI/pythia-14m-seed7@80cfcd2f5f02f1133c00c972ba71366dc5646fa5",
+      "candidate_ref": "refs/pr/1",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "size": 53311764,
+          "sha256": "2c8829f6786ee7cfe0165e26699bb4c0ee3b5525ac2de94bd4577797e75a5e26"
+        }
+      ],
+      "preserve_prior_split": "No prior scoped split in existing evidence; freeze formal allocation before calibration"
+    },
+    {
+      "model_id": "poly-size-slot-0-seed-slot-7",
+      "original_key": "EleutherAI/pythia-14m-seed8@96bed32adeb238865e691de2168a138a513533fb",
+      "candidate_key": "EleutherAI/pythia-14m-seed8@f63e4e18a23b5d89abd9c8ab4f815192a1a6670d",
+      "candidate_ref": "refs/pr/1",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "size": 53311764,
+          "sha256": "1f344a748cc2146f748503044320d591250789c6592b731342c718ccb210c34e"
+        }
+      ],
+      "preserve_prior_split": "No prior scoped split in existing evidence; freeze formal allocation before calibration"
+    },
+    {
+      "model_id": "poly-size-slot-0-seed-slot-8",
+      "original_key": "EleutherAI/pythia-14m-seed9@50e806022dda859254768ba4ceae24788b49aee0",
+      "candidate_key": "EleutherAI/pythia-14m-seed9@bd0869f96846641a718d1006b3114080a03df57b",
+      "candidate_ref": "refs/pr/1",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "size": 53311764,
+          "sha256": "0afd9131bdc594ae6d1e5b38271cd3d9e530b06c309ffe250e6f382a93090f9e"
+        }
+      ],
+      "preserve_prior_split": "No prior scoped split in existing evidence; freeze formal allocation before calibration"
+    },
+    {
+      "model_id": "poly-size-slot-1-seed-slot-0",
+      "original_key": "EleutherAI/pythia-31m-seed1@9d2c5119aa939b5abeef3157c94122fa69e8466a",
+      "candidate_key": "EleutherAI/pythia-31m-seed1@07fdf0f17fb81a7403be19aa620447e7b4c8b8a6",
+      "candidate_ref": "refs/pr/1",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "size": 86165796,
+          "sha256": "6010a26d3a442d5f1a78a521b5b77a1069e72dd5c73a4e6547cee7005b316fc3"
+        }
+      ],
+      "preserve_prior_split": "No prior scoped split in existing evidence; freeze formal allocation before calibration"
+    },
+    {
+      "model_id": "poly-size-slot-1-seed-slot-1",
+      "original_key": "EleutherAI/pythia-31m-seed2@7a2c0cfe7793936ce1596d1f5f14d00d1e29e7e5",
+      "candidate_key": "EleutherAI/pythia-31m-seed2@141390024210f3a2e7fc340a650aac904e0b512e",
+      "candidate_ref": "refs/pr/1",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "size": 86165796,
+          "sha256": "4cf6e810b716ad6ac1c7c5f28577bfb6e6649c0fff46eec63b41d2dff2bc6565"
+        }
+      ],
+      "preserve_prior_split": "No prior scoped split in existing evidence; freeze formal allocation before calibration"
+    },
+    {
+      "model_id": "poly-size-slot-1-seed-slot-2",
+      "original_key": "EleutherAI/pythia-31m-seed3@007780274aabaef059324dfb91929e512fbe29ad",
+      "candidate_key": "EleutherAI/pythia-31m-seed3@e6fa088292f031c5dedbe5d1357d072ca56da7c4",
+      "candidate_ref": "refs/pr/1",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "size": 86165796,
+          "sha256": "3660b11d46371948abe3a4aee854295a57a8fa0a51879b1b3353f43af6326ddd"
+        }
+      ],
+      "preserve_prior_split": "No prior scoped split in existing evidence; freeze formal allocation before calibration"
+    },
+    {
+      "model_id": "poly-size-slot-1-seed-slot-3",
+      "original_key": "EleutherAI/pythia-31m-seed4@500f4c7ccfc248bcff33e6a9ede92af0f77268c4",
+      "candidate_key": "EleutherAI/pythia-31m-seed4@c67296e3294169f8dc687ae26eb72878743ef81a",
+      "candidate_ref": "refs/pr/1",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "size": 86165796,
+          "sha256": "207d68421c32f62dcd0c835e175b4ac8319a89b3b7d852193f495e7be2d114b7"
+        }
+      ],
+      "preserve_prior_split": "No prior scoped split in existing evidence; freeze formal allocation before calibration"
+    },
+    {
+      "model_id": "poly-size-slot-1-seed-slot-4",
+      "original_key": "EleutherAI/pythia-31m-seed5@057af9a8057a13713396963a38f272574f38ff83",
+      "candidate_key": "EleutherAI/pythia-31m-seed5@bb8ba371f5ba703799589b6a3a8315301a21d5b7",
+      "candidate_ref": "refs/pr/1",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "size": 86165796,
+          "sha256": "fe7f7dba91a27c7a571ca50ae374d4fbedabd669d2b80ba8b4765165dc42cf2d"
+        }
+      ],
+      "preserve_prior_split": "No prior scoped split in existing evidence; freeze formal allocation before calibration"
+    },
+    {
+      "model_id": "poly-size-slot-1-seed-slot-5",
+      "original_key": "EleutherAI/pythia-31m-seed6@285752bb715b22eb0a423c34f3d85799f0a491fd",
+      "candidate_key": "EleutherAI/pythia-31m-seed6@2754c21d5859b0ed01cd7f5707f65fc8db2f75c4",
+      "candidate_ref": "refs/pr/1",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "size": 86165796,
+          "sha256": "4b1b53ff4fe52bf83060783e11f915ba16c392ad64f818bbea0996f050efec1d"
+        }
+      ],
+      "preserve_prior_split": "No prior scoped split in existing evidence; freeze formal allocation before calibration"
+    },
+    {
+      "model_id": "poly-size-slot-1-seed-slot-6",
+      "original_key": "EleutherAI/pythia-31m-seed7@4baadf03d6cdccbc04bc90a438676bca1e24e5a5",
+      "candidate_key": "EleutherAI/pythia-31m-seed7@916be66a1118210bd450f3961ae077cce64b0063",
+      "candidate_ref": "refs/pr/1",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "size": 86165796,
+          "sha256": "47829a8a09d591200cb1d4db19e4ccac2b3aa299fa66b6004d61a3ad4972a746"
+        }
+      ],
+      "preserve_prior_split": "No prior scoped split in existing evidence; freeze formal allocation before calibration"
+    },
+    {
+      "model_id": "poly-size-slot-1-seed-slot-7",
+      "original_key": "EleutherAI/pythia-31m-seed8@241aa615964e20fb411aea451a241c6d4fbab683",
+      "candidate_key": "EleutherAI/pythia-31m-seed8@7411d8161e69db0a36354952fd06f2e050f895ab",
+      "candidate_ref": "refs/pr/1",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "size": 86165796,
+          "sha256": "4e1ec795768c878cda425151cf1e1f77c060eb123019beac092db1e3bcf7c5d4"
+        }
+      ],
+      "preserve_prior_split": "No prior scoped split in existing evidence; freeze formal allocation before calibration"
+    },
+    {
+      "model_id": "poly-size-slot-1-seed-slot-8",
+      "original_key": "EleutherAI/pythia-31m-seed9@cf8491770336a746113d26ebd41961cbb83cd911",
+      "candidate_key": "EleutherAI/pythia-31m-seed9@d27f3e030ba924bbeb20a1d1355af47002c7479f",
+      "candidate_ref": "refs/pr/1",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "size": 86165796,
+          "sha256": "1a80c3e76cd1744a84c63478954186cc373e6aa567b00db9a4ec08c8f34fdae8"
+        }
+      ],
+      "preserve_prior_split": "No prior scoped split in existing evidence; freeze formal allocation before calibration"
+    },
+    {
+      "model_id": "poly-size-slot-2-seed-slot-0",
+      "original_key": "EleutherAI/pythia-70m-seed1@b92214180642ad85f91ccbfffcbf118ebcf2529f",
+      "candidate_key": "EleutherAI/pythia-70m-seed1@312c96132acdefa4aac0b0106ff9a76f457dc895",
+      "candidate_ref": "refs/pr/1",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "size": 166029860,
+          "sha256": "dd5e86b1e19a9349a49392932cab84f1fed8292bc1864992f1dc2dcab5e71f50"
+        }
+      ],
+      "preserve_prior_split": "No prior scoped split in existing evidence; freeze formal allocation before calibration"
+    },
+    {
+      "model_id": "poly-size-slot-2-seed-slot-1",
+      "original_key": "EleutherAI/pythia-70m-seed2@9df96128bfe65ea5e7f1543f0c8ee707932df286",
+      "candidate_key": "EleutherAI/pythia-70m-seed2@f8ac2c548b099b9976d7bd7e6725be9c6127d0c1",
+      "candidate_ref": "refs/pr/1",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "size": 166029860,
+          "sha256": "876e8db9ea5554c685a6e6717a60342c4e544b405b471e5602d7f4b3a67d05d4"
+        }
+      ],
+      "preserve_prior_split": "No prior scoped split in existing evidence; freeze formal allocation before calibration"
+    },
+    {
+      "model_id": "poly-size-slot-2-seed-slot-2",
+      "original_key": "EleutherAI/pythia-70m-seed3@3b039e52757be58fe0f769bec63cf50254853f88",
+      "candidate_key": "EleutherAI/pythia-70m-seed3@2175db1793f169e80f97c653f5c5ee4dd69b5ad1",
+      "candidate_ref": "refs/pr/2",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "size": 166029860,
+          "sha256": "e66a73ffc9432231d6ad1dfb114e6a32968cf70dfc27cb099ecaaa932636cae5"
+        }
+      ],
+      "preserve_prior_split": "No prior scoped split in existing evidence; freeze formal allocation before calibration"
+    },
+    {
+      "model_id": "poly-size-slot-2-seed-slot-3",
+      "original_key": "EleutherAI/pythia-70m-seed4@f525bf61a55437bf9166a77571f8e0c054215600",
+      "candidate_key": "EleutherAI/pythia-70m-seed4@71a89beb84f884d56b7326324c59aecc901979d3",
+      "candidate_ref": "refs/pr/1",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "size": 166029860,
+          "sha256": "6e9d960fee324c43a6d2acd597fce09a2b0124378a731d72370852a5c75f9dad"
+        }
+      ],
+      "preserve_prior_split": "No prior scoped split in existing evidence; freeze formal allocation before calibration"
+    },
+    {
+      "model_id": "poly-size-slot-2-seed-slot-4",
+      "original_key": "EleutherAI/pythia-70m-seed5@e27a605ee68762a318956435821ef7ac23c21199",
+      "candidate_key": "EleutherAI/pythia-70m-seed5@7864f54ca6038794d2482e5d71a334310849a958",
+      "candidate_ref": "refs/pr/1",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "size": 166029860,
+          "sha256": "577f44db8ed61d1a5bb532b5314606bee9c828153a66b235d74e2cfe9d995486"
+        }
+      ],
+      "preserve_prior_split": "No prior scoped split in existing evidence; freeze formal allocation before calibration"
+    },
+    {
+      "model_id": "poly-size-slot-2-seed-slot-5",
+      "original_key": "EleutherAI/pythia-70m-seed6@b4e7ddaab555b55d9043c210510795ebb0787be1",
+      "candidate_key": "EleutherAI/pythia-70m-seed6@566b61de59258ac65f908a028c364e331d938825",
+      "candidate_ref": "refs/pr/1",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "size": 166029860,
+          "sha256": "6bfea715560ca2393e919fcb388cdc5fb676924432bb4d2098ed322efd815cf1"
+        }
+      ],
+      "preserve_prior_split": "No prior scoped split in existing evidence; freeze formal allocation before calibration"
+    },
+    {
+      "model_id": "poly-size-slot-2-seed-slot-6",
+      "original_key": "EleutherAI/pythia-70m-seed7@17e376beb51f5fbf51a47d1e9368fdaa343fe498",
+      "candidate_key": "EleutherAI/pythia-70m-seed7@866902ecddb1ba1e347173312279a8345641ab4e",
+      "candidate_ref": "refs/pr/1",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "size": 166029860,
+          "sha256": "4272914c2624ab7a60b6d66a3ed13d1b020943299d9f5368953a8ab1205323df"
+        }
+      ],
+      "preserve_prior_split": "No prior scoped split in existing evidence; freeze formal allocation before calibration"
+    },
+    {
+      "model_id": "poly-size-slot-2-seed-slot-7",
+      "original_key": "EleutherAI/pythia-70m-seed8@ecb4649b5096fed7e206bea3b8abd22192c0c601",
+      "candidate_key": "EleutherAI/pythia-70m-seed8@8a9fdf4212c6e842ad6f2aa4dd3a19000a923edf",
+      "candidate_ref": "refs/pr/1",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "size": 166029860,
+          "sha256": "9cf76bedf56e4e7e957806659eaa66eb49735e19b0fe87a89b72fb58b0d14924"
+        }
+      ],
+      "preserve_prior_split": "No prior scoped split in existing evidence; freeze formal allocation before calibration"
+    },
+    {
+      "model_id": "poly-size-slot-2-seed-slot-8",
+      "original_key": "EleutherAI/pythia-70m-seed9@373172e086d06a8a9a15816db498d099246f1409",
+      "candidate_key": "EleutherAI/pythia-70m-seed9@eaf629b0e378d98d8431d13c903fdb834d6ae305",
+      "candidate_ref": "refs/pr/1",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "size": 166029860,
+          "sha256": "5e75efe9e9831ef68ee28bbb5d7f70edec86c95cdba2e68237a57b1e87c5f2c3"
+        }
+      ],
+      "preserve_prior_split": "No prior scoped split in existing evidence; freeze formal allocation before calibration"
+    },
+    {
+      "model_id": "poly-size-slot-3-seed-slot-3",
+      "original_key": "EleutherAI/pythia-160m-seed4@c7a7ebcc54c75407bfd8cdea09c5cfa2c7961b4d",
+      "candidate_key": "EleutherAI/pythia-160m-seed4@1551afc3daebad67e435339ca0465800a61a7713",
+      "candidate_ref": "refs/pr/1",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "size": 374998720,
+          "sha256": "940014726d7d7e397429076971aed9ed74cebc31a0a23ee9691db9dfe4101b3d"
+        }
+      ],
+      "preserve_prior_split": "No prior scoped split in existing evidence; freeze formal allocation before calibration"
+    },
+    {
+      "model_id": "poly-size-slot-3-seed-slot-4",
+      "original_key": "EleutherAI/pythia-160m-seed5@7682ee9da4d8d399d3ecc3ad468500b3e99cddf3",
+      "candidate_key": "EleutherAI/pythia-160m-seed5@6ad63b558f5edfb2c230848044d880d0dd3d78f9",
+      "candidate_ref": "refs/pr/1",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "size": 374998720,
+          "sha256": "86e3233af695f7408778a08424df2dec5f22446e313df39d600a6be25bbb3ea6"
+        }
+      ],
+      "preserve_prior_split": "No prior scoped split in existing evidence; freeze formal allocation before calibration"
+    },
+    {
+      "model_id": "poly-size-slot-3-seed-slot-5",
+      "original_key": "EleutherAI/pythia-160m-seed6@78e11a97c628c5716c07a277de902f76b99695a7",
+      "candidate_key": "EleutherAI/pythia-160m-seed6@a6161cc89e8a07a0631a5ab9390a24a9d6c6cd26",
+      "candidate_ref": "refs/pr/1",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "size": 374998720,
+          "sha256": "38162423d1d7ec0ad2736829f609dfbe7cfe6dd802afade6b9a42af618dddb68"
+        }
+      ],
+      "preserve_prior_split": "No prior scoped split in existing evidence; freeze formal allocation before calibration"
+    },
+    {
+      "model_id": "poly-size-slot-3-seed-slot-6",
+      "original_key": "EleutherAI/pythia-160m-seed7@11b513c3f630f59d0d61cfc0163fc05426f30c07",
+      "candidate_key": "EleutherAI/pythia-160m-seed7@9611e4b12c35c3d983d209c166b2d0be0547d4fc",
+      "candidate_ref": "refs/pr/1",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "size": 374998720,
+          "sha256": "73db149e8dfb53c13e3057acd1347a9c7f7d773ec450c0632a5a5bca8195caca"
+        }
+      ],
+      "preserve_prior_split": "No prior scoped split in existing evidence; freeze formal allocation before calibration"
+    },
+    {
+      "model_id": "poly-size-slot-3-seed-slot-7",
+      "original_key": "EleutherAI/pythia-160m-seed8@2149b1efc141db551191f87f778d1f6979ded3e9",
+      "candidate_key": "EleutherAI/pythia-160m-seed8@00f32c35e06d2c184a5d88284f75eeaa3a4f5309",
+      "candidate_ref": "refs/pr/1",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "size": 374998720,
+          "sha256": "e173fd74b2157c59c5d72c578ab6f2e680b90a2cf895205b7febfbb210606779"
+        }
+      ],
+      "preserve_prior_split": "No prior scoped split in existing evidence; freeze formal allocation before calibration"
+    },
+    {
+      "model_id": "poly-size-slot-3-seed-slot-8",
+      "original_key": "EleutherAI/pythia-160m-seed9@08020a8fabd0f0b44d45db35910b9c312b9ade3a",
+      "candidate_key": "EleutherAI/pythia-160m-seed9@370e48c290fdcfc608868e436e6715c1ed46d0fb",
+      "candidate_ref": "refs/pr/1",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "size": 374998720,
+          "sha256": "e604ceae5ad6a9cbf9b86da19b5f769e71d5773a14418ca6911f77c185f1b45c"
+        }
+      ],
+      "preserve_prior_split": "No prior scoped split in existing evidence; freeze formal allocation before calibration"
+    },
+    {
+      "model_id": "poly-size-slot-4-seed-slot-0",
+      "original_key": "EleutherAI/pythia-410m-seed1@33803c4f5a1e9a4bece59e52f17bb8755add33e1",
+      "candidate_key": "EleutherAI/pythia-410m-seed1@52a39c0148cac9d979cfd9887a7c1b1b038a7658",
+      "candidate_ref": "refs/pr/1",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "size": 911373680,
+          "sha256": "4a2cd5b57e2ac82340941b87640b932ebaf0274a382d5e2b9fb91d3bfd425779"
+        }
+      ],
+      "preserve_prior_split": "No prior scoped split in existing evidence; freeze formal allocation before calibration"
+    },
+    {
+      "model_id": "poly-size-slot-4-seed-slot-1",
+      "original_key": "EleutherAI/pythia-410m-seed2@da2549c8d3e03e6e927594b9060073abdb94e6ba",
+      "candidate_key": "EleutherAI/pythia-410m-seed2@62ded1c65295a3e9839efdc7fe9d15e9ed6bcd02",
+      "candidate_ref": "refs/pr/1",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "size": 911373680,
+          "sha256": "dab96275cd6c6662f3a06000d2aedcbbadf3b2cc27be1c92a4dfcaf2240c1ee9"
+        }
+      ],
+      "preserve_prior_split": "No prior scoped split in existing evidence; freeze formal allocation before calibration"
+    },
+    {
+      "model_id": "poly-size-slot-4-seed-slot-2",
+      "original_key": "EleutherAI/pythia-410m-seed3@1dd84c3d638fd5b6e3c77815ca2a26f1cdf1a307",
+      "candidate_key": "EleutherAI/pythia-410m-seed3@b467dbe058f61d158641343c1cc51545992ab1f7",
+      "candidate_ref": "refs/pr/1",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "size": 911373680,
+          "sha256": "87a7f35fb757dd093a89b9c410156b5790c86ca3c35e77fc5737385aeb7c9486"
+        }
+      ],
+      "preserve_prior_split": "No prior scoped split in existing evidence; freeze formal allocation before calibration"
+    },
+    {
+      "model_id": "poly-size-slot-4-seed-slot-3",
+      "original_key": "EleutherAI/pythia-410m-seed4@57c8ecb67375772335b779545246e2f3a4aed69b",
+      "candidate_key": "EleutherAI/pythia-410m-seed4@02c572a099ed8e32f13cfa65bcb92221590deab3",
+      "candidate_ref": "refs/pr/1",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "size": 911373680,
+          "sha256": "45cfe7405c722745551f4e3f4c5b34e9e56987c9498fb54afda19aabe31ab46d"
+        }
+      ],
+      "preserve_prior_split": "No prior scoped split in existing evidence; freeze formal allocation before calibration"
+    },
+    {
+      "model_id": "poly-size-slot-4-seed-slot-4",
+      "original_key": "EleutherAI/pythia-410m-seed5@8f2c179eee40284065226c82b9fa0d8106658a6f",
+      "candidate_key": "EleutherAI/pythia-410m-seed5@d85d9fbc5a9938395087667ae6ed228a7b83aad9",
+      "candidate_ref": "refs/pr/2",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "size": 911373680,
+          "sha256": "ec3df36fe077ef6d3b6d9023c2c1d8b19476113d548b35eafb390f1b4e1c1ec7"
+        }
+      ],
+      "preserve_prior_split": "No prior scoped split in existing evidence; freeze formal allocation before calibration"
+    },
+    {
+      "model_id": "poly-size-slot-4-seed-slot-5",
+      "original_key": "EleutherAI/pythia-410m-seed6@6a2463662069b7a4f5e77cf3c222dc60ff6cd3e4",
+      "candidate_key": "EleutherAI/pythia-410m-seed6@bfb3dd1bd382fe980f0027a44f671d41daff781f",
+      "candidate_ref": "refs/pr/1",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "size": 911373680,
+          "sha256": "5150809c34e8b661ddba7a5ac1ff9c3360b44588b0044e7ac99738f044619c08"
+        }
+      ],
+      "preserve_prior_split": "No prior scoped split in existing evidence; freeze formal allocation before calibration"
+    },
+    {
+      "model_id": "poly-size-slot-4-seed-slot-6",
+      "original_key": "EleutherAI/pythia-410m-seed7@84f51f7862c384d3d3d4095fb3b4d0438022b39e",
+      "candidate_key": "EleutherAI/pythia-410m-seed7@d5d08c9abeb2fcf3f2c6c6112b88ea564030b7bf",
+      "candidate_ref": "refs/pr/1",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "size": 911373680,
+          "sha256": "6360a8eaa50bc5837dc7342a8385d5a7f2f0df1c3f3548688a37ffc9ca7a8b23"
+        }
+      ],
+      "preserve_prior_split": "No prior scoped split in existing evidence; freeze formal allocation before calibration"
+    },
+    {
+      "model_id": "poly-size-slot-4-seed-slot-7",
+      "original_key": "EleutherAI/pythia-410m-seed8@368c5c53fda3ea210d154fcf6673328fa05da6ca",
+      "candidate_key": "EleutherAI/pythia-410m-seed8@0cfaa2c8f4b045ac7b3fa3ccb531e6a9e377f2aa",
+      "candidate_ref": "refs/pr/1",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "size": 911373680,
+          "sha256": "627711a784aeca972416082c2e7da63871ff23d98c03563b49a08884d4609532"
+        }
+      ],
+      "preserve_prior_split": "No prior scoped split in existing evidence; freeze formal allocation before calibration"
+    },
+    {
+      "model_id": "poly-size-slot-4-seed-slot-8",
+      "original_key": "EleutherAI/pythia-410m-seed9@509afc6f4768f37ebab1705b93a098ecb5d78855",
+      "candidate_key": "EleutherAI/pythia-410m-seed9@5de14b30215d221f8b9fde2c92e5312fbf150656",
+      "candidate_ref": "refs/pr/1",
+      "upstream_author": "SFconvertbot",
+      "safe_files": [
+        {
+          "filename": "model.safetensors",
+          "size": 911373680,
+          "sha256": "9e2d0dc8d09b7d0f327bbd53b567955b607ea0dffc1d6182cb703fd00e3ff9e4"
+        }
+      ],
+      "preserve_prior_split": "No prior scoped split in existing evidence; freeze formal allocation before calibration"
+    }
+  ]
+}
