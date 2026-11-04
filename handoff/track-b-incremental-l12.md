@@ -427,3 +427,94 @@ are under the new run directory. All10 individual E3 fits abstain under the
 existing correlation guard despite full numerical rank; combined layer CIs
 are available. No new calibration/direction/coefficient-recovery claim.
 No B worker, GPU allocation or T2 run remains.
+
+## B claims the four25-child incremental writers,2026-11-03
+
+Reconciliation found A HubT1 finished97/97 and liveHubT2 separately running;
+none of B25 new labT2 children had a writer or delivery. B now executes those
+four exact queues using the merged A31b86dd extractor on GPU5, leaving A Hub
+farm/source/settings unchanged. **A must not start duplicate writers for these
+four outputdirectories while the B claims/locks are active.**
+
+HostPID1168369/rootexecsession14040, started13:04:12UTC, external7200s bound.
+The verified157.73s single-casepilot projected93.32min for25; it was adopted
+with zero recompute. Lastobserved14/25published; sourceoftruth:
+`runs/track-b-reconciliation-20261103/incremental25-v2-progress.json` and
+`artifact-index25-v2-partial.csv`. Each case has exact5SHA/fullHDF5/freeT1 proof.
+Four queue writerclaims and the physical GPU lock are held; fresh paired<80%/
+24GiB and liveA UUID exclusion apply. Per-case selectedstaging bounded32GiB
+and deleted afterpublication. Multi-parent DAGs and selected-parent-onlydelta
+limitations remain explicit.
+
+Continue monitoring existing session14040; do not rerun the claim-onlylaunch.
+If stopped, strictremaining-onlyresume commands/SHAs/check-only mode are in
+`incremental25-v3-resume-ready.json` and the v2resume-manifest. They require
+deadPID/freewriter+GPUlocks, verify every completed5-artifact bundle, skip
+completedcases and retain the originaldeadline. Hostcheck-only correctly
+refuses an activewriter.
+
+New producerdeliveries are separate:12QwenLoRA/T1 at
+`runs/track-b-formal-qwen-lora-v1/` and6q2/q4/T1 at
+`runs/track-b-formal-quantization-v1/`; each has its own preparedincremental
+T2queue, unclaimed. No inheritedbase/standaloneT1 rerun. Globalcoverageproof
+andrefreshcommand:`runs/track-b-reconciliation-20261103/global-coverage-proof-current.json`.
+At13:24UTC:61verifiedformalIDs,30fullT2,63ungenerated,42externalT0-only; new
+Qwenmerges are excluded until their own verification/T1finalizes. Wholelab
+andG0/P1gates remainincomplete.
+
+
+## Original25 complete; new38 prepared, 2026-11-03
+
+The four claimed queues above are now COMPLETE: 25/25 cases, comprising24
+new extractions and one adopted pilot, in2129.44s. Each case published full
+T2 spectra, T2/k128 and free T1 blocks128/256/512. The controller exited;
+all four writer locks and GPU5 lock are free. Historical claim files remain
+for provenance. Do not rerun completed cases or use the old resume command.
+Final index: `runs/track-b-reconciliation-20261103/artifact-index25-v2.csv`;
+report: `incremental25-v2-report.json`; lifecycle: `incremental25-completion-audit.json`.
+
+The new queues are separate and PREPARED_NOT_LAUNCHED:
+
+- 12 Qwen LoRAs: `runs/track-b-formal-qwen-lora-v1/incremental-A-l12-launch.json`.
+- 6 quantizations: `runs/track-b-formal-quantization-v1/incremental-A-l12-launch.json`.
+- 20 Qwen merges: `runs/track-b-formal-qwen-merges-v1/incremental-A-l12-launch.json`.
+
+All bases and previous standalone T1 measurements are reused. Native
+multi-parent DAGs are retained; selected-parent delta limitations remain
+explicit. Current global proof is `runs/track-b-reconciliation-20261103/global-coverage-proof-current.json`,
+refreshed by `refresh-global-coverage-v2.py`:81 formal measured IDs,
+43 fullT2,43 ungenerated and42 external T0-only. Planned merge quota is30/30,
+with26 unique weight sets; duplicate recipes are not independent models.
+
+The new frozen24-model evaluation in `runs/track-b-formal-chain-evaluation-v1/REPORT.md`
+consumes the actual published three-chain artifacts and held-out Pythia
+controls. Same-root controls score AUROC1.00; direction abstains, tolerance
+sensitivity is explicit, and G0/R6 remain incomplete. OLMo LoRAs are a
+separate active training batch and are not included in these38 queued children.
+
+
+## OLMo complete; next44 frozen, 2026-11-03 14:13 UTC
+
+Six official OLMo instruction/dialogue LoRAs at ranks8/64/256 now pass full
+128-step, safe checkpoint, finite adapter, provenance, native-token and
+held-out checks. Six new T1/k64 fingerprints are published; A's original
+base T1/k128 and T2/HDF5 are reused. Official LoRA minimum24/24 verified.
+Summary and separate A6 queue are under
+`runs/track-b-formal-olmo-launches-v1/lora-execution/`.
+
+The complete next queue contains44 new children:12 Qwen LoRAs,6 quantizations,
+20 Qwen merges and6 OLMo LoRAs. All four queue hashes, exact keys, CUDA argv
+and local source mirrors are frozen in
+`runs/track-b-reconciliation-20261103/next44-T2-ready.json`.
+**PREPARED_NOT_LAUNCHED; no writer claim or GPU worker exists for this queue.**
+Claim outputs and per-UUID locks, exclude live A assignments and enforce
+paired utilization<80%/occupied memory<80% with24GiB free before GPU use.
+Use at most two simultaneous GPU workers and a measured native OLMo T2 pilot;
+whole-action projection must remain below2h. Use local source mirrors for
+selected-file staging; CUDA argv alone does not enforce these ownership guards.
+
+Final global proof refreshed by `refresh-global-coverage-v3.py` confirms87
+formal measured IDs,43 fullT2,37 ungenerated and42 external T0-only. All B
+training/finalization workers have exited; A's Hub farm remains independent.
+No old training/base/T1/T2 experiment needs repeating. Full lab, C blind
+attestation, direction/calibration and G0/R6 remain incomplete.

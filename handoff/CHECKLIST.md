@@ -219,26 +219,25 @@ works with agent sessions.
     and 7B; Qwen3-0.6B and 1.7B; SmolLM2; and OLMo-2-1B.
   - **Never Qwen2.5-3B.**
   - Record each base's commit and license.
-- [~] **L4 Merges: at least 30** (B; configs due Nov 11; done by Nov 13).
+- [r] **L4 Merges: at least 30** (B; configs due Nov 11; done by Nov 13).
   Agents may run the merges if they fit D4.1's limits; otherwise a person
   launches them.
   - Linear, SLERP, TIES, and DARE, with 2–4 parents each.
   - Some with per-layer `t`.
   - Use mergekit configs and keep each config's hash.
-  - Nov3 scope review:next batch is exact Smol360 merges using completed official LoRA parents. Freeze inputs; linear05 pilot, then ten recipes only if measured<2h and storage fits. E3 reports conditioning/effective coefficients/CIs/nonidentifiability.
-  - Nov3 follow-through:10/30 official recipes complete/verified/T1;8 unique primary-weight sets, duplicate pairs explicit. E3 individual attribution abstains10/10 under existing correlation guard despite full numerical rank; combined-attribution CIs10/10. Report:`runs/track-b-formal-smol360-merges-v1/REPORT.md`. Next12 Qwen LoRA outputs unlock other20 merges.
-- [~] **L5 LoRA: at least 24 runs at ranks 8, 64, and 256** (B; queued in week
+  - Nov3: all30 prescribed recipes verified and T1 measured, with 26 unique primary weight sets. Smol360 contributes10 cases/8 unique; Qwen2.5 contributes10/10; Qwen3 contributes10/8. Full multi-parent DAGs retained. E3 individual attribution abstains under the existing correlation guard despite full numerical rank; combined-attribution intervals retained. Reports: `runs/track-b-formal-smol360-merges-v1/REPORT.md`, `runs/track-b-formal-qwen-merges-v1/REPORT-v4.md`. Source compatibility changes reviewed and587 tests passed; uncommitted.
+- [r] **L5 LoRA: at least 24 runs at ranks 8, 64, and 256** (B; queued in week
   1; [HUMAN] launches; done by Nov 20).
-  - Nov3:6 official Smol360 instruction/dialogue runs at ranks8/64/256 complete, safely published and T1 measured (6/24 formal).
+  - Nov3: all24 official LoRAs complete and T1 measured: six each on Smol360, Qwen2.5-0.5B, Qwen3-0.6B and native OLMo1.485B, instruction/dialogue at ranks8/64/256. All128 steps, safe primary+adapter tensors, provenance, unchanged base tensors and held-out controls verified. Current24-output hashes and scientific recipe identities PASS. OLMo report/proofs: `runs/track-b-formal-olmo-launches-v1/lora-execution/`; no B workers remain.
   - 2026-11-02:6 extra Smol135 GPU runs complete (instruction/dialogue, ranks8/64/256), exact scoped verification PASS. No formal quota credit; their T1/T2 fingerprints are complete and consumed in the new12-model report.
 - [~] **L6 Full fine-tunes: at least 8 SFT and 8 DPO at ≤1.7B** (B; [HUMAN]
   launches; done by Nov 20).
   - Nov3: both official Smol360 SFT/DPO seed pairs complete and T1 measured:2/8 SFT,2/8 DPO. All11 prepared training jobs complete. Both Qwen seed0 SFT/DPO pairs now complete on two GPUs with native pinned inputs; total4/8 SFT and4/8 DPO.
   - 2026-11-02:2 extra Smol135 SFT and2 matching DPO GPU jobs complete, full frozen steps and unchanged DPO references; scoped verification/T1/scoring complete. No formal quota credit.
 - [~] **L7 Abliterations: at least 8, classic and Heretic** (B, due Nov 20).
-- [~] **L8 Simulated quantizations: at least 12** (B, due Nov 20). Each model is
+- [r] **L8 Simulated quantizations: at least 12** (B, due Nov 20). Each model is
   quantized, dequantized, and saved as bf16.
-  - Six exact planned outputs are complete:3 OLMo plus Smol360/Qwen2.5/Qwen3 chain q8 (6/12). Scoped Smol/Pythia extras
+  - Nov3:all12 official quantizations complete/verified/T1, six newq2/q4 cases safelyreloaded, original6unchanged;9oldevidence rowsreused. NewA6T2queue prepared at `runs/track-b-formal-quantization-v1/`. Scoped Smol/Pythia extras
     are recorded separately and do not silently replace the minimum inventory.
 - [~] **L9 Laundering transforms: at least 20** (B, due Nov 13).
   - Real scoped Smol rescaling/perturbation complete; rejected MLP permutation
@@ -263,6 +262,7 @@ works with agent sessions.
     listed in `lab/models.csv` as independents with no edges.
   - Pin each one's commit.
 - [~] **L12 [HUMAN] Fingerprint lab v0** (A, due Nov 20).
+  - Nov3 current reconciliation: original25-child queue COMPLETE in2129.44s, all artifacts verified, controller exited and all writer/GPU locks free. Global coverage87 measured formal IDs/43 fullT2,37 ungenerated and42 external T0-only. Next44 CUDA T2 cases (12 Qwen LoRA+6 quantization+20 Qwen merges+6 OLMo LoRA) prepared, unclaimed and unlaunched; frozen queue hashes/ownership/admission requirements in `runs/track-b-reconciliation-20261103/next44-T2-ready.json`. Reuse existing base/T1/T2 artifacts and leave A Hub farm separate.
   - Nov3:25 new formal outputs/T1 ready for A (prior15 plus10 Smol merge recipes;8 unique new merge weight sets). Four exact incremental T2 queues prepared; writers pending. FullT2 remains18, T1-or-T2 now43 model IDs,81 ungenerated and42 external T0-only. New queue/166-row coverage:`runs/track-b-formal-smol360-merges-v1/`.
   - Nov2: new3 formal Smol360 T2/k128/full HDF5/freeT1 complete in507.56s;
     exact keys/parents verified. Formal fullT2 coverage18/166; B's new3 extra
@@ -331,6 +331,7 @@ works with agent sessions.
 - [~] **E6 Tree-likeness on lab trees** (B, due **Nov 27**). A person makes
   the pivot decision on the thresholds in `GUIDANCE.md` 5.2.
   - Scoped real diagnostics now available:20-node Smol violations4193/4845(T1),4201/4845(T2) at1e-6, nRFnull/unresolveddirection; flagsreported, no formal pivot or threshold change. Original17-node/OLMo and tolerance sensitivity retained.
+  - Nov3: new frozen24-model/17-edge formal-chain report consumes actual T2 artifacts for all3 prescribed chains plus held-out Pythia controls. Same-root control AUROC1.00, parent/ancestor coverage0; quartet violations at1e-6 are Smol1/1 and each Qwen0/1, but all3 violate at1e-8/1e-10. nRFnull, typed T2 engine NOT_EVALUABLE; no pivot or calibrated G0 claim. `runs/track-b-formal-chain-evaluation-v1/REPORT.md`.
 - [x] **E7 Calibration** (B, due Dec 4).
   - An empirical null, a GPD tail, and per-query FDR.
   - Agree with X9 on the calibration statistic and `sketch_k = 64`.
@@ -438,12 +439,19 @@ works with agent sessions.
     metadata-type failures recovered. No resampling. See the run report and
     STATUS.md; R2 remains partial.
 - [~] **R3 [HUMAN] T2 run** (due Dec 1).
+  - Nov3 final: all287 new readable jobs terminal,241 complete/46 failed;6 prior T2 bundles reused. All247 available pilot T2 bundles retain full HDF5 and three companions; metadata audit PASS. No active workers. Pinned failure ledger and final report preserve gaps; fix tall-matrix CUDA solver errors before selective retry. Run execution finished; coverage remains partial.
+  - Nov3 GPU parent-delta acceleration deployed for queued jobs; only2 F64
+    SVDs moved, estimator/precision/layout unchanged. Actual matched case5.11×
+    faster;45 focused/252 package tests PASS (1 opt-in skip), fresh reviewPASS.
+    Four active model workers adopted without interruption;6-worker capacity,
+    GPU6/7 left for B. Existing8 failures remain for separate triage.
+    Source uncommitted; `GPU_DELTA_REPORT.md` in the pilot run has evidence.
   - Covers the independents, the Hub related pairs, and 10 models per stratum
     above 9B: about 4 TB.
   - Not the lab: L12 already fingerprinted it, and running it again would
     collide with L12's files.
   - Free T1 blocks at 128, 256, and 512, with `--with_parent`.
-- [r] **R4 [HUMAN] T1 run** on the rest of the 320-model Hub pilot (due Dec 1).
+- [x] **R4 [HUMAN] T1 run** on the rest of the 320-model Hub pilot (due Dec 1).
   - Nov3 readable batch finished:97/97 completed, no extraction failures;
     129 requested rows retain28 T0-only,2 denied,2 missing-manifest gaps.
     Original83 completions preserved;14 unfinished/failed jobs completed.
@@ -463,6 +471,7 @@ works with agent sessions.
     launchers. Exact checkpoint/508-file inventory:
     `runs/track-a-r3-r6-20261102.rcsy95ap/PAUSE_REPORT.md`.
 - [!] **R5 G0 report and calibration file** (A, due Dec 2).
+  - Nov3: descriptive G0 report now written from completed pilot outputs; formal calibration still blocked. Frozen57/166 manifest mapping is historical, distinct from B current coverage. No partial null substituted; report: runs/track-a-r3-r6-20261102.rcsy95ap/G0-report.md.
   - `write_g0_report` and `write_calibration` at `sketch_k = 64`.
   - These read existing outputs, so agents may run them.
   - Nov2: full calibration preflight blocked:57/166 formal manifests mapped,
@@ -470,11 +479,12 @@ works with agent sessions.
     no partial-cohort null substituted. Pilot R3/R4 measurements are separate.
     That preflight is frozen at pilot start; three new formal L12 outputs are
     now published separately, reducing current ungenerated count to106.
-- [ ] **R6 Zoo v0 smoke build** on the pilot outputs, with `--leaderboard_v2`
+- [~] **R6 Zoo v0 smoke build** on the pilot outputs, with `--leaderboard_v2`
   and the calibration file (A, due Dec 3). It reads fingerprints, not
   weights, so agents run it.
   - Run each query once on a known derivative pair.
   - Record the outputs in `docs/operations/zoo.md`.
+  - Nov3: uncalibrated artifact smoke now PASS:556 models,89,286 views,284 full-spectrum links, all6CLIqueries. Real Hub gated-string/boolean export issue fixed and merged; no weights re-extracted. Operations record updated. Full calibrated R6 remains blocked on R5 and required coverage; FINAL_REPORT.md records exact outputs.
   - Nov2: scoped existing-artifact CLI smoke passed at
     `runs/track-a-z8-cli-20261102.c45u9pog`; this is not R6 completion.
     R3/R4 pilot measurements and R5 G0 calibration are still required.
@@ -602,3 +612,5 @@ Each item gets its own plan, which a person reviews before work starts.
 - [ ] **Token hygiene:** list run-output files that contain a token-shaped string with
   `grep -rlE 'hf_[A-Za-z0-9]{30,}' <run dir>` (file names only, never the
   matches). Any hit goes to a person.
+
+- [x] A / R3 runtime optimization (2026-11-03 owner authorization): CUDA delta/sketch/companion computation, child/parent reuse and bounded read-ahead enabled for queued jobs. Merged into Model-Zoo main1dc9da8; final combined1266testsPASS/1skip,38focusedPASS,3readerchecksPASS, freshcore reviewPASS; fair warm-cache local2.13×. Full spectra retained; existingworkerspreserved. Report: runs/track-a-r3-r6-20261102.rcsy95ap/GPU_PIPELINE_REPORT.md.
