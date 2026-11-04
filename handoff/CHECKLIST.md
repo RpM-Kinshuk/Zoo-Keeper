@@ -262,6 +262,8 @@ works with agent sessions.
     listed in `lab/models.csv` as independents with no edges.
   - Pin each one's commit.
 - [~] **L12 [HUMAN] Fingerprint lab v0** (A, due Nov 20).
+  - Nov4 next priority: all42 required pickle-only references have explicit upstream safe-conversion candidates;38 new manifests granted,4 prior scoped aliases reusable. Bounded GPU pilot/batch uses separate actual-pin outputs; no formal source amendment or credit yet. Prior held-outs preserved. Roadmap: `handoff/track-a-roadmap.md`; evidence: `runs/track-a-r5-readiness-20261104T092928Z/`.
+  - Nov4: A delivered all44 prepared children, upgrading formal fullT2 coverage43→87/166; all87 exact-key manifest/T2/HDF paths verified. Four writer locks released, full spectra and three companions retained. Global proof PASS;37 ungenerated+42 T0-only still prevent whole-lab completion. Delivery: runs/track-a-formal44-20261104T042230Z/artifact-index44.csv and REPORT.md. Authoritative additive coverage refresh is beside that index; old v3 omits the new deliveries.
   - Nov3 current reconciliation: original25-child queue COMPLETE in2129.44s, all artifacts verified, controller exited and all writer/GPU locks free. Global coverage87 measured formal IDs/43 fullT2,37 ungenerated and42 external T0-only. Next44 CUDA T2 cases (12 Qwen LoRA+6 quantization+20 Qwen merges+6 OLMo LoRA) prepared, unclaimed and unlaunched; frozen queue hashes/ownership/admission requirements in `runs/track-b-reconciliation-20261103/next44-T2-ready.json`. Reuse existing base/T1/T2 artifacts and leave A Hub farm separate.
   - Nov3:25 new formal outputs/T1 ready for A (prior15 plus10 Smol merge recipes;8 unique new merge weight sets). Four exact incremental T2 queues prepared; writers pending. FullT2 remains18, T1-or-T2 now43 model IDs,81 ungenerated and42 external T0-only. New queue/166-row coverage:`runs/track-b-formal-smol360-merges-v1/`.
   - Nov2: new3 formal Smol360 T2/k128/full HDF5/freeT1 complete in507.56s;
@@ -272,10 +274,7 @@ works with agent sessions.
   - [x] Six LoRA T1 fingerprints complete at k64/block256; all33 ready real models now have T1. Original six trained/source evidence files unchanged.
   - [x] Two-model T2/k128 pilot complete; expected identities, full HDF5 spectra and free T1 blocks128/256/512 verified.
   - [x] T2/k128 complete for43 real checkpoints (all33 ready plus10 readable formal sources), full HDF5 spectra and T1 blocks128/256/512 verified and published. All54 formal external T0 manifests complete at original pins.
-  - Current formal coverage:18/166 fullT2,43/166 model IDs at T1-or-T2;81 checkpoints not generated and42
-    external pins T0-only. Whole L12 stays in progress. Updated gap ledger:
-    `runs/track-b-formal-smol360-merges-v1/formal-coverage166.csv`.
-    Original43-model delivery/report remains unchanged.
+  - Current formal coverage:87/166 fullT2;37 checkpoints ungenerated and42 original-pin T0-only references. Whole L12 stays in progress. Current additive ledger: `runs/track-b-reconciliation-20261103/formal-coverage166-current.csv`. Earlier delivery ledgers remain historical.
   - B's original cohort has33 unique ready models with T1 k64/block256 (original22 plus11 trained outputs). All33 also have T2/freeT1 at k128;10 additional formal sources have T2/freeT1 at k128. The selector dependency is resolved.
     Incremental T2/k128 handoff and exact launch are in `handoff/track-b-incremental-l12.md`;
     this does not complete whole-lab L12.
@@ -438,7 +437,8 @@ works with agent sessions.
     unavailable references;8 confirmed access denials remain. HTTP307/401 and
     metadata-type failures recovered. No resampling. See the run report and
     STATUS.md; R2 remains partial.
-- [~] **R3 [HUMAN] T2 run** (due Dec 1).
+- [x] **R3 [HUMAN] T2 run** (due Dec 1; finished with explicit coverage gaps).
+  - Nov4 scope closure:284/287 new successes plus6 reused T2 bundles. One NaN source and two original timeout omissions remain. Owner clarified optional retries are unnecessary; both stopped, no workers remain. Preserve the frozen sample/inclusion weights and report missing observations; do not infer complete-pilot claims. Code/cache fixes retained. Current artifact build/query smoke passed; formal calibration remains separate.
   - Nov3 final: all287 new readable jobs terminal,241 complete/46 failed;6 prior T2 bundles reused. All247 available pilot T2 bundles retain full HDF5 and three companions; metadata audit PASS. No active workers. Pinned failure ledger and final report preserve gaps; fix tall-matrix CUDA solver errors before selective retry. Run execution finished; coverage remains partial.
   - Nov3 GPU parent-delta acceleration deployed for queued jobs; only2 F64
     SVDs moved, estimator/precision/layout unchanged. Actual matched case5.11×
@@ -471,6 +471,7 @@ works with agent sessions.
     launchers. Exact checkpoint/508-file inventory:
     `runs/track-a-r3-r6-20261102.rcsy95ap/PAUSE_REPORT.md`.
 - [!] **R5 G0 report and calibration file** (A, due Dec 2).
+  - Nov4 current preflight:87 formal identities have verified manifests and fullT2;79 required measurements remain missing (37 ungenerated,42 T0-only). New exact artifact map includes the earlier3 chain endpoints. No partial null written; current preflight: runs/track-a-r3-r6-20261102.rcsy95ap/recovery-20261104T042716Z/calibration-status-current.json. Original57-mapped snapshot is historical.
   - Nov3: descriptive G0 report now written from completed pilot outputs; formal calibration still blocked. Frozen57/166 manifest mapping is historical, distinct from B current coverage. No partial null substituted; report: runs/track-a-r3-r6-20261102.rcsy95ap/G0-report.md.
   - `write_g0_report` and `write_calibration` at `sketch_k = 64`.
   - These read existing outputs, so agents may run them.
@@ -614,3 +615,5 @@ Each item gets its own plan, which a person reviews before work starts.
   matches). Any hit goes to a person.
 
 - [x] A / R3 runtime optimization (2026-11-03 owner authorization): CUDA delta/sketch/companion computation, child/parent reuse and bounded read-ahead enabled for queued jobs. Merged into Model-Zoo main1dc9da8; final combined1266testsPASS/1skip,38focusedPASS,3readerchecksPASS, freshcore reviewPASS; fair warm-cache local2.13×. Full spectra retained; existingworkerspreserved. Report: runs/track-a-r3-r6-20261102.rcsy95ap/GPU_PIPELINE_REPORT.md.
+
+- [x] A / T2 recovery and B44 continuation:43/45 former failures recovered, final284/287 new Hub successes; owner accepted two optional timeout omissions and stopped extra retries. One NaN source remains. All44 formal deliveries and current artifact/query refresh complete; code/cache repairs merged locally at Model-Zoo `5262c90` (1,280 passed,1 skipped). No measurement workers remain; formal calibration/fullG0 still incomplete.

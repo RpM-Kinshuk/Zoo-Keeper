@@ -518,3 +518,46 @@ formal measured IDs,43 fullT2,37 ungenerated and42 external T0-only. All B
 training/finalization workers have exited; A's Hub farm remains independent.
 No old training/base/T1/T2 experiment needs repeating. Full lab, C blind
 attestation, direction/calibration and G0/R6 remain incomplete.
+
+
+## A consumes the next44,2026-11-04UTC
+
+TrackA now owns the four prepared44 outputdirectories via writer.lock and
+writer-claim.json; do notlaunch their rawargv or the completed25driver. Exact
+queue/CSV/manifest hashes and50local sources audited; no completedT2case
+was repeated. Execution: `runs/track-a-formal44-20261104T042230Z/progress.json`;
+nativeOLMopilot passed92.82s, projecting2910.46s for44<7200. Atmosttwo
+GPUworkers, sharedUUIDlocks/paired<80%checks/24GiBfree,32GiBselectedstaging,
+local-onlySHAverifiedreads, all5outputfiles/fullSVDcounts verified andT2last.
+The producer DAGs remain intact; delta is first-declared-parent only.
+
+Original25 is complete and unchanged. New44 is still running; its per-case
+resultJSONs and finalartifact-index44.csv are the newdeliveries. Global43T2
+coverage remains the last published full snapshot until A verifies/adds these
+new deliveries; do not run refresh-global-coverage-v3.py after that update,
+because it only accounts for the original25 and would drop new T2 credit.
+Wholeformal lab/calibration/G0 remain incomplete;87measuredIDs/166 will be
+87fullT2 only ifall44new deliveries verify.
+
+
+## A delivery complete: all44 fullT2,2026-11-04UTC
+
+All44 cases succeeded. Consume `runs/track-a-formal44-20261104T042230Z/artifact-index44.csv`
+and per-case result JSONs in the four prepared output directories. Each bundle
+contains full spectra, T2/k128 and T1/k128 at128/256/512; all220 files and
+expected eigenvalue counts verified. Four writer locks and private staging are
+released. No prior25/base/T1/T2 checkpoint was repeated.
+
+Current global coverage proof now verifies **87 fullT2 of166**, with87 total
+measured IDs,37 ungenerated and42 external T0-only. Full lab/calibration/G0
+remain incomplete. Producer DAGs and first-parent-only delta scope remain
+explicit; duplicate recipes remain distinct from independent weight sets.
+
+Reproduce the additive coverage proof with `runs/track-a-formal44-20261104T042230Z/refresh-coverage.py`.
+The old v3 refresher excludes these44 deliveries and must not overwrite this
+snapshot. Full report, GPU admissions, native pilot and source/runtime hashes
+are alongside the index. Hub45-case recovery is separate and still active.
+
+## Next required reference handoff (2026-11-04)
+
+A audited all42 original-pin T0-only PolyPythias references. Every root has an explicit upstream SFconvertbot safetensors candidate;38 new headers granted,4 prior scoped T2 aliases reusable. A is running a bounded candidate pilot/batch at the actual conversion pins in separate outputs. No original registry replacement or formal credit yet. Original pins/provenance and 14M seed1/2 development,seed3/4 held-out assignments remain preserved. Exact proposal, candidate manifests and runtime state: `runs/track-a-r5-readiness-20261104T092928Z/`. B's37 ungenerated formal rows remain a separate dependency. Do not refresh the global ledger with candidate credit before an explicit source amendment.
