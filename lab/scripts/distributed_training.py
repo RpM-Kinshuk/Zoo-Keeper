@@ -33,6 +33,15 @@ def _rank_zero_call(operation, rank):
     return result[0]['value']
 
 
+def _profile_path(path, rank):
+    return path if rank == 0 else path.with_name(path.name + '.rank' + str(rank) + '.json')
+
+
+def _check_profile_paths(path, world_size):
+    if any(_profile_path(path, rank).exists() for rank in range(world_size)):
+        raise FileExistsError('use a new profile path for each launch attempt')
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--config', type=Path, required=True)
@@ -57,17 +66,17 @@ def main(argv=None):
     if {'model', 'token_ids', 'reference_model'} & config['inputs'].keys():
         raise ValueError('runtime requires frozen local model/token inputs')
     rank, local_rank, world_size = (int(os.environ[name]) for name in ('RANK', 'LOCAL_RANK', 'WORLD_SIZE'))
-    if world_size != 2 or rank not in (0, 1) or local_rank != rank:
-        raise ValueError('this worker requires two ranks on one node')
+    if world_size not in (2, 4) or not 0 <= rank < world_size or local_rank != rank:
+        raise ValueError('this worker requires two or four ranks on one node')
     import torch
     import torch.distributed as dist
     if not torch.cuda.is_available() or torch.cuda.device_count() != world_size:
-        raise RuntimeError('exactly two externally admitted visible CUDA GPUs are required')
+        raise RuntimeError('exactly ' + str(world_size) + ' externally admitted visible CUDA GPUs are required')
     torch.cuda.set_device(local_rank)
     torch.cuda.reset_peak_memory_stats(local_rank)
     metadata = distributed_metadata(validate_full_recipe(config['recipe'], edge), world_size, 'nccl')
     canonical_recipe = {**config['recipe'], 'distributed': metadata, 'inputs': config['inputs']}
-    profile_path = args.profile if rank == 0 else args.profile.with_name(args.profile.name + '.rank' + str(rank) + '.json')
+    profile_path = _profile_path(args.profile, rank)
     started = time.monotonic()
     phase_started, current_phase = started, 'CHECKING'
     profile = dict(status=current_phase, model_id=canonical_recipe['model_id'],
@@ -104,8 +113,7 @@ def main(argv=None):
         dist.init_process_group('nccl', timeout=timedelta(seconds=180), device_id=torch.device('cuda', local_rank))
         group_initialized = True
         def check_profile():
-            if args.profile.exists() or args.profile.with_name(args.profile.name + '.rank1.json').exists():
-                raise FileExistsError('use a new profile path for each launch attempt')
+            _check_profile_paths(args.profile, world_size)
         _rank_zero_call(check_profile, rank)
         profile_owned = True
         publish()

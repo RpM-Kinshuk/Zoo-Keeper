@@ -229,6 +229,66 @@ def test_real_inputs_accept_equivalent_serialized_config(tmp_path):
                       for name in rec['inputs']}
 
 
+def tied_qwen3_fixture(root):
+    from transformers import Qwen3Config, Qwen3ForCausalLM
+    rec = real_fixture(root)
+    config = Qwen3Config(hidden_size=32, intermediate_size=64, num_hidden_layers=2,
+        num_attention_heads=4, num_key_value_heads=2, head_dim=8, vocab_size=64,
+        max_position_embeddings=32, tie_word_embeddings=True)
+    with torch.random.fork_rng(devices=[]):
+        torch.manual_seed(23)
+        model = Qwen3ForCausalLM(config)
+        model.tie_weights()
+    state = {name: tensor.detach().clone() for name, tensor in model.state_dict().items()}
+    assert torch.equal(state['lm_head.weight'], state['model.embed_tokens.weight'])
+    for name in rec['inputs']:
+        path = root / name
+        config.save_pretrained(path)
+        selected = state if name == 'base' else {k: v for k, v in state.items() if k != 'lm_head.weight'}
+        save_file(selected, str(path / 'model.safetensors'))
+        value = json.loads((path / 'config.json').read_text())
+        rec['inputs'][name].update(config_sha256=content_hash(value),
+            config_file_sha256=hashlib.sha256((path / 'config.json').read_bytes()).hexdigest(),
+            weight_sha256={'model.safetensors': hashlib.sha256((path / 'model.safetensors').read_bytes()).hexdigest()})
+    return rec
+
+
+def test_real_inputs_accept_native_declared_tied_alias_omission(tmp_path):
+    from lab.merges import _checked_inputs
+    rec = tied_qwen3_fixture(tmp_path)
+    before = {str(p.relative_to(tmp_path)): p.read_bytes()
+              for p in tmp_path.rglob('*') if p.is_file()}
+    assert set(_checked_inputs(rec, tmp_path)) == {'a', 'b', 'base'}
+    assert before == {str(p.relative_to(tmp_path)): p.read_bytes()
+                      for p in tmp_path.rglob('*') if p.is_file()}
+
+
+@pytest.mark.parametrize('mutation', ['conflicting_alias', 'missing_nonalias', 'wrong_nonalias_shape', 'undeclared_tie'])
+def test_real_inputs_reject_invalid_effective_tied_parameters(tmp_path, mutation):
+    from lab.merges import _checked_inputs
+    rec = tied_qwen3_fixture(tmp_path)
+    name = 'base' if mutation == 'conflicting_alias' else 'a'
+    path = tmp_path / name / 'model.safetensors'
+    state = load_file(str(path))
+    if mutation == 'conflicting_alias':
+        state['lm_head.weight'][0, 0] += 1
+    elif mutation == 'missing_nonalias':
+        del state['model.layers.0.self_attn.q_proj.weight']
+    elif mutation == 'wrong_nonalias_shape':
+        state['model.layers.0.self_attn.q_proj.weight'] = torch.zeros(1, 1)
+    else:
+        for label in rec['inputs']:
+            cfgpath = tmp_path / label / 'config.json'
+            cfg = json.loads(cfgpath.read_text()); cfg['tie_word_embeddings'] = False
+            cfgpath.write_text(json.dumps(cfg))
+            rec['inputs'][label].update(config_sha256=content_hash(cfg),
+                config_file_sha256=hashlib.sha256(cfgpath.read_bytes()).hexdigest())
+    save_file(state, str(path))
+    rec['inputs'][name]['weight_sha256']['model.safetensors'] = hashlib.sha256(path.read_bytes()).hexdigest()
+    with pytest.raises(ValueError, match='conflicting tied|effective parameter|tensor names or shapes'):
+        _checked_inputs(rec, tmp_path)
+
+
 @pytest.mark.parametrize('change', ['rope', 'heads', 'bias'])
 def test_real_inputs_reject_architecture_changes_after_normalization(tmp_path, change):
     from lab.merges import _checked_inputs
@@ -266,16 +326,25 @@ def test_real_inputs_require_completed_provenance(tmp_path, mutation, monkeypatc
         run_merge(rec, tmp_path, tmp_path/'out')
 
 
-def test_real_cli_uses_transient_argument_array(tmp_path, monkeypatch):
+@pytest.mark.parametrize('compute_device', [None, 'cpu', 'cuda:0'])
+def test_real_cli_uses_transient_argument_array(tmp_path, monkeypatch, compute_device):
     rec = real_fixture(tmp_path)
+    if compute_device is not None:
+        rec['compute_device'] = compute_device
     called = []
     def runner(argv, **kwargs):
         called.append(argv)
         assert isinstance(argv, list) and kwargs.get('shell', False) is False
         cfg = yaml.safe_load(Path(argv[3]).read_text())
         assert 'base_model' not in cfg
+        assert 'tokenizer_source' not in cfg and 'tokenizer' not in cfg
+        assert '--no-copy-tokenizer' in argv
         assert cfg['models'][0]['model'] == str(tmp_path/'a')
         assert kwargs['env']['HF_HUB_OFFLINE'] == '1'
+        if compute_device is None:
+            assert '--device' not in argv
+        else:
+            assert argv[argv.index('--device') + 1] == compute_device
         target = Path(argv[4])
         save_file({'model.layers.0.weight':torch.ones(4,4)}, str(target/'model.safetensors'))
         (target/'config.json').write_text(json.dumps({'_name_or_path':str(tmp_path/'a'),'model_type':'llama'}))
@@ -287,15 +356,30 @@ def test_real_cli_uses_transient_argument_array(tmp_path, monkeypatch):
     assert not list((tmp_path/'out').glob('*.yml'))
 
 
-@pytest.mark.parametrize('unsafe_file', [None, 'config.json', 'tokenizer.json'])
-def test_merge_tokenizer_rules_are_text_and_metadata_paths_stay_rejected(tmp_path, monkeypatch, unsafe_file):
+@pytest.mark.parametrize('device', ['auto', 'cuda:1', 'unallocated'])
+def test_merge_device_must_be_an_explicit_admitted_local_device(tmp_path, device):
+    rec = {**real_fixture(tmp_path), 'compute_device': device}
+    with pytest.raises(ValueError, match='compute_device'):
+        prepare_recipe(rec)
+
+
+@pytest.mark.parametrize('unsafe_file', [None, 'config.json', 'tokenizer.json', 'tokenizer_config.json'])
+@pytest.mark.parametrize('template_kind', ['string', 'named_list', 'named_dict'])
+def test_merge_tokenizer_rules_are_text_and_metadata_paths_stay_rejected(tmp_path, monkeypatch, unsafe_file, template_kind):
     rec = real_fixture(tmp_path)
     tokenizer = {'model': {'type': 'BPE', 'vocab': {'/': 0, '\\': 1},
-                          'merges': ['/ /', 'Ġ \\', '[: ,', '~ ~', ['/', '/']]}}
+                          'merges': ['/ /', 'Ġ \\', '[: ,', '~ ~', ['/', '/']]},
+                 'pre_tokenizer': {'type': 'Sequence', 'pretokenizers': [
+                     {'type': 'Split', 'pattern': {'Regex': r'\p{L}+[\r\n]*'}, 'behavior': 'Isolated'}]}}
+    template = r"{{ 'literal\n' }}"
+    chat = template if template_kind == 'string' else ([{'name': 'default', 'template': template}]
+           if template_kind == 'named_list' else {'default': template})
+    tokenizer_config = {'chat_template': chat}
     def runner(argv, **kwargs):
         target = Path(argv[4])
         save_file({'model.layers.0.weight': torch.ones(4, 4)}, str(target / 'model.safetensors'))
-        values = {'config.json': {'model_type': 'llama'}, 'tokenizer.json': tokenizer}
+        values = {'config.json': {'model_type': 'llama'}, 'tokenizer.json': tokenizer,
+                  'tokenizer_config.json': tokenizer_config}
         if unsafe_file:
             values[unsafe_file] = {**values[unsafe_file], 'cache_dir': '/private/runtime/cache'}
         for name, value in values.items():
@@ -308,3 +392,58 @@ def test_merge_tokenizer_rules_are_text_and_metadata_paths_stay_rejected(tmp_pat
     else:
         run_merge(rec, tmp_path, output)
         assert json.loads((output / 'tokenizer.json').read_text()) == tokenizer
+        assert json.loads((output / 'tokenizer_config.json').read_text()) == tokenizer_config
+
+
+@pytest.mark.parametrize('literal_field', ['pattern', 'chat_template'])
+def test_tokenizer_literal_fields_cannot_hide_path_metadata(tmp_path, monkeypatch, literal_field):
+    rec = real_fixture(tmp_path)
+    def runner(argv, **kwargs):
+        target = Path(argv[4])
+        save_file({'model.layers.0.weight': torch.ones(4, 4)}, str(target / 'model.safetensors'))
+        if literal_field == 'pattern':
+            filename = 'tokenizer.json'
+            value = {'pre_tokenizer': {'type': 'Split', 'pattern': {'Regex': 'plain', 'cache_dir': '/private/cache'}}}
+        else:
+            filename = 'tokenizer_config.json'
+            value = {'chat_template': [{'name': 'default', 'template': 'plain', 'cache_dir': '/private/cache'}]}
+        (target / filename).write_text(json.dumps(value))
+    monkeypatch.setattr('subprocess.run', runner)
+    with pytest.raises(ValueError):
+        run_merge(rec, tmp_path, tmp_path / 'out')
+
+
+@pytest.mark.parametrize('producer_tokenizer', ['missing', 'empty_default'])
+def test_real_merge_packages_reference_tokenizer_without_changing_weights(tmp_path, monkeypatch, producer_tokenizer):
+    from tokenizers import Tokenizer
+    from tokenizers.models import WordLevel
+    from tokenizers.pre_tokenizers import Whitespace
+    from transformers import AutoTokenizer, PreTrainedTokenizerFast
+    rec = real_fixture(tmp_path)
+    native = Tokenizer(WordLevel({'[UNK]': 0, 'A': 1, 'small': 2}, unk_token='[UNK]'))
+    native.pre_tokenizer = Whitespace()
+    tokenizer = PreTrainedTokenizerFast(tokenizer_object=native, unk_token='[UNK]')
+    tokenizer.save_pretrained(tmp_path / 'base')
+    assert not (tmp_path / 'a' / 'tokenizer.json').exists()
+    assert not (tmp_path / 'b' / 'tokenizer.json').exists()
+    expected = {p.name: json.loads(p.read_text()) for p in (tmp_path / 'base').glob('*token*.json')}
+    merged = torch.arange(16, dtype=torch.float32).reshape(4, 4)
+    produced_weights = []
+    def runner(argv, **kwargs):
+        target = Path(argv[4])
+        save_file({'model.layers.0.weight': merged}, str(target / 'model.safetensors'))
+        produced_weights.append((target / 'model.safetensors').read_bytes())
+        (target / 'config.json').write_text(json.dumps({'model_type': 'llama'}))
+        if producer_tokenizer == 'empty_default':
+            (target / 'tokenizer.json').write_text(json.dumps({'model': {'type': 'BPE', 'vocab': {}, 'merges': []}}))
+            (target / 'tokenizer_config.json').write_text(json.dumps({'tokenizer_class': 'PreTrainedTokenizerFast'}))
+    monkeypatch.setattr('subprocess.run', runner)
+    output = tmp_path / 'out'
+    run_merge(rec, tmp_path, output)
+    assert (output / 'model.safetensors').read_bytes() == produced_weights[0]
+    assert torch.equal(load_file(str(output / 'model.safetensors'))['model.layers.0.weight'], merged)
+    for name, value in expected.items():
+        assert (output / name).exists(), name
+        assert json.loads((output / name).read_text()) == value
+    loaded = AutoTokenizer.from_pretrained(output, local_files_only=True, trust_remote_code=False)
+    assert loaded.encode('A small', add_special_tokens=False) == [1, 2]

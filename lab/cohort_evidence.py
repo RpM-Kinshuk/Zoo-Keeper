@@ -178,7 +178,7 @@ def measure_ready(ready_path, *, data_root, run_root, model_ids=None, max_second
             if len(parent_ids) > 1:
                 raise ValueError('incremental pair extraction currently requires one parent')
             before = reader.tensor_bytes.copy()
-            fingerprint_path = fingerprint_model(manifest, reader, 't1', run/'evidence/t1',
+            fingerprint_path = fingerprint_model(manifest, reader, 'row_blocks', run/'evidence/row_blocks',
                 parent=manifests[parent_ids[0]] if parent_ids else None,
                 sketch_k=64, all_experts=True, read_threads=4)
             fp = load_fingerprint(fingerprint_path)

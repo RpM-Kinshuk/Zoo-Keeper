@@ -46,6 +46,8 @@ def prepare_recipe(recipe):
     parents = recipe['parents']
     if recipe.get('edge_type') != 'merge' or recipe.get('method') not in METHODS:
         raise ValueError('unsupported merge recipe')
+    if recipe.get('compute_device', 'cpu') not in {'cpu', 'cuda:0'}:
+        raise ValueError('compute_device must be cpu or an externally admitted cuda:0')
     if not 2 <= len(parents) <= 4 or len(set(parents)) != len(parents):
         raise ValueError('merge requires two to four distinct parents')
     for name in [*parents, recipe['reference']]:
@@ -116,6 +118,48 @@ def _architecture_config(config):
     model_type = fields.pop('model_type')
     normalized = AutoConfig.for_model(model_type, **fields).to_dict()
     return {k: v for k, v in normalized.items() if k not in ignored}
+
+
+def _effective_shape_maps(paths, config, shapes):
+    """Compare native parameters while accounting for declared tied aliases."""
+    import torch
+    from safetensors import safe_open
+    from transformers import AutoConfig, AutoModelForCausalLM
+    fields = dict(config)
+    model_type = fields.pop('model_type')
+    model_config = AutoConfig.for_model(model_type, **fields)
+    with torch.device('meta'):
+        skeleton = AutoModelForCausalLM.from_config(model_config, trust_remote_code=False)
+        skeleton.tie_weights()
+    groups = {}
+    for name, parameter in skeleton.named_parameters(remove_duplicate=False):
+        groups.setdefault(id(parameter), []).append(name)
+    expected = {name: tuple(tensor.shape) for name, tensor in skeleton.state_dict().items()}
+    aliases = {name: min(names) for names in groups.values() for name in names}
+    canonical = lambda shape: {aliases.get(name, name): dims for name, dims in shape.items()}
+    required = canonical(expected)
+    results = []
+    for path, shape in zip(paths, shapes):
+        if any(name not in expected or dims != expected[name] for name, dims in shape.items()):
+            raise ValueError('incompatible parent tensor names or shapes')
+        effective = canonical(shape)
+        if effective != required:
+            raise ValueError('missing effective parameter or incompatible tensor names or shapes')
+        location = {}
+        for file in sorted(path.glob('*.safetensors')):
+            with safe_open(file, framework='pt', device='cpu') as stream:
+                location.update({name: file for name in stream.keys()})
+        def tensor(name):
+            with safe_open(location[name], framework='pt', device='cpu') as stream:
+                return stream.get_tensor(name)
+        for names in groups.values():
+            present = [name for name in names if name in shape]
+            if len(present) > 1:
+                first = tensor(present[0])
+                if any(not torch.equal(first, tensor(name)) for name in present[1:]):
+                    raise ValueError('conflicting tied effective weights: ' + present[0])
+        results.append(effective)
+    return results
 
 
 def _checked_inputs(recipe, root):
@@ -198,15 +242,66 @@ def _checked_inputs(recipe, root):
         paths[name] = path
         shapes.append(shape)
         configs.append({k:v for k,v in config.items() if k not in {'_name_or_path','torch_dtype','dtype','architectures','transformers_version'}})
-    if any(shape != shapes[0] for shape in shapes[1:]):
-        raise ValueError('incompatible parent tensor names or shapes')
     if any(config != configs[0] for config in configs[1:]):
         # Identical dictionaries already satisfy the existing contract, including
         # the deliberately minimal matrix fixtures. Normalize only export drift.
         configs = [_architecture_config(config) for config in configs]
         if any(config != configs[0] for config in configs[1:]):
             raise ValueError('incompatible parent architecture configs')
+    if any(shape != shapes[0] for shape in shapes[1:]):
+        # Preserve the raw-equal path, including minimal matrix fixtures. Only
+        # native configurations explicitly declaring ties need semantic lookup.
+        if not all(config.get('tie_word_embeddings') is True for config in configs):
+            raise ValueError('incompatible parent tensor names or shapes')
+        shapes = _effective_shape_maps(list(paths.values()), configs[0], shapes)
+        if any(shape != shapes[0] for shape in shapes[1:]):
+            raise ValueError('incompatible parent tensor names or shapes')
     return paths
+
+
+def _json_validation_view(filename, value):
+    """Exclude typed tokenizer literals from path checks, retaining metadata."""
+    if not isinstance(value, dict):
+        return value
+    checked = dict(value)
+    if filename == 'tokenizer.json':
+        if isinstance(value.get('model'), dict) and 'merges' in value['model']:
+            rules = value['model']['merges']
+            if not isinstance(rules, list) or not all(
+                    isinstance(rule, str) or (isinstance(rule, list) and len(rule) == 2
+                        and all(isinstance(token, str) for token in rule)) for rule in rules):
+                raise ValueError('tokenizer BPE merges must be token strings or pairs')
+            checked['model'] = {k: v for k, v in value['model'].items() if k != 'merges'}
+        def patterns(node):
+            if isinstance(node, list):
+                return [patterns(item) for item in node]
+            if not isinstance(node, dict):
+                return node
+            result = {k: patterns(v) for k, v in node.items()}
+            if node.get('type') in {'Split', 'Replace'} and 'pattern' in node:
+                pattern = node['pattern']
+                if (not isinstance(pattern, dict) or len(pattern) != 1
+                        or next(iter(pattern)) not in {'Regex', 'String'}
+                        or not isinstance(next(iter(pattern.values())), str)):
+                    raise ValueError('tokenizer pattern must be a literal Regex or String')
+                result['pattern'] = {key: '' for key in pattern}
+            return result
+        for name in ('pre_tokenizer', 'normalizer', 'decoder', 'post_processor'):
+            if name in checked:
+                checked[name] = patterns(checked[name])
+    elif filename == 'tokenizer_config.json' and value.get('chat_template') is not None:
+        template = value['chat_template']
+        if isinstance(template, str):
+            checked['chat_template'] = ''
+        elif isinstance(template, dict) and template and all(isinstance(v, str) for v in template.values()):
+            checked['chat_template'] = {name: '' for name in template}
+        elif isinstance(template, list) and template and all(
+                isinstance(item, dict) and set(item) == {'name', 'template'}
+                and isinstance(item['name'], str) and isinstance(item['template'], str) for item in template):
+            checked['chat_template'] = [{**item, 'template': ''} for item in template]
+        else:
+            raise ValueError('chat_template must be a string or named templates')
+    return checked
 
 
 def merge_states(recipe, parents, base):
@@ -279,11 +374,22 @@ def run_merge(recipe: dict, lab_root: Path, output: Path) -> None:
             subprocess.run([sys.executable, '-m', 'mergekit.scripts.run_yaml', str(invocation), str(produced),
                             '--random-seed', str(recipe.get('sparsification_seed', recipe['seed'])),
                             '--safe-serialization', '--no-trust-remote-code', '--no-lazy-unpickle',
-                            '--no-write-model-card', '--num-threads', '1',
-                            *(['--no-copy-tokenizer'] if recipe.get('synthetic_fixture') else [])],
+                            '--no-write-model-card', '--num-threads', '1', '--no-copy-tokenizer',
+                            *(['--device', recipe['compute_device']] if 'compute_device' in recipe else [])],
                            check=True, env=_offline_env(), capture_output=True, text=True)
         if not list(produced.glob('*.safetensors')):
             raise ValueError('mergekit produced no safe checkpoint')
+        if not recipe.get('synthetic_fixture'):
+            # Tokenizer packaging happens after mergekit's weight math. Choosing
+            # a tokenizer in its YAML would instead enable vocabulary remapping.
+            reference = paths[recipe['reference']]
+            for name in ('tokenizer.json', 'tokenizer_config.json', 'special_tokens_map.json',
+                         'tokenizer.model', 'added_tokens.json', 'vocab.json', 'vocab.txt', 'merges.txt'):
+                source, target = reference/name, produced/name
+                if source.is_file() and not source.is_symlink():
+                    if target.is_symlink():
+                        raise ValueError('unsafe mergekit output')
+                    shutil.copyfile(source, target)
         output.mkdir(parents=True, exist_ok=True)
         # mergekit's generated YAML/card may contain runtime paths. Keep only safe
         # loadable checkpoint files; preserve the portable source in provenance.
@@ -296,19 +402,7 @@ def run_merge(recipe: dict, lab_root: Path, output: Path) -> None:
                     for key in ('_name_or_path', 'name_or_path'):
                         if key in value:
                             value[key] = ''
-                checked = value
-                if (file.name == 'tokenizer.json' and isinstance(value, dict)
-                        and isinstance(value.get('model'), dict) and 'merges' in value['model']):
-                    rules = value['model']['merges']
-                    valid = isinstance(rules, list) and all(
-                        isinstance(rule, str) or (isinstance(rule, list) and len(rule) == 2
-                            and all(isinstance(token, str) for token in rule)) for rule in rules)
-                    if not valid:
-                        raise ValueError('tokenizer BPE merges must be token strings or pairs')
-                    # BPE rules contain literal slash/backslash tokens. Validate
-                    # all metadata, retaining these lexical rules unchanged.
-                    checked = {**value, 'model': {k:v for k,v in value['model'].items() if k != 'merges'}}
-                _portable(checked)
+                _portable(_json_validation_view(file.name, value))
                 atomic_json(output/file.name, value)
             elif file.is_file() and file.suffix in {'.safetensors','.model','.txt'}:
                 shutil.copyfile(file, output/file.name)

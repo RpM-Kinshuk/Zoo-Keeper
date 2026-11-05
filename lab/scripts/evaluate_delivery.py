@@ -9,6 +9,7 @@ import importlib.metadata
 import importlib.util
 import json
 from pathlib import Path
+import subprocess
 import tempfile
 import time
 
@@ -17,7 +18,10 @@ import pandas as pd
 from scipy.stats import spearmanr
 
 from evidence.compare import pair_similarity
-from evidence.fingerprint import EVIDENCE_VERSION, load_fingerprint
+from evidence import READABLE_EVIDENCE_VERSIONS
+from evidence.compatibility import canonical_mode, companion_spectra_path
+from evidence.fingerprint import load_fingerprint
+from safetensors import safe_open
 from evidence.sketch import SKETCH_SEED
 from lab.artifacts import atomic_json, content_hash
 from lab.chains import chain_paths
@@ -36,14 +40,74 @@ from zoo.tables import build_tables
 from zoo.retrieval import build_retrieval
 
 
-MODES = {'t1-b128-k128': ('t1_b128', 128), 't1-b256-k64': ('t1_b256', 64),
-         't1-b256-k128': ('t1_b256', 128), 't1-b512-k128': ('t1_b512', 128),
-         't2-k64': ('fingerprint_t2', 64), 't2-k128': ('fingerprint_t2', 128)}
+MODES = {'row-blocks-b128-k128': ('row_blocks_128', 128),
+         'row-blocks-b256-k64': ('row_blocks_256', 64),
+         'row-blocks-b256-k128': ('row_blocks_256', 128),
+         'row-blocks-b512-k128': ('row_blocks_512', 128),
+         'full-weights-k64': ('full_weight_fingerprint', 64),
+         'full-weights-k128': ('full_weight_fingerprint', 128)}
 COHORTS = ('track-b-real-cohort-v1', 'track-b-safe-control-cohort-v1',
            'track-b-training-gpu-v1')
-MEASUREMENTS = {'original': ('t1', 256, 64), 't1_b128': ('t1b128', 128, 128),
-                't1_b256': ('t1', 256, 128), 't1_b512': ('t1b512', 512, 128),
-                'fingerprint_t2': ('t2', 256, 128)}
+MEASUREMENTS = {'original': ('row_blocks', 256, 64),
+                'row_blocks_128': ('row_blocks_128', 128, 128),
+                'row_blocks_256': ('row_blocks', 256, 128),
+                'row_blocks_512': ('row_blocks_512', 512, 128),
+                'full_weight_fingerprint': ('full_weights', 256, 128)}
+DELIVERY_FIELDS = ('manifest', 'full_weight_fingerprint', 'full_weight_spectra',
+                   'row_blocks_128', 'row_blocks_256', 'row_blocks_512')
+
+
+def normalize_delivery_entry(entry):
+    """Adapt legacy input columns without changing the source index or files."""
+    result = dict(entry)
+    for old, new in (('fingerprint_t2', 'full_weight_fingerprint'),
+                     ('spectra_h5', 'full_weight_spectra'),
+                     ('t1_b128', 'row_blocks_128'), ('t1_b256', 'row_blocks_256'),
+                     ('t1_b512', 'row_blocks_512')):
+        if old in result:
+            if new in result and result[new] != result[old]:
+                raise ValueError('Conflicting legacy and descriptive delivery columns')
+            result[new] = result.pop(old)
+    if Path(result['full_weight_spectra']) != companion_spectra_path(result['full_weight_fingerprint']):
+        raise ValueError('full-weight sidecar differs from bound delivery')
+    return result
+
+
+def read_chain_delivery(directory, bind):
+    """Read either chain index generation with its frozen source records."""
+    directory = Path(directory)
+    index = directory/'artifact-index.csv'
+    if not index.exists():
+        index = directory/'artifact-index3.csv'
+    if not index.exists():
+        return None
+    prefix = 'full-weights' if (directory/'full-weights-freeze.json').exists() else 't2'
+    bind(directory/(prefix+'-freeze.json'))
+    bind(directory/(prefix+'-progress.json'))
+    return pd.read_csv(bind(index), keep_default_na=False)
+
+
+def freeze_measurement(path, *, key, measurement):
+    """Freeze the readable source version, never the current writer default."""
+    with safe_open(path, framework='numpy') as handle:
+        meta = handle.metadata()
+    version = meta.get('evidence_version')
+    if version not in READABLE_EVIDENCE_VERSIONS:
+        raise ValueError('unsupported source evidence version')
+    mode, block, size = MEASUREMENTS[measurement]
+    contract = dict(tier=mode, row_block=block, sketch_k=size,
+                    sketch_seed=SKETCH_SEED, evidence_version=version)
+    if meta.get('repo_id', '')+'@'+meta.get('revision', '') != key:
+        raise ValueError('fingerprint identity differs from frozen delivery')
+    actual = dict(tier=canonical_mode(meta.get('tier')), evidence_version=version,
+                  **{f: json.loads(meta.get(f, 'null')) for f in ('row_block', 'sketch_k', 'sketch_seed')})
+    if actual != contract:
+        raise ValueError('fingerprint measurement settings differ from declared mode')
+    return contract
+
+
+def validate_frozen_measurement(fp, *, key, contract):
+    validate_measurement(fp, key=key, **contract)
 
 
 def scoped_tables(rows, identities):
@@ -77,6 +141,8 @@ def universe_for(ids, rows, keys, *, independent=False):
 
 
 def similarity_predictions(ids, keys, fingerprints, k, mode):
+    if len({fingerprints[name].meta.get('evidence_version') for name in ids}) != 1:
+        raise ValueError('cannot compare different source evidence versions')
     predictions = []
     for query in ids:
         for candidate in ids:
@@ -131,10 +197,13 @@ def run(root, delivery, out, chain_run=None):
             pin = pins[row['original_model_id']]
             if pin.get('reference_type') != 'polypythias' or pin['repo_id'] != row['repo_id'] or pin['seed'] != row['seed']:
                 raise ValueError('independent control lacks original published seed evidence')
-    a_index = pd.read_csv(bind(delivery/'artifact-index43.csv'), keep_default_na=False)
+    index_path = delivery/'artifact-index.csv'
+    if not index_path.exists():
+        index_path = delivery/'artifact-index43.csv'
+    a_index = pd.read_csv(bind(index_path), keep_default_na=False)
     if a_index.model_id.duplicated().any() or a_index.model_key.duplicated().any():
         raise ValueError('duplicate delivery identities')
-    entries = {r['model_id']: r for r in a_index.to_dict('records') if r['model_id'] in rows}
+    entries = {r['model_id']: normalize_delivery_entry(r) for r in a_index.to_dict('records') if r['model_id'] in rows}
     if set(entries) != set(rows):
         raise ValueError('delivery does not cover the frozen ready cohort')
     delivery_ids = set(entries)
@@ -144,10 +213,7 @@ def run(root, delivery, out, chain_run=None):
         expected_parents = [old_progress[n]['key'] for n in rows[name].get('parents', [])]
         if sorted(json.loads(entry['parent_keys'])) != sorted(expected_parents) or entry['root_id'] != rows[name]['root_id']:
             raise ValueError('delivery and verified construction parents/root differ')
-        suffix = '.t2.fingerprint.safetensors'
-        if not entry['fingerprint_t2'].endswith(suffix) or entry['spectra_h5'] != entry['fingerprint_t2'][:-len(suffix)]+'.t2.spectra.h5':
-            raise ValueError('T2 sidecar differs from bound delivery')
-        for field in ('manifest', 'fingerprint_t2', 'spectra_h5', 't1_b128', 't1_b256', 't1_b512'):
+        for field in DELIVERY_FIELDS:
             bind(entry[field])
         item = old_progress[name]
         bind(item['manifest'], item['manifest_sha256'])
@@ -168,9 +234,8 @@ def run(root, delivery, out, chain_run=None):
         if not set(chain_ids) <= set(old_progress):
             raise ValueError('chain outputs lack completed evidence')
         bind(chain_run/'frozen.json')
-        if (chain_run/'artifact-index3.csv').exists():
-            bind(chain_run/'t2-freeze.json'); bind(chain_run/'t2-progress.json')
-            extra = pd.read_csv(bind(chain_run/'artifact-index3.csv'), keep_default_na=False)
+        extra = read_chain_delivery(chain_run, bind)
+        if extra is not None:
             if extra.model_id.duplicated().any() or set(extra.model_id) != set(chain_ids):
                 raise ValueError('chain T2 index differs from the new ready endpoints')
             for entry in extra.to_dict('records'):
@@ -180,14 +245,23 @@ def run(root, delivery, out, chain_run=None):
                 expected_parents = [old_progress[n]['key'] for n in rows[name]['parents']]
                 if sorted(json.loads(entry['parent_keys'])) != sorted(expected_parents):
                     raise ValueError('chain T2 construction parent differs')
-                suffix = '.t2.fingerprint.safetensors'
-                if not entry['fingerprint_t2'].endswith(suffix) or entry['spectra_h5'] != entry['fingerprint_t2'][:-len(suffix)]+'.t2.spectra.h5':
-                    raise ValueError('chain T2 sidecar differs from bound index')
-                for field in ('manifest', 'fingerprint_t2', 'spectra_h5', 't1_b128', 't1_b256', 't1_b512'):
+                entry = normalize_delivery_entry(entry)
+                for field in DELIVERY_FIELDS:
                     bind(entry[field])
                 entries[name] = entry
     keys = {name: item['key'] for name, item in old_progress.items()}
     manifests = {name: json.loads((root/item['manifest']).read_text()) for name,item in old_progress.items()}
+    measurement_sources = {}
+    for name in rows:
+        sources = {'original': old_progress[name]['fingerprint']}
+        if name in entries:
+            sources.update({field: entries[name][field] for field in MEASUREMENTS if field != 'original'})
+        for measurement, relative in sources.items():
+            path = bind(relative)
+            contract = freeze_measurement(path, key=keys[name], measurement=measurement)
+            if relative in measurement_sources and measurement_sources[relative] != contract:
+                raise ValueError('conflicting frozen measurement contracts')
+            measurement_sources[relative] = contract
     models, edges = scoped_tables(rows, keys)
     training_ids = sorted(name for name in rows if name == 'smol-135' or name.startswith('smol-135-gpu-v1-'))
     training_index = training_input_index(training_ids, keys, old_progress, manifests)
@@ -199,12 +273,17 @@ def run(root, delivery, out, chain_run=None):
     runtime.update({name: importlib.metadata.version(name)
                     for name in ('scipy', 'safetensors', 'h5py', 'networkx')})
     upstream_sources = {name: hashlib.sha256(Path(importlib.util.find_spec(name).origin).read_bytes()).hexdigest()
-                        for name in ('evidence.fingerprint', 'evidence.compare', 'evidence.sketch',
+                        for name in ('evidence', 'evidence.fingerprint', 'evidence.compatibility', 'evidence.compare', 'evidence.sketch',
                                      'zoo.schema', 'zoo.tables', 'zoo.retrieval')}
-    freeze = dict(schema_version='1', artifacts=proofs, sources={str(p.relative_to(Path(__file__).parents[2])):
+    source_revisions = {name: subprocess.check_output(
+        ['git', '-C', str(path), 'rev-parse', 'HEAD'], text=True).strip()
+        for name, path in (('zoo_keeper', repository),
+                           ('model_zoo', Path(importlib.util.find_spec('evidence').origin).parents[1]))}
+    freeze = dict(schema_version='2', artifacts=proofs, sources={str(p.relative_to(Path(__file__).parents[2])):
         hashlib.sha256(p.read_bytes()).hexdigest() for p in source_files}, development_threshold=.75,
         scorer_components=scorer_components, runtime_identity=runtime, upstream_sources=upstream_sources,
         training_input_index=training_index, measurement_contract=MEASUREMENTS,
+        measurement_sources=measurement_sources, delivery_inputs=entries, source_revisions=source_revisions,
         threshold_origin='unchanged predeclared descriptive threshold; no tuning',
         root_split=controls['root_split'], modes=MODES, sketch_distance='mean squared Frobenius over one common view set',
         quartet_tolerances=[1e-6, 1e-8, 1e-10], chain_models=chain_ids,
@@ -217,15 +296,13 @@ def run(root, delivery, out, chain_run=None):
             fp = load_fingerprint(root/relative)
             fp_cache[relative] = fp
         fp = fp_cache[relative]
-        tier, block, size = MEASUREMENTS[measurement]
-        validate_measurement(fp, key=keys[name], tier=tier, row_block=block, sketch_k=size,
-                             sketch_seed=SKETCH_SEED, evidence_version=EVIDENCE_VERSION)
+        validate_frozen_measurement(fp, key=keys[name], contract=measurement_sources[relative])
         return fp
     models.to_csv(out/'models.csv', index=False); edges.to_csv(out/'edges.csv', index=False)
     started = time.monotonic()
     training_run = root/'runs/track-b-training-gpu-v1'
     atomic_json(out/'training-12/input-index.json', training_index)
-    records = load_records(out/'training-12/input-index.json', training_run/'evidence/t1', data_root=root)
+    records = load_records(out/'training-12/input-index.json', training_run/'evidence', data_root=root)
     if {record.key for record in records} != {keys[n] for n in training_ids}:
         raise ValueError('loaded training universe differs from frozen entries')
     for record in records:
@@ -233,8 +310,8 @@ def run(root, delivery, out, chain_run=None):
         for field in ('manifest', 'fingerprint'):
             if record.meta[field+'_sha256'] != proofs[item[field]]['sha256']:
                 raise ValueError('loaded training artifact differs from freeze')
-        validate_measurement(record.meta['upstream_fingerprint'], key=record.key, tier='t1',
-            row_block=256, sketch_k=64, sketch_seed=SKETCH_SEED, evidence_version=EVIDENCE_VERSION)
+        validate_frozen_measurement(record.meta['upstream_fingerprint'], key=record.key,
+            contract=measurement_sources[item['fingerprint']])
     # The real engine needs the same upstream retrieval index as its CLI.
     # Build it from the explicit files only, never a live-directory scan.
     private_manifests = out/'training-12/input-manifests'
@@ -282,7 +359,7 @@ def run(root, delivery, out, chain_run=None):
             atomic_json(directory/'metrics.json', result)
             subset.to_parquet(directory/'predictions.parquet', index=False)
             universe.to_parquet(directory/'universe.parquet', index=False)
-    left, right = similarity_frames['t1-b256-k64'], similarity_frames['t2-k64']
+    left, right = similarity_frames['row-blocks-b256-k64'], similarity_frames['full-weights-k64']
     joined = left.merge(right, on=['child_key', 'parent_key'], suffixes=('_t1', '_t2'))
     # Same partition only; never borrow a test root for a development reference.
     split_by_key = {keys[n]: controls['root_split'][rows[n]['root_id']] for n in control_ids}
@@ -296,21 +373,21 @@ def run(root, delivery, out, chain_run=None):
     related = joined[[roots_by_key[q] == roots_by_key[c] for q,c in zip(joined.child_key,joined.parent_key)]]
     comparison = dict(n_pairs=len(joined), all_pairs_spearman=correlation(joined),
         n_related_pairs=len(related), related_pair_spearman=correlation(related),
-        heldout_same_root_auroc_t1=results['t1-b256-k64']['test']['tiers']['verified_hub']['same_root']['auroc'],
-        heldout_same_root_auroc_t2=results['t2-k64']['test']['tiers']['verified_hub']['same_root']['auroc'],
+        heldout_same_root_auroc_row_blocks=results['row-blocks-b256-k64']['test']['tiers']['verified_hub']['same_root']['auroc'],
+        heldout_same_root_auroc_full_weights=results['full-weights-k64']['test']['tiers']['verified_hub']['same_root']['auroc'],
         status='SMALL_SCOPE_DIAGNOSTIC', full_g0='NOT_EVALUABLE')
     trees = {}
     for root_id in ('smol-135', 'olmo-1b'):
         base_ids = sorted(n for n,r in rows.items() if r['root_id'] == root_id and n in delivery_ids)
-        modes = {'original-t1-k64': {n: read_fp(n, old_progress[n]['fingerprint']) for n in base_ids},
-                 'full-t2-k128': {n: read_fp(n, entries[n]['fingerprint_t2'], 'fingerprint_t2') for n in base_ids}}
+        modes = {'original-row-blocks-k64': {n: read_fp(n, old_progress[n]['fingerprint']) for n in base_ids},
+                 'full-weights-k128': {n: read_fp(n, entries[n]['full_weight_fingerprint'], 'full_weight_fingerprint') for n in base_ids}}
         if root_id == 'smol-135' and chain_ids:
             ids = sorted(n for n,r in rows.items() if r['root_id'] == root_id)
-            modes['expanded-chain-t1-k64'] = {n: read_fp(n, old_progress[n]['fingerprint']) for n in ids}
+            modes['expanded-chain-row-blocks-k64'] = {n: read_fp(n, old_progress[n]['fingerprint']) for n in ids}
             if set(ids) <= set(entries):
-                modes['expanded-chain-t2-k128'] = {n: read_fp(n, entries[n]['fingerprint_t2'], 'fingerprint_t2') for n in ids}
+                modes['expanded-chain-full-weights-k128'] = {n: read_fp(n, entries[n]['full_weight_fingerprint'], 'full_weight_fingerprint') for n in ids}
         for mode, fingerprints in modes.items():
-            ids = sorted(fingerprints); k = 128 if mode.endswith('t2-k128') else 64
+            ids = sorted(fingerprints); k = 128 if mode.endswith('weights-k128') else 64
             distance, views = common_distances([fingerprints[n] for n in ids], k=k)
             truth = [(r.parent, r.child) for r in edges.itertuples() if r.parent in ids and r.child in ids]
             per_tolerance = {}
@@ -326,8 +403,8 @@ def run(root, delivery, out, chain_run=None):
     chain_paths_found = [p for p in chain_paths(models, edges) if len(p) >= 4]
     report = dict(status='REAL_SCOPED_DESCRIPTIVE', models=len(rows), edges=len(edges),
         training_models=len(training_ids), control_models=len(control_ids),
-        ready_t2_models=len(entries),
-        t1_t2=comparison, trees=trees, depth_three_paths=chain_paths_found,
+        ready_full_weight_models=len(entries),
+        row_block_full_weight_comparison=comparison, trees=trees, depth_three_paths=chain_paths_found,
         new_chain_models=chain_ids, formal_chain_credit=0, gate_status='NOT_EVALUABLE',
         unresolved_dependencies=['formal generated cohort', 'safe pinned source weights/tokenization',
             'large reference pool', 'matched measured baselines', 'validated asymmetric direction'],
@@ -339,7 +416,7 @@ def run(root, delivery, out, chain_run=None):
     lines=['# L12 delivery evaluation and real tree diagnostics', '',
         f"{len(rows)} ready real models; {len(training_ids)} training-cohort models rescored; {len(control_ids)} frozen independent-seed control models.",
         'All original evaluation reports and held-out root assignments remain unchanged. No scores were used to select thresholds or cohorts.', '',
-        f"Held-out same-root AUROC: T1={comparison['heldout_same_root_auroc_t1']}, T2={comparison['heldout_same_root_auroc_t2']}; related-pair median-cosine Spearman={comparison['related_pair_spearman']} over{len(related)} ordered related pairs. All-pair Spearman={comparison['all_pairs_spearman']} over{len(joined)} within-partition pairs.",
+        f"Held-out same-root AUROC: T1={comparison['heldout_same_root_auroc_row_blocks']}, T2={comparison['heldout_same_root_auroc_full_weights']}; related-pair median-cosine Spearman={comparison['related_pair_spearman']} over{len(related)} ordered related pairs. All-pair Spearman={comparison['all_pairs_spearman']} over{len(joined)} within-partition pairs.",
         'These are small-scope relatedness diagnostics, not calibrated parent-direction or full G0/P1 evidence.', '',
         '| Real family / measurement | Nodes | Common views | Four-point violations / quartets at frozen1e-6 |',
         '| --- | ---: | ---: | --- |']

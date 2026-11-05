@@ -97,3 +97,33 @@ def test_new_derived_measurement_requires_frozen_weight_hashes(source_row):
     ready=run/'ready.json';ready.write_text(json.dumps({'sources':[source],'outputs':[child]}))
     with pytest.raises(ValueError,match='hash'):
         measure_ready(ready,data_root=root,run_root=run)
+
+
+def test_resume_preserves_legacy_paths_versions_and_bytes(source_row):
+    from safetensors import safe_open
+    root, row = source_row
+    run = root/'runs/cohort'; run.mkdir(parents=True)
+    ready = run/'ready.json'
+    ready.write_text(json.dumps({'sources':[row], 'outputs':[]}))
+    measured = measure_ready(ready, data_root=root, run_root=run)['rows'][0]
+    current = root/measured['fingerprint']
+    with safe_open(current, framework='pt') as handle:
+        meta = handle.metadata()
+        tensors = {name:handle.get_tensor(name) for name in handle.keys()}
+    meta.update(tier='t1', evidence_version='1')
+    legacy = run/'evidence/t1'/current.name.replace('.row_blocks.', '.t1.')
+    legacy.parent.mkdir()
+    save_file(tensors, legacy, metadata=meta)
+    current.unlink()
+    manifest_path = root/measured['manifest']
+    manifest = json.loads(manifest_path.read_text()); manifest['evidence_version'] = '1'
+    manifest_path.write_text(json.dumps(manifest))
+    measured.update(fingerprint=legacy.relative_to(root).as_posix(),
+                    fingerprint_sha256=hashlib.sha256(legacy.read_bytes()).hexdigest(),
+                    manifest_sha256=hashlib.sha256(manifest_path.read_bytes()).hexdigest())
+    progress = dict(schema_version='1', rows=[measured])
+    (run/'evidence/progress.json').write_text(json.dumps(progress))
+    before = {p:p.read_bytes() for p in (legacy, manifest_path, run/'evidence/progress.json')}
+    assert measure_ready(ready, data_root=root, run_root=run) == progress
+    assert all(p.read_bytes() == data for p,data in before.items())
+    assert not current.exists()

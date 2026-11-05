@@ -63,18 +63,18 @@ within the authorized scope. Select an allocated
 device explicitly and obey the shared-GPU checks. Completed runs, exact pins,
 counts and artifact locations are recorded in the main handoff status.
 
-Full SFT/DPO can use two GPUs through `lab.scripts.distributed_training`.
-Its caller must reserve both physical UUID locks and check each GPU's
+Full SFT/DPO can use two or four GPUs through `lab.scripts.distributed_training`.
+Its caller must reserve all physical UUID locks and check each GPU's
 utilization and occupied-memory fraction below80% twice, at least5s apart,
 with enough free memory for the measured recipe. Freeze a new config with
-`recipe.distributed` containing `world_size=2`, `backend="nccl"`, the original
-`global_batch`, half-sized `local_batch`, and
+`recipe.distributed` containing `world_size=2` or `4`, `backend="nccl"`, the original
+`global_batch`, `local_batch=global_batch/world_size`, and
 `partition_policy="contiguous_global_step_batch_v1"`. Keep global batch,
 steps, learning rate, data and seeds unchanged. DDP replicates model/optimizer
 state; models exceeding one replica's memory need a separate sharding path.
 
 After CPU preflight and GPU admission, the reserved caller sets
-`CUDA_VISIBLE_DEVICES` to the two UUIDs and starts the worker:
+`CUDA_VISIBLE_DEVICES` to the reserved UUIDs and starts the worker:
 
 ```bash
 timeout --signal=TERM --kill-after=30s 7200s \
@@ -84,11 +84,22 @@ timeout --signal=TERM --kill-after=30s 7200s \
   --data-root "$ZOO_DATA" --profile "$NEW_PROFILE" --execute --resume
 ```
 
+For four ranks, use `--nproc_per_node=4` with matching frozen world4 metadata.
+Smaller local activations and logits can fit a recipe that exceeds two GPUs;
+parameter and optimizer replicas remain unsharded.
+
 Resolve the actual completed SFT parent before admitting DPO. Each launch
 attempt needs a new profile path. Rank0 alone publishes the atomic checkpoint;
-rank1 writes a separate profile. Profiles report phases, step progress,
+each nonzero rank writes a separate profile. Profiles report phases, step progress,
 synchronized timing, actual runtime, current GPU allocation/reservation and
 per-rank peaks. GPU tensors are released before CPU checkpoint serialization.
+
+Real merge recipes may set `compute_device` to `cuda:0` to use mergekit's
+existing GPU arithmetic. The caller admits and locks one physical GPU, sets
+`CUDA_VISIBLE_DEVICES` before launch, and freezes that execution choice with
+the recipe. Omitting the field preserves the existing CPU invocation. Record
+device/runtime and measured pilot costs; floating-point results and seeded
+DARE masks can differ between CPU and GPU execution.
 
 The installed Heretic 1.4.0 loader lacks the required safe local-loading
 controls. Its adapter refuses execution; synthetic dispatch tests are not
@@ -149,3 +160,23 @@ The completed L12 delivery and real depth-three-chain evaluation are described
 in `docs/l12-evaluation.md`. `lab.scripts.chain_cohort` creates the three
 scoped extra endpoints; `lab.scripts.evaluate_delivery` consumes A artifacts
 and publishes a new immutable report without changing old held-out protocols.
+
+`lab.heretic_safe` and `lab.heretic_objective` provide the reviewed binding for
+installed `heretic-llm==1.4.0`: preload a builtin safetensors model with
+`trust_remote_code=False`, call `prepare_stock_run` with separately frozen,
+licensed harmful/harmless direction and objective records, optimize the stock
+refusal/KL objective, and merge the selected in-memory PEFT edit safely. Freeze
+runtime controls and source hashes before optimization. The original CLI's
+unprepared Heretic path remains fail-closed; sentiment token inputs do not bind
+the stock refusal objective. Record the actual sampler seed from the nested
+runtime config alongside any inventory recipe seed. A zero-refusal pretrained
+baseline uses the upstream absolute-count rule and supports no quality claim.
+
+`lab.transform_drift` implements the separately approved generation-only
+`public-transform-drift-v2` cohort. It reuses the frozen permutation/rotation
+recipes and unchanged numerical checks, then requires exact finite BF16 state,
+safe reload, complete matching token audits, and immutable checkpoint files.
+Its version-2 `cohort.json` separates verified construction from functional
+failure. New IDs end in `-drift-v2`; original formal slots and G1 credit are
+unchanged. See the public-transform-equivalence-v2 protocol in the main
+checkout's `docs/plans/` for the owner's approval boundary.

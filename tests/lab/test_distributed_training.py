@@ -45,10 +45,10 @@ def _baseline(edge):
     return model.state_dict(), losses
 
 
-def _worker(rank, rendezvous, directory, edge):
+def _worker(rank, rendezvous, directory, edge, world_size):
     torch.set_num_threads(1)
     dist.init_process_group('gloo', init_method='file://' + rendezvous,
-                            rank=rank, world_size=2, timeout=timedelta(seconds=45))
+                            rank=rank, world_size=world_size, timeout=timedelta(seconds=45))
     try:
         inputs = memory_inputs(edge)
         reference = None
@@ -56,16 +56,20 @@ def _worker(rank, rendezvous, directory, edge):
             reference = copy.deepcopy(inputs['model'])
             before = {k: v.clone() for k, v in reference.state_dict().items()}
             inputs['reference_model'] = reference
-        bundle = distributed.train_full(recipe(edge), inputs, edge, rank=rank, world_size=2)
+        bundle = distributed.train_full(recipe(edge), inputs, edge, rank=rank, world_size=world_size)
         if rank == 0:
             expected, losses = _baseline(edge)
             assert bundle is not None
+            # Four-way FP32 reduction changes summation order; two AdamW
+            # steps amplify the measured discrepancy to <1e-6 in one value.
+            # Global losses retain the same independent-baseline tolerance.
+            atol = 1e-6 if world_size == 4 else 2e-7
             for key, value in bundle.model.state_dict().items():
-                torch.testing.assert_close(value, expected[key], rtol=2e-5, atol=2e-7)
+                torch.testing.assert_close(value, expected[key], rtol=2e-5, atol=atol)
             assert bundle.training['losses'] == pytest.approx(losses, abs=1e-6)
             assert bundle.training['distributed']['global_batch'] == 4
-            assert bundle.training['distributed']['local_batch'] == 2
-            assert len(bundle.training['distributed']['per_rank_peaks']) == 2
+            assert bundle.training['distributed']['local_batch'] == 4 // world_size
+            assert len(bundle.training['distributed']['per_rank_peaks']) == world_size
         else:
             assert bundle is None
         if reference is not None:
@@ -83,16 +87,21 @@ def _worker(rank, rendezvous, directory, edge):
             distributed.completed_checkpoint(recipe(edge), Path(directory), resume=False, rank=rank)
         with pytest.raises(ValueError, match='resume|mismatch'):
             distributed.completed_checkpoint({**recipe(edge), 'seed': 2}, Path(directory), resume=True, rank=rank)
+    except BaseException:
+        import traceback
+        Path(directory).parent.joinpath('failure-rank' + str(rank) + '.txt').write_text(traceback.format_exc())
+        raise
     finally:
         dist.destroy_process_group()
 
 
+@pytest.mark.parametrize('world_size', [2, 4])
 @pytest.mark.parametrize('edge', ['sft', 'dpo'])
-def test_two_rank_global_loss_update_frozen_reference_and_collective_resume(tmp_path, edge):
+def test_global_loss_update_frozen_reference_and_collective_resume(tmp_path, edge, world_size):
     # Catches wrong/no sharding, omitted DDP averaging, local-only loss reporting,
     # double-forward reducer misuse, reference mutation and publication races.
-    mp.spawn(_worker, args=(str(tmp_path / 'store'), str(tmp_path / 'output'), edge),
-             nprocs=2, join=True)
+    mp.spawn(_worker, args=(str(tmp_path / 'store'), str(tmp_path / 'output'), edge, world_size),
+             nprocs=world_size, join=True)
     report = json.loads((tmp_path / 'output' / ('tiny-' + edge) / 'training.json').read_text())
     assert report['steps_completed'] == 2
     assert report['reference_unchanged'] is (True if edge == 'dpo' else None)
@@ -150,3 +159,44 @@ def test_distributed_loader_rechecks_real_frozen_bytes_and_preprocessing(tmp_pat
     inputs['model_pin']['weight_sha256']['model.safetensors'] = '0' * 64
     with pytest.raises(ValueError, match='weight hash'):
         distributed.train_full(r, inputs, 'sft', rank=0, world_size=1)
+
+
+@pytest.mark.parametrize('world_size,rank', [(2, 0), (4, 0), (4, 1), (4, 3)])
+def test_cli_accepts_admitted_two_or_four_rank_topology(tmp_path, monkeypatch, world_size, rank):
+    from lab.launches import file_hash
+    from lab.scripts.distributed_training import main
+    config = tmp_path / 'config.json'
+    config.write_text(json.dumps(dict(trainer='sft', recipe={**recipe(), 'device': 'cuda:0'}, inputs={})))
+    for name, value in [('RANK', rank), ('LOCAL_RANK', rank), ('WORLD_SIZE', world_size)]:
+        monkeypatch.setenv(name, str(value))
+    monkeypatch.setattr(torch.cuda, 'is_available', lambda: False)
+    # A supported topology reaches CUDA admission, before model or data loading.
+    with pytest.raises(RuntimeError, match='externally admitted'):
+        main(['--config', str(config), '--data-root', str(tmp_path),
+              '--profile', str(tmp_path / 'profile.json'),
+              '--expected-config-sha256', file_hash(config), '--execute'])
+
+
+@pytest.mark.parametrize('world_size,rank,local_rank', [(1, 0, 0), (3, 0, 0), (8, 0, 0), (4, 4, 4), (4, 3, 2)])
+def test_cli_rejects_unsupported_topology_before_cuda(tmp_path, monkeypatch, world_size, rank, local_rank):
+    from lab.launches import file_hash
+    from lab.scripts.distributed_training import main
+    config = tmp_path / 'config.json'
+    config.write_text(json.dumps(dict(trainer='sft', recipe={**recipe(), 'device': 'cuda:0'}, inputs={})))
+    for name, value in [('RANK', rank), ('LOCAL_RANK', local_rank), ('WORLD_SIZE', world_size)]:
+        monkeypatch.setenv(name, str(value))
+    monkeypatch.setattr(torch.cuda, 'is_available', lambda: pytest.fail('unsupported topology reached CUDA'))
+    with pytest.raises(ValueError, match='rank'):
+        main(['--config', str(config), '--data-root', str(tmp_path),
+              '--profile', str(tmp_path / 'profile.json'),
+              '--expected-config-sha256', file_hash(config), '--execute'])
+
+
+def test_fourth_rank_profile_collision_is_rejected(tmp_path):
+    from lab.scripts.distributed_training import _check_profile_paths
+    profile = tmp_path / 'attempt.json'
+    fourth = tmp_path / 'attempt.json.rank3.json'
+    fourth.write_text('existing rank profile')
+    with pytest.raises(FileExistsError, match='new profile'):
+        _check_profile_paths(profile, 4)
+    assert fourth.read_text() == 'existing rank profile' and not profile.exists()
