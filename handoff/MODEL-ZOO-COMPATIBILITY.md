@@ -1,5 +1,13 @@
 # Model-Zoo compatibility: 2026-11-05
 
+Continuation results: B repair is locally merged at51147a3 (658 tests PASS; original
+36-model report/input hashes and numerical values preserved). New descriptive
+mapping, exact source-version/hash freeze and report:
+`runs/track-b-compatibility-20261105/`. See [Track B](TRACK-B.md).
+A's six/two upgrades completed; its verified137full-weight map is under
+`runs/track-a-compatibility-20261105/`. New B deliveries are separate; see Track B.
+The audit requirements below describe the initial failures and acceptance contract.
+
 Audit baseline: Model-Zoo main `de2aabd`, Zoo-Keeper main `99cc6c2`.
 This is a forward migration handoff, not a claim that all consumers are fixed.
 The current contract below supersedes older interface examples in this folder;

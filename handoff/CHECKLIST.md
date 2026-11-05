@@ -219,18 +219,18 @@ works with agent sessions.
     and 7B; Qwen3-0.6B and 1.7B; SmolLM2; and OLMo-2-1B.
   - **Never Qwen2.5-3B.**
   - Record each base's commit and license.
-- [r] **L4 Merges: at least 30** (B; configs due Nov 11; done by Nov 13).
+- [x] **L4 Merges: at least 30** (B; configs due Nov 11; done by Nov 13).
   Agents may run the merges if they fit D4.1's limits; otherwise a person
   launches them.
   - Linear, SLERP, TIES, and DARE, with 2–4 parents each.
   - Some with per-layer `t`.
   - Use mergekit configs and keep each config's hash.
   - Nov3: all30 prescribed recipes verified and T1 measured, with 26 unique primary weight sets. Smol360 contributes10 cases/8 unique; Qwen2.5 contributes10/10; Qwen3 contributes10/8. Full multi-parent DAGs retained. E3 individual attribution abstains under the existing correlation guard despite full numerical rank; combined-attribution intervals retained. Reports: `runs/track-b-formal-smol360-merges-v1/REPORT.md`, `runs/track-b-formal-qwen-merges-v1/REPORT-v4.md`. Source compatibility changes reviewed and587 tests passed; uncommitted.
-- [r] **L5 LoRA: at least 24 runs at ranks 8, 64, and 256** (B; queued in week
+- [x] **L5 LoRA: at least 24 runs at ranks 8, 64, and 256** (B; queued in week
   1; [HUMAN] launches; done by Nov 20).
   - Nov3: all24 official LoRAs complete and T1 measured: six each on Smol360, Qwen2.5-0.5B, Qwen3-0.6B and native OLMo1.485B, instruction/dialogue at ranks8/64/256. All128 steps, safe primary+adapter tensors, provenance, unchanged base tensors and held-out controls verified. Current24-output hashes and scientific recipe identities PASS. OLMo report/proofs: `runs/track-b-formal-olmo-launches-v1/lora-execution/`; no B workers remain.
   - 2026-11-02:6 extra Smol135 GPU runs complete (instruction/dialogue, ranks8/64/256), exact scoped verification PASS. No formal quota credit; their T1/T2 fingerprints are complete and consumed in the new12-model report.
-- [r] **L6 Full fine-tunes: at least 8 SFT and 8 DPO at ≤1.7B** (B; [HUMAN]
+- [x] **L6 Full fine-tunes: at least 8 SFT and 8 DPO at ≤1.7B** (B; [HUMAN]
   launches; done by Nov 20).
   - Nov4 handoff: L6 complete; no jobs remain. Fresh Track B start: `handoff/TRACK-B.md`. Disposable caches cleaned; pending implementation remains uncommitted and existing599-test evidence retained.
   - Nov4 completion: both native OLMo DPOs passed128 steps on four GPUs, saved-checkpoint safety/full-parameter/frozen-reference/provenance/held-out checks and new2T1. Aggregate **SFT8/8, DPO8/8** exact16keys verified, with old14 proofs reused. Global137 measured/129fullT2/29ungenerated; A2 T2 queue prepared/unclaimed. Proof/index/lifecycle: `runs/track-b-l6-remaining-20261104/world4/future-capacity/execution2/`. All owned workers exited and locks free. Existing source599tests/review retained; no source changes or repeated suite this run.
@@ -238,12 +238,17 @@ works with agent sessions.
   - Nov4: six new formal outputs and T1 verified, aggregateSFT8/8 andDPO6/8. Two OLMo DPOs pending four eligible GPUs: measured2rank reference-forwardOOM, then4rank admissions blocked by foreign load before training. Four-rank worker19 focused/599 fulltests PASS, review clean; real4GPU execution remains untested. Six-output proof/A6queue: `runs/track-b-l6-remaining-20261104/execution6/`; exact pending proposal:`world4/future-capacity-proposal.json` under that run. No owned workers; L6 remains incomplete.
   - Nov3: both official Smol360 SFT/DPO seed pairs complete and T1 measured:2/8 SFT,2/8 DPO. All11 prepared training jobs complete. Both Qwen seed0 SFT/DPO pairs now complete on two GPUs with native pinned inputs; total4/8 SFT and4/8 DPO.
   - 2026-11-02:2 extra Smol135 SFT and2 matching DPO GPU jobs complete, full frozen steps and unchanged DPO references; scoped verification/T1/scoring complete. No formal quota credit.
-- [~] **L7 Abliterations: at least 8, classic and Heretic** (B, due Nov 20).
-- [r] **L8 Simulated quantizations: at least 12** (B, due Nov 20). Each model is
+- [x] **L7 Abliterations: at least 8, classic and Heretic** (B, due Nov 20).
+  - Nov5 remaining:4/4 stock Heretic completed200trials each through reviewed safe installed-algorithm binding; exact frozen MIT prompts, BF16 weights/safe reload/finite heldout logits verified. With4classic, generation8/8; no refusal-quality claim. Heretic outputs temporary, durable copy pending. Exact A queue/root binding: `runs/track-b-remaining-20261105/delivery/`;658full tests PASS.
+  - Nov5:4 classic shared-direction examples generated/verified from frozen public direction labels; sentiment-conditioned mathematical projection, no refusal-quality claim. Heretic0/4 remains unsafe-loader blocked. New exact-key A delivery: `runs/track-b-gpu-continuation-20261105/delivery/`.
+- [x] **L8 Simulated quantizations: at least 12** (B, due Nov 20). Each model is
   quantized, dequantized, and saved as bf16.
   - Nov3:all12 official quantizations complete/verified/T1, six newq2/q4 cases safelyreloaded, original6unchanged;9oldevidence rowsreused. NewA6T2queue prepared at `runs/track-b-formal-quantization-v1/`. Scoped Smol/Pythia extras
     are recorded separately and do not silently replace the minimum inventory.
 - [~] **L9 Laundering transforms: at least 20** (B, due Nov 13).
+  - Nov5 remaining:owner approved generation only.8/8 separate `-drift-v2` constructions verified, including complete unchanged FP32/BF16/reload audits; all8 functional outcomes FAILED. Original public8/16 unchanged; zero additional formal/G1 credit, calibration roster unchanged. Exact auxiliary rows in the remaining delivery above; protocol `docs/plans/2026-11-05-public-transform-equivalence-v2.md`. C blind boundary untouched.
+  - Nov5 esd_ind outside sandbox:8/16 official public outputs pass (4 rescalings,4 perturbations);8 permutation/rotation cases fail original FP32/bf16 checks and remain excluded. Frozen audits/16-case GPU validation/new A handoff in `runs/track-b-gpu-continuation-20261105/`. C blind boundary untouched.
+  - Nov5: official Smol360 rescaling pilot stopped during bf16 validation on CPU: no native bf16; representative kernel255.5x slower than FP32 projects beyond2h. Original120 rows/tolerances retained; no checkpoint/credit/workers. New host/path needed. `runs/track-b-l9-smol360-20261105/REPORT.md`.
   - Real scoped Smol rescaling/perturbation complete; rejected MLP permutation
     is excluded. Whole-lab and blind counts remain open.
   - Function-preserving permutation, rescaling, rotation, and targeted
@@ -253,7 +258,8 @@ works with agent sessions.
 - [x] **L10 Chains: at least 3 of depth ≥3** (B, due Nov 20).
   - Nov3:all3 prescribed formal paths complete/verified/T1:smol-360,q25-05,q3-06 each→SFTs0→DPOs0→quantization-s8. Existing minimum checker confirms3/3; scoped registries/provenance/held-out checks PASS. First Smol four-node diagnostic violates1/1 quartets; no asymmetric tree assembly/pivot decision. Consolidated report: `runs/track-b-resume-20261103/REPORT.md`.
   - 2026-11-02:3 scoped Smol135 depth3paths generated/verified/T1+T2 measured; no formalquota (prescribed anchors remain q25-05,q3-06,smol-360). New real36-model E6/E9 experiment recorded in `docs/l12-evaluation.md`.
-- [~] **L14 Decision heads: at least 6** (B, due Nov 20).
+- [x] **L14 Decision heads: at least 6** (B, due Nov 20).
+  - Nov5 remaining:6/6 generated. Final1.5B full head32steps, actual safe reload/finite validation logits verified; temporary root, durable copy pending. Exact identity/A request binding: `runs/track-b-remaining-20261105/head-verification-and-root-binding.json`. Other four new heads and prior Smol360 retain their earlier proofs. A numerical measurements remain separate.
   - Nov3:official Smol360 decision-s0 full32-step run complete, safely published and T1 measured (1/6 formal).
   - 2026-11-02:1 extra Smol135/Amazon Polarity classifier complete; held-out scoring183/256=71.48%, majority137/256=53.52%; verification/T1 complete. No formal quota credit.
   - Sequence-classification fine-tunes: 4 on lab decoder bases and 2 on
@@ -266,10 +272,14 @@ works with agent sessions.
     listed in `lab/models.csv` as independents with no edges.
   - Pin each one's commit.
 - [~] **L12 [HUMAN] Fingerprint lab v0** (A, due Nov 20).
-  - [ ] Nov5 compatibility follow-up (A/B): update old track worktrees; A derives
-    current six-plus-two queue launches; B fixes cohort producer/delivery reader
-    together. Reuse completed evidence and preserve frozen inputs. Scope and
-    acceptance: [compatibility handoff](MODEL-ZOO-COMPATIBILITY.md).
+  - Nov5 B integration:source committed/merged at51147a3;21formal+8auxiliary outputs delivered through two exact-key requests, A29run active. Reuse137map, await A's verified new measurement map. Auxiliary zero G1credit; latest13checkpoints temporary/durable copy pending. `runs/track-b-remaining-20261105/delivery/`.
+  - Nov5 B generation delivery:16 new exact-key checkpoints await A numerical measurements. `runs/track-b-gpu-continuation-20261105/delivery/A-measurement-request.json`; reuse parent/base evidence. Readiness137 full-weight+16 generated pending+13 ungenerated; no new B fingerprint credit.
+  - Nov5 A continuation: A worktrees current; frozen six/two queues parse,129 full-weight +8 row-block hashes verified, explicit two-model build/query PASS. `runs/track-a-compatibility-20261105/REPORT.md`. Eight upgrades pending: current NVIDIA driver unavailable. B migration still open.
+  - [r] Nov5 compatibility follow-up (A/B): worktrees updated; A prepared current
+    six-plus-two queue/source contracts; B producer/evaluator repair and both naming
+    generations verified (627 tests PASS, real36-model report unchanged).
+    `runs/track-b-compatibility-20261105/REPORT.md`. No extraction credit;
+    eight upgrades still await an accessible GPU driver. Original inputs preserved.
   - Nov4 OLMo DPO follow-through: new2 T1 complete, A2 T2 queue prepared at `runs/track-b-l6-remaining-20261104/world4/future-capacity/execution2/incremental-A-l12-launch.json`, distinct from prior A6. Eight total upgrades ready; global137 measured/129 fullT2/29 ungenerated. Current additive refresh: `runs/track-b-olmo-dpo-finish-20261104/refresh-coverage.py`; older refreshers omit the final2.
 
   - Nov4 B follow-through: six new full-training outputs/T1 ready for incremental T2, distinct A6queue prepared/unclaimed at `runs/track-b-l6-remaining-20261104/execution6/incremental-A-l12-launch.json`. Global135 measured/129 fullT2,31 ungenerated; missingfullT2=37 (six ready+31 ungenerated). Current additive proof in `runs/track-b-reconciliation-20261103/`, refreshed by `runs/track-b-next-20261104/refresh-l6-coverage.py`; old refreshers omit these deliveries.
@@ -341,6 +351,7 @@ works with agent sessions.
 - [x] **E5 Stacked abliteration test** (B, due Nov 27).
 - [~] **E6 Tree-likeness on lab trees** (B, due **Nov 27**). A person makes
   the pivot decision on the thresholds in `GUIDANCE.md` 5.2.
+  - Nov5 expanded diagnostic:48compatible measured nodes/44construction edges,4public anchors;149inputs rehashed,8matrices bitwise recomputed,24tolerance results identical. Primary1e-6 violation rates81.8–96.2%, all8family/mode diagnostics above20%flag; nRFnull. Eight schema-v3 upgrades excluded by unchanged common-space version guard; all89exclusions explicit. No fitted method/pivot/blind reads. Person's pivot decision requested; full E6 remains open. `runs/track-b-e6-expanded-20261105/REPORT.md`.
   - Scoped real diagnostics now available:20-node Smol violations4193/4845(T1),4201/4845(T2) at1e-6, nRFnull/unresolveddirection; flagsreported, no formal pivot or threshold change. Original17-node/OLMo and tolerance sensitivity retained.
   - Nov3: new frozen24-model/17-edge formal-chain report consumes actual T2 artifacts for all3 prescribed chains plus held-out Pythia controls. Same-root control AUROC1.00, parent/ancestor coverage0; quartet violations at1e-6 are Smol1/1 and each Qwen0/1, but all3 violate at1e-8/1e-10. nRFnull, typed T2 engine NOT_EVALUABLE; no pivot or calibrated G0 claim. `runs/track-b-formal-chain-evaluation-v1/REPORT.md`.
 - [x] **E7 Calibration** (B, due Dec 4).

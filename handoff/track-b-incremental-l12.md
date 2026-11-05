@@ -1,9 +1,10 @@
 # Incremental L12: small real cohort
 
+**Latest B delivery — 2026-11-05:** use `runs/track-b-remaining-20261105/delivery/A-measurement-request.json` and its `root-binding.json` for13new exact keys (5formal+8auxiliary,zero new G1credit). These resolve against explicit temporary root label `temporary_remaining`; host runtime location `/tmp/zoo-track-b-remaining-20261105`. Durable checkpoint copy pending capacity. Also measure the16new original-roster outputs in `runs/track-b-gpu-continuation-20261105/delivery/`. Reuse A's verified137full-weight map; the older six/two queues below are already measured and must not be repeated. Current formal readiness is137measured/21generated-awaiting-A/8originalfailed-transform slots;8v2constructions remain outside166. See [Track B](TRACK-B.md) and the remaining-run report before launching. No B numerical measurements or G1/calibration-policy changes.
+
 **Current continuation (2026-11-05):** this is a historical incremental record.
 Use [Track A](TRACK-A.md), [Track B](TRACK-B.md) and the
-[compatibility handoff](MODEL-ZOO-COMPATIBILITY.md) before new launches. Both
-pending six- and two-output queue files require derived current CLI arguments;
+[compatibility handoff](MODEL-ZOO-COMPATIBILITY.md) before new launches. The earlier six- and two-output queue files required derived current CLI arguments;
 keep the original queues, artifact paths, hashes and recorded commands below
 unchanged. New modes are `row_blocks` and `full_weights`.
 
@@ -630,3 +631,40 @@ fullT2 missing37=8ready upgrades+29 ungenerated. Authoritative additive
 refresh: `runs/track-b-olmo-dpo-finish-20261104/refresh-coverage.py`; older
 refreshers omit the final2. All owned workers exited and locks are free.
 Full lab/C blind/calibration/G0 remain incomplete.
+
+
+## Compatibility continuation, 2026-11-05
+
+B producer/evaluator repair is ready for review in track-b at1d728a7;
+627 full tests PASS. Historical input/report hashes and36-model comparison/tree
+values are unchanged. New descriptive mapping and exact source-version/hash
+freeze: `runs/track-b-compatibility-20261105/delivery/artifact-index.csv` and
+`evaluation-final/pre-score-freeze.json`; verification/report beside them.
+The existing A six/two queues retain their input hashes and remain distinct.
+A's derived current source/queue contracts are in
+`runs/track-a-compatibility-20261105/`; NVIDIA-driver access blocks execution.
+
+One official L9 rescaling pilot was stopped during CPU bf16 validation because
+measured kernel throughput projects beyond2h; no checkpoint or new measurement
+is delivered. Exact source/120-row validation freeze, diagnostic and no-worker
+proof: `runs/track-b-l9-smol360-20261105/`. Do not add it to coverage. Current
+verified baseline remains137 measured/129 full-weight/29 ungenerated.
+
+
+## New16-checkpoint B delivery for A — 2026-11-05
+
+`runs/track-b-gpu-continuation-20261105/delivery/A-measurement-request.json`
+binds ready.json, artifact-index.csv,16 exact local identities/manifests/file hashes
+and5 pinned parent/source mirrors. New8 public transforms+4 classic projections+
+4 heads are generated, not numerically measured. Reuse the verified137-model A map;
+keep old six/two queue records unchanged. Requested next: full_weights,k128,free
+row blocks128/256/512 with parent deltas in a new output directory. A owns launch,
+source binding/admission/output locks, measurement verification and map extension.
+
+Eight failed public permutation/rotation cases are excluded with original audits.
+Classic examples share one fixed-middle-layer mean direction learned from disjoint
+sentiment labels; no refusal-quality claim, BF16 rounding explicit. Decision total
+5/6;1.5B head remains storage-blocked. Formal readiness:137 full-weight,16 generated
+awaiting A,13 ungenerated. delivery/formal-coverage166.csv and verification.json are
+the new readiness overlay; no calibrated/full-lab claim. No B workers remain and
+C's blind subset was not inspected. Full details: parent run REPORT.md.
