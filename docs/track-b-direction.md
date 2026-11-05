@@ -28,8 +28,8 @@ Strict preflight exposed one hidden Qwen3embedded-head view-name collision.
 A narrow existing-Task3 source repair separates canonical base matrices from
 [lora]products, preserving physical sources and comparison guards. The same
 checkpoint was remeasured; only its measurement pointers changed in the active
-map. Exact proof: `runs/track-a-embedded-peft-repair-20261105/`. The two-file
-A source patch remains uncommitted for review.
+map. Exact proof: `runs/track-a-embedded-peft-repair-20261105/`. The reviewed source fix is merged locally into Model-Zoo main at `7c3c356`;
+historical measurement freezes retain their original execution-time metadata.
 
 Next: consume A's calibration outputs once verified; advance supervised edge
 scoring under a separately frozen protocol before any new feature/model fit.
@@ -39,3 +39,7 @@ partitions, abstentions, source hashes, negative results and original freezes.
 The13raw temporary checkpoints total23.8GB and still need durable capacity.
 All numerical outputs/manifests needed by A are already primary. No checkpoint
 or numerical job remains running. Start with main `handoff/TRACK-B.md`.
+
+Standing owner instruction: reuse existing code and entry points wherever
+practical, useful and possible. Search existing helpers and workflows first;
+new code should address a concrete gap rather than duplicate an existing path.
