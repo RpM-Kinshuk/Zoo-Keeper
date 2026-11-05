@@ -6,6 +6,44 @@ entry and name the agent or person.
 
 ## Snapshot
 
+**2026-11-05 Codex Track B E9 public166 baseline IN PROGRESS:** proceeding with existing lineage.cli infer/freeze/evaluate, unchanged method/0.75reporting threshold, no new fit/features or A-calibration duplication. Approved166public roster;27390ordered pairs with unknown external truth retained, certified reference labels only, prior root assignments preserved. Existing loader rejects8v1manifest/v3fingerprint pairs; re-created only those8T0manifests via existing local builder, verifying exact unchanged checkpoint keys and leaving originals intact. Input freeze/metadata proof/run logs: `runs/track-b-e9-public166-20261105/`. Twelve-case Qwen3pilot active before bounded166expansion; CPU/sketch inputs only after metadata refresh, no GPU, checkpoints regenerated, production code or Cblind reads. No calibration/G0/full-E9 claim; A's request remains separately ready.
+
+**2026-11-05 Track A merge + expanded R6/G0 RUNNING:** owner explicitly
+requested local integration and continuation. Existing calibration checkpoint
+changes are being verified (extractor/store and full query/lab suites).
+`runs/track-a-expanded-r6-20261105/run.py` reuses historical556-model store
+and active166roster, current artifacts taking same-key precedence. Existing
+build/CLI/G0 report APIs; calibration.json reused unchanged; no raw-weight reads.
+CPU command: `OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 /scratch/kinshuk/anaconda3/envs/esd_ind/bin/python runs/track-a-expanded-r6-20261105/run.py`;
+outputs/progress/log in that run.7000s bound; no background GPU jobs.
+Pair diagnostics use existing development partition (no held-out tuning);
+spectral diagnostics use stored evidence only. No G0/G1 or blind-data access.
+
+
+**2026-11-05 Track A approved-v2 R5/R6 checkpoint PASS:** existing writer
+fitted165 independent/157 parent pairs at k64/block256/seed20261028;
+prior seed3/4 Pythia14M root holdouts excluded (0fit leakage).15 held-out
+independent pairs,0above frozen threshold,0held-out positives.166-model
+calibrated build/all6CLIcommands PASS; ModernBERT check consistent.
+Exact freeze/calibration/report/query/build evidence:
+`runs/track-a-roster-v2-calibration-20261105/R5-report.md`, `verification.json`.
+18Raw leaderboard associations,6revision-verified; default skill filters exclude
+unverified rows.24025views/1213lineage/582calibrated same-root edges; empty
+layers table for standalone evidence.134.92s CPU, no workers/weight reads,
+installs, commits or blind access. G0/G1 not decided;5000candidate gate,
+held-out positive recall and raw temporary checkpoint durability remain open.
+
+
+**2026-11-05 Track A approved-v2 calibration/R6 RUNNING:** consuming B's
+active request using current committed A extractor/query worktrees (query
+fast-forwarded cleanly). New output `runs/track-a-roster-v2-calibration-20261105/`;
+command `OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 /scratch/kinshuk/anaconda3/envs/esd_ind/bin/python runs/track-a-roster-v2-calibration-20261105/run.py`.
+Hash checks precede existing write_calibration and zoo CLI. Prior Pythia14M
+seed3/4 root holdouts and all descendants excluded from fit; previously
+unassigned roots remain development-only. Freeze recorded before fit; no
+heldout threshold tuning, new weights/GPU jobs, G0/G1 decisions or blind reads.
+
+
 **2026-11-05 Codex local integration and standing reuse preference:** owner requested merging current changes and reusing existing code wherever practical/useful/possible. Reviewed embedded-PEFT fix merged into Model-Zoo main at `7c3c356`, preserving newer README/license commits. Pre-merge470PASS/1skip(50.57s); merged extractor/store470PASS/1skip(53.11s); Zoo-Keeper against merged extractor658PASS/16warnings(167.95s). Track B direction merged at `a84c1d7`; approved166roster/E6pivot/A handoffs and permanent reuse instruction integrated in this documentation batch. Reuse rule recorded in Model-Zoo AGENTS.md and D7.10 here: search existing helpers/entry points first; small adapters or new code only for a concrete unmet need. Exact logs/final integration proof: `runs/track-b-reuse-merge-20261105/`. No model jobs, remeasurement, calibration, G0/G1 decision, blind reads, push or worktree/branch deletion. Existing measurements/frozen reports remain unchanged; A's active166roster request remains ready.
 
 **2026-11-05 Codex Track B roster ACTIVE; A input blockers cleared:** owner explicitly approved eight-slot roster/construction-counting amendment. `formal166-public-constructions-v2`:166/166mapped,0missing; unchanged k64median-cosine scorer evaluated all180independent+157parent pairs. Active request/approval/map/aliases/readiness: `runs/track-b-pivot-unblock-a-20261105/A-unblock-request-active.json`. Original tables/default inventory/158map and all original/v2equivalence failures retained; public constructions16/16, no G0/G1 decision/blind reads. Numerical preflight first found336/337 because Qwen3decision embedded LoRA-product names collided with parent matrices. Narrow existing-Task3 view-naming repair in A worktree preserves sources and strict guard; RED2fail26pass→GREEN28pass, core review no Critical/Important, same-key remeasurement passes, repaired full337preflight66.21s. Exact new bundle/sourcehashes: `runs/track-a-embedded-peft-repair-20261105/`. Old results retained; source patch merged locally into Model-Zoo main at7c3c356; original extractor/store verification470PASS/1skip (69.31s). Four-thread fork runs stalled; a single-thread global-offline invocation gave66fake-API failures; corrected intended fixture environment passed without test/source relaxation. A owns authorized calibration/R6 with prior held-out filters; existing merged readers scored corrected artifacts, so no dependency on uncommitted producer code for this calibration. B wrote no calibration/null. Raw23.8GB durable copy remains capacity-limited, numerical inputs already primary.

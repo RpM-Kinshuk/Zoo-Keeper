@@ -500,6 +500,7 @@ works with agent sessions.
     launchers. Exact checkpoint/508-file inventory:
     `runs/track-a-r3-r6-20261102.rcsy95ap/PAUSE_REPORT.md`.
 - [~] **R5 G0 report and calibration file** (A, due Dec 2).
+  - Nov5 calibration/report delivered:165 independent/157 parent fit pairs, prior root hold-outs excluded;15 independent evaluation pairs yield0threshold exceedances and0held-out positive coverage. `runs/track-a-roster-v2-calibration-20261105/R5-report.md`, calibration.json and verification.json. Larger G0 retrieval/pilot validation remains open; no gate decision.
   - Nov5 owner-approved versioned166roster clears missing8input blocker. Complete180independent/157parent numerical preflight PASS with existing scorer. Use active request from B; keep original maps/controls/priorheld-outs. Calibration not yet written by B; no G0/G1 gate claim.
   - Nov5 latest:158 formal full-weight mappings;8 original failed permutation/rotation slots prevent complete requested-parent calibration.8 measured auxiliary constructions give zero replacement credit. Current readiness: `runs/track-a-delivery29-20261105/calibration-readiness.json`; no null fitted or held-outs changed.
   - Nov5:137 exact manifest/full-weight mappings;29 ungenerated remain. References47/47 and180 independent pairs retained; no fit or held-out changes. Current readiness: `runs/track-a-compatibility-20261105/calibration-readiness.json`.
@@ -516,6 +517,7 @@ works with agent sessions.
 - [~] **R6 Zoo v0 smoke build** on the pilot outputs, with `--leaderboard_v2`
   and the calibration file (A, due Dec 3). It reads fingerprints, not
   weights, so agents run it.
+  - Nov5 calibrated approved166-roster smoke PASS:all6CLIcommands, full-weight/row-block input reuse, Raw leaderboard loader (6/18revision-verified). `runs/track-a-roster-v2-calibration-20261105/`. Broader pilot/retrieval gates remain open; no G0/G1 claim.
   - [x] Nov5 compatibility follow-up (A): reconcile verified artifact mappings
     additively and select explicit legacy inputs/conventions where necessary;
     confirm a small current build/query smoke without remeasuring for names.
@@ -562,6 +564,7 @@ works with agent sessions.
 - [ ] **H2 Byte curves and the T2 subset** (A, Dec 14–18).
 - [~] **E9 Full P1 evaluation** (B, Dec 14–18). Harness and first real
   held-out cohort report ready; large-pool/T2/baseline gates pending. It covers:
+  - Nov5 existing-engine166public baseline underway; reuse CLI/evaluation harness and approved roster, preserve original threshold/unknown labels/root partitions. Refresh8mismatched T0versions at unchanged keys, no guard relaxation. New freeze: `runs/track-b-e9-public166-20261105/`; no new fitting/calibration/large-pool or Cblind claims.
   - three estimands and three truth tiers;
   - false parents per query against pool size, from 10² up to the pool
     reached, extrapolated with the calibrated null;

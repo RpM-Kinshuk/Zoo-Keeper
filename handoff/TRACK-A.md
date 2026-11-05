@@ -1,5 +1,29 @@
 # Track A handoff
 
+## Latest checkpoint — 2026-11-05, calibration and formal R6 smoke complete
+
+Approved `formal166-public-constructions-v2`:166/166 measured identities.
+Existing calibration writer fitted165 independent +157 parent pairs at k64,
+block256,seed20261028. Prior Pythia14M seed3/4 roots/descendants excluded;
+15 held-out independent pairs yield0 above the fixed threshold,0 held-out
+positive pairs. No retuning or new fit/test allocation.
+
+Current output: `runs/track-a-roster-v2-calibration-20261105/`:
+`R5-report.md`, `fit-freeze.json`, `calibration.json`, `heldout-evaluation.json`,
+`verification.json`, `queries.json`, and immutable `zoo/` build pointer.
+166-model calibrated build and all6CLIcommands PASS; ModernBERT check consistent.
+6/18 imported leaderboard associations revision-verified; unverified associations
+remain flagged/excluded from default skill queries. Standalone spectra retained;
+no collector ESD packages invented (layers table empty).
+
+**Next:** broader R6/G0 retrieval validation (5000-candidate gate and held-out
+parent recall remain unestablished), preserving the frozen method/partitions.
+No G0/G1 decision, blind access, remeasurement or new source algorithms.
+B's raw temporary checkpoint durability still awaits capacity; all numerical
+inputs used here are already on primary storage. No jobs remain.
+
+Historical input handoffs follow; do not refit or repeat completed queues.
+
 ## Current checkpoint — 2026-11-05, approved roster v2 active
 
 **A's roster/pair-input blockers are cleared.** Owner explicitly approved the
