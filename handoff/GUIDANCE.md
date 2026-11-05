@@ -379,6 +379,14 @@ kept outside git under `$ZOO_DATA/lab_blind`.
 | P1 has neither ≥2× fewer false matches per query at TPR 0.9 nor ≥10× fewer bytes at equal AUROC than the best baseline | Dec 18 | Reframe P1 as a benchmark paper at ICML. Shrink the Hub set, never the lab. |
 | The exchange rate is small | — | It becomes a result of the selection paper; `recommend` leans on measured scores |
 
+**Owner decision, 2026-11-05:** apply the tree-likeness pivot now. The expanded
+public E6 diagnostic flags all eight family/mode comparisons (81.8–96.2%
+quartet violations at the unchanged1e-6 tolerance). Report “how tree-like” and
+focus the next P1 work on supervised edge scoring; make no tree-recovery claim.
+The owner instructed “go for it, and unblock A as well.” Decision/evidence:
+`runs/track-b-pivot-unblock-a-20261105/pivot-decision.json`. This approves the
+E6 direction change; lab roster/counting and A calibration remain separate.
+
 ### 5.3 Tracks
 
 One person, the owner, works with agent sessions. The work is split into three

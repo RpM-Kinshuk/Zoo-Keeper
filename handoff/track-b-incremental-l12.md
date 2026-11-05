@@ -1,6 +1,15 @@
 # Incremental L12: small real cohort
 
-**Latest B delivery — 2026-11-05:** use `runs/track-b-remaining-20261105/delivery/A-measurement-request.json` and its `root-binding.json` for13new exact keys (5formal+8auxiliary,zero new G1credit). These resolve against explicit temporary root label `temporary_remaining`; host runtime location `/tmp/zoo-track-b-remaining-20261105`. Durable checkpoint copy pending capacity. Also measure the16new original-roster outputs in `runs/track-b-gpu-continuation-20261105/delivery/`. Reuse A's verified137full-weight map; the older six/two queues below are already measured and must not be repeated. Current formal readiness is137measured/21generated-awaiting-A/8originalfailed-transform slots;8v2constructions remain outside166. See [Track B](TRACK-B.md) and the remaining-run report before launching. No B numerical measurements or G1/calibration-policy changes.
+**Current — 2026-11-05, calibration inputs ready:** all29delivered outputs
+are already measured. Owner approved versioned roster `formal166-public-constructions-v2`:
+166/166identities and all180independent/157parent scores verified. Use
+`runs/track-b-pivot-unblock-a-20261105/A-unblock-request-active.json` for existing
+calibration/R6 with prior held-out filters and fresh outputs. One same-key Qwen3
+embedded-head measurement was corrected under existing Task3; active map binds
+the repaired bundle, originals retained. Do not repeat old extraction queues.
+All equivalence failures remain failures; no G0/G1 decision or Cblind access.
+
+**Historical B delivery — 2026-11-05:** use `runs/track-b-remaining-20261105/delivery/A-measurement-request.json` and its `root-binding.json` for13new exact keys (5formal+8auxiliary,zero new G1credit). These resolve against explicit temporary root label `temporary_remaining`; host runtime location `/tmp/zoo-track-b-remaining-20261105`. Durable checkpoint copy pending capacity. Also measure the16new original-roster outputs in `runs/track-b-gpu-continuation-20261105/delivery/`. Reuse A's verified137full-weight map; the older six/two queues below are already measured and must not be repeated. Current formal readiness is137measured/21generated-awaiting-A/8originalfailed-transform slots;8v2constructions remain outside166. See [Track B](TRACK-B.md) and the remaining-run report before launching. No B numerical measurements or G1/calibration-policy changes.
 
 **Current continuation (2026-11-05):** this is a historical incremental record.
 Use [Track A](TRACK-A.md), [Track B](TRACK-B.md) and the

@@ -246,6 +246,8 @@ works with agent sessions.
   - Nov3:all12 official quantizations complete/verified/T1, six newq2/q4 cases safelyreloaded, original6unchanged;9oldevidence rowsreused. NewA6T2queue prepared at `runs/track-b-formal-quantization-v1/`. Scoped Smol/Pythia extras
     are recorded separately and do not silently replace the minimum inventory.
 - [~] **L9 Laundering transforms: at least 20** (B, due Nov 13).
+  - Nov5 owner APPROVED eight exact slot replacements/public-construction counting. Active roster v2 has16/16public constructions; all8v2equivalence outcomes FAILED, original failures retained. Combined20/G1 still needs C's separate boundary/owner decision. Active request: `runs/track-b-pivot-unblock-a-20261105/A-unblock-request-active.json`.
+  - Nov5 A-unblock preview:8exact drift-v2 substitutions yield complete166map with158other rows unchanged,180independent/157parent pairs available. NOT ACTIVE; explicit roster/counting approval requested separately from approved E6 pivot. No G1 gate/null fit/failed-equivalence relabeling. `runs/track-b-pivot-unblock-a-20261105/A-unblock-request.json`.
   - Nov5 remaining:owner approved generation only.8/8 separate `-drift-v2` constructions verified, including complete unchanged FP32/BF16/reload audits; all8 functional outcomes FAILED. Original public8/16 unchanged; zero additional formal/G1 credit, calibration roster unchanged. Exact auxiliary rows in the remaining delivery above; protocol `docs/plans/2026-11-05-public-transform-equivalence-v2.md`. C blind boundary untouched.
   - Nov5 esd_ind outside sandbox:8/16 official public outputs pass (4 rescalings,4 perturbations);8 permutation/rotation cases fail original FP32/bf16 checks and remain excluded. Frozen audits/16-case GPU validation/new A handoff in `runs/track-b-gpu-continuation-20261105/`. C blind boundary untouched.
   - Nov5: official Smol360 rescaling pilot stopped during bf16 validation on CPU: no native bf16; representative kernel255.5x slower than FP32 projects beyond2h. Original120 rows/tolerances retained; no checkpoint/credit/workers. New host/path needed. `runs/track-b-l9-smol360-20261105/REPORT.md`.
@@ -272,8 +274,11 @@ works with agent sessions.
     listed in `lab/models.csv` as independents with no edges.
   - Pin each one's commit.
 - [~] **L12 [HUMAN] Fingerprint lab v0** (A, due Nov 20).
+  - Nov5 approved roster v2:166/166mapped/full-weight; unchanged scorer produces180independent+157parent pairs. One same-key Qwen3embedded-head remeasurement repairs Task3canonical view names; original165other measurements and all old files retained. Calibration/R6 input blocker cleared; A owns fit/held-out policy, no B calibration. Active request above.
+  - Nov5 A delivery29 COMPLETE:21 new formal full-weight →158/166;8 auxiliaries separately measured with zero credit. All29 bundles verified; build/query smoke PASS; no workers/locks. Current map/coverage/proof: `runs/track-a-delivery29-20261105/`.8 original failed-transform slots unresolved;13 checkpoint inputs still temporary/durable-copy pending.
   - Nov5 B integration:source committed/merged at51147a3;21formal+8auxiliary outputs delivered through two exact-key requests, A29run active. Reuse137map, await A's verified new measurement map. Auxiliary zero G1credit; latest13checkpoints temporary/durable copy pending. `runs/track-b-remaining-20261105/delivery/`.
   - Nov5 B generation delivery:16 new exact-key checkpoints await A numerical measurements. `runs/track-b-gpu-continuation-20261105/delivery/A-measurement-request.json`; reuse parent/base evidence. Readiness137 full-weight+16 generated pending+13 ungenerated; no new B fingerprint credit.
+  - Nov5 A8 COMPLETE:137/166 formal full-weight (137 measured;29 ungenerated); all8 bundles verified, upgraded build/query PASS, no workers/locks. Current map/proof/readiness in `runs/track-a-compatibility-20261105/`. R5/calibrated R6 remain blocked.
   - Nov5 A continuation: A worktrees current; frozen six/two queues parse,129 full-weight +8 row-block hashes verified, explicit two-model build/query PASS. `runs/track-a-compatibility-20261105/REPORT.md`. Eight upgrades pending: current NVIDIA driver unavailable. B migration still open.
   - [r] Nov5 compatibility follow-up (A/B): worktrees updated; A prepared current
     six-plus-two queue/source contracts; B producer/evaluator repair and both naming
@@ -351,6 +356,7 @@ works with agent sessions.
 - [x] **E5 Stacked abliteration test** (B, due Nov 27).
 - [~] **E6 Tree-likeness on lab trees** (B, due **Nov 27**). A person makes
   the pivot decision on the thresholds in `GUIDANCE.md` 5.2.
+  - Nov5 owner decision:apply planned pivot now; report how tree-like, focus on supervised edge scoring, no tree-recovery claim. Decision and first existing E7 development-only scorer diagnostic (18development/6held-out,3estimands) at `runs/track-b-pivot-unblock-a-20261105/`; direction/calibration remain unvalidated. No blind reads or G1/roster amendment implied.
   - Nov5 expanded diagnostic:48compatible measured nodes/44construction edges,4public anchors;149inputs rehashed,8matrices bitwise recomputed,24tolerance results identical. Primary1e-6 violation rates81.8–96.2%, all8family/mode diagnostics above20%flag; nRFnull. Eight schema-v3 upgrades excluded by unchanged common-space version guard; all89exclusions explicit. No fitted method/pivot/blind reads. Person's pivot decision requested; full E6 remains open. `runs/track-b-e6-expanded-20261105/REPORT.md`.
   - Scoped real diagnostics now available:20-node Smol violations4193/4845(T1),4201/4845(T2) at1e-6, nRFnull/unresolveddirection; flagsreported, no formal pivot or threshold change. Original17-node/OLMo and tolerance sensitivity retained.
   - Nov3: new frozen24-model/17-edge formal-chain report consumes actual T2 artifacts for all3 prescribed chains plus held-out Pythia controls. Same-root control AUROC1.00, parent/ancestor coverage0; quartet violations at1e-6 are Smol1/1 and each Qwen0/1, but all3 violate at1e-8/1e-10. nRFnull, typed T2 engine NOT_EVALUABLE; no pivot or calibrated G0 claim. `runs/track-b-formal-chain-evaluation-v1/REPORT.md`.
@@ -493,7 +499,10 @@ works with agent sessions.
     Frozen inputs/original results preserved; `OWNER_PAUSED.json` guards both
     launchers. Exact checkpoint/508-file inventory:
     `runs/track-a-r3-r6-20261102.rcsy95ap/PAUSE_REPORT.md`.
-- [!] **R5 G0 report and calibration file** (A, due Dec 2).
+- [~] **R5 G0 report and calibration file** (A, due Dec 2).
+  - Nov5 owner-approved versioned166roster clears missing8input blocker. Complete180independent/157parent numerical preflight PASS with existing scorer. Use active request from B; keep original maps/controls/priorheld-outs. Calibration not yet written by B; no G0/G1 gate claim.
+  - Nov5 latest:158 formal full-weight mappings;8 original failed permutation/rotation slots prevent complete requested-parent calibration.8 measured auxiliary constructions give zero replacement credit. Current readiness: `runs/track-a-delivery29-20261105/calibration-readiness.json`; no null fitted or held-outs changed.
+  - Nov5:137 exact manifest/full-weight mappings;29 ungenerated remain. References47/47 and180 independent pairs retained; no fit or held-out changes. Current readiness: `runs/track-a-compatibility-20261105/calibration-readiness.json`.
   - Nov4 after source approval:129 exact manifest/fullT2 mappings;47 references complete and180 independent pairs verified. Remaining blocker is37 ungenerated B checkpoints. Preserve held-out allocation before any fit. Current preflight: `runs/track-a-r5-readiness-20261104T092928Z/calibration-status-current.json`.
   - Nov4 current preflight:87 formal identities have verified manifests and fullT2;79 required measurements remain missing (37 ungenerated,42 T0-only). New exact artifact map includes the earlier3 chain endpoints. No partial null written; current preflight: runs/track-a-r3-r6-20261102.rcsy95ap/recovery-20261104T042716Z/calibration-status-current.json. Original57-mapped snapshot is historical.
   - Nov3: descriptive G0 report now written from completed pilot outputs; formal calibration still blocked. Frozen57/166 manifest mapping is historical, distinct from B current coverage. No partial null substituted; report: runs/track-a-r3-r6-20261102.rcsy95ap/G0-report.md.
@@ -507,7 +516,7 @@ works with agent sessions.
 - [~] **R6 Zoo v0 smoke build** on the pilot outputs, with `--leaderboard_v2`
   and the calibration file (A, due Dec 3). It reads fingerprints, not
   weights, so agents run it.
-  - [ ] Nov5 compatibility follow-up (A): reconcile verified artifact mappings
+  - [x] Nov5 compatibility follow-up (A): reconcile verified artifact mappings
     additively and select explicit legacy inputs/conventions where necessary;
     confirm a small current build/query smoke without remeasuring for names.
   - Run each query once on a known derivative pair.

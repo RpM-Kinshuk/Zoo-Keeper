@@ -197,6 +197,11 @@ unsure whether a rule applies, treat it as applying and ask.
     `measurement_config` flat, through the path set in `evidence/__init__.py`;
     never import `esd_experiment.src` as a package, because it loads
     transformers.
+    Owner instruction, 2026-11-05: prefer existing code and entry points wherever
+    practical, useful and possible. Before adding an implementation or run
+    script, look for suitable helpers, commands and established workflows.
+    Use a small adapter when necessary; new code must address a concrete gap
+    rather than duplicate an existing path.
 11. Do not modify the existing collector (`esd_experiment/`, `net_esd/`) unless
     a plan says to. Runner integration waits for G0. Its existing tests must
     keep passing.

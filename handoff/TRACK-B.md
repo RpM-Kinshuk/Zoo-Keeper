@@ -1,6 +1,13 @@
 # Track B handoff
 
-## Current checkpoint — 2026-11-05, locally integrated and E6 extended
+## Current checkpoint — 2026-11-05, approved roster active; A unblocked
+
+Latest local integration: Model-Zoo `7c3c356` contains the reviewed embedded
+PEFT fix; Track B priorities merged at `a84c1d7`, with approved handoff/protocol
+records integrated afterward. Merged checks:470extractor/store PASS,1opt-in
+skip;658Zoo-Keeper PASS. Reuse existing code and entry points wherever practical,
+useful and possible; D7.10 and Model-Zoo AGENTS.md record the standing instruction.
+No push or worktree deletion. `runs/track-b-reuse-merge-20261105/` seals the result.
 
 Continue in `worktrees/Zoo-Keeper-track-b`, branch `track-b`; source commit `51147a3` is integrated into main;
 use `conda activate esd_ind`. All owned jobs exited; no commits/merge/push.
@@ -18,7 +25,9 @@ asymmetric assembly, so nRFnull. Eight otherwise eligible schema-v3 upgrades are
 excluded under the existing common-space version guard; every exclusion is
 recorded before outcomes. Report/freeze/verification:
 `runs/track-b-e6-expanded-20261105/`. This is a diagnostic, not recovery or
-calibration. A person was asked for the planned GUIDANCE5.2 pivot; none applied.
+calibration. The owner approved the GUIDANCE5.2 pivot: report how tree-like and focus on
+supervised edge scoring; no tree-recovery claim. Exact decision and first
+existing-scorer diagnostic: `runs/track-b-pivot-unblock-a-20261105/`.
 
 **13 additional verified checkpoints ready for A:**
 
@@ -45,18 +54,26 @@ is pending primary capacity**; do not treat temporary storage as archival.
 114 small metadata/manifests are preserved in the primary run's
 `evidence-snapshot/` with exact hash proofs.
 
-**A queue:** primary `runs/track-b-remaining-20261105/delivery/` contains
-`A-measurement-request.json`, `ready.json`, `artifact-index.csv`, verification,
-and `root-binding.json`. Paths in ready/request resolve against the explicit
-temporary root; its byte-identical delivery is `runs/remaining-delivery/`.
-Measure these13 plus the earlier16 from the GPU continuation below, reusing A's
-verified137 full-weight map. B has not run new numerical measurements. Earlier
-six/two queues are already measured and must not be repeated.
+**A measurements complete:** A verified all29new outputs in709.81seconds;
+formal mapping is158/166 plus8measured auxiliary constructions. Do not repeat
+these queues. Read `runs/track-a-delivery29-20261105/REPORT.md`,
+`formal-artifact-map158.json`, `auxiliary-artifact-map8.json` and readiness.
+All new numerical outputs/manifests are on primary storage. The13raw checkpoint
+inputs remain temporary; that durability issue is separate from calibration's
+exact roster blocker.
 
-Formal166 readiness: **137 measured/full-weight,21 generated awaiting A,
-8 ungenerated original failed-transform slots**, plus8 auxiliary constructions
-outside that roster. Exact additive CSV/overlay are in the new delivery directory.
-No full-lab/calibration/G0/G1 completion claim.
+**A unblocked:** owner explicitly approved the exact versioned roster/counting
+amendment. `formal166-public-constructions-v2` is active with166/166mapped and
+all180independent/157parent scores produced by the unchanged scorer.
+`runs/track-b-pivot-unblock-a-20261105/A-unblock-request-active.json` binds active
+models/edges/maps/input aliases and approval/readiness proofs. Original default
+roster and158map stay immutable; all8original/v2equivalence failures remain.
+One previously hidden Qwen3embedded PEFT view-name bug was fixed under existing
+extractor Task3, reviewed and remeasured in A's own new output directory with
+unchanged checkpoint identity. No source or guard was silently substituted.
+See `runs/track-a-embedded-peft-repair-20261105/`; two-file A source patch is merged locally into Model-Zoo main at `7c3c356`. A can now run existing calibration/R6 with prior held-outs.
+No G0/G1 decision; raw temporary storage remains separate.
+
 
 New code: `lab/heretic_safe.py`, `lab/heretic_objective.py`,
 `lab/transform_drift.py`, corresponding tests and12 missing-only pinned
@@ -68,13 +85,12 @@ Core review fixes verified; final **658tests PASS**,16warnings. Initial suite
 command used wrong cwd (7missing-relative-config failures); corrected checkout
 command passes, original log retained. No blind reads or threshold relaxation.
 
-Next: consume A's verified measurements after its active29-output run finishes;
-retain the baseline and old freezes until exact new maps verify. Arrange durable
-capacity/copy. Await the owner's tree-likeness pivot decision before changing
-method direction; E9 still needs the full pool, C baselines and calibrated method
-readiness. Any G1 counting amendment remains separate under D10.5. Further git
-integration needs an owner request; the current local merge was explicitly
-requested. Preserve all earlier artifacts and C's blind boundary.
+Next: A consumes the active request for its complete calibration/R6 pipeline,
+with existing controls and held-outs. Keep original158map/default tables intact.
+Supervised E7 baseline results use18development and6held-out public queries;
+parent/ancestor direction remains unvalidated. Full E9 still needs the large
+pool and C baselines. Durable raw-checkpoint capacity remains open. No further
+commits/push without an owner request; preserve A's existing staged changes.
 
 ## Historical checkpoint — 2026-11-05, esd_ind GPU continuation
 

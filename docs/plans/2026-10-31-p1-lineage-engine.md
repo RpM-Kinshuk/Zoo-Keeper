@@ -196,6 +196,16 @@ Use NetworkX's minimum spanning arborescence (Chu–Liu/Edmonds) on permitted di
 - [ ] **Step 4:** Run test file then package tests once, expected PASS. Dry-run six-node cycle fixture requires no model weights.
 - [ ] **Step 5:** Suggested commit: `lineage: tree diagnostics and directed arborescence assembly`.
 
+**2026-11-05 owner-approved E6 pivot:** the recorded48-node public extension
+crossed the existing20%quartet trigger in all8comparisons. Apply GUIDANCE5.2:
+retain tree-likeness as a descriptive finding and focus on supervised edge
+scoring. No tree-recovery claim or forced asymmetric assembly. Existing E7's
+development-only temperature/intercept scorer may be exercised as a scoped
+baseline with frozen features, preserved roots and pre-test model hashes.
+It does not validate direction or provide calibration by itself. New asymmetric
+features or supervised models need their own versioned protocol before fitting.
+Exact decision/evidence: `runs/track-b-pivot-unblock-a-20261105/`.
+
 ### Task 6 (E7): Empirical null, tail model, per-query control, and open sets
 
 **Files:** Create `lineage/calibration.py`, `lineage/conformal.py`, `tests/lineage/test_calibration.py`, `tests/lineage/test_conformal.py`, `configs/lineage/calibration.json`.
