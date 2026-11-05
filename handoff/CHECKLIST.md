@@ -514,9 +514,10 @@ works with agent sessions.
     no partial-cohort null substituted. Pilot R3/R4 measurements are separate.
     That preflight is frozen at pilot start; three new formal L12 outputs are
     now published separately, reducing current ungenerated count to106.
-- [~] **R6 Zoo v0 smoke build** on the pilot outputs, with `--leaderboard_v2`
+- [r] **R6 Zoo v0 smoke build** on the pilot outputs, with `--leaderboard_v2`
   and the calibration file (A, due Dec 3). It reads fingerprints, not
   weights, so agents run it.
+  - Nov5 expanded calibrated pilot/formal703-model smoke ready:474full-weight links; all6CLIqueries PASS, existing calibration reused. `runs/track-a-expanded-r6-20261105/REPORT.md`. G0development report records retrieval/alpha failures and missing5000pool/cost evidence; no gate decision.
   - Nov5 calibrated approved166-roster smoke PASS:all6CLIcommands, full-weight/row-block input reuse, Raw leaderboard loader (6/18revision-verified). `runs/track-a-roster-v2-calibration-20261105/`. Broader pilot/retrieval gates remain open; no G0/G1 claim.
   - [x] Nov5 compatibility follow-up (A): reconcile verified artifact mappings
     additively and select explicit legacy inputs/conventions where necessary;

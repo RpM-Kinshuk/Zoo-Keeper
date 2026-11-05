@@ -6,6 +6,22 @@ entry and name the agent or person.
 
 ## Snapshot
 
+**2026-11-05 Track A expanded R6 COMPLETE; G0 not satisfied:**703models,
+474full-weight links, all6CLIqueries PASS; calibration reused unchanged.
+Existing G0report:966/966development pairs, AUROC1, within-related rho0.997216,
+decision agreement0.992754. Immediate-parent diagnostic8.276786false matches/
+query at TPR0.904459 on incomplete labels/minpool1 (1569unknown relations);
+no5000-pool guarantee. Alpha gap0.427726>0.1 over24025paired fits: retain full
+spectra under existing fallback. Parent-vs-sibling/grandparent0.645387/0.571351;
+keep approved supervised-edge pivot. Empirical-null width diagnostic fails;
+no closed-form/per-query claims. Formal cost evidence unavailable, original
+pilot costs separate. Report/verification/query/build/merge evidence:
+`runs/track-a-expanded-r6-20261105/`.427.31s CPU; no workers,new weights,
+measurements,threshold retuning,blind reads,installs or push. Merge checks:
+470extractor/store PASS/1skip;658query/lab PASS/16warnings in established host
+fixture/metadata-overlay environment. G0/G1 human decisions remain open.
+
+
 **2026-11-05 Codex Track B E9 public166 baseline IN PROGRESS:** proceeding with existing lineage.cli infer/freeze/evaluate, unchanged method/0.75reporting threshold, no new fit/features or A-calibration duplication. Approved166public roster;27390ordered pairs with unknown external truth retained, certified reference labels only, prior root assignments preserved. Existing loader rejects8v1manifest/v3fingerprint pairs; re-created only those8T0manifests via existing local builder, verifying exact unchanged checkpoint keys and leaving originals intact. Input freeze/metadata proof/run logs: `runs/track-b-e9-public166-20261105/`. Twelve-case Qwen3pilot active before bounded166expansion; CPU/sketch inputs only after metadata refresh, no GPU, checkpoints regenerated, production code or Cblind reads. No calibration/G0/full-E9 claim; A's request remains separately ready.
 
 **2026-11-05 Track A merge + expanded R6/G0 RUNNING:** owner explicitly

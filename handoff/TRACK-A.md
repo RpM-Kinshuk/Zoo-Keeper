@@ -1,5 +1,30 @@
 # Track A handoff
 
+## Current checkpoint — 2026-11-05, expanded calibrated R6 ready
+
+Local calibration records integrated; expanded artifact-only store703models,
+474full-weight links, approved166roster included; all6CLIqueries PASS. Frozen
+calibration reused, no weight reads or measurements. Current evidence:
+`runs/track-a-expanded-r6-20261105/REPORT.md`, `verification.json`,
+`G0-development-report.md`, `queries.json`, immutable `zoo/`.
+
+Development G0 diagnostics:966/966pairs, parent-vs-independent AUROC1,
+within-related Spearman0.997216, decision agreement0.992754. Immediate-parent
+false-match diagnostic8.276786/query at TPR0.904459; small/incompletely labelled
+pool (min1,1569unknown relations), not a5000-candidate guarantee. Parent-vs-
+sibling/grandparent AUROCs0.645387/0.571351. Keep B's approved supervised-edge
+pivot; no validated direction or G0/G1 claim.
+
+24025paired spectral fits readable; median alpha gap0.427726>0.1. Retain/use
+full-weight spectra under the existing fallback. Cost evidence in this formal
+report is unavailable; original pilot timing records remain separate. Null
+width diagnostic also fails: empirical calibration only, no closed-form or
+per-query error guarantee. Prior held-outs and original reports unchanged.
+
+**Next:** human G0 review and separately authorized large-pool acquisition;
+5000verified candidates and held-out parent recall remain unmet. No jobs remain.
+R6smoke ready for review. Raw temporary checkpoint durability remains open.
+
 ## Latest checkpoint — 2026-11-05, calibration and formal R6 smoke complete
 
 Approved `formal166-public-constructions-v2`:166/166 measured identities.
