@@ -266,6 +266,10 @@ works with agent sessions.
     listed in `lab/models.csv` as independents with no edges.
   - Pin each one's commit.
 - [~] **L12 [HUMAN] Fingerprint lab v0** (A, due Nov 20).
+  - [ ] Nov5 compatibility follow-up (A/B): update old track worktrees; A derives
+    current six-plus-two queue launches; B fixes cohort producer/delivery reader
+    together. Reuse completed evidence and preserve frozen inputs. Scope and
+    acceptance: [compatibility handoff](MODEL-ZOO-COMPATIBILITY.md).
   - Nov4 OLMo DPO follow-through: new2 T1 complete, A2 T2 queue prepared at `runs/track-b-l6-remaining-20261104/world4/future-capacity/execution2/incremental-A-l12-launch.json`, distinct from prior A6. Eight total upgrades ready; global137 measured/129 fullT2/29 ungenerated. Current additive refresh: `runs/track-b-olmo-dpo-finish-20261104/refresh-coverage.py`; older refreshers omit the final2.
 
   - Nov4 B follow-through: six new full-training outputs/T1 ready for incremental T2, distinct A6queue prepared/unclaimed at `runs/track-b-l6-remaining-20261104/execution6/incremental-A-l12-launch.json`. Global135 measured/129 fullT2,31 ungenerated; missingfullT2=37 (six ready+31 ungenerated). Current additive proof in `runs/track-b-reconciliation-20261103/`, refreshed by `runs/track-b-next-20261104/refresh-l6-coverage.py`; old refreshers omit these deliveries.
@@ -492,6 +496,9 @@ works with agent sessions.
 - [~] **R6 Zoo v0 smoke build** on the pilot outputs, with `--leaderboard_v2`
   and the calibration file (A, due Dec 3). It reads fingerprints, not
   weights, so agents run it.
+  - [ ] Nov5 compatibility follow-up (A): reconcile verified artifact mappings
+    additively and select explicit legacy inputs/conventions where necessary;
+    confirm a small current build/query smoke without remeasuring for names.
   - Run each query once on a known derivative pair.
   - Record the outputs in `docs/operations/zoo.md`.
   - Nov3: uncalibrated artifact smoke now PASS:556 models,89,286 views,284 full-spectrum links, all6CLIqueries. Real Hub gated-string/boolean export issue fixed and merged; no weights re-extracted. Operations record updated. Full calibrated R6 remains blocked on R5 and required coverage; FINAL_REPORT.md records exact outputs.

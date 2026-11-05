@@ -1,5 +1,10 @@
 # Handoff: building the Model Zoo (start here)
 
+**Current compatibility entry point (2026-11-05):**
+[MODEL-ZOO-COMPATIBILITY.md](MODEL-ZOO-COMPATIBILITY.md), with next actions in
+[Track A](TRACK-A.md) and [Track B](TRACK-B.md). Historical commands below must
+not be replayed against current code without the documented adaptation.
+
 **Continuing Track A:** start with [TRACK-A.md](TRACK-A.md). The dated orientation below is historical.
 
 This folder holds what a new group of agents needs to continue the Model Zoo

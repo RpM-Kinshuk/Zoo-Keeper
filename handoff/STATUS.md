@@ -6,6 +6,18 @@ entry and name the agent or person.
 
 ## Snapshot
 
+**2026-11-05 compatibility audit:** Main readers already support historical/current
+formats; no blanket data migration is needed. Remaining work is assigned in
+[Track A](TRACK-A.md), [Track B](TRACK-B.md) and the
+[shared compatibility handoff](MODEL-ZOO-COMPATIBILITY.md): old worktrees,
+removed flags in both pending queues, B's cohort producer/delivery reader, and
+additive coverage/build input reconciliation. Existing reader checks24 PASS;
+existing tiny cohort test1 FAIL reproduces the removed mode. Both queue argument
+arrays fail before translation and parse after translation; nothing launched.
+Nonblind frozen studies/runs unchanged; no blind outputs inspected. This audit
+updates handoffs/checklist only; code fixes remain open. Latest recorded coverage
+137 measured /129 full-weight /29 ungenerated was not recounted.
+
 **2026-11-04.**
 - Pilot R1 complete (320 models, all quotas); R2 partial after targeted repair:309 pilot manifests complete,6 denied,5 unresolved;155 direct bases complete,2 denied,7 unresolved. Recovered30 of42 affected requests; remaining gaps are source/layout decisions. See "Pilot runs" below.
 - Track A extractor X1–X10 committed and merged locally into Model-Zoo `main` at `0d24eda` on the owner's request. Real G0/calibration still needs measured pilot outputs.
@@ -569,6 +581,8 @@ document and section, what changed, why, and who approved it.
 | 2026-11-05 | Zoo database version | ZOO_VERSION1→2 for renamed model columns; readers support0/1/2 with legacy normalization at load/view boundaries. | Prevent silent schema-contract ambiguity. | Owner explicit public-name migration; current/legacy query checks pass |
 | 2026-11-05 | Legacy compatibility boundaries | evidence.compatibility centralizes numbered labels/paths. Old package manifests/hashes stay immutable; explicitly selected historical packages and backfilled runs build normally. Legacy diff/check locates the original sibling manifest. Query spectra path containment/symlink checks retained; synthetic lineage records stay independent of evidence imports. | Keep old evidence usable while current interfaces use descriptive names. | One focused review found2Important lookup gaps;3RED→GREEN8targetedPASS; no repeat review |
 | 2026-11-05 | Naming guidance, docs and validation | AGENTS.md and current guides use descriptive names; archived plans/actual paths are explicitly historical. Initial core run518PASS/1stale version assertion/1SKIP, stale assertion fixed and rerun; final worker17PASS, compatibility8PASS; sibling query/CLI/lineage214PASS plus overlapping focused follow-ups. Wrapper exit0/17/130, syntax/compilation/whitespace checks pass. No GPU work/downloads/installs/commits. | Record migration scope and focused evidence, without adding measurements. | Suggested refactor(evidence): replace numbered tiers with descriptive measurement names; plan Model-Zoo/docs/superpowers/plans/2026-11-05-descriptive-evidence-names.md |
+
+| 2026-11-05 | Cross-track compatibility handoff | Audited current consumers and nonblind study/run interfaces; recorded only remaining A/B work in TRACK-A.md, TRACK-B.md and MODEL-ZOO-COMPATIBILITY.md, linked from shared guidance/checklist. | Avoid duplicate migrations and preserve frozen source/results; remaining producer/delivery and launch gaps stay explicitly open. | Owner authorized high-level track handoffs; 24 reader checks PASS, 1 existing cohort test FAIL reproduces removed mode; both queue argv translations parse; docs-only change |
 
 ## Weekly result log
 

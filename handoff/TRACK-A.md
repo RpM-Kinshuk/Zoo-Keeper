@@ -1,5 +1,27 @@
 # Track A handoff
 
+## Current continuation requirements — 2026-11-05
+
+The compatibility audit at Model-Zoo `de2aabd` / Zoo-Keeper `99cc6c2`
+found work remaining; see [the shared handoff](MODEL-ZOO-COMPATIBILITY.md).
+
+- Update A's old collection/query worktrees to the committed interfaces while
+  preserving local edits; verify the actual imported source.
+- Derive new, hash-bound launches for both pending six- and two-output queues
+  using `--measurement_mode full_weights` and `--also_row_block_sizes`.
+  Preserve original queues and completed measurements.
+- Reconcile coverage additively, then reuse compatible existing artifacts for
+  build/query. Package defaults do not automatically include historical runs or
+  conventions. No remeasurement is needed merely to change names.
+- Latest recorded baseline is 137 measured / 129 full-weight / 29 ungenerated;
+  eight upgrades are ready. Complete those upgrades before resuming R5/calibrated
+  R6 when their actual prerequisites are met. This audit ran no model jobs.
+
+## Historical checkpoint — 2026-11-04
+
+The numbered mode names and source revisions below describe that checkpoint.
+The requirements above govern new launches.
+
 Continue in the existing `track-a` worktrees under `worktrees/`. Extractor and zoo/query source are implemented and merged. Model-Zoo main: `5262c90`; the approved reference-source amendment is on Zoo-Keeper main at `7a0d786`.
 
 Current coverage: **129/166 full T2; 135 measured overall**. Six new B outputs are ready for T2; **31 checkpoints remain ungenerated**. All 47 references are complete. Full spectra and original source provenance are retained. No Track A jobs are running.

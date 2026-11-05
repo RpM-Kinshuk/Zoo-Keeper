@@ -1,5 +1,12 @@
 # Incremental L12: small real cohort
 
+**Current continuation (2026-11-05):** this is a historical incremental record.
+Use [Track A](TRACK-A.md), [Track B](TRACK-B.md) and the
+[compatibility handoff](MODEL-ZOO-COMPATIBILITY.md) before new launches. Both
+pending six- and two-output queue files require derived current CLI arguments;
+keep the original queues, artifact paths, hashes and recorded commands below
+unchanged. New modes are `row_blocks` and `full_weights`.
+
 Owner priority, 2026-11-01: verified real sources, ready L8/L9 derivatives,
 evaluation harness and first scoped inference/scoring report. Release staging
 is deferred. A retains ownership of whole-lab L12; this bounded incremental

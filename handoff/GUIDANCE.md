@@ -1,5 +1,11 @@
 # Guidance
 
+**Current interface amendment, 2026-11-05:**
+[Model-Zoo compatibility](MODEL-ZOO-COMPATIBILITY.md) defines the current
+measurement names, artifact/schema versions, package inputs and remaining A/B
+work. It supersedes older interface examples below; scientific decisions and
+frozen historical records retain their original meaning.
+
 This document covers what we are building, why, and the few ideas you need to
 make good decisions on any task. It summarizes the merged research plan
 (`Zoo-Keeper/docs/research/2026-10-27-merged-research-plan.md`),
