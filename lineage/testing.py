@@ -16,7 +16,7 @@ def synthetic_median(a, b, *, k=64):
     return float(np.median(cosine_views(a, b, pairs, k=k))) if pairs else None
 
 
-def make_record(key, sketches, *, parent=None, delta=None, arch='cfg:synthetic', tier='t1',
+def make_record(key, sketches, *, parent=None, delta=None, arch='cfg:synthetic', tier='row_blocks',
                 row_block=256, rows=None, names=None):
     sketches = np.asarray(sketches, dtype=np.float32)
     n = len(sketches)
@@ -58,7 +58,7 @@ def make_synthetic_pool():
     for i, array in enumerate(arrays):
         parents = [keys[p] for p, c in links if c == i]
         record = make_record(keys[i], array, parent=parents[0] if len(parents) == 1 else None,
-                             arch='cfg:different' if i == 2 else 'cfg:synthetic', tier='t0' if i == 11 else 't1')
+                             arch='cfg:different' if i == 2 else 'cfg:synthetic', tier='metadata_only' if i == 11 else 'row_blocks')
         record = replace_record(record, duplicate_group='duplicate-3' if i in (3, 10) else f'unique-{i}')
         records.append(record)
     truth = {'nodes': keys, 'edges': [{'parent_key': keys[p], 'child_key': keys[c],
@@ -66,7 +66,7 @@ def make_synthetic_pool():
              'completeness': {'parent': True, 'ancestor': True, 'same_root': True},
              'duplicates': {keys[10]: keys[3]}}
     universe = [{'key': r.key, 'query_eligible': i != 11, 'candidate_eligible': i != 11,
-                 'duplicate_group': r.meta['duplicate_group'], 'reason': 't0_only' if i == 11 else 'ok'}
+                 'duplicate_group': r.meta['duplicate_group'], 'reason': 'metadata_only' if i == 11 else 'ok'}
                 for i, r in enumerate(records)]
     manifests = [{'key': r.key, 'synthetic': True, 'arch': r.arch} for r in records]
     return SimpleNamespace(records=records, truth=truth, universe=universe, manifests=manifests)

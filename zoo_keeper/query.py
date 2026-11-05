@@ -10,9 +10,11 @@ import duckdb
 import pandas as pd
 from safetensors import safe_open
 
+from evidence.compatibility import (canonical_mode, companion_spectra_path,
+                                    normalize_model_table, normalize_view_table)
 from evidence.compare import check_verdict, diff_fingerprints
 from evidence.fingerprint import load_fingerprint
-from zoo import ZOO_VERSION
+from zoo import READABLE_ZOO_VERSIONS
 from zoo.retrieval import nearest
 from zoo.schema import model_key
 
@@ -37,6 +39,7 @@ _TABLES = ("models", "views", "coverage", "lineage", "scores", "predictions")
 _FIND_COLUMNS = ("model_key", "repo_id", "modality", "params", "license", "downloads",
                  "coverage_status", "dup_group")
 _SIMILAR_COLUMNS = ("model_key", "cosine", "dup_group", "license")
+_FINGERPRINT_FIELDS = {"row_blocks": "row_block_fingerprint", "full_weights": "full_weight_fingerprint"}
 _TIERS = {"verified": 0, "detected": 1, "declared": 2}
 
 
@@ -57,13 +60,20 @@ class Zoo:
         root = data_root if data_root is not None else os.environ.get("ZOO_DATA")
         self.data_root = Path(root).resolve() if root else None
         self.metadata = json.loads((self.path / "zoo.json").read_text())
-        if self.metadata.get("zoo_version") != ZOO_VERSION:
+        if self.metadata.get("zoo_version") not in READABLE_ZOO_VERSIONS:
             raise ValueError("Unsupported zoo version")
         self._connection = duckdb.connect(":memory:")
         try:
             for name in _TABLES:
                 # Names are fixed; paths go through DuckDB's relation API.
-                self._connection.read_parquet(str(self.path / f"{name}.parquet")).create_view(name)
+                table = self._connection.read_parquet(str(self.path / f"{name}.parquet"))
+                if name == "models":
+                    # Normalize the in-memory view; published generations stay immutable.
+                    self._connection.register(name, normalize_model_table(table.df()))
+                elif name == "views":
+                    self._connection.register(name, normalize_view_table(table.df()))
+                else:
+                    table.create_view(name)
         except BaseException:
             self.close()
             raise
@@ -193,7 +203,7 @@ class Zoo:
         key = row["model_key"]
         identity_fields = ("model_key", "repo_id", "revision")
         decision_fields = ("is_decision", "system_one", "decision_type", "num_labels", "labels")
-        fingerprint_fields = ("fingerprint_t1", "fingerprint_t2", "spectra_t2")
+        fingerprint_fields = ("row_block_fingerprint", "full_weight_fingerprint", "full_weight_spectra")
         excluded = {*identity_fields, *decision_fields, *fingerprint_fields, "coverage_status", "skipped_tensors"}
         decision = {field: row[field] for field in decision_fields}
         labels = decision["labels"] or {}
@@ -221,11 +231,11 @@ class Zoo:
     def similar(self, model, k=10, collapse_duplicates=True) -> pd.DataFrame:
         _nonnegative(k, "k")
         row = self._model(model)
-        if not row["fingerprint_t1"]:
-            raise NotComparable("no_t1_fingerprint" if row["fingerprint_t2"] else row["coverage_status"])
+        if not row["row_block_fingerprint"]:
+            raise NotComparable("no_row_block_fingerprint" if row["full_weight_fingerprint"] else row["coverage_status"])
         candidates = self._records(
             "SELECT model_key, dup_group, license, downloads FROM models "
-            "WHERE arch_signature = ? AND fingerprint_t1 <> ?", [row["arch_signature"], ""])
+            "WHERE arch_signature = ? AND row_block_fingerprint <> ?", [row["arch_signature"], ""])
         if len(candidates) < 2:
             raise NotComparable("no_same_architecture_models")
         if k == 0:
@@ -298,25 +308,25 @@ class Zoo:
                     license_chain=chain, license_differs=len({license for _, license in chain if license is not None}) > 1)
 
     def _fingerprint(self, row, tier):
-        path = self._artifact(row[f"fingerprint_{tier}"])
+        path = self._artifact(row[_FINGERPRINT_FIELDS[tier]])
         # The evidence loader chooses companion access from embedded metadata,
         # so reject a mislabeled artifact before it can open any companion.
         with safe_open(path, framework="numpy") as handle:
             metadata = handle.metadata()
         if model_key(metadata["repo_id"], metadata["revision"]) != row["model_key"]:
             raise ValueError(f"Fingerprint identity does not match model: {row['model_key']}")
-        if metadata.get("tier") != tier:
+        if canonical_mode(metadata.get("tier")) != tier:
             raise ValueError(f"Fingerprint tier does not match {tier}")
-        if tier == "t2":
+        if tier == "full_weights":
             # load_fingerprint also opens this companion file. Check containment
             # before handing it to the evidence loader (including symlinks).
-            companion = path.with_name(path.name.removesuffix(".t2.fingerprint.safetensors") + ".t2.spectra.h5")
+            companion = companion_spectra_path(path)
             if not companion.resolve().is_relative_to(self.data_root):
-                raise ValueError("T2 spectra path escapes data_root")
+                raise ValueError("full-weight spectra path escapes data_root")
         fingerprint = load_fingerprint(path)
         if model_key(fingerprint.meta["repo_id"], fingerprint.meta["revision"]) != row["model_key"]:
             raise ValueError(f"Fingerprint identity does not match model: {row['model_key']}")
-        if fingerprint.meta.get("tier") != tier:
+        if canonical_mode(fingerprint.meta.get("tier")) != tier:
             raise ValueError(f"Fingerprint tier does not match {tier}")
         return fingerprint
 
@@ -327,8 +337,8 @@ class Zoo:
         any computed values or the upstream fingerprint/diff formats.
         """
         left, right = self._model(a), self._model(b)
-        tier = next((tier for tier in ("t1", "t2")
-                     if left[f"fingerprint_{tier}"] and right[f"fingerprint_{tier}"]), None)
+        tier = next((tier for tier in ("row_blocks", "full_weights")
+                     if left[_FINGERPRINT_FIELDS[tier]] and right[_FINGERPRINT_FIELDS[tier]]), None)
         if tier is None:
             raise NotComparable("no_common_tier")
         calibration = json.loads(Path(null).read_text()) if null is not None else None

@@ -11,7 +11,7 @@ def fingerprint(names, values, rows=None):
         shape=np.array([[4, 4]] * len(names)),
         rows=np.array(rows or [[0, 4]] * len(names)),
         sketch=np.array(values, dtype=np.float32).reshape(len(names), 2, 2),
-        meta=dict(tier='t1', row_block=4, sketch_seed=1, evidence_version='v1', sketch_k=2))
+        meta=dict(tier='row_blocks', row_block=4, sketch_seed=1, evidence_version='v1', sketch_k=2))
 
 
 def test_tree_uses_one_common_coordinate_space_for_every_pair():
@@ -59,7 +59,7 @@ def test_freeze_never_replaces_a_previous_protocol(tmp_path):
         freeze_json(path, {'threshold': .7})
 
 
-@pytest.mark.parametrize('field,value', [('tier','t2'), ('row_block',8),
+@pytest.mark.parametrize('field,value', [('tier','full_weights'), ('row_block',8),
                                        ('sketch_seed',2), ('evidence_version','v2')])
 def test_tree_rejects_different_measurement_settings(field, value):
     a = fingerprint(['x'], [[0, 0, 0, 0]])
@@ -72,9 +72,9 @@ def test_tree_rejects_different_measurement_settings(field, value):
 def test_same_key_wrong_tier_is_rejected_before_scoring():
     from lineage.lab_report import validate_measurement
     fp = fingerprint(['x'], [[1, 0, 0, 0]])
-    fp.meta.update(repo_id='lab/model', revision='local:'+'a'*64, tier='t2')
+    fp.meta.update(repo_id='lab/model', revision='local:'+'a'*64, tier='full_weights')
     with pytest.raises(ValueError, match='measurement'):
-        validate_measurement(fp, key='lab/model@local:'+'a'*64, tier='t1', row_block=4,
+        validate_measurement(fp, key='lab/model@local:'+'a'*64, tier='row_blocks', row_block=4,
                              sketch_k=2, sketch_seed=1, evidence_version='v1')
 
 

@@ -8,8 +8,10 @@ import numpy as np
 import pandas as pd
 from scipy.stats import genpareto
 
+from evidence.compatibility import canonical_mode
+
 METHOD_VERSION = "lineage-calibration-v1"
-STATISTIC = dict(statistic="median_cosine", sketch_k=64, tier="t1", row_block=256)
+STATISTIC = dict(statistic="median_cosine", sketch_k=64, tier="row_blocks", row_block=256)
 STRATA = {"same_root": ("independent",), "ancestor": ("independent", "sibling"),
           "parent": ("independent", "sibling", "non_immediate_ancestor")}
 
@@ -115,8 +117,9 @@ def fit_null(scores: pd.DataFrame, *, estimand: str, settings: dict,
     """
     if estimand not in STRATA or not 0 < tail_quantile < 1:
         raise ValueError("supported estimand and tail quantile in (0,1) required")
-    if any(settings.get(k) != v for k,v in STATISTIC.items()):
-        raise ValueError("calibration requires median_cosine at k64/t1/row256")
+    if any((canonical_mode(settings.get(k)) if k == "tier" else settings.get(k)) != v
+           for k, v in STATISTIC.items()):
+        raise ValueError("calibration requires median_cosine at k64/row_blocks/row256")
     source_hashes = settings.get("source_hashes")
     if not isinstance(source_hashes, dict) or not source_hashes or any(
         not isinstance(value, str) or len(value) != 64 or
@@ -199,7 +202,8 @@ def apply_null(observed: float, calibration: dict, *, family: str, settings: dic
     if calibration.get("artifact_hash") != _hash({k:v for k,v in calibration.items() if k != "artifact_hash"}):
         raise ValueError("calibration artifact hash mismatch")
     abstain = dict(status="uncalibrated", p_value=None, validity="unvalidated", guarantee="none")
-    if any(settings.get(k) != calibration["settings"].get(k) for k in calibration["settings"]):
+    if any((canonical_mode(settings.get(k)) != canonical_mode(value) if k == "tier"
+            else settings.get(k) != value) for k, value in calibration["settings"].items()):
         return dict(abstain, reason="settings_mismatch")
     if family not in calibration["strata"]:
         return dict(abstain, reason="unseen_family", guarantee="transfer_unvalidated")

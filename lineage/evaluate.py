@@ -75,7 +75,7 @@ def freeze(config, inputs, out):
                     threshold_policy='fixed deployment threshold; evaluation TPR90 is descriptive only',
                     prospective_cutoff='2026-12-04', prospective_status='not_evaluated',
                     pool_policy='fixed nested seeded candidate pools retaining all labeled positives',
-                    extrapolation_status='not_run', evidence_ladder=['metadata','T0','T1','T2','black-box'])
+                    extrapolation_status='not_run', evidence_ladder=['metadata','metadata_only','row_blocks','full_weights','black-box'])
     out.mkdir(parents=True, exist_ok=False)
     for name,value in [('protocol.json',protocol), ('input_hashes.json',hashes)]:
         with (out / name).open('x') as stream:
@@ -324,7 +324,7 @@ def evaluate(predictions, truth, universe, costs, *, config):
                 at_frozen_threshold=primary['at_frozen_threshold'],
                 unknown_truth_pairs=primary['unknown_truth_pairs'],negative_pairs=primary['negative_pairs'],
                 costs=_cost_report(costs,queries,n_answers),baselines=baseline,
-                gate={'status':'NOT_EVALUABLE','reason':'requires measured 5000-reference pool, T2 comparisons, and matched real baseline artifacts; a person decides gates'},
+                gate={'status':'NOT_EVALUABLE','reason':'requires measured 5000-reference pool, full-weight comparisons, and matched real baseline artifacts; a person decides gates'},
                 pool_protocol={'seed':config.get('seed',0),'candidate_order':ordered,'pool_sizes':sizes,
                                'scale':'toy' if available < 100 else 'measured','extrapolation':'not_run'},
                 curves=pd.DataFrame(curves),coverage=all_rows)

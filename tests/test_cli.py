@@ -76,7 +76,7 @@ def test_calibration_and_data_root_are_forwarded(built_zoo, universe, tmp_path, 
     calibration = tmp_path / "null.json"
     calibration.write_text(json.dumps(dict(
         statistic="median_cosine", sketch_k=32, row_block=ROW_BLOCK, sketch_seed=SKETCH_SEED,
-        n_pairs=99, tier="t1", null_quantiles=[-.1, .1], related_threshold=.8)))
+        n_pairs=99, tier="row_blocks", null_quantiles=[-.1, .1], related_threshold=.8)))
     common = ["--zoo", str(built_zoo), "--data_root", str(universe.root),
               "--null", str(calibration), "--json"]
     assert main(["diff", "org/child@" + SHA2, "org/parent@" + SHA1, *common]) == 0

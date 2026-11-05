@@ -35,7 +35,7 @@ def retrieve(query: FingerprintRecord, candidates: list[FingerprintRecord], *, l
         seen.add(candidate.key)
         if not candidate.meta.get('synthetic', False):
             continue
-        # Eligibility is always assessed at the frozen T1 evidence size.
+        # Eligibility is always assessed at the frozen row-block evidence size.
         pairs, reasons = view_diagnostics(query, candidate, k=64)
         retrieval_pairs, retrieval_reasons = view_diagnostics(query, candidate, k=32)
         retrieval_set = set(retrieval_pairs)

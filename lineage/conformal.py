@@ -68,7 +68,7 @@ def fit_development_scorer(development: pd.DataFrame, *, estimand: str,
                  candidate_universe_hash=candidate_universe_hash,
                  temperature=float(np.exp(fit.x[0])), not_in_reference_intercept=float(fit.x[1]),
                  development_hash=_frame_hash(development), frozen=True,
-                 statistic=dict(statistic="median_cosine", sketch_k=64, tier="t1", row_block=256),
+                 statistic=dict(statistic="median_cosine", sketch_k=64, tier="row_blocks", row_block=256),
                  objective="mean query average true-label negative log probability",
                  development_nll=float(fit.fun))
     return dict(model, protocol_hash=_hash(model))

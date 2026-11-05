@@ -80,7 +80,7 @@ def view_diagnostics(a, b, *, k=64):
             return [], [f'missing_setting:{field}']
         if a.meta[field] != b.meta[field]:
             return [], [f'setting_mismatch:{field}']
-    if a.meta['tier'] != 't1':
+    if a.meta['tier'] != 'row_blocks':
         return [], ['unsupported_tier']
     if a.arch != b.arch:
         return [], ['architecture_mismatch']

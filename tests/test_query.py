@@ -25,7 +25,7 @@ def test_info_separates_measured_and_predicted(z):
     card = z.info("org/child@" + SHA2)
     assert card["predictions"] == [] and all("revision_verified" in s for s in card["measured_scores"])
     assert card["coverage"]["status"] in {"measured", "partial"}
-    assert z.info("org/t0only@" + SHA8)["coverage"]["status"] == "t0_only"
+    assert z.info("org/t0only@" + SHA8)["coverage"]["status"] == "metadata_only"
 
 def test_similar_and_not_comparable(z):
     df = z.similar("org/child@" + SHA2, k=5)
@@ -35,7 +35,7 @@ def test_similar_and_not_comparable(z):
     assert "org/dup@" + SHA5 in z.info("org/child@" + SHA2)["duplicates"]
     with pytest.raises(NotComparable) as err:
         z.similar("org/t0only@" + SHA8)
-    assert err.value.reason == "t0_only"
+    assert err.value.reason == "metadata_only"
     with pytest.raises(NotComparable):
         z.similar("org/other-arch@" + SHA7)
 
@@ -153,14 +153,14 @@ def test_similar_collapses_other_groups_by_downloads(snapshot, universe):
             opened.similar("org/parent@" + SHA1, k=-1)
 
 
-def test_similar_t2_only_reason_and_missing_common_views(snapshot, universe):
-    def t2_only(rows):
+def test_similar_full_weights_only_reason_and_missing_common_views(snapshot, universe):
+    def full_weights_only(rows):
         child = next(row for row in rows if row["model_key"] == "org/child@" + SHA2)
-        child.update(fingerprint_t1="", fingerprint_t2="fingerprints/only.t2.fingerprint.safetensors")
-    with Zoo(snapshot({"models": t2_only}), data_root=universe.root) as opened:
+        child.update(row_block_fingerprint="", full_weight_fingerprint="fingerprints/only.full_weights.fingerprint.safetensors")
+    with Zoo(snapshot({"models": full_weights_only}), data_root=universe.root) as opened:
         with pytest.raises(NotComparable) as err:
             opened.similar("org/child@" + SHA2)
-        assert err.value.reason == "no_t1_fingerprint"
+        assert err.value.reason == "no_row_block_fingerprint"
     path = snapshot()
     import shutil
     shutil.rmtree(path / "retrieval")
@@ -210,10 +210,10 @@ def test_check_missing_and_ambiguous_declared_base(z, snapshot, universe):
             opened.check("org/sibling")
 
 
-@pytest.mark.parametrize("bad_path", ["../outside.t1.fingerprint.safetensors", "/tmp/outside.t1.fingerprint.safetensors"])
+@pytest.mark.parametrize("bad_path", ["../outside.row_blocks.fingerprint.safetensors", "/tmp/outside.row_blocks.fingerprint.safetensors"])
 def test_diff_rejects_paths_outside_data_root(snapshot, universe, bad_path):
     def escape(rows):
-        next(row for row in rows if row["model_key"] == "org/child@" + SHA2)["fingerprint_t1"] = bad_path
+        next(row for row in rows if row["model_key"] == "org/child@" + SHA2)["row_block_fingerprint"] = bad_path
     with Zoo(snapshot({"models": escape}), data_root=universe.root) as opened:
         with pytest.raises(ValueError, match="relative|escapes|outside"):
             opened.diff("org/child@" + SHA2, "org/parent@" + SHA1)
@@ -222,14 +222,14 @@ def test_diff_rejects_paths_outside_data_root(snapshot, universe, bad_path):
 def test_diff_rejects_wrong_loaded_identity_and_no_common_tier(snapshot, universe):
     def wrong_identity(rows):
         parent = next(row for row in rows if row["model_key"] == "org/parent@" + SHA1)
-        next(row for row in rows if row["model_key"] == "org/child@" + SHA2)["fingerprint_t1"] = parent["fingerprint_t1"]
+        next(row for row in rows if row["model_key"] == "org/child@" + SHA2)["row_block_fingerprint"] = parent["row_block_fingerprint"]
     with Zoo(snapshot({"models": wrong_identity}), data_root=universe.root) as opened:
         with pytest.raises(ValueError, match="identity"):
             opened.diff("org/child@" + SHA2, "org/parent@" + SHA1)
-    def t2_only(rows):
+    def full_weights_only(rows):
         next(row for row in rows if row["model_key"] == "org/child@" + SHA2).update(
-            fingerprint_t1="", fingerprint_t2="unused.t2.fingerprint.safetensors")
-    with Zoo(snapshot({"models": t2_only}), data_root=universe.root) as opened:
+            row_block_fingerprint="", full_weight_fingerprint="unused.full_weights.fingerprint.safetensors")
+    with Zoo(snapshot({"models": full_weights_only}), data_root=universe.root) as opened:
         with pytest.raises(NotComparable) as err:
             opened.diff("org/child@" + SHA2, "org/parent@" + SHA1)
         assert err.value.reason == "no_common_tier"
@@ -304,13 +304,13 @@ def tiered_zoo(tmp_path_factory):
             manifest["declared_bases"] = [keys[0]]
         keys.append(key)
         write_manifest(manifest, root / "manifests")
-        fingerprints.append(fingerprint_model(manifest, HubReader(), "t2", root / "fingerprints",
-                                               also_t1_blocks=(256,), read_threads=1))
+        fingerprints.append(fingerprint_model(manifest, HubReader(), "full_weights", root / "fingerprints",
+                                               also_row_block_sizes=(256,), read_threads=1))
     path = build_zoo(root / "manifests", [root / "fingerprints"], root / "zoo", root)
     return SimpleNamespace(root=root, path=path, keys=keys, fingerprints=fingerprints)
 
 
-def test_diff_prefers_t1_then_falls_back_to_real_t2_and_forwards_calibration(tiered_zoo, tmp_path):
+def test_diff_prefers_row_blocks_then_falls_back_to_real_full_weights_and_forwards_calibration(tiered_zoo, tmp_path):
     import json
     import shutil
     import pyarrow as pa
@@ -320,7 +320,7 @@ def test_diff_prefers_t1_then_falls_back_to_real_t2_and_forwards_calibration(tie
     base, child = tiered_zoo.keys
     calibration = tmp_path / "null.json"
     null = dict(statistic="median_cosine", sketch_k=32, row_block=ROW_BLOCK, sketch_seed=SKETCH_SEED,
-                n_pairs=99, tier="t1", null_quantiles=[-.1, .1], related_threshold=.8)
+                n_pairs=99, tier="row_blocks", null_quantiles=[-.1, .1], related_threshold=.8)
     calibration.write_text(json.dumps(null))
     with Zoo(tiered_zoo.path, data_root=tiered_zoo.root) as opened:
         assert opened.diff(child, base, null=calibration)["relatedness"]["verdict"] == "related"
@@ -329,9 +329,9 @@ def test_diff_prefers_t1_then_falls_back_to_real_t2_and_forwards_calibration(tie
     shutil.copytree(tiered_zoo.path.resolve(), fallback)
     table = pq.read_table(fallback / "models.parquet")
     rows = table.to_pylist()
-    next(row for row in rows if row["model_key"] == child)["fingerprint_t1"] = ""
+    next(row for row in rows if row["model_key"] == child)["row_block_fingerprint"] = ""
     pq.write_table(pa.Table.from_pylist(rows, schema=table.schema), fallback / "models.parquet")
-    null["tier"] = "t2"
+    null["tier"] = "full_weights"
     calibration.write_text(json.dumps(null))
     with Zoo(fallback, data_root=tiered_zoo.root) as opened:
         result = opened.diff(child, base, null=calibration)
@@ -342,20 +342,20 @@ def test_diff_prefers_t1_then_falls_back_to_real_t2_and_forwards_calibration(tie
 def test_diff_rejects_fingerprint_symlink_escape(snapshot, universe, tmp_path):
     import shutil
 
-    target = next(universe.fingerprints.glob("*.t1.fingerprint.safetensors"))
+    target = next(universe.fingerprints.glob("*.row_blocks.fingerprint.safetensors"))
     root = tmp_path / "data"
     root.mkdir()
-    outside = tmp_path / "external.t1.fingerprint.safetensors"
+    outside = tmp_path / "external.row_blocks.fingerprint.safetensors"
     shutil.copyfile(target, outside)
-    (root / "escape.t1.fingerprint.safetensors").symlink_to(outside)
+    (root / "escape.row_blocks.fingerprint.safetensors").symlink_to(outside)
     def escape(rows):
-        next(row for row in rows if row["model_key"] == "org/child@" + SHA2)["fingerprint_t1"] = "escape.t1.fingerprint.safetensors"
+        next(row for row in rows if row["model_key"] == "org/child@" + SHA2)["row_block_fingerprint"] = "escape.row_blocks.fingerprint.safetensors"
     with Zoo(snapshot({"models": escape}), data_root=root) as opened:
         with pytest.raises(ValueError, match="escapes"):
             opened.diff("org/child@" + SHA2, "org/parent@" + SHA1)
 
 
-def test_diff_rejects_embedded_t2_in_t1_slot_before_outside_hdf_open(tiered_zoo, tmp_path, monkeypatch):
+def test_diff_rejects_embedded_full_weights_in_row_blocks_slot_before_outside_hdf_open(tiered_zoo, tmp_path, monkeypatch):
     import shutil
     from pathlib import Path
     import pyarrow as pa
@@ -364,20 +364,20 @@ def test_diff_rejects_embedded_t2_in_t1_slot_before_outside_hdf_open(tiered_zoo,
 
     root = tmp_path / "data"
     root.mkdir()
-    artifact = root / "misplaced.t2.fingerprint.safetensors"
+    artifact = root / "misplaced.full_weights.fingerprint.safetensors"
     source = tiered_zoo.fingerprints[1]
     shutil.copyfile(source, artifact)
-    companion = artifact.with_name("misplaced.t2.spectra.h5")
-    outside = tmp_path / "outside.t2.spectra.h5"
-    shutil.copyfile(source.with_name(source.name.removesuffix(".t2.fingerprint.safetensors")
-                                   + ".t2.spectra.h5"), outside)
+    companion = artifact.with_name("misplaced.full_weights.spectra.h5")
+    outside = tmp_path / "outside.full_weights.spectra.h5"
+    shutil.copyfile(source.with_name(source.name.removesuffix(".full_weights.fingerprint.safetensors")
+                                   + ".full_weights.spectra.h5"), outside)
     companion.symlink_to(outside)
     path = tmp_path / "zoo"
     shutil.copytree(tiered_zoo.path.resolve(), path)
     table = pq.read_table(path / "models.parquet")
     rows = table.to_pylist()
     child = tiered_zoo.keys[1]
-    next(row for row in rows if row["model_key"] == child)["fingerprint_t1"] = artifact.name
+    next(row for row in rows if row["model_key"] == child)["row_block_fingerprint"] = artifact.name
     pq.write_table(pa.Table.from_pylist(rows, schema=table.schema), path / "models.parquet")
     outside_opens = []
     original_file = fingerprint_module.h5py.File
@@ -392,3 +392,46 @@ def test_diff_rejects_embedded_t2_in_t1_slot_before_outside_hdf_open(tiered_zoo,
         with pytest.raises(ValueError, match="tier"):
             opened.diff(child, tiered_zoo.keys[0])
     assert outside_opens == []
+
+
+@pytest.mark.parametrize("artifact_mode", ["t2", "full_weights"])
+@pytest.mark.parametrize("escape", [False, True])
+def test_full_weight_companion_compatibility_and_containment(tiered_zoo, tmp_path, artifact_mode, escape):
+    import shutil
+    import pyarrow as pa
+    import pyarrow.parquet as pq
+    from safetensors import safe_open
+    from safetensors.numpy import load_file, save_file
+
+    root = tmp_path / "evidence"
+    root.mkdir()
+    path = tmp_path / "snapshot"
+    shutil.copytree(tiered_zoo.path.resolve(), path)
+    table = pq.read_table(path / "models.parquet")
+    rows = table.to_pylist()
+    for index, (key, source) in enumerate(zip(tiered_zoo.keys, tiered_zoo.fingerprints)):
+        artifact = root / f"model-{index}.{artifact_mode}.fingerprint.safetensors"
+        with safe_open(source, framework="numpy") as handle:
+            metadata = handle.metadata()
+        metadata["tier"] = artifact_mode
+        save_file(load_file(source), artifact, metadata=metadata)
+        source_companion = source.with_name(source.name.removesuffix(".full_weights.fingerprint.safetensors")
+                                            + ".full_weights.spectra.h5")
+        companion = root / f"model-{index}.{artifact_mode}.spectra.h5"
+        if escape:
+            outside = tmp_path / f"outside-{index}.spectra.h5"
+            shutil.copyfile(source_companion, outside)
+            companion.symlink_to(outside)
+        else:
+            shutil.copyfile(source_companion, companion)
+        row = next(row for row in rows if row["model_key"] == key)
+        row.update(row_block_fingerprint="", full_weight_fingerprint=artifact.name,
+                   full_weight_spectra=companion.name)
+    pq.write_table(pa.Table.from_pylist(rows, schema=table.schema), path / "models.parquet")
+    with Zoo(path, data_root=root) as opened:
+        if escape:
+            with pytest.raises(ValueError, match="spectra path escapes"):
+                opened.diff(tiered_zoo.keys[1], tiered_zoo.keys[0])
+        else:
+            result = opened.diff(tiered_zoo.keys[1], tiered_zoo.keys[0])
+            assert result["summary"]["counts"]["changed"] > 0

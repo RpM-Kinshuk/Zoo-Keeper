@@ -1,6 +1,10 @@
 # Local lineage engine
 
-The runner reads existing T1 fingerprints through the committed Model-Zoo
+Measurement labels use `metadata_only`, `row_blocks`, and `full_weights`.
+Historical artifacts may use T0/T1/T2 respectively; legacy filenames and
+metadata remain readable without rewriting those artifacts.
+
+The runner reads existing row-block fingerprints through the committed Model-Zoo
 extractor and zoo APIs. It retrieves candidates, scores aligned views, records
 typing/stacked diagnostics, and publishes detected edges in the frozen zoo
 schema. It never loads checkpoints or reads lab truth to infer edges.
@@ -25,7 +29,7 @@ python -m lineage.cli infer \
 ```
 
 `dry-run` generates synthetic records and one explicitly synthetic asymmetric
-direction example; it is not a real lab result. `infer` discovers real T1
+direction example; it is not a real lab result. `infer` discovers real row-block
 fingerprints using the upstream model tables and architecture signatures,
 builds a temporary retrieval index, then deletes that index when finished.
 Missing measurements, duplicate exclusions and unresolved directions appear
@@ -54,7 +58,7 @@ components; regression fit alone never supplies direction.
 `--calibration FILE` accepts artifacts keyed by estimand. A calibrated artifact
 must match the method hash, candidate-universe hash, architecture and statistic
 settings, and preserve validated exchangeability. Per-query e-BH includes all
-same-architecture T1 candidates in its denominator, including candidates that
+same-architecture row-block candidates in its denominator, including candidates that
 could not be scored or retrieved. Calibrated rows are exported only when the
 query control rejects; unsupported or absent calibration leaves development
 scores explicitly uncalibrated, with null p-values. No control guarantee is
@@ -71,7 +75,7 @@ JSON index. Each real row explicitly binds these four fields:
     "key": "publisher/model@0123456789abcdef0123456789abcdef01234567",
     "arch": "cfg:<authoritative architecture signature>",
     "manifest": "manifests/model.manifest.json",
-    "fingerprint": "fingerprints/model.t1.fingerprint.safetensors"
+    "fingerprint": "fingerprints/model.row_blocks.fingerprint.safetensors"
   }
 ]
 ```
@@ -81,7 +85,7 @@ models use `lab/<model_id>@local:<sha256>`. Manifest and fingerprint identities
 must both match the index. The index, manifest, and fingerprint paths stay
 within `data_root`, and each fingerprint stays within the supplied fingerprint
 directory. Absolute paths and escaping symlinks in index entries are rejected.
-T2 is unsupported by this adapter. JSON fingerprint payloads are reserved for
+full-weight is unsupported by this adapter. JSON fingerprint payloads are reserved for
 synthetic fixtures.
 
 Supply the architecture signature from the authoritative model index. The
@@ -167,11 +171,11 @@ Unattainable finite-score TPR90 has null operational metrics; separate
 metrics stay separate. Input paths are relative to the freeze directory; old
 incomplete freezes are rejected rather than silently upgraded.
 
-All22 models have measured T1 tensor reads and parent-read breakdowns. Full
+All22 models have measured row-block tensor reads and parent-read breakdowns. Full
 preparation/cold-reference/cached-inference IO remains incomplete, so complete
 bytes-per-answer is unavailable. Missing baselines are `not_run`; absent
-T2/5k-pool/baseline results leave gates `NOT_EVALUABLE`. A's queued incremental
-k128/T2 launch uses committed extractor code and separate output; see the main
+full-weight/5k-pool/baseline results leave gates `NOT_EVALUABLE`. A's queued incremental
+k128/full-weight launch uses committed extractor code and separate output; see the main
 checkout's `handoff/track-b-incremental-l12.md`. Whole-lab L12 remains pending.
 
 Training launches are in `$ZOO_DATA/runs/track-b-training-launches-v1`, documented

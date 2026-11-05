@@ -25,6 +25,12 @@ Model-Zoo dependency from setup above. They read tables and fingerprints
 offline; no model weights or GPU are needed. Build instructions and table
 descriptions are in Model-Zoo's `docs/operations/zoo.md`.
 
+Current snapshots expose `row_block_fingerprint`, `full_weight_fingerprint`,
+and `full_weight_spectra`. Readers also support schema 0/1 snapshots, normalizing
+legacy columns and measurement labels in memory without rewriting published files.
+Historical reports use T0 for metadata-only evidence, T1 for row-block evidence,
+and T2 for full-weight evidence; their recorded artifact paths stay unchanged.
+
 Set `ZOO_DATA` to the data root holding the original evidence. Every command
 defaults to `$ZOO_DATA/builds/current`; pass `--zoo "$ZOO"` for another build.
 `--data_root DIR` overrides the evidence root. For example:
@@ -48,7 +54,7 @@ use its exact `repo_id@revision` key. Add `--json` to any command for one JSON
 document; otherwise tables or indented cards are printed. Query/input errors
 return 2 on stderr; an `inconsistent` check returns 1, and success returns 0.
 
-Weight neighbors use compatible T1 views within the same architecture
+Weight neighbors use compatible row-block views within the same architecture
 signature. `info` separates measured scores (with revision verification)
 from predictions, which are empty in v0. `diff` reports measured changes,
 without predicting skill changes. Lineage records carry `verified`,

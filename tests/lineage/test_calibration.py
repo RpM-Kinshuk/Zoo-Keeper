@@ -8,7 +8,7 @@ from lineage.calibration import (apply_null, exact_shortlist_permutation, fit_nu
                                  query_control)
 
 
-SETTINGS = dict(statistic="median_cosine", sketch_k=64, tier="t1", row_block=256,
+SETTINGS = dict(statistic="median_cosine", sketch_k=64, tier="row_blocks", row_block=256,
                 source_hashes={"upstream_x9": "a" * 64},
                 exchangeability_design="independent query-root/seed blocks, fixed candidate labels")
 
@@ -48,7 +48,7 @@ def test_full_pool_multiplicity_is_not_shortlist_size():
 
 
 def test_settings_and_family_transfer_do_not_fake_calibration(calibration_fixture):
-    assert calibration_fixture.apply(tier="t2")["status"] == "uncalibrated"
+    assert calibration_fixture.apply(tier="full_weights")["status"] == "uncalibrated"
     assert calibration_fixture.apply(row_block=128)["status"] == "uncalibrated"
     assert calibration_fixture.apply(sketch_k=32)["status"] == "uncalibrated"
     assert calibration_fixture.apply(family="unseen")["guarantee"] == "transfer_unvalidated"
@@ -170,3 +170,14 @@ def test_null_application_requires_observed_architecture(calibration_fixture, ar
 def test_null_records_architecture_and_matching_application(calibration_fixture):
     assert calibration_fixture.artifact["architectures"] == {"f":"cfg:a"}
     assert calibration_fixture.apply()["status"] == "calibrated"
+
+
+def test_legacy_calibration_mode_matches_current_measurement_mode():
+    from copy import deepcopy
+    legacy_settings = {**SETTINGS, 'tier': 't1'}
+    artifact = fit_null(null_frame(), estimand='parent', settings=legacy_settings)
+    original = deepcopy(artifact)
+    result = apply_null(.95, artifact, family='f',
+                        settings={**SETTINGS, 'tier': 'row_blocks', 'architecture': 'cfg:a'})
+    assert result['status'] == 'calibrated'
+    assert artifact == original

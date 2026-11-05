@@ -21,7 +21,7 @@ def test_retrieve_is_local_sorted_and_arch_limited(synthetic_pool):
 def test_settings_and_padding_are_checked(aligned_pair):
     a, b = aligned_pair
     assert len(compatible_views(a, b)) == 6
-    assert compatible_views(a, replace_record(b, tier='t2')) == []
+    assert compatible_views(a, replace_record(b, tier='full_weights')) == []
     assert compatible_views(a, replace_record(b, row_block=128)) == []
     assert compatible_views(a, replace_record(b, rows=b.rows + 1)) == []
     assert compatible_views(a, replace_record(b, sketch_seed=7)) == []
@@ -76,12 +76,13 @@ def test_arrays_are_readonly_and_original_unchanged(aligned_pair):
     a, b = aligned_pair
     with pytest.raises(ValueError):
         a.sketches[0, 0, 0] = 0
-    changed = replace_record(b, tier='t2')
-    assert b.meta['tier'] == 't1'
-    assert changed.meta['tier'] == 't2'
+    changed = replace_record(b, tier='full_weights')
+    assert b.meta['tier'] == 'row_blocks'
+    assert changed.meta['tier'] == 'full_weights'
 
 
-def test_local_synthetic_json_roundtrip_is_offline(tmp_path, monkeypatch):
+@pytest.mark.parametrize('measurement_mode', ['row_blocks', 't1'])
+def test_local_synthetic_json_roundtrip_is_offline(tmp_path, monkeypatch, measurement_mode):
     def deny(*args, **kwargs):
         raise AssertionError('network forbidden')
     monkeypatch.setattr(socket.socket, 'connect', deny)
@@ -91,13 +92,14 @@ def test_local_synthetic_json_roundtrip_is_offline(tmp_path, monkeypatch):
     data = {'key': key, 'arch': 'cfg:synthetic', 'names': ['layer.0.weight'],
             'shapes': [[512, 128]], 'rows': [[128, 384]], 'geometry': ['matrix'],
             'sketches': np.ones((1, 64, 64)).tolist(), 'delta': {},
-            'meta': {'synthetic': True, 'tier': 't1', 'row_block': 256,
+            'meta': {'synthetic': True, 'tier': measurement_mode, 'row_block': 256,
                      'sketch_seed': 20261028, 'evidence_version': 'synthetic-v1'}, 'coverage': []}
     (fp / 'tiny.json').write_text(json.dumps(data))
     manifest = tmp_path / 'manifest.json'
     manifest.write_text(json.dumps([{'key': key, 'fingerprint': 'fingerprints/tiny.json'}]))
     records = load_records(manifest, fp, data_root=tmp_path)
     assert records[0].key == key
+    assert records[0].meta['tier'] == 'row_blocks'
     assert median_similarity(records[0], records[0]) == pytest.approx(1)
     data['key'] = 'lab/wrong@local:' + 'b' * 64
     (fp / 'tiny.json').write_text(json.dumps(data))

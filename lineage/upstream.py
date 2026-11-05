@@ -70,21 +70,23 @@ def _load_real(entry, path, root):
     if not isinstance(entry.get('manifest'), str):
         raise ValueError('real fingerprint requires a relative manifest path')
     manifest_path = _relative(root, entry['manifest'])
-    manifest = json.loads(manifest_path.read_text())
+    from evidence import READABLE_EVIDENCE_VERSIONS
+    from evidence.compatibility import canonical_mode, normalize_manifest
+    manifest = normalize_manifest(json.loads(manifest_path.read_text()))
     if _identity(manifest) != entry['key']:
         raise ValueError('index and manifest identity disagree')
-    # This engine currently accepts T1 only. Reject T2 before its loader opens
-    # a separate HDF5 spectrum file outside the explicit fingerprint inputs.
+    # Accept row-block evidence only. Reject full-weight evidence before its
+    # loader can open a separate HDF5 file outside the explicit inputs.
     from safetensors import safe_open
     with safe_open(path, framework='numpy') as handle:
-        if handle.metadata().get('tier') != 't1':
-            raise ValueError('lineage records currently require T1 fingerprints')
+        if canonical_mode(handle.metadata().get('tier')) != 'row_blocks':
+            raise ValueError('lineage records currently require row-block fingerprints')
     fp = fingerprint.load_fingerprint(path)
     if _identity(fp.meta) != entry['key']:
         raise ValueError('manifest and fingerprint identity disagree')
-    if fp.meta.get('evidence_version') != fingerprint.EVIDENCE_VERSION:
+    if fp.meta.get('evidence_version') not in READABLE_EVIDENCE_VERSIONS:
         raise ValueError('unsupported fingerprint evidence version')
-    if manifest.get('evidence_version', fingerprint.EVIDENCE_VERSION) != fp.meta['evidence_version']:
+    if manifest.get('evidence_version', fp.meta['evidence_version']) != fp.meta['evidence_version']:
         raise ValueError('manifest and fingerprint evidence version disagree')
     if fp.meta.get('sketch_k') != fp.sketch.shape[1]:
         raise ValueError('fingerprint sketch size disagrees with metadata')
@@ -139,6 +141,8 @@ def load_records(manifests: Path, fingerprints: Path, *, data_root: Path) -> lis
             raise ValueError('manifest and fingerprint architecture disagree')
         # Inject the specified scorer locally; never deserialize executable code.
         from .testing import synthetic_median
+        from evidence.compatibility import normalize_fingerprint_metadata
+        data['meta'] = normalize_fingerprint_metadata(data['meta'])
         data['meta']['scoring_callable'] = synthetic_median
         result.append(FingerprintRecord(**data))
     return result
@@ -163,20 +167,20 @@ def load_directory(manifests, fingerprints, *, data_root):
         manifest_by_key[key] = resolved
     records = []
     for row in models.sort_values('model_key').itertuples():
-        if row.fingerprint_t1:
-            path = _relative(root, row.fingerprint_t1)
+        if row.row_block_fingerprint:
+            path = _relative(root, row.row_block_fingerprint)
             if not path.is_relative_to(Path(fingerprints).resolve()):
                 raise ValueError('fingerprint artifact escapes fingerprints directory')
             record = _load_real(dict(key=row.model_key, arch=row.arch_signature,
                 manifest=manifest_by_key[row.model_key].relative_to(root).as_posix()), path, root)
             # dup_group means identical measured blocks, not full checkpoint bytes.
             record.meta.update(duplicate_group=row.dup_group,
-                               duplicate_scope='all_measured_T1_blocks')
+                               duplicate_scope='all_measured_row_blocks')
         else:
             record = FingerprintRecord(key=row.model_key, arch=row.arch_signature or arch_signature({}, []),
                 names=(), shapes=np.empty((0, 2), dtype=np.int64), rows=np.empty((0, 2), dtype=np.int64),
                 geometry=(), sketches=np.empty((0, 64, 64), dtype=np.float32), delta={},
-                meta=dict(tier='t0', synthetic=False, access=row.access,
+                meta=dict(tier='metadata_only', synthetic=False, access=row.access,
                           manifest_sha256=hashlib.sha256(manifest_by_key[row.model_key].read_bytes()).hexdigest()),
                 coverage=[])
         records.append(record)

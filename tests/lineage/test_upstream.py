@@ -89,3 +89,24 @@ def test_real_manifest_path_cannot_escape_root(real_inputs):
     index.write_text(json.dumps(entries))
     with pytest.raises(ValueError, match='escape|relative'):
         upstream.load_records(index, directory, data_root=root)
+
+
+@pytest.mark.parametrize('version', ['1', '2', '3'])
+def test_real_loader_accepts_descriptive_measurement_mode(real_inputs, version):
+    from safetensors import safe_open
+    from safetensors.numpy import load_file, save_file
+    root, directory, index, entries = real_inputs
+    for name, tier, entry in zip(('parent', 'child'), ('row_blocks', 't1'), entries):
+        path = directory / (name + '.safetensors')
+        with safe_open(path, framework='numpy') as handle:
+            metadata = handle.metadata()
+        metadata.update(tier=tier, evidence_version=version)
+        tensors = load_file(path)
+        save_file(tensors, path, metadata=metadata)
+        manifest_path = root / entry['manifest']
+        manifest = json.loads(manifest_path.read_text())
+        manifest['evidence_version'] = version
+        manifest_path.write_text(json.dumps(manifest))
+    parent, child = upstream.load_records(index, directory, data_root=root)
+    assert parent.meta['tier'] == 'row_blocks'
+    assert upstream.median_similarity(parent, child) == pytest.approx(1.)

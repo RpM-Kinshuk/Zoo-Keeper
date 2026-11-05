@@ -132,7 +132,7 @@ def test_missing_and_mismatched_views_are_explained(merge_fixture):
     assert out['n_views'] == 15
     assert out['coverage']['fraction'] == 15 / 16
     assert any('missing_view' in reason for reason in out['coverage']['reasons'])
-    inputs['parents'] = [replace_record(p0, tier='t2'), p1]
+    inputs['parents'] = [replace_record(p0, tier='full_weights'), p1]
     out = fit_merge(**inputs)
     assert out['status'] == 'missing_data'
     assert out['n_views'] == 0

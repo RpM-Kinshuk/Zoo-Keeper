@@ -144,11 +144,11 @@ def infer(records, *, config, calibration=None):
         return row
 
     for child in records:
-        if child.meta.get('tier') != 't1':
+        if child.meta.get('tier') != 'row_blocks':
             abstain(child.key, None, 'unsupported_or_unmeasured_tier')
             continue
         pool = [candidate for candidate in records if not exclusion_reason(child, candidate)
-                and candidate.arch == child.arch and candidate.meta.get('tier') == 't1']
+                and candidate.arch == child.arch and candidate.meta.get('tier') == 'row_blocks']
         pools[child.key] = len(pool)
         candidates = retrieve(child, records, limit=cfg['retrieval_limit'])
         if not candidates:
@@ -158,7 +158,7 @@ def infer(records, *, config, calibration=None):
             reason = exclusion_reason(child, candidate)
             if not reason and candidate.arch != child.arch:
                 reason = 'architecture_mismatch'
-            if not reason and candidate.meta.get('tier') != 't1':
+            if not reason and candidate.meta.get('tier') != 'row_blocks':
                 reason = 'candidate_unmeasured_tier'
             if not reason and candidate.key not in retrieved:
                 reason = 'not_shortlisted' if compatible_views(child, candidate) else 'incompatible_views'
