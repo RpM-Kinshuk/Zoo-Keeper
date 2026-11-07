@@ -565,7 +565,7 @@ works with agent sessions.
 - [ ] **H2 Byte curves and the T2 subset** (A, Dec 14–18).
 - [~] **E9 Full P1 evaluation** (B, Dec 14–18). Harness and first real
   held-out cohort report ready; large-pool/T2/baseline gates pending. It covers:
-  - Nov5 existing-engine166public baseline underway; reuse CLI/evaluation harness and approved roster, preserve original threshold/unknown labels/root partitions. Refresh8mismatched T0versions at unchanged keys, no guard relaxation. New freeze: `runs/track-b-e9-public166-20261105/`; no new fitting/calibration/large-pool or Cblind claims.
+  - Nov5 existing-engine166public baseline verified:2058uncalibrated same-root claims, compatible-slice AUROC0.689385/TPR0.539623 at unchanged0.75; direction fully abstains,1298source-version exclusions. Separate174catalogue reuses8old controls; original6held-out queries over17compatible candidates yield relatedness AUROC1,12/12positives,0/84false matches; parent coverage0. Formal claims identical;879bindings/five freezes PASS. `runs/track-b-e9-public166-20261105/REPORT.md`. No new fit/calibration, formal-roster change or Cblind reads. Full large-pool/cost/baseline/direction gates open.
   - three estimands and three truth tiers;
   - false parents per query against pool size, from 10² up to the pool
     reached, extrapolated with the calibrated null;

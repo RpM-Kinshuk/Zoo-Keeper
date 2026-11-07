@@ -1,96 +1,65 @@
 # Track B handoff
 
-## Current checkpoint — 2026-11-05, approved roster active; A unblocked
+## Current checkpoint — 2026-11-05, scoped E9 baseline verified
 
-Latest local integration: Model-Zoo `7c3c356` contains the reviewed embedded
-PEFT fix; Track B priorities merged at `a84c1d7`, with approved handoff/protocol
-records integrated afterward. Merged checks:470extractor/store PASS,1opt-in
-skip;658Zoo-Keeper PASS. Reuse existing code and entry points wherever practical,
-useful and possible; D7.10 and Model-Zoo AGENTS.md record the standing instruction.
-No push or worktree deletion. `runs/track-b-reuse-merge-20261105/` seals the result.
+Use `esd_ind`. Reuse existing code/helpers/entry points wherever practical,
+useful and possible (D7.10). Current work uses existing lineage CLI and evaluation
+harness only; no new production code, fitting, calibration or C blind reads.
+Current report: `runs/track-b-e9-public166-20261105/REPORT.md`;
+`verification.json` verifies879 source bindings and five evaluation freezes.
+All owned evaluation commands exited. This analysis/documentation batch is
+uncommitted; no push or worktree deletion.
 
-Continue in `worktrees/Zoo-Keeper-track-b`, branch `track-b`; source commit `51147a3` is integrated into main;
-use `conda activate esd_ind`. All owned jobs exited; no commits/merge/push.
-Read `runs/track-b-remaining-20261105/REPORT.md` and `final-verification.json`.
+**E9 baseline:** approved166public identities,27,390ordered pairs;2,058emitted
+uncalibrated same-root claims. Same-architecture AUROC0.689385, TPR0.539623 at
+inherited0.75,0false matches. Parent/ancestor have zero scored claims and zero
+coverage; direction accuracy null.1,298compatible-architecture pairs fail the
+unchanged source-version guard. Refreshed only8T0manifests via existing builder
+at exact unchanged checkpoint keys; original manifests/fingerprints preserved.
+No individual architecture in formal166 has both same-root label classes, so
+pooled AUROC is insufficient within-architecture validation.
 
-Owner requested local integration. Pre-merge and merged-main suites both passed
-658tests/16warnings; no push, branch deletion or worktree deletion. Track A's
-existing staging and concurrent29-output measurement run are preserved.
+**Separate controlled174:** reuse8already measured public Pythia derivatives;
+formal roster unchanged, no new generation/extraction/fit. Original6held-out
+queries,17same-architecture identities/16eligible candidates per query:
+relatedness AUROC1.00,12/12positive recall and0/84negative false matches at0.75.
+Parent/ancestor still fully abstain, including4held-out parent positives.
+All2,058formal claims remain exactly identical. This is a descriptive extension
+of already observed controls, not independent replication or a174effective-pool
+claim. Source hashes and inherited root assignments are frozen. Full E9 remains
+open: large pool, actual costs, baselines and directed evidence unavailable.
 
-**Next priority executed: E6 extension.** Existing sketches cover48compatible
-nodes/44construction edges across4public anchors. All8distance matrices recompute
-bitwise,24diagnostics match,149inputs rehash. At unchanged1e-6, all8family/mode
-quartet diagnostics flag:81.8–96.2% violations against20%trigger. No validated
-asymmetric assembly, so nRFnull. Eight otherwise eligible schema-v3 upgrades are
-excluded under the existing common-space version guard; every exclusion is
-recorded before outcomes. Report/freeze/verification:
-`runs/track-b-e6-expanded-20261105/`. This is a diagnostic, not recovery or
-calibration. The owner approved the GUIDANCE5.2 pivot: report how tree-like and focus on
-supervised edge scoring; no tree-recovery claim. Exact decision and first
-existing-scorer diagnostic: `runs/track-b-pivot-unblock-a-20261105/`.
+**A has consumed the handoff:** current `TRACK-A.md` reports approved166calibrated
+R6 and expanded703-model R6 complete, all6CLIqueries pass. Do not repeat those
+runs. `runs/track-a-expanded-r6-20261105/` records development G0 diagnostics:
+immediate-parent8.276786false matches/query atTPR0.904459 in an incomplete small
+pool; spectral alpha gap0.427726>0.1 and empirical-null width diagnostic fail.
+Retain full spectra/empirical calibration; no5000-candidate or G0/G1 decision.
 
-**13 additional verified checkpoints ready for A:**
+**Generation/roster status:** L7generation8/8(classic4+stock Heretic4), L14heads6/6.
+All8drift-v2 functional-equivalence outcomes remain FAILED. The owner subsequently
+approved the exact8-slot construction-counting/roster amendment, so active
+`formal166-public-constructions-v2` has166/166mapped; original defaults,158map and
+failed results remain immutable. The earlier generation-only restriction was
+superseded for this explicit amendment. Read
+`runs/track-b-pivot-unblock-a-20261105/A-unblock-request-active.json` and approval.
+The embedded-PEFT view-name repair is merged in Model-Zoo at7c3c356; same-key A
+remeasurement is already consumed. Historical verification470PASS/1skip and
+658Zoo-Keeper PASS is retained; no code changed in the current E9 batch.
 
-- **L7:**4/4 stock Heretic runs,200trials each, on all four prescribed anchors.
-  Reviewed safe adapter uses the installed1.4.0 algorithm and refusal/KL objective;
-  pinned MIT JBB prompts and runtime controls frozen/disjoint. Safe BF16 reload,
-  finite saved weights and4-row heldout logits verified. With earlier4classic,
-  L7 generation8/8. All pretrained objective baselines had0refusals; stock
-  absolute-count scoring applies. No quality/improvement claim. Actual nested
-  sampler seed20261028 is explicitly distinguished from inventory recipe seeds.
-- **L14:**final Qwen2.5-1.5B head completed original32steps and safe reload/finite
-  validation logits. Decision generation **6/6**.
-- **L9 auxiliary:**owner approved **generation only** for8 separately named
-  `-drift-v2` constructions. All8 exact constructions/safe reloads verified;
-  **all8 functional-equivalence outcomes FAILED**. Original8 failures, seeds,
-  edits,tokens and thresholds unchanged. Original public completion stays8/16;
-  v2 grants zero additional formal/G1 credit. Counting/calibration-roster changes
-  remain unapproved; C's blind boundary remains untouched.
+**Approved E6 pivot:**48nodes/44edges, all8quartet diagnostics flag81.8–96.2%
+violations; nRFnull. Report how tree-like and focus on supervised edge scoring.
+Existing E7 diagnostic uses18development/6held-out queries; no validated
+asymmetric direction. Original freezes/results/thresholds are retained.
 
-**Storage:** these13 checkpoints total23.8GB and use private temporary ZOO_DATA
-root label `temporary_remaining`. Host runtime location:
-`/tmp/zoo-track-b-remaining-20261105`. `.env` unchanged. **Durable checkpoint copy
-is pending primary capacity**; do not treat temporary storage as archival.
-114 small metadata/manifests are preserved in the primary run's
-`evidence-snapshot/` with exact hash proofs.
-
-**A measurements complete:** A verified all29new outputs in709.81seconds;
-formal mapping is158/166 plus8measured auxiliary constructions. Do not repeat
-these queues. Read `runs/track-a-delivery29-20261105/REPORT.md`,
-`formal-artifact-map158.json`, `auxiliary-artifact-map8.json` and readiness.
-All new numerical outputs/manifests are on primary storage. The13raw checkpoint
-inputs remain temporary; that durability issue is separate from calibration's
-exact roster blocker.
-
-**A unblocked:** owner explicitly approved the exact versioned roster/counting
-amendment. `formal166-public-constructions-v2` is active with166/166mapped and
-all180independent/157parent scores produced by the unchanged scorer.
-`runs/track-b-pivot-unblock-a-20261105/A-unblock-request-active.json` binds active
-models/edges/maps/input aliases and approval/readiness proofs. Original default
-roster and158map stay immutable; all8original/v2equivalence failures remain.
-One previously hidden Qwen3embedded PEFT view-name bug was fixed under existing
-extractor Task3, reviewed and remeasured in A's own new output directory with
-unchanged checkpoint identity. No source or guard was silently substituted.
-See `runs/track-a-embedded-peft-repair-20261105/`; two-file A source patch is merged locally into Model-Zoo main at `7c3c356`. A can now run existing calibration/R6 with prior held-outs.
-No G0/G1 decision; raw temporary storage remains separate.
-
-
-New code: `lab/heretic_safe.py`, `lab/heretic_objective.py`,
-`lab/transform_drift.py`, corresponding tests and12 missing-only pinned
-requirements. Existing installed versions unchanged; exact dependency and
-metadata-overlay record: `heretic-dependencies.json`. Old unprepared Heretic
-CLI stays fail-closed; replay frozen workers with their recorded inputs/code,
-not sentiment tokens. New v2 module preserves the original default transform path.
-Core review fixes verified; final **658tests PASS**,16warnings. Initial suite
-command used wrong cwd (7missing-relative-config failures); corrected checkout
-command passes, original log retained. No blind reads or threshold relaxation.
-
-Next: A consumes the active request for its complete calibration/R6 pipeline,
-with existing controls and held-outs. Keep original158map/default tables intact.
-Supervised E7 baseline results use18development and6held-out public queries;
-parent/ancestor direction remains unvalidated. Full E9 still needs the large
-pool and C baselines. Durable raw-checkpoint capacity remains open. No further
-commits/push without an owner request; preserve A's existing staged changes.
+**Next:** separately reviewed asymmetric-direction protocol using existing
+modules/development controls; reviewed source-version compatibility path or
+matching-version inputs; public baselines/measured costs and owner-launched
+large pool. Do not fit a new model or relax a guard under this baseline scope.
+C's blind boundary remains untouched.13raw checkpoints (23.8GB) remain at
+`/tmp/zoo-track-b-remaining-20261105`; durable copy still needs primary capacity.
+All numerical evidence is primary. Historical entries below are superseded by
+this current checkpoint where approvals/progress differ.
 
 ## Historical checkpoint — 2026-11-05, esd_ind GPU continuation
 
