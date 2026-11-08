@@ -2,7 +2,8 @@
 Brief of 2026-11-08 read; K5 first. No claim advanced.
 
 **Now:** integrated as uncommitted main files per owner; nothing running.
-Class 1: no Git history changes; track-b originals preserved.
+Class 1: track-b fast-forwarded to main; current B source/steering synced.
+Superseded proposal archived with its run; generated B caches cleared.
 
 **Results since the last steward run:**
 - K5 quantization: 12/12 grids, 0/30 control flags, 12/12 bit-exact parent replays.
