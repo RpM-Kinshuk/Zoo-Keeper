@@ -36,6 +36,8 @@ folder) only once in a long while. Between those check-ins, you run day-to-day c
   - Agents never commit, merge, rebase or push. The overseer reviews and
     commits, and asks for merges into `main` when ready.
   - Tokens live only in `.env`, which no agent opens or prints.
+  - Up to four free GPUs may accelerate work across all tracks combined;
+    shared admission, allocation and large-run rules are in `ROLES.md`.
   - The overseer launches big runs: more than about 100 models' weights, or
     more than about 2 hours.
   - Data goes to public Hugging Face storage, gated until the P1 submission

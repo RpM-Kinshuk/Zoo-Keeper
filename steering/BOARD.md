@@ -20,10 +20,10 @@ Existing Nov 21/Dec 1–5 test targets stay. Finish bounded tree/disguise checks
 
 ## Waiting for you
 - **No decision waits. D6 approved:** the Dec 4 plan separates approved conclusions from unanswered questions and their tests. Later conclusions still need verification and your explicit approval; dates stay unchanged.
-- **No launch request:** the large-run card remains blocked on scientific review, final eligible inputs and feasible storage/budget. Cost probes and a proposed catalog now exist.
+- **No launch request:** the large-run card remains blocked on scientific review and feasible storage. A has completed the fixed header/input preparation and a CPU launch-budget draft.
 
 ## Risks and dates
-The 216-query catalog contains only two inherited unseen-test identities; more entries do not establish independent validation. The partial storage forecast exceeds recorded free space. Real-model construction records and informative controls remain incomplete.
+The 216-query catalog contains only two inherited unseen-test identities; more entries do not establish independent validation. Header preparation is complete; its 52.98 GB free-space gate exceeds the recorded 26.25 GB available; the storage draft awaits steward screening. Real-model construction records and informative controls remain incomplete.
 Nov 25: verified-claim review. Dec 4: test-plan freeze. Dec 12: method check. Dec 18: paper/venue decision. No broad claim is newly verified.
 
 ## For your information (class 2)
@@ -36,3 +36,4 @@ Steward aligned briefs around the shared evaluation and capped repeated-case wor
 - You approved D5's research corrections and requested plain, contextual updates; guidance changed. Construction-record novelty remains unverified.
 - Holistic review recognizes new lab edit/control/cost evidence, aligns tracks around practical comparative outcomes and raises D6's freeze conflict.
 - You approved D6: open test questions and approved conclusions are separated; no claim, date or test rule changed.
+- You authorized four idle GPUs project-wide where useful; initial slots are A=0/B=2/C=2 with handoff-based borrowing and refreshed the three kickoff prompts. Large-run launch limits remain.

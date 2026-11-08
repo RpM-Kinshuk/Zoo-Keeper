@@ -1,4 +1,4 @@
-# Brief: track C (2026-11-08, holistic review)
+# Brief: track C (2026-11-08, current focus + GPU update)
 ## Do next:
 1. K7: deliver a usable multi-family real-model set with complete comparisons and positive/negative controls; keep exact construction truth separate from publisher declarations and unresolved history.
 2. For the Nov 14 review, report which selected cases can actually be evaluated, what evidence each supports and which gaps block a verdict; retain Dec 1–5 targets for the full tier.
@@ -14,3 +14,4 @@
 ## Watch out for:
 - Two adaptations on the small old cohort are not the full benchmark; preserve prior test exposure and architecture limits.
 - No separate benchmark framework, heritability study or interface project. Keep the existing cut list if behind.
+- Compute: project-wide cap four idle GPUs; default A=0/B=2/C=2, borrowing only by explicit handoff. Apply ROLES.md admission/reservation rules; large-run launch limits still apply.

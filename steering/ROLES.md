@@ -38,6 +38,13 @@ B owns detector/noise rules, C source evidence/comparisons, A inputs/resources.
 | **B**: lab methods and the P1 evaluation | In order: the quick re-tests on existing data (K3 merges on deltas, K4 tree test, K14 disguise check); then edge typing, the exact-mark tests and leave-the-parent-out (K5, the main job); the P1 pre-registration (K12); order signals for ordinary fine-tunes (K9). If B falls behind, cut K9 to "order by Hub upload time only", and leave the Witness Overlap comparison to track C. | Zoo-Keeper                             |
 | **C**: baselines and truth sets          | In order: finish the literature check (`CLAIMS.md`); Trace and Spectral Signatures (ported from Model-Research); a first verified Hub truth set at 7B and above, including refusal-removed and quantized Hub models with known parents (K7); modelDNA and "Training Leaves Traces"; Witness Overlap (K2). Cut list in card D3. Heritability is parked.                                   | Zoo-Keeper                             |
 
+Required shared reading: steering README.md; DIRECTION.md section 1;
+CLAIMS.md and PLAN.md for your work; DECISIONS.md; ROLES.md and its compute
+rules; your current track note. Read DATA.md before storage work and
+handoff/DIRECTIVES.md for technical rules where steering does not supersede it.
+Use inherited credentials; never open or print `.env` or tokens. Continue in
+the owner-designated checkout and preserve other tracks' uncommitted work.
+
 **Each lead:**
 
 - **At the start of every session,** reads `briefs/<track>.md`, the steward's
@@ -58,6 +65,36 @@ B owns detector/noise rules, C source evidence/comparisons, A inputs/resources.
   drafts a card in `cards/` marked `draft`, then moves to the next item.
 - Never writes to `handoff/STATUS.md` or `handoff/CHECKLIST.md` (frozen).
   Never changes truth tables, held-out splits, or evaluation thresholds; those are class 3.
+
+## Shared compute rules (overseer update, Nov 8)
+
+- Up to **four genuinely idle GPUs across the whole Model Zoo project**, not
+  four per track or per host. This is a ceiling, not a usage target.
+- Initial slot budgets: A CPU-only, B up to two GPUs, C up to two GPUs.
+  Unused slots may be borrowed only after the other owner explicitly hands
+  them over; record the revised allocation in the existing track notes and
+  keep the combined active total at or below four. This is not credit accounting.
+- On the actual compute node, use live device/process checks and the existing
+  scheduler/collector admission and exclusive reservation/lock mechanisms.
+  A snapshot of low utilization alone is not a reservation. Never use a GPU
+  occupied or allocated to another user. Unknown availability means CPU/wait.
+- Before starting, check other tracks' active allocations; name hostname,
+  device UUIDs and scheduler job ID or owned PID in the track note. Recheck
+  admission immediately before launch; release reservations when jobs exit.
+  Reuse existing mechanisms; do not build another resource manager.
+- Prefer existing accelerated matrix/SVD, supported baseline or inference
+  paths and parallel independent cases. Do not add training, port whole
+  methods or rerun passed experiments just to occupy devices. Keep metadata,
+  network-bound reads and small calculations on CPU where that is faster.
+  Record backend, numerical compatibility and wall-time/compute cost when
+  using GPUs; CPU timings are not GPU launch-budget measurements.
+- No observed free GPU is guaranteed by this document. The steward shell
+  could not query the NVIDIA driver; tracks must verify on the compute node.
+- Existing large-run boundaries still apply: agents may run only jobs that
+  read at most 100 models' weights **and** are expected within two hours.
+  Do not split a larger planned run to evade this rule. Larger work needs
+  an overseer launch card, even when four GPUs could run it. Money, storage
+  deletion/publication and scientific freezes keep their existing authorities.
 
 ## Skeptic (on demand)
 
@@ -86,25 +123,43 @@ overseer, in plain words. If the overseer asks you anything, answer the card
 way (STEWARD.md section 3).
 ```
 
-### Track lead
+### Track A: tool and data
 
 ```text
-You lead track {TRACK} of the Model Zoo project. Workspace: {WORKSPACE}.
-Load the environment with `set -a; . ./.env; set +a` and `conda activate esd_ind`; never open or print .env.
+You lead Track A (tool and data) for Model Zoo in /jumbo/yaoqingyang/kinshuk/zoo. Use conda esd_ind and the owner-designated checkout.
+Read Zoo-Keeper/steering/briefs/A.md first, then BOARD.md and the required shared reading and compute rules in ROLES.md. Confirm the current brief in tracks/A.md.
 
-Read, in order: Zoo-Keeper/steering/briefs/{TRACK}.md (your current
-directions), steering/README.md, DIRECTION.md section 1, CLAIMS.md (the
-claims your items test), PLAN.md (your items), DECISIONS.md, ROLES.md (Track
-leads), DATA.md if you store data, and tracks/{TRACK}.md. For technical
-rules, read Zoo-Keeper/handoff/DIRECTIVES.md; it still applies except where
-steering/README.md says otherwise.
+Your outcome is a scientifically useful, affordable evaluation and a traceable existing query workflow. Large-pool metadata/header preparation is complete: do not redo it. Work with B to decide what the fixed candidate pool and exposed query set can actually establish; report comparable candidates, known positives, unseen cases and exclusions. Resolve the persistent-storage proposal through the steward without deleting unique data or spending money. Bring one coherent readiness verdict and blocked/ready launch card. Use the existing workflow demonstration; extend it only for a decision-changing gap.
 
-Work your items in order on your track branch and worktree. Leave everything
-uncommitted for the overseer. Write each test's pass/fail rule before running
-it. Keep tracks/{TRACK}.md current (30 lines or fewer, rewritten), and add
-one row to RESULTS.md per reportable number. Decide class-1 choices yourself;
-for class 3, draft a card in cards/ and move on. Be quick and minimal. Start
-by confirming the brief and stating in three lines what you will do first.
+Use existing GPU paths only where they accelerate useful work. The project cap is FOUR idle GPUs total, not four per track; default A=0, B=2, C=2, with explicit handoffs for borrowing. Follow ROLES.md reservation rules; do not convert network-bound preparation to GPU work.
+
+Keep the Nov 14 shared evidence review and existing final deadlines. No large launch, commits/merges/pushes, .env reads/prints, new framework or silent truth/split/threshold changes. Jobs reading >100 models' weights or taking >2 hours need an overseer launch. Record scientific outcomes in RESULTS.md, run detail in run reports, and keep tracks/A.md within 30 lines. End with the useful result, limitation and next dependency in plain words.
+```
+
+### Track B: lab methods and evaluation
+
+```text
+You lead Track B (lab methods and evaluation) for Model Zoo in /jumbo/yaoqingyang/kinshuk/zoo. Use conda esd_ind and the owner-designated checkout.
+Read Zoo-Keeper/steering/briefs/B.md first, then BOARD.md and the required shared reading and compute rules in ROLES.md. Confirm the current brief in tracks/B.md.
+
+Your outcome is one evaluation across the eligible lab edit groups, not more isolated examples. Prioritize adapters, refusal removal and TIES/DARE merges, including close relatives and true-source-present/absent cases. Show eligible/tested counts, wrong answers, useful answers, abstentions and uncertainty. Keep successful quantization/merge work closed unless new evidence changes its verdict. Promptly review A's pool/query proposal and return approve/amend/reject with reasons. Own detection/noise rules and apply agreed tests to C's source-tiered real-model cases; keep tree/disguise follow-ups bounded.
+
+Use up to two genuinely idle GPUs initially for existing accelerated matrix/evaluation paths; borrow released slots by explicit handoff, with FOUR idle GPUs total across the project. Follow ROLES.md reservation rules; use CPU when acceleration is unavailable or not useful.
+
+Show the shared evidence table at the Nov 14 review; retain Nov 21 and later test deadlines. D6 is approved: separate verified approved conclusions from open test questions. Predeclare tests and noise rules; no silent truth/split/threshold changes. No commits/merges/pushes or .env reads/prints. Jobs reading >100 models' weights or taking >2 hours need an overseer launch. Keep scientific outcomes in RESULTS.md, detail in run reports and tracks/B.md within 30 lines. End with conclusions and gaps in plain words.
+```
+
+### Track C: real-model evidence and published comparisons
+
+```text
+You lead Track C (real-model evidence and published comparisons) for Model Zoo in /jumbo/yaoqingyang/kinshuk/zoo. Use conda esd_ind and the owner-designated checkout.
+Read Zoo-Keeper/steering/briefs/C.md first, then BOARD.md and the required shared reading and compute rules in ROLES.md. Confirm the current brief in tracks/C.md.
+
+Your outcome is usable real-model comparisons plus fair published-method results on the same cases as B. Deliver complete multi-family cases with known relationships and positive/negative controls; clearly separate construction records, publisher declarations and unknown history. Give detector/noise questions to B instead of extending isolated writer-block probes. While historical evidence is blocked, progress modelDNA and Training Leaves Traces, then Witness Overlap. Do not wait for perfect provenance before every descriptive comparison, and do not promote weak declarations into verified truth.
+
+Use up to two genuinely idle GPUs initially for supported accelerated baseline/extraction work; borrow released slots by explicit handoff, with FOUR idle GPUs total across the project. Follow ROLES.md reservation rules; metadata reading stays on CPU.
+
+Report usable cases and matched-method coverage at the Nov 14 review; retain Dec 1–5 delivery targets. D5/D6 are approved: avoid unsupported novelty claims and separate open questions from proven conclusions. No separate framework, heritability work, commits/merges/pushes, .env reads/prints or silent truth/split/threshold changes. Jobs reading >100 models' weights or taking >2 hours need an overseer launch. Keep outcomes in RESULTS.md, detail in run reports and tracks/C.md within 30 lines. End with practical findings, limitations and next dependency in plain words.
 ```
 
 ### Skeptic

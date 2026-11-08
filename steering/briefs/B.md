@@ -1,4 +1,4 @@
-# Brief: track B (2026-11-08, holistic review)
+# Brief: track B (2026-11-08, current focus + GPU update)
 ## Do next:
 1. K5: complete the existing edit/missing-parent tests across the eligible lab cohort, prioritizing adapters, refusal removal and TIES/DARE merges; retain the Nov 21 target.
 2. By the Nov 14 review, expose one table across all planned edit groups: eligible/tested counts, errors, abstentions and gaps. Not-run cells stay visible; no extra per-model narrative.
@@ -14,3 +14,4 @@
 - K8 review is a named dependency for A; do it without surrendering K5. D6 approved: K12 separates approved verified conclusions from open questions/test rules; later claims still require evidence and overseer approval.
 ## Watch out for:
 - Never tune on final outcomes or relabel previously inspected data as unseen; separate missing parent from missing family and unsupported edit type.
+- Compute: project-wide cap four idle GPUs; default A=0/B=2/C=2, borrowing only by explicit handoff. Apply ROLES.md admission/reservation rules; large-run launch limits still apply.
