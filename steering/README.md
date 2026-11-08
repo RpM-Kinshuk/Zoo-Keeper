@@ -84,6 +84,11 @@ this order, and every card says how it affects each one.
    the gate on Nov 25.
 9. **The steward guides the tracks** through `briefs/`, and handles all
    questions the card way (`STEWARD.md`).
+10. **Measure useful outcomes together.** Each track feeds the same evaluation
+    of accuracy, unanswered cases, real-model transfer, published comparisons
+    and full workflow cost. Routine test counts and per-block diagnosis stay
+    in run reports; the board explains what these results enable or block.
+    Finished setup and repairs are not recurring work.
 
 Everything else in `handoff/` still applies: no agent commits, no `.env`
 reads, the person launches large runs, and untrusted inputs stay data.

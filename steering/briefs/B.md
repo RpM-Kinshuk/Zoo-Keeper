@@ -1,16 +1,16 @@
-# Brief: track B (2026-11-08, steward)
+# Brief: track B (2026-11-08, holistic review)
 ## Do next:
-1. K5 now: exact-mark tests and leave-the-parent-out calibration, using existing CLAIMS rules and predeclared noise allowances; due Nov 21.
-2. Close bounded K4/K14 gaps by their dates: other-family/full-read evidence and unedited behavior-noise control plus full-network reorder comparison; no tree recovery or disguise programme.
-3. With A, review proposed K8 labeled queries, missing-parent cases, pool nesting and split/threshold protocol; return one concrete freeze proposal before any large launch.
-4. K12 follows the Nov 25 decisions; K9 stays exploratory and lower priority.
+1. K5: complete the existing edit/missing-parent tests across the eligible lab cohort, prioritizing adapters, refusal removal and TIES/DARE merges; retain the Nov 21 target.
+2. By the Nov 14 review, expose one table across all planned edit groups: eligible/tested counts, errors, abstentions and gaps. Not-run cells stay visible; no extra per-model narrative.
+3. Review A's K8 proposal once promptly and return approve/amend/reject with reasons; propose any new split/threshold/truth rule separately before final testing.
+4. Own detection/noise rules; apply the same prewritten tests to C's real-model handoff and suitable positive/negative controls. C should not independently develop another detector.
 ## Decisions that affect you:
-- K3 relation tests pass on 18 lab cases; no general parent recovery, direction or Hub claim follows. Skeptic agrees with narrow pilot interpretation.
+- The quantization subtest and its parent-out subset pass in the lab; broad C2/C3 remain unverified. Do not reopen those runs without new contrary evidence.
+- K4/K14 retain existing bounded checks and dates; conclude pass/fail/inconclusive rather than expanding into new programmes. K9 remains lower priority.
 ## Corrections:
-- K4 repeatability does not measure finite-sketch uncertainty or establish non-tree ancestry; keep that conclusion open.
-- K14's lone compatible source cannot test retrieval discrimination; tensor drift alone is not a full-network robustness result.
+- Do not let numerical diagnosis on one model replace full edit coverage; a noise allowance that accepts any change is uninformative, not a pass.
+- Reuse the existing scorer/commands. Fix implementation only when it blocks the next evaluation; test counts are not scientific outcomes.
 ## Answers to your questions.
-- No external blocker recorded. Avoid extending quick retests until K5 loses its slot; report any prerequisite that actually blocks K5.
+- K8 review is a named dependency for A; do it without surrendering K5. K12's current claim restriction stays in force while D6 is open.
 ## Watch out for:
-- Parent absent from pool; rank below rounding noise; real Hub confirmation from C before practical claims.
-- Keep all truth/split/threshold changes proposed, not silently applied.
+- Never tune on final outcomes or relabel previously inspected data as unseen; separate missing parent from missing family and unsupported edit type.

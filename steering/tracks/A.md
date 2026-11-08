@@ -1,15 +1,17 @@
 # Track A: tool and data
-Brief of 2026-11-08 read; K6 feasibility reported before any weight reads.
+Brief of 2026-11-08 read; bounded K8 preparation tested. No claim advanced.
 
-**Now:** K6 BERT specificity diagnostic tested/reviewed; no owned process running.
+**Now:** header/resource preparation finished; no agent jobs or large weight run active. L1 stays draft BLOCKED.
 **Results since the last steward run:**
-- K6:30 publisher-provenance scratch-trained BERT identities share audited normalized backbone config;30 partial fingerprints. [Feasibility](../../../runs/track-a-k6-feasibility-20261108/REPORT.md).
-- K6:0/435 false family matches at unchanged0.9999585892781632;78 shared views per pair,30 unique measured encoder signatures. Narrow diagnostic PASS; C1 not advanced. [Report](../../../runs/track-a-k6-bert-20261108/REPORT.md).
-- Important caveat:max score0.530912 (originalBERT/LEGAL-BERT-SC);0/72 matching encoder blocks, but initialization-seed relationship unresolved. Thirty scratch-training identities do not certify30 independent random seeds. [Review](../../../runs/track-a-k6-bert-20261108/REVIEW.md).
-- Cost:2,642,780,160 requested tensor bytes/806.764 summed model-seconds;CPU only,29 new+1 reused pilot. No positive-pair recall/per-query guarantee/decoder-scale claim.
-- K0 preserved:139 checkpoint copies plus permitted112-model evidence/database remotely verified;manual gates and all local copies retained.
-- K10 preserved:144/150 weight-identical associations;6 missing leaderboard revision. K8 cost table/L1 draft remain as recorded.
-**Next:** K8 pinned candidates, bounded budget/comparable70B cost; proposed query/nested-pool/split/threshold protocol to B and steward before L1 becomes ready.
-**Blocked or needs:** K6 initialization provenance caveat for steward; no claim freeze. K8 candidate/query inputs,70B cost and full launch budget remain open.
-**Class 1:** selected/reversibly measured the documented30-root BERT cohort;existing safe refs only. No conversion requests or .bin loads.
-All work uncommitted;no frozen handoff writes,source/schema/package changes,truth/split/threshold changes,uploads or large launches.
+- Fixed5224 reserve fully accounted:5222 manifests,2 parser failures;5154 resource-eligible distinct inventories,first5000 selected,154 reserve,70 exclusions. [Report](../../../runs/track-a-k8-headers-20261108/REPORT.md).
+- Planned row256 payload2.567TB;fingerprint estimate19.70GB/reserve40.66GB. With margin52.98GBfree required vs26.25GBobserved:space FAIL;all local copies preserved.
+- Paired CPU extraction-only costs:8B641,728,512B/104.843s;70B3,196,059,648B/357.927s. Completed8B resume0new reader calls. Search/end-to-end cost excluded. [Costs](../../../runs/track-a-k8-cost-20261108/REPORT.md).
+- 216 proposed queries,only2 exact inherited heldout keys. Planned compatible counts0–252;12zero,64atleast100,none5000. Estimates before value-dependent/self/duplicate/numeric checks;not final-score bounds. [Per-query table](../../../runs/track-a-k8-protocol-20261108/geometry-coverage.csv).
+- Existing saved-evidence info/similar/family/check demo passed with explicit missing-base abstention;no new interface or weights. [Workflow](../../../runs/track-a-workflow-20261108/REPORT.md).
+- Owner-only command/input hashes/shell syntax checked;verifier correctly refuses current storage before collection. [L1](../cards/L1-5k-pool.md).
+- K0/K10 remain closed in recorded scope;K6 stays narrow30BERT/0of435 false-match diagnostic,with initialization/recall/decoder caveats.
+**Next:** B/steward scientific review of fixed pool/query proposal;resolve persistent capacity before overseer launch. No new scientific freeze.
+**Blocked or needs:** current mixed pool is not5000 comparable hard negatives/query or200 unseen tests. B review pending via sufficient shared [handoff](A-to-B-k8-proposal.md);no message retries. [Storage draft](../cards/draft-k8-storage.md) has skeptic agreement.
+Class1:fixed reserve/strict operational caps retained;terminal parser errors excluded,CPU-only existing CLI reused. Core guard finding reproduced/fixed;original review preserved.
+Class2:final resource and per-query evidence shared for B/steward review;no truth/split/threshold changes. All work uncommitted;no upload,deletion,frozen-handoff write or shared source/schema/package change.
+Integration requested by owner:both track-a branches already contained in main;fast-forward-only merges returned already up to date. A steering changes remain uncommitted in main;run artifacts remain under runs/.

@@ -25,3 +25,7 @@ If setup is delayed: A prepares the inventory and a local stopgap where safe, wi
 Can it be undone? Access settings can change only under the existing publication rules; deleting a sole copy requires the overseer.
 Second opinion (skeptic, original card): agreed that the at-risk data should be copied off-server immediately rather than wait for a paid plan. This was a review of the original proposal, not verification of an upload.
 Details for agents: [DATA.md](../DATA.md), PLAN.md K0. Measured inventories and remote revisions now appear in DATA.md and RESULTS.md.
+
+Prepared remainder: the owner approved continuation on Nov 7; Track A's final
+remote verification covers it. The obsolete continuation draft was consolidated
+here after completion; there is no further storage-setup approval pending.

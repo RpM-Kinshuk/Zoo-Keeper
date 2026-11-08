@@ -36,22 +36,32 @@ against allowance ≤4). Fresh skeptic supports a narrow lab pilot only:
 selected views, related parents and three families; no unknown-parent,
 direction, historical implementation or Hub validation. Broad C2 stays checked;
 no full claim is promoted or made solid. K4/K14 remain partial diagnostics.
-K6 has nine independent models per config versus target thirty. The first
-two baseline adaptations cover only the small L12 cohort. These results do
-not yet satisfy C1, C3 or C4 full tests. RESULTS.md retains their provenance.
+K5 quantization now passes its existing lab criteria: 12 detections/replays,
+0 flags among 30 controls. Its parent-out subset answers all 12 present cases
+correctly and abstains on all 12 absent cases. Fresh skeptic agrees this is
+narrow lab evidence, not unique parenthood/order in general or a C3 guarantee.
+K6 now has 30 publisher-supported scratch-trained BERT controls and 0 false
+matches among 435 pairs; seed independence, positive recall and decoder
+transfer remain unresolved. Further seed forensics is not a prerequisite to
+reporting that narrow diagnostic honestly.
+The two baseline adaptations still cover only the small old cohort. C's real
+selected-block test is uninformative and verifies no construction edge.
+C1–C5 remain checked, C6 remains a later hypothesis; no full claim is promoted.
+The holistic review prioritizes comparative coverage and usable real-model
+verdicts over more selected-case diagnostics; RESULTS.md holds the summary.
 
-## Literature check (2026-11-07, web search)
+## Literature check (Nov 7, documentary follow-up Nov 8)
 
 | Work                                                                                                                                         | What it does                                                                                                                                                                                    | Effect on us                                                                                                                                                |
 | -------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| modelDNA (2607.10617), LineageBench, modelDNA Atlas                                                                                          | Weight-based lineage verification and merge decomposition. LineageBench has 15 suspect models and 8 candidate parents (AUROC 1.0, 13/13 correct). The Atlas covers 68 Hub models and 123 edges. | Our lab (166 models with exact construction truth) and our zoo (703 models now, 10–20k planned) are much larger. Same-family detection alone is not new.    |
+| modelDNA (2607.10617), LineageBench, modelDNA Atlas                                                                                          | Weight-based lineage verification and merge decomposition. LineageBench has 15 suspect models and 8 candidate parents (AUROC 1.0, 13/13 correct). The Atlas covers 68 Hub models and 123 edges. | Our controlled cohort includes 112 constructed children among 166 entries; the measured snapshot has 703 models. Exact construction records, not generic size, are the distinction to check (D5). Same-family detection alone is not new.    |
 | "Training Leaves Traces" (2608.14929)                                                                                                        | Weight-only relatedness score. It separates fine-tuned, LoRA-merged, pruned and quantized descendants from independent and distilled models. The score is symmetric: no direction or edit type. | **New to our plan; must be a baseline for claim C1.** Typing and direction remain open.                                                                     |
 | Witness Overlap (2609.31784, arXiv 2026; NeurIPS acceptance not confirmed)                                                                   | Orients parent→child among fine-tunes using a third family member (a "witness"): 95.3% on 176 checkpoints in 16 families                                                                        | **Corrects us:** order for ordinary fine-tunes is not hopeless from weights when a witness exists. It is a baseline and a possible component for C2 and K9. |
 | TrFP (2610.34675)                                                                                                                            | Fingerprints from activation trajectories. It needs forward passes. Claimed robust to fine-tuning, pruning, quantization, merging, permutation and adaptive attacks.                            | The robustness comparison for disguise. Different cost: it runs the model; we read weights only.                                                            |
 | [Provenance sets (MPS, 2602.00772)](https://arxiv.org/html/2602.00772v1) | Returns possible source/ancestor sets; tests coverage and set size over candidate pools 5, 10, 20, 50, 80, 100. Collection: 455 models labeled from declared bases. | Pool-size curves and calibrated source sets already exist. Their ancestor coverage differs from our immediate-parent error test; exact construction records remain a possible distinction (D5 approved). |
 | Cisco `model-provenance-kit` (GitHub)                                                                                                        | A practical provenance tool with an edit-type taxonomy (fine-tune, adapter, quantization, merge, and more)                                                                                      | **New to our plan:** a real-world competitor for the `check` command. Learn what it measures before we position ours.                                       |
 | Refusal-removal ("abliteration") detection                                                                                                   | Found only activation-based or behavior-based detection                                                                                                                                         | A weight-only detector looks open.                                                                                                                          |
-| Not yet verified: AttnPrint/DistillTrace (2609.20457), SCOUT (2609.32749), BULLPEN (2610.41375), the GGUF reproducibility paper (2610.19498) | Reported by the critic's search                                                                                                                                                                 | Track C verifies each before citing it                                                                                                                      |
+| AttnPrint/DistillTrace, SCOUT, BULLPEN and GGUF reproducibility | C completed the primary-source access/modality checks; detailed findings in its Nov 7 K2 primary-check note | Do not repeat that completed documentary check. Exact reconstruction needs build inputs; output-based approaches do not establish weight-only edit detection. |
 
 ## Claims
 
@@ -101,7 +111,7 @@ real Hub examples (K7).
 | **Adapter** (LoRA merged into the weights) | Tensors the adapter did not touch are **bit-identical to the parent**. Touched tensors change at low rank, but only above the bf16 noise floor.                                                                                                                                             | yes                                | **no:** a low-rank difference looks the same in both directions                        | Small LoRA updates fall below the floor and the rank test abstains. Report each LoRA's update size first.                                                                                                                              | 24 lab LoRAs. Pass: parent found by identical tensors 24/24; rank within ±25% of the configured rank wherever above the floor.                                           |
 | **Ordinary fine-tune** (SFT, DPO)          | No exact mark. Two candidate signals for order: (a) the witness geometry (Witness Overlap); (b) a hypothesis from our own spectral work, that heavy-tail statistics shift in one direction with training. Spectral numbers need full reads (lab has them).                                  | family and closest candidates only | possibly, with a witness or spectral signal; otherwise from Hub upload time            | No witness in the pool; tiny updates (DPO); spectral drift may be too weak                                                                                                                                                             | 16 lab SFT/DPO edges. Report witness-method and spectral-cue order accuracy. No pass rule yet: this is exploratory until Dec 4.                                          |
 
-**Status:** checked (theory and literature). Each row moves separately.
+**Status:** checked overall. Quantization and known-source linear/SLERP tests have passed in the lab; the remaining edit tests and real-model checks are open. Each hypothesis moves separately; no parent/order guarantee follows from these subtests.
 
 ### C3: parent decisions calibrated against relatives
 
@@ -140,7 +150,8 @@ a separate comparison; size alone is not a novelty claim (D5).
 
 **Literature:** LineageBench has 15 suspect models; Witness Overlap evaluates
 176 checkpoints; MPS collects 455 models labeled from declared bases. Ours has
-166 constructed models; the verified Hub tier is still being built (K7).
+a 166-entry cohort including 112 formal constructed children and bases/reference
+controls; the verified Hub tier is still being built (K7).
 Exact construction records and coverage of edit types need direct comparison.
 
 **Test:** at least 4 published methods run on it (K2), with the scorer

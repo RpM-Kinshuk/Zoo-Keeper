@@ -1,19 +1,27 @@
-# L1: Measure family false matches as the candidate pool grows
-Status: draft BLOCKED | Why now: [K8](../PLAN.md), launch card due November 21.
+# L1: Test family matching as the search grows
+Status: draft BLOCKED | Plan: K8 | Ready-card target: Nov 21
 
-Recommendation: keep this draft blocked until the candidate and query inputs are pinned. No overseer launch is requested yet. If no answer: do not launch; K8 remains open. The pool-size curve is still NOT MEASURED and C1 does not advance.
+Purpose: measure useful answers, mistakes and costs as the search grows. Preparation is tested; the large weight run has not started.
 
-Command (from workspace root): **withheld**. No frozen 5,000-model candidate roster was supplied or identified in the inspected pilot inputs; a paste-ready launch would imply missing inputs exist. The existing pilot runner points to its historical run through a temporary marker and must not be reused as a 5k launcher.
+Ready inputs: 5,000 pinned, distinct header/resource-eligible candidates plus 154 reserve; 70 exclusions retained. The 216-query catalog includes only two inherited held-out keys. Planned compatible counts range 0–252 per query; 12 have zero. These header estimates precede value-dependent view removal, self/duplicate removal and numeric checks; they are not bounds on final score eligibility or 5,000 independent distractors per query.
 
-Expected cost: GPU-hours **unknown** · wall-clock hours **unknown** · storage written **unknown**. **Prediction only:** 2.613 TB requested tensor payload and 492.27 serial model-hours for 5,000 draws with exactly the completed pilot's mixture, hardware and policy, excluding gaps/retries. This is not a 5k launch budget; requested tensor payload is not measured network traffic.
+Still blocked:
+- B/steward must review whether this pool and the exposed query catalog answer the scientific question. No new truth, split, threshold or scientific freeze is applied.
+- Persistent free space must reach 52,977,254,828 bytes (about 52.98 GB). The budget snapshot records 26.25 GB free, a 26.72 GB shortfall. No deletion, extra upload or purchase is authorized. See [storage draft](draft-k8-storage.md).
+If no answer: retain data and keep this card blocked; use existing evidence for the November review.
 
-Measured extraction cost: nine existing header-verified 7.5–8.5B examples: median **641,728,512 bytes / 849.98 seconds**. Comparable standalone **70B cost NOT MEASURED**. Costs of searching the growing pool and end-to-end check latency also remain unmeasured.
+Prepared command, OWNER ONLY after this card becomes ready, from the workspace root:
+```bash
+set -a; . ./.env; set +a
+bash "$ZOO_DATA/runs/track-a-k8-launch-20261108/collect.sh"
+```
+The verifier checks pinned inputs/source and current space before invoking the existing collector: CPU, four workers, one numerical thread each, k64/row256, sampled experts, no parents or parent cache. No large launch is authorized by this draft.
 
-To become ready: freeze >=5,000 distinct readable candidate revisions and manifests; freeze the labeled query roster, nested pool sizes 100–5,000, splits and threshold (>=200 queries before the P1 scale check); pin source hashes and fill the aggregate bytes/storage/GPU/wall budget. Then supply and validate an exact command using existing `evidence.cli batch --measurement_mode row_blocks`, with explicit workers, device, sketch size and bounded caches. Existing artifact-aware resume is available; demonstrate it on these inputs before marking ready. The frozen hash record here covers only reused pilot evidence, not a future 5k roster.
+Expected cost: 0 GPU-hours; 2.567 TB planned tensor requests before retries; 19.70 GB fingerprint estimate / 40.66 GB planning reserve. Dense-anchor scaling predicts 112.44 serial elapsed hours, or 28.11 ideal four-worker wall hours. Historical mixed-host bins predict 505.91 serial hours, or 126.48 ideal wall hours, omitting 91 models without a historical bin. Neither is a measured CPU time, runtime guarantee or uncertainty interval; file/request overhead and concurrency can dominate. The hard timeout is seven days. Peak process RAM and fresh-model end-to-end latency remain unmeasured.
 
-You will know it worked when: all 5,000 candidates have recorded outcomes and explicit gaps, and a report gives false matches per labeled query at every frozen pool size plus actual costs.
-Stop it if: access/rate-limit handling or cache bounds fail, input hashes change, or costs exceed the approved budget. Safe to stop and resume: **not yet verified for this future run**; the ready card must include the same exact command and artifact verification procedure.
-After it finishes: tell the steward. No other action is needed from you.
+Success: all intended distinct identities have valid, correctly pinned artifacts; then B's reviewed analysis reports usable/compatible counts, label/test exposure, known-present recall, false-hit bounds including unknowns, abstention and cost at each pool size. Missing size or truth stays a miss, not a successful benchmark.
+Stop if free space approaches 2 GiB, memory threatens the host, access is denied or systematic errors appear. Preserve completed artifacts/logs and wait for all workers to exit before rerunning the same command. Completed-artifact resume was tested on one real 8B model with zero new reader calls; interrupted models may reread data. [Resume details](../../../runs/track-a-k8-launch-20261108/RESUME.md).
 
-Second opinion (skeptic): pending; this blocked draft is not ready for the overseer's launch batch.
-Details for agents: [cost evidence and exclusions](../../../runs/track-a-k8-20261107/REPORT.md), [frozen rules](../../../runs/track-a-k8-20261107/PASS_FAIL.md), [one input hash record](../../../runs/track-a-k8-20261107/INPUTS.sha256.json). No 5k job was launched.
+Second opinion: independent preparation review found a header-boundary guard gap, reproduced and fixed with RED/GREEN regression; original review and lead disposition preserved. Storage-card skeptic agrees to retain data and hold launch. Neither substitutes for B's pending scientific review.
+Details: [resource report](../../../runs/track-a-k8-headers-20261108/REPORT.md), [per-query planned counts](../../../runs/track-a-k8-protocol-20261108/geometry-coverage.csv), [proposal](../../../runs/track-a-k8-protocol-20261108/PROPOSAL.md), [paired costs](../../../runs/track-a-k8-cost-20261108/REPORT.md).
+After a ready launch finishes: tell the steward; no publication or deletion follows automatically.

@@ -13,6 +13,36 @@ Paths are relative to `$ZOO_DATA` unless they start with a repository name.
 Seeded on 2026-11-07 from the agents' own records. These numbers have not
 been re-run.
 
+## Current outcome summary (Nov 8 holistic review)
+
+This summarizes existing runs, not a new experiment. The dated ledger below
+retains the measurements and links; old failures and partial inventories are
+history, not a reason to repeat work already resolved.
+
+| Question | Evidence against its target | Still missing | Source |
+| --- | --- | --- | --- |
+| Can we detect a quantization made in the lab? | 12/12 detected and replayed from the known source; 0/30 controls flagged, matching the written targets | Other quantizers/formats and real published models; not general parent or order proof | `runs/track-b-k5-quantization-20261108/REPORT.md` |
+| Does it avoid naming a missing source? | Quantization subset: 12/12 answers correct with source present; 0/12 answers when absent; 100% present coverage versus ≥50% target | Other edit groups, broader relatives, independent test data and uncertainty | `runs/track-b-k5-parent-out-20261108/REPORT.md` |
+| Can we recover known merge proportions? | 18/18 linear/SLERP cases within 0.05 error; 0 misses versus allowance ≤4 | Unknown-parent search, direction and real-model transfer | `runs/track-b-k3-slerp-trig-20261107-v2/REPORT.md` |
+| Are unrelated same-design models confused? | 30 trained BERT controls versus ≥30 count target; 0/435 observed false matches versus 0 target | Seed independence unresolved; no positive recall or decoder transfer measured | `runs/track-a-k6-bert-20261108/REPORT.md`; `REVIEW.md` |
+| Do real published-model exact marks work? | 0 verified construction edges so far; selected-block refusal-removal test uninformative | Complete multi-family comparisons, informative controls and construction records for causal claims | Track C `docs/research/2026-11-08-k7-first-evidence.md`, `2026-11-08-k7-writer-diagnostic.md` |
+| Have published methods been compared fairly? | Two native adaptations on the small old cohort; four priority methods required | Remaining methods and matched full eligible lab/Hub comparison; Witness Overlap separately for order | Track C `docs/research/2026-11-07-k2-lab-results.md` |
+| Is larger-search evaluation ready? | 216 proposed query identities versus ≥200 labeled-query target; only 2 inherited held-out keys, 145 with known positive peers; preparation, not evaluation | B review; positive membership/comparable counts; final input, cost/storage plan; no 5k weight run | `runs/track-a-k8-protocol-20261108/catalog/REPORT.md`; `PROPOSAL.md` |
+| Is there a practical whole-workflow result? | Existing CLI smoke workflow works; verdict was uncalibrated | An interpretable real-model check with error/unknown handling and full extraction-plus-search cost | `Zoo-Keeper/README.md`; earlier query reports |
+
+The controlled lab is an asset, not yet a complete comparative benchmark.
+SFT/DPO, adapters, refusal removal, TIES/DARE and decision-head coverage must
+appear in B's consolidated table, including not-run or unsupported entries.
+K0 archive and K10 hash audit are complete in their recorded scope; do not
+keep reopening them as prerequisites for unrelated evaluations.
+The Nov 8 08:53 UTC storage snapshot projected about 41.27 GB reserved space
+for a hypothetical 5k cohort versus 30.59 GB free. That conditional estimate
+misses the available-space check; final headers/budget are still pending.
+Source: `runs/track-a-k8-headers-20261108/budget.json`, with dated snapshots.
+No file deletion or storage purchase follows from this observation.
+
+## Dated measurements
+
 | Date | Track | What was measured (plain words) | Number | Target | Verdict | Status | Source |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 11-02 | B | Same family or not, on held-out families (only 2 families, 6 queries) | AUROC 1.00, partial and full reads | ≥0.98 | pass, but tiny sample | tested | `Zoo-Keeper/docs/l12-evaluation.md` |
@@ -163,6 +193,23 @@ been re-run.
 | 11-08 | B | K5/C2 complete child/parent tensor-name and shape coverage | 12/12 | 12/12 | PASS; original child weight pins also match; lab only | tested | `runs/track-b-k5-quantization-20261108/REPORT.md` |
 
 | 11-08 | B | Existing quantizer unit tests after K5 replay audit | 29 passed | no failures | PASS; one NVML warning | tested | `runs/track-b-k5-quantization-20261108/verification.json` |
+
+| 11-08 | B | K5 quantization parent-present answers | 12/12 | ≥50% coverage | PASS subset | tested | `runs/track-b-k5-parent-out-20261108/REPORT.md` |
+| 11-08 | B | K5 quantization parent-present wrong answers | 0/12 answers | ≤0.05 per answer | PASS subset | tested | `runs/track-b-k5-parent-out-20261108/REPORT.md` |
+| 11-08 | B | K5 quantization parent-absent answers | 0/12 queries | abstain when source absent | all abstain; precision undefined | tested | `runs/track-b-k5-parent-out-20261108/REPORT.md` |
+| 11-08 | B | K5 quantization parent-absent false named parents | 0 | no false parent | no answered queries | tested | `runs/track-b-k5-parent-out-20261108/REPORT.md` |
+| 11-08 | B | K5 quantization pooled false parent rate | 0/12 answers | ≤0.05 | PASS empirical subset only | tested | `runs/track-b-k5-parent-out-20261108/REPORT.md` |
+| 11-08 | B | K5 quantization parent-present coverage | 100% | ≥50% | PASS subset | tested | `runs/track-b-k5-parent-out-20261108/REPORT.md` |
+| 11-08 | B | K5 quantization incomplete parent-out queries | 0 | 0 | complete | tested | `runs/track-b-k5-parent-out-20261108/REPORT.md` |
+| 11-08 | B | K5 parent-out effective tensor coverage | 126/126 candidate pairs | all complete | PASS incl tied aliases | tested | `runs/track-b-k5-parent-out-20261108/REPORT.md` |
+| 11-08 | B | K5 parent-out distinct frozen identities | 46 | ≤100 weight models | within small-run limit | tested | `runs/track-b-k5-parent-out-20261108/REPORT.md` |
+| 11-08 | B | K5 parent-out weight pins matching original delivery | 50 files | all selected files | PASS | tested | `runs/track-b-k5-parent-out-20261108/REPORT.md` |
+
+| 11-08 | B | Initial main integration test passes | 648 | all pass | 20 environment failures | tested | `runs/track-b-k5-parent-out-20261108/verification.json` |
+| 11-08 | B | Initial main integration test failures | 20 | 0 | research import path, metadata, Gloo environment | tested | `runs/track-b-k5-parent-out-20261108/verification.json` |
+| 11-08 | B | Environment-corrected main integration test passes | 664 | all pass | four socket-restricted cases remain | tested | `runs/track-b-k5-parent-out-20261108/verification.json` |
+| 11-08 | B | Environment-corrected main integration test failures | 4 | 0 | sandbox Gloo restriction; verified on separate rerun | tested | `runs/track-b-k5-parent-out-20261108/verification.json` |
+| 11-08 | B | Distributed-training file outside socket sandbox | 19 passed | 0 failures | PASS; covers all four preceding failures | tested | `runs/track-b-k5-parent-out-20261108/verification.json` |
 
 ## Steward verification: 2026-11-07
 
@@ -384,3 +431,58 @@ declared-base models and pool curves through 100. No full claim promotion.
 | 11-08 | C | v2 selected weight payload bytes | 46137344 | bounded two-model pilot | measured; invalid v1 repeated reads excluded | tested diagnostic | `runs/track-c-k7-writer-diagnostic-20261108-v2/report.json`; source hashes `inputs.json`; track-c `docs/research/2026-11-08-k7-writer-diagnostic.md` |
 | 11-08 | C | v2 metadata/header payload bytes | 107782 | bounded two-model pilot | measured; invalid v1 repeated reads excluded | tested diagnostic | `runs/track-c-k7-writer-diagnostic-20261108-v2/report.json`; source hashes `inputs.json`; track-c `docs/research/2026-11-08-k7-writer-diagnostic.md` |
 | 11-08 | C | v2 diagnostic wall seconds | 4.80540579702938 | bounded two-model pilot | measured; invalid v1 repeated reads excluded | tested diagnostic | `runs/track-c-k7-writer-diagnostic-20261108-v2/report.json`; source hashes `inputs.json`; track-c `docs/research/2026-11-08-k7-writer-diagnostic.md` |
+
+## Track A — K8 bounded cost and query preparation, 2026-11-08
+
+| Date | Track | What was measured (plain words) | Number | Target | Verdict | Status | Source |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 11-08 | A | K8 Dense Llama3.1 8B extraction payload | 641,728,512 bytes | nonzero standalone partial-read cost | pass | tested | `runs/track-a-k8-cost-20261108/cost-results.json` |
+| 11-08 | A | K8 Dense Llama3.1 8B extraction runtime | 104.8430084810243 seconds | bounded same-policy cost | pass | tested | `same` |
+| 11-08 | A | K8 Dense Llama3.1 70B extraction payload | 3,196,059,648 bytes | nonzero standalone partial-read cost | pass | tested | `same` |
+| 11-08 | A | K8 Dense Llama3.1 70B extraction runtime | 357.92708002997097 seconds | bounded same-policy cost | pass | tested | `same` |
+| 11-08 | A | K8 Completed 8B artifact resume, new reader calls | 0 | 0 with network forbidden | pass | tested | `runs/track-a-k8-cost-20261108/resume-verification-8b.json` |
+| 11-08 | A | K8 Proposed eligible pinned query keys | 216 | ≥200 catalog identities | pass catalog; not200heldout positives | tested | `runs/track-a-k8-protocol-20261108/catalog/summary.json` |
+| 11-08 | A | K8 Catalog queries with another known same-root query | 145 | report positive availability separately | candidate-pool presence not yet verified | tested | `same` |
+| 11-08 | A | K8 Known-positive roots in query catalog | 11 | report root diversity | no generalization claim | tested | `same` |
+| 11-08 | A | K8 Exact inherited R5 heldout query keys | 2 | preserve existing split | pass; no new assignments | tested | `same` |
+| 11-08 | A | K8 Header-only pilot complete extractor manifests | 100/100 | 100/100 | pass T0 metadata only | tested | `runs/track-a-k8-headers-20261108/pilot100-summary.json` |
+| 11-08 | A | K8 Header-only pilot metadata payload | 6,482,301 bytes | no tensor data reads | pass guarded header/JSON reads only | tested | `same` |
+| 11-08 | A | K8 Header-only pilot summed model runtime | 255.912868699932 model-seconds | forecast metadata action bound | measured; not parallel wall time | tested | `same` |
+| 11-08 | A | Existing saved-evidence info/similar/family/check workflow incl database opening | 0.809020432 seconds | finite local query cost, explicit missing-base abstention | pass demonstration; not fresh-model end-to-end cost or accuracy | tested | `runs/track-a-workflow-20261108/demo.json` |
+| 11-08 | A | K8 Fixed candidate frame identities selected before API calls | 6,000 | fixed bounded reserve | pass fixed selection | tested | `runs/track-a-k8-inputs-20261108/SUMMARY.json` |
+| 11-08 | A | K8 Exact distinct candidate repository/revision pins resolved | 5,992 | ≥5,000 before eligibility | pass metadata only;8 not found | tested | `runs/track-a-k8-inputs-20261108/SUMMARY.json` |
+| 11-08 | A | K8 Metadata-qualified candidate pins | 5,400 | report conservative screen | pass metadata only | tested | `runs/track-a-k8-inputs-20261108/SUMMARY.json` |
+| 11-08 | A | K8 Distinct metadata root-safe-file inventory groups | 5,224 | ≥5,000 before header/resource checks | pass provisional reserve | tested | `runs/track-a-k8-inputs-20261108/SUMMARY.json` |
+| 11-08 | A | K8 Metadata root-safe-file duplicate excess removed | 176 | remove exact inventory repeats | pass metadata grouping;not tensor equivalence | tested | `runs/track-a-k8-inputs-20261108/SUMMARY.json` |
+
+## Track A — final bounded K8 preparation, 2026-11-08
+
+| Date | Track | What was measured (plain words) | Number | Target | Verdict | Status | Source |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 11-08 | A | K8 Fixed reserve terminal outcomes | 5,224 | 5224 | pass accounting | tested | `runs/track-a-k8-headers-20261108/header-outcomes.json` |
+| 11-08 | A | K8 Published exact-pinned extractor header manifests | 5,222 | all usable attempts explicit | pass metadata scope | tested | `runs/track-a-k8-headers-20261108/header-outcomes.json` |
+| 11-08 | A | K8 Terminal parser failures preserved | 2 | no hidden failures | excluded;invalid size/duplicate names | tested | `runs/track-a-k8-headers-20261108/header-outcomes.json` |
+| 11-08 | A | K8 Header/resource-eligible distinct inventories | 5,154 | ≥5,000 | pass operational preparation | tested | `runs/track-a-k8-headers-20261108/budget.json` |
+| 11-08 | A | K8 Selected resource-eligible candidates | 5,000 | 5,000 | pass headers only;not measured scores | tested | `runs/track-a-k8-headers-20261108/budget.json` |
+| 11-08 | A | K8 Passing fixed reserve remaining | 154 | report reserve | available before score-dependent checks | tested | `runs/track-a-k8-headers-20261108/budget.json` |
+| 11-08 | A | K8 Total terminal/resource exclusions | 70 | all failures explicit | retained;rules unchanged | tested | `runs/track-a-k8-headers-20261108/budget.json` |
+| 11-08 | A | K8 Recorded header/JSON requested metadata | 426,670,883 bytes | bounded metadata only | no candidate tensor collection | tested | `runs/track-a-k8-headers-20261108/header-outcomes.json` |
+| 11-08 | A | K8 Recorded summed metadata model time | 16,297.081669 summed model-seconds | report actual counters | not wall/CPU time;aborted sandbox start excluded | tested | `runs/track-a-k8-headers-20261108/header-outcomes.json` |
+| 11-08 | A | K8 Selected planned row256 tensor payload | 2,566,948,468,040 bytes | bounded supported-layout plan | not actual network traffic or approved launch | planned | `runs/track-a-k8-headers-20261108/budget.json` |
+| 11-08 | A | K8 Fingerprint storage point estimate | 19,701,678,952 bytes | capacity planning | empirical estimate;not guaranteed format bound | predicted | `runs/track-a-k8-headers-20261108/budget.json` |
+| 11-08 | A | K8 Fingerprint storage planning reserve | 40,663,816,944 bytes | capacity planning | empirical estimate;not guaranteed format bound | predicted | `runs/track-a-k8-headers-20261108/budget.json` |
+| 11-08 | A | K8 Free-space gate including proposed margin | 52,977,254,828 bytes | reserve×1.25+2GiB | unmet;capacity decision required | planned | `runs/track-a-k8-headers-20261108/budget.json` |
+| 11-08 | A | K8 Observed persistent filesystem free space | 26,254,245,888 bytes | ≥52,977,254,828 | FAIL storage;availability not reservation | tested | `runs/track-a-k8-headers-20261108/budget.json` |
+| 11-08 | A | K8 Storage shortfall against proposed gate | 26,723,008,940 bytes | 0 | FAIL;retain local copies | planned | `runs/track-a-k8-headers-20261108/budget.json` |
+| 11-08 | A | K8 Dense-anchor scaled serial elapsed forecast | 112.441281 hours | planning only | not CPU time or wall guarantee | predicted | `runs/track-a-k8-headers-20261108/budget.json` |
+| 11-08 | A | K8 Dense-anchor scaled serial elapsed forecast ideal four-worker wall division | 28.110320 hours | planning only | not a measured concurrency speedup | predicted | `runs/track-a-k8-headers-20261108/budget.json` |
+| 11-08 | A | K8 Historical mixed-host bin serial elapsed forecast | 505.905900 hours | planning only | not CPU time or wall guarantee | predicted | `runs/track-a-k8-headers-20261108/budget.json` |
+| 11-08 | A | K8 Historical mixed-host bin serial elapsed forecast ideal four-worker wall division | 126.476475 hours | planning only | not a measured concurrency speedup | predicted | `runs/track-a-k8-headers-20261108/budget.json` |
+| 11-08 | A | K8 Models omitted by missing historical runtime bins | 91 | report missingness | historical forecast incomplete | tested | `runs/track-a-k8-headers-20261108/budget.json` |
+| 11-08 | A | K8 Minimum planned compatible candidates/query | 0 | report per-query effective scope | structural estimate only | tested | `runs/track-a-k8-protocol-20261108/geometry-coverage.json` |
+| 11-08 | A | K8 Maximum planned compatible candidates/query | 252 | report per-query effective scope | not final numeric eligibility/bound | tested | `runs/track-a-k8-protocol-20261108/geometry-coverage.json` |
+| 11-08 | A | K8 Queries with zero planned compatible candidates | 12 | 0 | 12 scoped coverage gaps | tested | `runs/track-a-k8-protocol-20261108/geometry-coverage.json` |
+| 11-08 | A | K8 Queries with at least100 planned compatible candidates | 64 | report scope | not labeled hard-negative count | tested | `runs/track-a-k8-protocol-20261108/geometry-coverage.json` |
+| 11-08 | A | K8 Queries with5000 planned compatible candidates | 0 | report against global5000 target | none;global roster is not per-query5000 | tested | `runs/track-a-k8-protocol-20261108/geometry-coverage.json` |
+| 11-08 | A | K8 Production structural-guard differential checks | 15040 | all agree | pass structural logic only | tested | `runs/track-a-k8-protocol-20261108/geometry-coverage.json` |
+| 11-08 | A | K8 Planned compatible candidates for each K6 BERT query | 2 | report cohort scope | header geometry estimate;not retained numeric score count | tested | `runs/track-a-k8-protocol-20261108/geometry-coverage.csv` |

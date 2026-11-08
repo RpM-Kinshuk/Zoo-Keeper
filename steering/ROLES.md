@@ -28,6 +28,10 @@ a track reports a claim-changing result.
 
 Scopes through Dec 18 (`PLAN.md` holds the items):
 
+These are ownership scopes, not recurring prerequisites. Current briefs set
+the execution order; completed reading, setup and repairs are not repeated.
+B owns detector/noise rules, C source evidence/comparisons, A inputs/resources.
+
 | Track                                    | Scope                                                                                                                                                                                                                                                                                                                                                                                    | Repository                             |
 | ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
 | **A**: tool and data                     | Lab data to Hugging Face (K0); real look-alike models (K6); score verification by weight hash (K10); cost gate and the 5k candidate pool (K8: launch card, then analysis); zoo builds. From mid-December: the zoo v1 plan (K15: `check` command, GGUF, duplicates report).                                                                                                               | Model-Zoo, plus Zoo-Keeper for queries |

@@ -25,20 +25,31 @@ The merged plan remains the reference for methods detail.
 - a fingerprint extractor for every model type;
 - a queryable zoo of 703 models;
 - a 320-model random sample of the Hub;
-- a lab of 166 models whose exact construction we know.
+- a 166-model lab cohort: 112 formal constructed children plus bases and reference controls. Construction records apply to the built children; control provenance has separate limits.
 
-**What the evidence says so far:**
-- Telling which family a model comes from looks promising, but rests on just
-  6 queries from 2 held-out families. It is not established.
-- Naming the exact parent fails: 8 wrong answers per query against a target
-  of 0.05.
-- Telling which model came first was never attempted.
-- Two tests were set up wrong:
-  - the tree test used a near-exact tolerance with no noise model;
-  - the merge fit made parents look identical.
-- "What was done to this model?" was never tested.
-- No published baseline has been run.
-- The heritability study produced no numbers.
+**Current evidence, updated Nov 8:**
+- The collector, database and queries form a working internal prototype;
+  approved lab data is backed up. This is not yet a validated public service.
+- Family detection has encouraging small-cohort results and a thirty-model
+  trained BERT control; decoder-scale accuracy and recall remain unproven.
+- Quantization detections and exact known-source replays pass all twelve lab
+  cases with no flags among thirty controls. The absent-parent subset also
+  abstains correctly. Other edit categories still need systematic tests.
+- The merge retest now fits all eighteen linear/SLERP lab cases within the
+  allowed error; this does not establish unknown-parent recovery or order.
+- Two adapted published methods ran on the small old cohort; the full
+  comparative lab and real-model evaluation is unfinished.
+- No real Hub construction edge is yet verified. A selected-block refusal-
+  removal diagnostic is uninformative; it is not practical detection proof.
+- Larger-search inputs, extraction costs and a proposed query catalog now
+  exist; the search curve, adequate unseen evaluation and final budget do not.
+- Score links improve to 144/150 by weight identity; this does not revive
+  score-prediction or heritability work.
+
+**Execution emphasis:** use the existing pipeline for a joined-up evaluation
+across edit groups, real models and published methods. Small pilots should
+resolve a named uncertainty, then feed that evaluation; they are not the end
+product. PLAN.md defines the Nov 14 review without changing final deadlines.
 
 **The correction.** Claim what weights can actually show, and test it
 properly:
@@ -53,8 +64,9 @@ properly:
    a spectral cue. We test both, and fall back to the Hub's upload times
    (corrected). This is new science and a practical "what was done to this
    model?" tool.
-3. **The lab as a benchmark.** 166 models with exact construction truth
-   across seven kinds of edit. Earlier work includes a 455-model collection labeled from declared
+3. **The lab as a benchmark.** A 166-model cohort with 112 constructed
+   children across seven edit groups, plus bases/reference controls. Earlier
+   work includes a 455-model collection labeled from declared
    bases. We do not claim the largest collection; the value of our exact
    construction records across edit types still needs direct comparison (D5).
 4. **The ecosystem measured.** Duplicates, quantized copies, tensor sharing,
@@ -77,9 +89,13 @@ properly:
 - **Zoo v1** goes public Feb–Mar, with a `check` command and GGUF support.
 - **The zoo paper** is due in May, at 10–20k models.
 
-## 2. Promises versus evidence
+## 2. Original reassessment: promises versus evidence (Nov 7)
 
-| What the plan promised (P1 and around it) | Evidence now | Verdict |
+This table records the original diagnosis; use section 1 and RESULTS.md for
+current evidence. Do not re-run a resolved repair because its old failure is
+still recorded here.
+
+| What the plan promised (P1 and around it) | Evidence at reassessment | Verdict |
 | --- | --- | --- |
 | Published methods give many false parents as the pool grows | No baselines run; pool about 700 | **untested.** It is also close to a statistical truism, so on its own it is weak. |
 | Our method keeps false parents at or below 0.05 per query at 10^4 | 8.28 per query on a small pool | **undermined** |
@@ -146,12 +162,13 @@ each claim are in `CLAIMS.md`. In short:
     - **Cisco's `model-provenance-kit`:** a practical provenance tool with
       edit types, and a real-world competitor for `check`.
 - **Not found:** any weight-only detector for refusal removal.
-- **Not yet verified:** AttnPrint/DistillTrace, SCOUT, BULLPEN, and the GGUF
-  reproducibility paper. Track C verifies these.
+- **Documentary follow-up complete (Nov 8):** C checked AttnPrint/DistillTrace,
+  SCOUT, BULLPEN and the GGUF reproducibility paper; see its K2 primary-source
+  note and CLAIMS.md. This is reading, not new method-performance evidence.
 
 **Where we can lead:**
-- **Exact construction truth across many kinds of edit:** 166 models we
-  built. Earlier work includes 455 models with declared bases; our possible
+- **Construction records across many kinds of edit:** 112 formal constructed
+  children within the 166-model cohort. Earlier work includes 455 models with declared bases; our possible
   distinction is exact construction records across edit types, not size (D5).
 - **Edge-type identifiability:** which edits make the parent and order
   provable from weights, and which provably do not.
@@ -187,9 +204,11 @@ own, and robustness to disguise.
   sobering result.
 - **The random Hub sample,** which makes honest prevalence estimates possible.
 - **Refusal-removal detection,** a practical win.
-- **Score verification:** only 24/150 leaderboard scores match the measured
-  commit. Many likely match by weight hash, which fixes the join.
-- **The tool itself:** a two-minute `check` that people can install.
+- **Score verification:** weight identity now supports 144/150 score links,
+  compared with 24/150 matching revision names alone; six remain unknown.
+  This is not a verification of every evaluation setting.
+- **The tool itself:** an interpretable model-origin check using the existing
+  queries. Whole-workflow latency and real-world accuracy still need measurement.
 
 ## 6. The corrected course
 

@@ -121,6 +121,15 @@ claim-changing result.
 
 **Drift rule.** A track that moves no number in `RESULTS.md` for two weeks gets a card: pause, redirect, or keep, with a reason.
 
+### Outcome check (overseer request, Nov 8)
+
+Before assigning another small test, name the useful decision it resolves and
+when it stops. Review tool usefulness, full evaluation coverage, paper evidence,
+resources and later release needs together. Each track's next output must feed
+the same comparison; repeated examples and implementation checks do not stand
+in for real-model accuracy, independent tests or honest abstention. Keep the
+board about those outcomes; put low-level diagnosis in linked run reports.
+
 ## 5. Guiding the tracks: briefs
 
 Each track has `briefs/<track>.md`, which you own and rewrite. Tracks read it
