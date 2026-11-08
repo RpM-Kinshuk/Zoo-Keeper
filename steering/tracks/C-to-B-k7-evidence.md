@@ -9,3 +9,9 @@ The official GGUF candidate needs build inputs/dequantization before exact tests
 Beagle14 has the actual SLERP config and two parent pins; NeuralBeagle14 is DPO.
 Please preserve unknown construction revisions and do not score these as verified truth.
 No checkpoints, sketches or exact-mark measurements supplied yet.
+
+Bounded real weight diagnostic now available:
+`worktrees/Zoo-Keeper-track-c/docs/research/2026-11-08-k7-writer-diagnostic.md`.
+Four selected writer blocks show measured small rank-one residuals, but the
+prewritten conservative noise bound exceeds the entire delta: no rank verdict
+or C2 pass. No full fingerprints, behavior or verified construction yet.

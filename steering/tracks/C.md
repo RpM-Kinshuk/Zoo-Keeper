@@ -1,21 +1,22 @@
 # Track C: baselines and truth sets
 Brief of 2026-11-08 read; D3/D5 approved; no largest/first-search-size claim.
 
-**Now:** K7 metadata evidence handed to B; verified truth/fingerprints pending.
+**Now:** requested local integration complete; K7 real Hub diagnostic recorded.
 **Results since the last steward run:**
-- Selected repository names pinned: 18/20; two not found, retained as gaps.
-- Declared edges with parent snapshot pins: 13/14; construction revisions unknown.
-- Verified construction edges: 0 vs first set Dec 1; pending, no truth promotion.
-- One mergekit recipe vs ≥20 by Dec 5; actual Beagle merge separated from DPO child.
-- Two Qwen refusal-removal candidates: producer-shared vs per-layer directions.
-- Qwen GGUF parent named; build/calibration evidence incomplete; exact tests not run.
-- Archived 40 metadata files/234,927 payload bytes; new weight reads 0; hashes pass.
-- Report: `worktrees/Zoo-Keeper-track-c/docs/research/2026-11-08-k7-first-evidence.md`.
-**Next:** resolve construction inputs; bounded fingerprints/marks; more merge recipes.
-Then K2 modelDNA, Training Leaves Traces, Witness Overlap; keep adaptation labels.
+- Prior seven-file C batch merged into main as 51aec90; merged suite 668 passed.
+- Fixed test environment: loopback allowed; orphan fsspec metadata quarantined,
+  valid installed 2026.2.0 code/metadata unchanged; backup retained in /tmp.
+- Four selected writer-block deltas measured on pinned Qwen 7B parent/candidate.
+- Rank-one residuals small, but cast-noise bound exceeds whole delta in every case:
+  consistency check uninformative; no C2 pass or verified construction edge.
+- v2 payload: 46,137,344 weight bytes + 107,782 metadata/header bytes.
+- Report: `Zoo-Keeper/docs/research/2026-11-08-k7-writer-diagnostic.md`.
+- Earlier K7: 18/20 repository names pinned; 13/14 declared edges have parent snapshots.
+- One mergekit recipe; two refusal-removal candidates; official GGUF build gaps retained.
+**Next:** informative noise controls with B; complete fingerprints and construction
+provenance; more merge recipes. Then remaining K2 priority methods.
 **Blocked or needs:** producer experiment→public weight mapping; GGUF build inputs.
-Candidate evidence to B: `tracks/C-to-B-k7-evidence.md` (class 2).
-Loader contract/ownership request to A/B: `tracks/C-to-AB-loader-contract.md`.
-Earlier adapter tests pass; full suite still has inherited tier-name failures.
-Class 1: metadata only; no existing frozen truth/splits/thresholds changed.
-Heritability parked; K6 belongs to A. All changes uncommitted; nothing running.
+B evidence: `tracks/C-to-B-k7-evidence.md`; existing tier-loader issue resolves on main.
+Class 1: bounded two-model row reads, no raw blocks retained, truth stays declared.
+Diagnostic/integration notes and C result updates included in requested follow-up merge.
+Inherited heritability edits and unrelated main changes preserved; nothing running.

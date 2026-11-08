@@ -11,3 +11,8 @@ Evidence: track-c unchanged lineage/upstream.py:81 rejects current extractor
 row_blocks; two tests/lineage/test_upstream.py failures reproduce without the
 new baseline module. C baseline studies and K7 metadata work remain usable.
 Please record ownership in your next track note; steward reconciles timing.
+
+Integration update: 51aec90 merges C into current main; unchanged main compatibility
+normalization accepts canonical row_blocks. Full merged suite 668 passed with
+working loopback and repaired orphan environment metadata; earlier loader failures
+no longer reproduce in the merged suite. No new shared-interface change by C.
