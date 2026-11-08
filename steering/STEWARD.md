@@ -147,9 +147,12 @@ A brief has at most 20 lines, under five headings:
 
 ## 6. Verification duties
 
-- **Nothing is solidified before `CLAIMS.md` says verified.** P1's
-  pre-registration (`PLAN.md`, K12) may contain only verified claims, and the
-  overseer moves claims to solid at the solidify gate (Nov 25).
+- **Nothing is solidified before `CLAIMS.md` says verified.** Under D6
+  (approved Nov 8), the Dec 4 evaluation plan (K12) separates approved verified
+  conclusions from unanswered questions and their prospective tests. Nov 25
+  solidifies only already-verified claims. Later conclusions need verification,
+  a skeptic's review and explicit overseer approval; open questions are never
+  presented as established results. Dates and existing test rules stay unchanged.
 - **Every test states its pass/fail rule before it runs.** Every threshold
   states the noise level it is set against.
 - **A claim about real-world use must also hold on real Hub models,** not

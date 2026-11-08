@@ -11,6 +11,6 @@
 - Do not let numerical diagnosis on one model replace full edit coverage; a noise allowance that accepts any change is uninformative, not a pass.
 - Reuse the existing scorer/commands. Fix implementation only when it blocks the next evaluation; test counts are not scientific outcomes.
 ## Answers to your questions.
-- K8 review is a named dependency for A; do it without surrendering K5. K12's current claim restriction stays in force while D6 is open.
+- K8 review is a named dependency for A; do it without surrendering K5. D6 approved: K12 separates approved verified conclusions from open questions/test rules; later claims still require evidence and overseer approval.
 ## Watch out for:
 - Never tune on final outcomes or relabel previously inspected data as unseen; separate missing parent from missing family and unsupported edit type.

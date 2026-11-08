@@ -9,7 +9,9 @@ No claim in `DIRECTION.md` is frozen until it passes four checks:
 4. **A skeptic's review.**
 
 Claims about real-world use must also hold on real Hub models, not only on our lab. The steward keeps this file. Only the overseer moves a claim to
-**solid**, at the solidify gate (`PLAN.md`, Nov 25).
+**solid**, at the Nov 25 gate or an explicit later review after verification
+(D6). The Dec 4 plan may separately list unanswered questions and prospective
+tests; their inclusion does not verify or solidify them.
 
 **Status ladder:**
 
@@ -17,7 +19,7 @@ Claims about real-world use must also hold on real Hub models, not only on our l
 - **checked:** literature and theory done;
 - **piloted:** the cheap test passed;
 - **verified:** the full test passed and the skeptic agreed;
-- **solid:** frozen in the P1 pre-registration;
+- **solid:** verified and explicitly approved for the paper claim list;
 - **dropped:** with the reason.
 
 ## Steward review (2026-11-08)

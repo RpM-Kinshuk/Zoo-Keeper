@@ -19,7 +19,7 @@ Model-Zoo collects/builds; Zoo-Keeper queries/evaluates. They serve one platform
 Existing Nov 21/Dec 1–5 test targets stay. Finish bounded tree/disguise checks without expanding them. Reopen completed work only for a decision-changing gap.
 
 ## Waiting for you
-- **[D6](cards/D6-test-plan-and-claims.md): recommend A.** Current rules freeze verified conclusions Nov 25, before required December evidence arrives. Let the Dec 4 test plan distinguish approved conclusions from unanswered questions. Dates and verification standards stay; until approved, current restrictions hold.
+- **No decision waits. D6 approved:** the Dec 4 plan separates approved conclusions from unanswered questions and their tests. Later conclusions still need verification and your explicit approval; dates stay unchanged.
 - **No launch request:** the large-run card remains blocked on scientific review, final eligible inputs and feasible storage/budget. Cost probes and a proposed catalog now exist.
 
 ## Risks and dates
@@ -35,3 +35,4 @@ Steward aligned briefs around the shared evaluation and capped repeated-case wor
 - Tracks completed archive, narrow merge retest, score-link audit and first adapted comparisons; steward reconciled partial versus complete work.
 - You approved D5's research corrections and requested plain, contextual updates; guidance changed. Construction-record novelty remains unverified.
 - Holistic review recognizes new lab edit/control/cost evidence, aligns tracks around practical comparative outcomes and raises D6's freeze conflict.
+- You approved D6: open test questions and approved conclusions are separated; no claim, date or test rule changed.

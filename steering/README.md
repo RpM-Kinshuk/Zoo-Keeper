@@ -81,7 +81,9 @@ this order, and every card says how it affects each one.
 8. **Verify before solidifying.** Every claim climbs the ladder in
    `CLAIMS.md` (hypothesis, checked, piloted, verified, solid), with pass/fail
    rules written before each test. Only the overseer makes a claim solid, at
-   the gate on Nov 25.
+   the gate on Nov 25 or an explicit later review after verification. D6
+   allows the Dec 4 test plan to separately list unanswered questions; those
+   remain unproven until the required evidence and approval exist.
 9. **The steward guides the tracks** through `briefs/`, and handles all
    questions the card way (`STEWARD.md`).
 10. **Measure useful outcomes together.** Each track feeds the same evaluation

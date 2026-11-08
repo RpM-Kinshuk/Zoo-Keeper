@@ -1,8 +1,8 @@
 # D6: Freeze the test plan separately from the conclusions?
-Status: open | Class: 3 | Ask: approve option A
-Due: Nov 14 review | If no answer: keep the current rule; later tests use separate written protocols and their unverified claims stay outside the frozen paper claim list.
+Status: decided | Class: 3 | Approved: option A, by the overseer, 2026-11-08.
+Decision: the Dec 4 plan separates approved conclusions from open questions; test rules are fixed before final runs, and later conclusions still need verification and explicit overseer approval.
 
-Recommendation: A (confidence: high).
+Approved approach: A (review confidence: high).
 Why: We currently freeze supported paper claims on Nov 25 and the evaluation plan on Dec 4. But real-model checks finish Dec 1–5 and the large-search test Dec 10. A test plan must be able to ask questions whose answers are still unknown.
 
 Options:
@@ -19,4 +19,4 @@ Big-picture effect:
 Can it be undone? Yes, by removing the open-question section; preserve any test rules already used to interpret a result.
 Uncertainty: some proposed questions may not have enough independent test cases or usable real-model truth; this decision does not supply them.
 Second opinion (fresh skeptic, Nov 8): agree. Separate open questions from approved conclusions; freeze tests before final data inspection, label already-seen cases as development evidence, and require overseer approval before later results become paper claims.
-Details for agents: [PLAN.md](../PLAN.md), K7/K8/K12 and Nov 25–Dec 18 milestones; [CLAIMS.md](../CLAIMS.md). The current K12 rule is unchanged unless the overseer approves this card.
+Details for agents: [PLAN.md](../PLAN.md), K7/K8/K12 and Nov 25–Dec 18 milestones; [CLAIMS.md](../CLAIMS.md). The approved two-section rule now applies to K12. No date, success threshold, data split or claim status changed.

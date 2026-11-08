@@ -36,12 +36,14 @@ sample quota, interface feature, or earlier deadline for all K5/K7/K2 work.
   model transfer, comparisons and full workflow cost. Routine unit-test counts,
   per-file inventories and per-block diagnostics stay in linked run reports.
 
-**Freeze conflict:** Nov 25 can solidify only claims already verified. K7 is
-due Dec 1–5 and K8 Dec 10, so those later results cannot be assumed at Nov 25
-or silently admitted to the Dec 4 claim list. [D6](cards/D6-test-plan-and-claims.md)
-asks to separate approved claims from unanswered questions in the evaluation
-plan. Until decided, current K12 rules and separate prospective run protocols
-apply. Dates, thresholds, truth tiers and held-out partitions are unchanged.
+**D6 approved (Nov 8):** the Dec 4 evaluation plan separates (1) verified
+conclusions explicitly approved by the overseer and (2) unanswered questions
+with tests, metrics, data partitions and pass rules fixed before final runs.
+Nov 25 solidifies only claims already verified; questions awaiting the Dec 1–5
+real-model evidence or Dec 10 scaling evidence remain open. Later conclusions
+require verification, a skeptic's review and explicit overseer approval before
+entering the paper claim list. Previously inspected cases remain development
+evidence. All dates, existing thresholds and truth/split rules are unchanged.
 
 ## 1. Corrective actions
 
@@ -62,7 +64,7 @@ serve the corrected claims in `DIRECTION.md` section 6.
 | **K9** | **Parent ordering, done realistically.** Weights narrow the family and the closest candidates. Hub metadata (upload time, declared base, author, tokenizer and chat template) orders them. Test two order signals for ordinary fine-tunes: Witness Overlap's witness method, and the spectral-drift cue on full-read spectra (`CLAIMS.md`, C2 last row). Exploratory until Dec 4. Claim only what this shows. | B | Parent-ranking accuracy on the lab and on verified Hub truth, with and without metadata | Dec 5 | open |
 | **K10** | **Verify scores by weight hash, not only by commit.** A leaderboard score applies to our pinned revision when the weight files' hashes match at both commits. New commits rarely change weights. | A | Verified score joins re-counted (was 24/150) | Nov 21 | tested: 144/150 weight-hash joins verified; six lack evaluation revision |
 | **K11** | **Heritability: parked.** Card D3: no paper target, and no workshop papers. If it is ever resumed, the rule fix stands: the benchmark's fixed question count is the sampling size, and the leaderboard commit is the identity for score-only analysis. | — | — | — | dropped (parked) |
-| **K12** | **P1 pre-registration.** One file lists the headline evaluations, metrics, splits, thresholds and baselines, frozen before the final runs. **It may contain only claims the overseer moved to solid at the Nov 25 gate.** It replaces the many small freezes. | B, with the steward | File frozen and its hash recorded in `RESULTS.md` | Dec 4 | open: Nov 25 verified-only claim restriction preserved; D6 proposes separate open questions in the Dec 4 document |
+| **K12** | **P1 pre-registration.** One file lists the headline evaluations, metrics, splits, thresholds and baselines, frozen before the final runs. **Two separate sections: approved verified conclusions, and open questions with prospective test rules (D6).** Open questions are not established claims; later conclusions require explicit overseer approval after verification. It replaces the many small freezes. | B, with the steward | File frozen and its hash recorded in `RESULTS.md` | Dec 4 | open: D6 approved; prepare separate approved-conclusion and open-question sections, with tests fixed before final data inspection |
 | **K14** | **Disguise check, in hours** (card D4). First check whether the 8 existing disguised models failed their behavior check only on tolerances too strict for floating-point rounding. Then test whether our fingerprint still matches all 8, and one exact neuron reordering inside one MLP layer. | B | Rows in `RESULTS.md`: the tolerance finding, plus survives or breaks for each case | Nov 21 | tested (partial): stored evidence and tensor permutation; behavior-noise and network comparison open |
 | **K15** | **Plan zoo v1:** a `check` command, GGUF support (dequantized for lineage), a duplicates report, a diff gallery, pip packaging. It replaces the old V1 item. | A | Plan written and reviewed by the steward, with a decision card for the release | plan Jan 15; release Feb–Mar | open |
 | **K13** | **Clean up the process** (`README.md`, "What changes"). Freeze the old STATUS and CHECKLIST. Keep track notes at 30 lines or fewer. Keep the results ledger. Stop credit and roster accounting. | All | First steward run finds no new writes to the frozen files | Nov 10 | tested: lead notes within cap; frozen handoff files match tracked versions Nov 8; ongoing rule |
@@ -73,7 +75,7 @@ serve the corrected claims in `DIRECTION.md` section 6.
 | --- | --- | --- |
 | **Nov 14** | K3 and K4 results. Merge and tree claims are decided by Dec 5 (`DIRECTION.md` section 7). | gate card if any claim changes |
 | **Nov 21** | First baselines (K2); edge typing (K5); real independents (K6); score joins (K10); 5k launch card ready (K8) | L1 (5k pool launch) |
-| **Nov 25** | **Solidify gate:** each claim in `CLAIMS.md` is moved to solid, reworded or dropped, using the cheap tests (K3–K6, K14), the literature check and the skeptic. Until then `DIRECTION.md` is the working direction, not a commitment. | G-card (solidify) |
+| **Nov 25** | **Solidify gate:** each claim in `CLAIMS.md` is solidified only if verified, reworded, dropped or kept open for missing evidence, using the cheap tests (K3–K6, K14), the literature check and the skeptic (D6). Until then `DIRECTION.md` is the working direction, not a commitment. | G-card (solidify) |
 | **Dec 4** | **Revised G0.** Cost gate on the pilot; same-family false positives against real independents; edge typing; merges; first baselines; pre-registration frozen | G1 (revised G0) |
 | **Dec 10** | 5k pool analyzed (K8); verified Hub truth (K7, Dec 5); all four baselines (Dec 5) | — |
 | **Dec 12** | **Method check (claim C2):** typed-edge direction coverage ≥50% at ≥95% precision, and parent false matches ≤0.05 per query on the edits where the method answers (abstentions reported), on the lab; the exact-mark tests also hold on the real Hub examples from K7 | G-card |

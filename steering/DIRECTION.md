@@ -1,8 +1,10 @@
 # Direction: reassessment and correction (2026-11-07)
 
 **Status:** the overseer approved this as the working direction on 2026-11-07
-(card D2). Every claim here is a hypothesis until the solidify gate (Nov 25)
-moves it to solid in `CLAIMS.md`. A literature check on 2026-11-07 already
+(card D2). Claims remain hypotheses until verified and explicitly approved
+by the overseer in `CLAIMS.md`, at Nov 25 or a later review. Under D6 (approved
+Nov 8), the Dec 4 plan separates approved conclusions from unanswered questions
+and the tests that will settle them; dates and evidence standards are unchanged. A literature check on 2026-11-07 already
 corrected two points; they are marked "(corrected)".
 
 This document re-checks every claim, promise and plan against the real world,
