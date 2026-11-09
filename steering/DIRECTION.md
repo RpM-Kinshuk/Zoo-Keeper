@@ -29,31 +29,30 @@ The merged plan remains the reference for methods detail.
 - a 320-model random sample of the Hub;
 - a 166-model lab cohort: 112 formal constructed children plus bases and reference controls. Construction records apply to the built children; control provenance has separate limits.
 
-**Current evidence, updated Nov 8:**
-- Tools and the protected lab are a working internal foundation; broad
-  real-world reliability and the paper's strongest claims remain unverified.
-- Quantization replay/source-absence tests and 18 known-source merge fits pass
-  their lab targets. They do not establish all-edit source or order recovery.
-- The joined table exposes broader limits: adapter clues also match relatives,
-  sampled refusal tests cannot resolve rank, and merge-entry shares overlap
-  controls. Most immediate-source decisions remain untested. D7 approved
-  separating informative edit evidence from unique-source proof (Nov9).
-- Four priority comparison methods now have scoped results, with two recently
-  matched on the quantization cases. Whole-benchmark and real-model coverage
-  remain unfinished; lack of independent negatives restricts error claims.
-- Additional collection of the prepared 5k is scientifically deferred; storage
-  is parked. Evaluate saved source/relative/control artifacts before defining
-  any minimum decision-changing data addition. Preparation is not a reason
-  to collect, and missing documented exact matches do not imply absent family.
-- Family detection/control results remain narrow; score-link improvements do
-  not revive prediction or heritability work.
+**Current evidence, updated Nov 9:**
+- The internal collector, queries and protected lab are useful assets; broad
+  practical reliability and the strongest paper claims remain unverified.
+- Existing-artifact family evaluation and A's evidence join are complete.
+  Family matches can remain after source removal; exact-mark evidence can be
+  informative where a fixed family-similarity rule misses a quantization.
+  This is not a validated combined source decision.
+- A joint classic refusal-removal source rule works on four exposed cases in
+  its fixed pools under declared input/operator assumptions. Stop this pilot;
+  applicability and independent validation precede any final adoption.
+- Four comparison methods have matched quantization and ancestry controls.
+  Small-root ancestry success and real-model source ambiguity must stay separate.
+- Fixed witness direction gives SFT0/8, DPO8/8; correlated witness follow-up is
+  deferred. This does not refute the method's differently sampled evaluation.
+- D7 is approved: unique-source wording requires informative distinction from
+  relatives, otherwise unresolved. No full claim or noise rule is promoted.
+- Collection and storage remain parked. The next question is what existing
+  cases can validate under defensible assumptions, not how to run the old5k.
 
-**Execution emphasis:** every statement/task needs a strong scientific reason
-and a necessary outcome (DIRECTIVES.md D1.6). Challenge the framing, reuse
-existing evidence, consider simpler or different approaches, and stop when a
-useful uncertainty is resolved. Do not turn inconclusive tests into passes or
-launch another collection to fill a round count. Existing dates and scientific
-rules remain; PLAN.md and briefs hold the necessary next work.
+**Execution emphasis:** scientific necessity (DIRECTIVES.md D1.6) governs
+more work. Use the completed comparisons, state limitations and stop resolved
+pilots. No round-count collection, new framework or repeated witness/control
+sweep. Current priorities are in the briefs and tracks/SHARED.md; targets and
+verification standards remain unchanged.
 
 **The correction.** Claim what weights can actually show, and test it
 properly:

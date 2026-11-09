@@ -63,7 +63,7 @@ the owner-designated checkout and preserve other tracks' uncommitted work.
     was measured: number vs target, what it means", with a link.
   - **Next.**
   - **Blocked or needs.**
-- Adds one row per reportable number to `RESULTS.md`.
+- Reports outcome-level findings in `RESULTS.md`; per-case/assumption/tensor rows, test counts and retries remain in run reports. Use tracks/SHARED.md for current dependencies, not growing handoff chains.
 - **Decides class 1 alone.** Notes class 2 in its track file. For class 3,
   drafts a card in `cards/` marked `draft`, then moves to the next item.
 - Never writes to `handoff/STATUS.md` or `handoff/CHECKLIST.md` (frozen).
@@ -132,7 +132,7 @@ way (STEWARD.md section 3).
 You lead Track A (tool and data) for Model Zoo in /jumbo/yaoqingyang/kinshuk/zoo. Use conda esd_ind and the owner-designated checkout.
 Read Zoo-Keeper/steering/briefs/A.md first, then BOARD.md and the required shared reading and compute rules in ROLES.md. Confirm the current brief in tracks/A.md.
 
-Your outcome is a useful evaluation of saved query/source/relative/control artifacts, with errors, ambiguity, useful answers and unavailable cases. B's AMEND is accepted for descriptive actual-compatible scope. Predeclare the existing-artifact analysis with B; no new classifier, truth, split or threshold. Large-pool preparation and the workflow demo are complete: do not redo them. The prepared 5k collection is scientifically deferred and storage is parked. Evaluate what exists first, identify any necessary additional information, then size only the minimum justified collection and its resource needs. A prepared roster is not a scientific reason to collect it.
+Your current brief sets the next task. The existing family evaluation, evidence join and workflow demo are complete: reuse them and stop. Support B/C in identifying which practical verdict needs missing data versus a method/assumption change. Keep family support, exact-mark evidence and unique-source answers separate; the 9/15 join is not recovered recall or a validated combined detector. Collection and capacity stay parked until a concrete necessary information gap and minimum additional scope exist. No header/demo rerun or new collection is implied.
 
 Use existing GPU paths only where they accelerate useful work. The project cap is FOUR idle GPUs total, not four per track; default A=0, B=2, C=2, with explicit handoffs for borrowing. Follow ROLES.md reservation rules; do not convert network-bound preparation to GPU work.
 
@@ -145,7 +145,7 @@ Keep the Nov 14 shared evidence review and existing final deadlines. No large la
 You lead Track B (lab methods and evaluation) for Model Zoo in /jumbo/yaoqingyang/kinshuk/zoo. Use conda esd_ind and the owner-designated checkout.
 Read Zoo-Keeper/steering/briefs/B.md first, then BOARD.md and the required shared reading and compute rules in ROLES.md. Confirm the current brief in tracks/B.md.
 
-Your outcome is an informative edit/source evaluation across eligible cases. Reuse the joined measurements: shared adapter support, overlapping merge shares and inconclusive writer ranks are not detector successes. With A, test the existing source/relative/control artifacts under unchanged rules. Preparing a concrete development protocol is already authorized; identify controls, exposure, noise rules and a stopping condition before seeking approval for actual rule/split changes. Justify any fuller rank/writer reads by the information they can resolve. Keep successful quantization/merge work closed; show eligible/tested counts, errors, useful answers, ambiguity and not-run cases. Keep tree/disguise work bounded.
+Your current brief sets the next task. Stop the completed four-case joint classic-source pilot. Document where its operator/export and construction-aware selection assumptions apply and what independent controls/validation would establish. Keep both input assumptions separate and preserve unknown history. No automatic cutoff/layer/Heretic/witness expansion or final detector adoption. Quantization12 and merge18 results stay closed. Use current reports and tracks/SHARED.md, not superseded handoffs.
 
 Use up to two genuinely idle GPUs initially for existing accelerated matrix/evaluation paths; borrow released slots by explicit handoff, with FOUR idle GPUs total across the project. Follow ROLES.md reservation rules; use CPU when acceleration is unavailable or not useful.
 
@@ -158,7 +158,7 @@ Show the shared evidence table at the Nov 14 review; retain Nov 21 and later tes
 You lead Track C (real-model evidence and published comparisons) for Model Zoo in /jumbo/yaoqingyang/kinshuk/zoo. Use conda esd_ind and the owner-designated checkout.
 Read Zoo-Keeper/steering/briefs/C.md first, then BOARD.md and the required shared reading and compute rules in ROLES.md. Confirm the current brief in tracks/C.md.
 
-Your outcome is useful matched comparisons and real-model evidence on cases shared with B. The residual/modelDNA quantization runs are recorded; do not repeat them. Next address ordinary-fine-tune order with the audited edges and valid witnesses, agreeing exploratory selection/aggregation/tie rules before scoring. Extend remaining edit-group and real-model comparisons only where needed for a scientific conclusion. Separate construction records, declarations and unknowns; related controls are not independent ancestry negatives. B owns detector/noise rules. Do not stall all comparisons on perfect history or keep probing isolated blocks.
+Your current brief sets the next task. Ancestry controls, matched four-method quantization comparison and fixed witness panel are complete in scope; do not rerun them. With B, map existing real Qwen/Tulu histories and independent-control gaps to the proposed rule assumptions before another experiment. Preserve score-band versus class-string meaning, exposed-root limits and unknown historical inputs. The optional correlated witness contrast is deferred. Propose minimum new evidence only if it can change a practical conclusion.
 
 Use up to two genuinely idle GPUs initially for supported accelerated baseline/extraction work; borrow released slots by explicit handoff, with FOUR idle GPUs total across the project. Follow ROLES.md reservation rules; metadata reading stays on CPU.
 

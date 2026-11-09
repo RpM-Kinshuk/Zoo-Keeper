@@ -1,16 +1,16 @@
-# Brief: track A (2026-11-08, scientific necessity review)
+# Brief: track A (2026-11-09, progress and cleanup)
 ## Do next:
-1. K8: with B, predeclare and evaluate saved query/source/relative/control artifacts under existing rules. Question: when is family/source retrieval useful, wrong, ambiguous or unavailable with the source present versus removed?
-2. Report actual comparable counts, known-positive retrieval, explicitly labeled errors, unresolved hits and test exposure. Anchor feasibility is not measured recall; unrelatedness is never inferred from a missing exact key.
-3. Stop after the eligible existing-artifact evaluation and identify any specific decision-changing gap. Propose only the minimum new comparable/labeled cases that can resolve it; collect none if existing evidence suffices.
+1. Carry the completed B family evaluation and A evidence join into Nov14; show family support, exact-mark support, unique-source answers and unknowns as separate outcomes, with their original pools/exposure.
+2. With B, identify whether any user-relevant failure needs missing data or a method/assumption change. Propose new inputs only for a concrete unresolved decision and minimum necessary scope.
+3. Use tracks/SHARED.md for current dependencies; do not replay retired handoffs or re-create their logs.
 ## Decisions that affect you:
-- B's AMEND is accepted for descriptive, actual-compatible scope only; no broad scaling freeze. L1 remains deferred on scientific necessity; storage draft is parked, not an overseer capacity request.
-- K0/K10 and the workflow demo stay closed in scope; K6 remains narrow/caveated. No scientific target, threshold or split changed.
+- D7 is approved; K0/K10, saved workflow, K6 diagnostic and the A join stay closed in their recorded scope. No combined fallback/detector is validated by the 9/15 evidence join.
+- Collection and capacity remain parked. No large launch, space request, header/demo rerun or extra fingerprint collection is currently justified.
 ## Corrections:
-- Do not collect the prepared 5k, rerun headers/demo, or seek space to make the old plan runnable. Its missing documented exact-positive matches do not prove family absence.
-- Storage/cost are assessed only after a necessary additional collection is sized. Available GPUs and past preparation are not reasons to run it.
+- 119/134 present and 112/134 removed-source family answers are not immediate-source accuracy. Nine covered misses are existing evidence, not newly recovered recall.
+- Do not duplicate B's scored results or C's comparisons; reuse pinned result reports and their input records.
 ## Answers to your questions.
-- Existing-artifact evaluation is authorized and not blocked by storage. B owns acceptance/detector rules; return concrete results before asking for more inputs.
+- A's bounded evaluation/join is complete. Support B's applicability/validation question; no further A measurement is automatically required.
 ## Watch out for:
-- Apply DIRECTIVES.md D1.6; preserve unknowns and group identity. Keep dates; no collection or new freeze implied.
-- Compute: four idle GPUs project-wide, default A=0/B=2/C=2; borrowing by handoff under ROLES.md. No job active; larger-run rules still apply.
+- Scientific necessity and existing truth/split/threshold rules remain. Retired docs are recoverable from the revision in DECISIONS.md; raw evidence stays intact.
+- Compute: shared cap four idle GPUs, initial A0/B2/C2, borrowing by handoff; no current allocation. GPU availability is not a reason to create work.

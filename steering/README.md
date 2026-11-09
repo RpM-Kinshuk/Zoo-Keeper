@@ -49,7 +49,7 @@ this order, and every card says how it affects each one.
 
 1. **Priorities** now come from `PLAN.md`. The open items in
    `handoff/CHECKLIST.md` are mapped there: continued, changed, or dropped.
-2. **`handoff/STATUS.md` and `handoff/CHECKLIST.md` are frozen as history.**
+2. **`handoff/STATUS.md` is a history pointer; `handoff/CHECKLIST.md` stays frozen.**
    Tracks no longer write to them. Each track keeps one short note in
    `tracks/`, which it rewrites rather than appends to. Numbers go to
    `RESULTS.md`. The steward keeps `BOARD.md`. Run details stay in the run's
@@ -65,7 +65,8 @@ this order, and every card says how it affects each one.
    - **tested:** it ran on real data and the numbers are recorded;
    - **decided:** a claim's verdict is settled.
 
-   The old "done" mixed these up.
+   The old "done" mixed these up. Current dependencies are consolidated in
+   `tracks/SHARED.md`; do not accumulate resolved handoff chains.
 5. **Data goes to public Hugging Face repositories, gated until the P1
    submission** (card D1, `DATA.md`). Agents may upload to the three
    designated repositories. Removing the gate, or publishing anything else, is
@@ -113,6 +114,6 @@ the useful uncertainty is resolved. Do not add a separate approval process.
 | `DECISIONS.md` | Who decides what, the card templates, and the decision log |
 | `ROLES.md` | The roles of the overseer, the steward, the track leads, and the skeptic, with their kickoff prompts |
 | `DATA.md` | Storage and publication on Hugging Face |
-| `cards/` | One file per open decision, gate, or launch |
-| `tracks/` | One short note per track, rewritten by its lead |
+| `cards/` | Actual open decisions/ready launches only; settled outcomes are in DECISIONS.md |
+| `tracks/` | One short note per track plus SHARED.md for current dependencies |
 | `briefs/` | The steward's current directions for each track |

@@ -104,7 +104,7 @@ claim-changing result.
    - `tracks/A.md`, `B.md`, `C.md`;
    - the new rows in `RESULTS.md`;
    - the run reports they link;
-   - the draft cards in `cards/`.
+   - tracks/SHARED.md and any actual open/draft cards in `cards/` (settled decisions are in DECISIONS.md).
 2. **Reconcile against `PLAN.md`.**
    - Is each track on its items, in order?
    - Is anyone drifting? Watch for extra machinery, bookkeeping, unrequested
@@ -134,8 +134,9 @@ notes; do not build another approval or bookkeeping process. Reassess after
 new evidence, not by habit after every mechanical step. Available GPUs, prepared
 rosters and past effort are not scientific justification. Review usefulness,
 evaluation coverage, papers, resources and release needs together; keep low-level
-diagnosis in run reports. The owner explicitly authorized the Nov 8 edit to
-DIRECTIVES.md; this does not grant a general exception to steering-only writes.
+diagnosis in run reports. The owner explicitly authorized the Nov 8 DIRECTIVES.md edit and the Nov 9
+cleanup of old documentation, including the retired handoff log. These are
+targeted exceptions, not permission to change code or delete scientific data.
 
 ## 5. Guiding the tracks: briefs
 

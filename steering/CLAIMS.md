@@ -22,46 +22,36 @@ tests; their inclusion does not verify or solidify them.
 - **solid:** verified and explicitly approved for the paper claim list;
 - **dropped:** with the reason.
 
-## Steward review (2026-11-08)
+## Steward review (2026-11-09)
 
-D5 approved by the overseer on Nov 8: earlier research (MPS, a method that
-returns a set of possible source models) already measures results over
-candidate sets of 5–100 models and uses 455 models labeled from publishers'
-declared bases. We withdraw generic largest-benchmark and first-pool-curve
-novelty. Our exact construction records across edit types remain a possible,
-unverified distinction. [Primary source, Appendices D/F](https://arxiv.org/html/2602.00772v1).
-C's primary-source note documents the other checked works; see D5. The
-correction changes research positioning, not claim status or paper dates.
+D5/D6/D7 are approved (DECISIONS.md). Prior-work comparisons are corrected;
+prospective questions remain separate from approved conclusions; source
+compatibility requires informative support and a unique immediate source
+requires distinguishing relatives within the stated pool. Otherwise unresolved.
 
-Current measurements (Nov 8): K3's 18 known-source linear/SLERP relations
-and the 12 quantization replays/parent-out cases remain successful in their
-narrow lab scope. No need to repeat those runs.
+New results make those distinctions concrete:
+- B's saved family evaluation answers 119/134 source-present and 112/134
+  source-removed cases usefully, with no known-wrong family hits. This does
+  not evaluate general immediate-source decisions or new unseen roots.
+- A joins existing exact-mark success to 9/15 family misses in the original
+  quantizer pools; this is evidence coverage, not a validated combined rule.
+- The joint classic-source development pilot answers four present cases
+  correctly and abstains in all four removed cases under each declared input
+  model. Those are the same four exposed cases; the operator/export assumptions
+  and construction-aware panel prevent general or real-model claims. No final
+  rule is adopted; stop this pilot and assess applicability/independent controls.
+- Four methods discriminate ancestry on the small fixed control panel; source
+  ambiguity persists in the matched relative/real neighborhoods. Perfect
+  AUROC on two exposed roots per partition is not a future error guarantee.
+- Witness direction remains SFT0/8, DPO8/8 on correlated witnesses; the optional
+  correlated contrast is deferred. Heretic FULL/rank3 recipe expectations are
+  conditional, not observed rank or a new decision allowance.
 
-The joined K5 table now covers scoped measurements for 90/112 formal children,
-not 90 complete detector passes. Immediate-source decisions were tested only
-for the 12 quantizations; 100 remain NOT TESTED, not successful abstentions.
-All 24 adapter support sets retain nonparents after removing the true source.
-Native untouched equality is 12/24, with cast and tied-alias gaps separately
-audited; these are not twelve substantive changes to untouched modules.
-Only 8/24 sampled adapter ranks resolve. Sampled refusal writer ranks do not
-resolve, and TIES/DARE shares overlap controls. These challenge the sufficiency
-of isolated marks, not every complete method. D7 option A was approved by the
-overseer on Nov9: source compatibility requires informative support; a unique
-immediate source requires tests distinguishing relatives within the stated
-candidate pool. Otherwise unresolved. Uninformative tests support no affirmative
-compatibility verdict. Fresh skeptic agrees; no claim status or test rule changes.
-
-C's residual/modelDNA comparisons now use the same 126 quantization pairs;
-residual ranks the source uniquely first 7/12, while modelDNA gives no definite
-source answers. Related controls do not establish independent-negative error
-rates, and neither result is the complete benchmark or real-model validation.
-K6's trained BERT diagnostic remains narrow/caveated. The mixed K8 roster has
-no documented exact positive keys for its queries; this does not prove those
-families absent. Additional collection is deferred while saved anchors and
-controls are evaluated. Source truth, unseen-test exposure and discriminating
-rules are the gaps to resolve before resources.
-C1–C5 remain checked; C6 remains a later hypothesis. No full claim is promoted.
-RESULTS.md and the joined report hold the numbers, targets and provenance.
+Closed quantization/replay and known-source merge-coefficient results stay in
+scope. The broader edit methods, independent real-model control tier and large
+scaling claim remain unfinished. C1–C5 stay checked; C6 stays a later hypothesis.
+No full claim is promoted by this review. RESULTS.md keeps the current outcome
+ledger; protocols, failed/incomplete versions and reviews remain in raw runs.
 
 ## Literature check (Nov 7, documentary follow-up Nov 8)
 

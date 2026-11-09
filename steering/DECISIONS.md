@@ -144,31 +144,27 @@ Each `[HUMAN]` item in `handoff/CHECKLIST.md` becomes one of these:
 
 "Track agent decides and asks for approval later" is not one of the options.
 
-## 6. Decision log
+## 6. Settled decisions
 
-Newest first. One line per decision: date, ID, decision, who decided.
+| ID | Approved | Effective decision | By |
+| --- | --- | --- | --- |
+| D1 | Nov 7 | Public, manually gated storage for the approved lab/evidence/database scope; preserve restricted-data exclusions. Archive verified; no storage setup remains. | overseer |
+| D2 | Nov 7 | Corrected research direction; test what weights reveal, with real-model evidence before practical claims. | overseer |
+| D3 | Nov 7 | C owns comparisons/real-model truth; heritability parked; no workshop papers. | overseer |
+| D4 | Nov 7 | Drop disguise robustness claim; retain the bounded limitation check. | overseer |
+| D5 | Nov 8 | Correct prior-work size/search comparisons; exact construction-record advantage remains to be verified. | overseer |
+| D6 | Nov 8 | Separate approved conclusions from prospective open tests. Later conclusions need verification and explicit owner approval; dates unchanged. | overseer |
+| D7 | Nov 9 | Informative evidence may support compatibility; a unique immediate source requires distinguishing relatives within the stated pool. Inconclusive stays unresolved. | overseer |
 
-| Date       | ID  | Decision                                                                                                                                                                                                        | By                                           |
-| ---------- | --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
-| 2026-11-09 | D7 | Approved option A: informative evidence may support source compatibility; unique immediate source only when tests distinguish relatives within the stated candidate pool, otherwise unresolved. Preserve successful scoped results; no claim promotion, test-rule, threshold, truth, split or date change. | overseer |
-| 2026-11-08 | scientific necessity | Every statement/task requires a strong scientific reason and necessary outcome; question the need, reuse evidence and consider simpler/different framings. Explicitly authorize this edit to handoff/DIRECTIVES.md; no new approval bureaucracy. | overseer |
-| 2026-11-08 | class 2 | Accept B's AMEND only for descriptive existing-artifact evaluation. Defer prepared collection and park storage; prepare concrete development rules without permission-to-prepare cards. No scientific freeze/threshold/split change. | steward, applying overseer direction |
-| 2026-11-08 | D7 | Fresh skeptic supports qualifying categorical source-proof wording after adapter ambiguity, overlapping merge shares and unresolved rank tests; concrete card awaits overseer. Full methods remain open. | steward and fresh skeptic |
-| 2026-11-08 | compute | Authorize up to four idle GPUs project-wide where useful; retain large-run, money and shared-cluster safeguards. | overseer |
-| 2026-11-08 | class 2 | Initial shared GPU slots A=0/B=2/C=2; explicit handoff permits borrowing within four total. Existing reservation mechanisms and track notes coordinate actual use; no scheduler build. Exact kickoff prompts refreshed. | steward |
-| 2026-11-08 | D6 | Approved option A: Dec 4 plan separates verified, overseer-approved conclusions from open questions with prospective tests. Later paper claims require verification and explicit overseer approval; dates and existing test rules unchanged. | overseer |
-| 2026-11-08 | class 2 | Holistic review aligns tracks on Nov 14 shared evaluation summary; C interleaves K2/K7, B owns detector/noise rules and reviews A's protocol, completed work reopens only for a decision-changing gap. Existing targets/dates unchanged; fresh skeptic agrees. | steward, under overseer request |
-| 2026-11-08 | D6 | Test-plan/claim timing conflict screened; recommend separating open questions from approved conclusions, pending overseer decision. Current K12 restriction remains. | steward and fresh skeptic |
-| 2026-11-08 | D5 | Approved factual corrections to research comparison; no generic largest-collection or first-pool-curve claim. Exact construction-record advantage remains to be checked; claim status and dates unchanged. | overseer |
-| 2026-11-08 | communication | Brief updates must give enough surrounding context, use plain language and explain necessary unfamiliar terms while keeping detail low. | overseer |
-| 2026-11-08 | class 2 | A/B prepare one proposed K8 evaluation freeze; B prioritizes K5 while closing bounded K4/K14 gaps. Existing class-3 truth/split/threshold rules stay in force. | steward |
-| 2026-11-08 | D5 | Literature correction screened against primary source and fresh skeptic; open for overseer, unsupported novelty wording suspended meanwhile. No claim ladder change. | steward (screening only) |
-| 2026-11-07 | D1 continuation | Owner approved the prepared remaining K0 payload; Track A records completed remote verification. Settled continuation draft consolidated into D1 after the holistic review. | overseer (approval recorded by track A) |
-| 2026-11-07 | class 2 | A may do K6 then K10 while external K0 setup is pending; K0 resumes first when setup is ready. No claim, date or scale change. | steward |
-| 2026-11-07 | —   | Verify claims before solidifying them (`CLAIMS.md`). The steward's way of handling questions is codified in `STEWARD.md`. The overseer checks in with the assistant rarely; the steward coordinates day to day. | overseer                                     |
-| 2026-11-07 | D4  | Disguise claim dropped; the disguise check runs (K14)                                                                                                                                                           | overseer                                     |
-| 2026-11-07 | D3  | Track C moves to baselines and truth sets. Heritability parked. No workshop papers.                                                                                                                             | overseer                                     |
-| 2026-11-07 | D2  | Corrected direction adopted as the working direction                                                                                                                                                            | overseer                                     |
-| 2026-11-07 | D1  | Public Hugging Face storage, gated until the P1 submission (the gating is the steward's default; the overseer may say "fully open")                                                                             | overseer (gating: assistant's default)       |
-| 2026-11-07 | —   | Cards D1–D4 written and screened. The skeptic agreed with a caveat on each, and the caveats were applied.                                                                                                       | assistant and skeptic; awaiting the overseer |
-| 2026-11-07 | —   | Steering folder created at the overseer's request                                                                                                                                                               | overseer                                     |
+Closed card options/reviews and the full earlier log are preserved at Git
+`fbf40e0a5097bf243f1fcb162c0185c1e171e0f4` under `steering/cards/` and
+`steering/DECISIONS.md`. Cards now hold only actual open decisions or ready launches.
+
+## Current coordination and preferences
+
+- Nov 9, steward: completed A/B/C results carried into one curated ledger and shared dependency note. Stop passed pilots; assess applicability/independent validation before expanding.
+- Nov 9, overseer cleanup request: remove superseded handoffs/cards and reduce old logs. Preserve raw evidence, protocols and unique data. Old documentation remains recoverable at the exact revision above.
+- Scientific necessity: every task/statement needs a necessary concrete outcome; reuse evidence, consider different framings and state the stopping point. No approval-to-prepare bureaucracy (overseer, Nov 8).
+- Four idle GPUs project-wide, initial A0/B2/C2 with explicit handoffs. Use only when faster/useful; owner launch rules still apply (overseer, Nov 8).
+- Broad collection and capacity are parked, not pending purchases. Only a concrete necessary information gap can revive them; no source/split/threshold changes implied (overseer direction, steward/A/B implementation).
+- Plain contextual updates, verified claims before solidification, short briefs and no repeated completed work remain in force. Historical class-2 sequencing choices are preserved in the cited revision.

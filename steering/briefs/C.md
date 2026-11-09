@@ -1,17 +1,17 @@
-# Brief: track C (2026-11-08, scientific necessity review)
+# Brief: track C (2026-11-09, progress and cleanup)
 ## Do next:
-1. K2: close the recorded matched quantization comparison; no repeat run. Next test the ordinary-fine-tune order question with the audited 16 SFT/DPO edges and valid witnesses, if proposed triples/conventions support it.
-2. Agree the exploratory witness selection/aggregation/tie/zero-update rules with B before scoring; label any equation-based adaptation accurately. No valid witness or comparable input means unresolved, not a fabricated direction.
-3. Extend matched methods to remaining edit groups and usable multi-family real-model cases only where this changes the comparative conclusion. Use the same cases/controls as B and keep unknown historical construction inputs explicit.
-4. Keep Nov14 coverage review and Dec1–5 targets; while source history is blocked, progress the next supported comparison rather than collect more isolated blocks.
+1. Keep the completed ancestry controls, four-method quantization table and fixed witness results closed. For Nov14, report ancestry support, score/abstention band, source ambiguity and missing inputs separately.
+2. With B, map the existing Qwen/Tulu cases to B's joint rule assumptions and independent-control needs; identify which histories/operators are supported versus unknown before requesting any new measurement.
+3. If existing cases cannot validate a proposed rule, state the precise missing evidence and minimum justified confirmation design; no automatic seed, weight, writer-panel or collection expansion.
 ## Decisions that affect you:
-- Training Leaves Traces/modelDNA ran on all 126 matched quantization pairs. The former ranks the true source first7/12; the latter makes no definite source answer. These are not independent-negative error estimates or a whole-benchmark verdict.
-- D5/D6 approved. Loader integration and prior baseline runs stay closed; heritability remains parked.
+- D5/D6/D7 approved; no broad claim promoted. Native verdict strings alone are not confirmed-family decisions; the score band/notes matter.
+- B/C deferred the correlated witness contrast. SFT0/8 and DPO8/8 remains exploratory evidence, not a reason for another witness or SVD sweep.
 ## Corrections:
-- Do not treat related controls as unrelated ancestry negatives, compare old unmatched cohorts as matched results, or infer immediate-source accuracy from an ancestry-ranking method.
-- B owns detector/noise rules; do not fit a parallel writer detector or pursue inaccessible official code indefinitely when a justified, clearly labeled adaptation can answer the question.
+- AUROC1 on two exposed roots per partition is narrow discrimination evidence, not a future error guarantee or unique-source result.
+- Existing real neighborhoods have declared histories and no matched independent real7B negatives; preserve unsafe-format exclusions and don't substitute convenient revisions.
 ## Answers to your questions.
-- Development/exploratory protocol preparation is authorized. Actual truth/split/threshold changes still need concrete review; current tests/exposure must stay visible.
+- Loader/integration handoffs are resolved; numerical training-test failures are recorded implementation gaps, not scientific results to keep rerunning.
+- Current dependencies are in tracks/SHARED.md. Detailed scientific development stays in the existing proposal/reports, not new handoff chains.
 ## Watch out for:
-- Apply DIRECTIVES.md D1.6: state why an extra comparison or new input is necessary, and its stopping condition; do not fill every possible table cell by habit.
-- Compute: four idle GPUs total, default A=0/B=2/C=2, borrowing by handoff. No reservation; last host lacked driver access, so retain useful CPU progress.
+- Keep Nov14/Dec1–5 targets and scientific-necessity/unchanged truth, split and threshold rules. No new detector or claim without review.
+- Shared GPU cap four idle, initial A0/B2/C2 with handoffs. No C job/reservation; use existing acceleration only where useful.
