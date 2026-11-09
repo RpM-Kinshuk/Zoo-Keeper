@@ -12,5 +12,5 @@ Owner source checkouts remain worktrees/Model-Zoo-track-a and worktrees/Zoo-Keep
 **Next:** B's discriminating development question for source/relative ambiguity and quantization evidence use, using existing controls; Nov14 carries the completed B evaluation and A join.
 **Blocked or needs:** any new scientific rule needs its concrete proposal/untouched confirmation cases. No specific additional fingerprint collection is justified; L1 deferred and storage PARKED.
 Class1: exact-key/result join only, metadata JSON reads, no weights/network/GPU; rules preceded execution, accounting PASS. Stop bounded join here.
-Class2: B/steward handoffs updated; a family-score miss must not silently negate separate exact evidence. No new fallback classifier or truth/split/threshold.
+Class2: D7 option A approved Nov9 and applied to claims/guidance; informative support differs from unique-source proof. No new classifier, test rule, truth/split/threshold or claim promotion.
 Compute/deadlines: A=0/B≤2/C≤2, cap4; no A reservation. Existing Nov14/Nov21 and final targets unchanged; work uncommitted.

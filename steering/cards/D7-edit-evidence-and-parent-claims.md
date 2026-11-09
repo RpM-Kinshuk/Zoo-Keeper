@@ -1,6 +1,6 @@
 # D7: Separate edit evidence from proof of the immediate source?
-Status: open | Class: 3 | Ask: approve option A
-Due: Nov 14 review | If no answer: keep these as unverified hypotheses; report ambiguous support and measurements, not proved immediate sources. Existing evaluation continues.
+Status: decided — APPROVED option A by overseer, 2026-11-09 | Class: 3
+Decision: informative edit evidence may support source compatibility; a unique immediate source requires tests distinguishing relatives within the stated candidate pool. Otherwise unresolved. Existing evaluation continues; no threshold, truth, split, test rule, claim status or deadline changed.
 
 Recommendation: A (confidence: high).
 Why: untouched weights still match nonparent relatives in all 24 adapter cases. Merge-entry shares overlap controls, and sampled refusal-removal tests are inconclusive. These marks alone do not prove a unique immediate source; the complete methods are not disproven.

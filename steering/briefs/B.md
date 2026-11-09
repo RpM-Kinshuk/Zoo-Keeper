@@ -5,7 +5,7 @@
 3. With A, score eligible saved family/source-present/removed cases under unchanged rules; report ambiguity, useful answers/errors and unavailable cases. Descriptive exposed-data evaluation does not require inventing an untouched test set.
 4. For fuller rank/writer reads, first explain what missing information they could resolve; run only a justified bounded addition. Keep Nov14 summary and Nov21 targets; decision heads/full tests stay explicit gaps.
 ## Decisions that affect you:
-- Quantization/merge lab results stay closed. D7 asks the overseer to qualify categorical source-proof wording; broad C2/C3 stay unverified.
+- Quantization/merge lab results stay closed. D7 option A approved Nov9: informative support may establish source compatibility; unique source requires distinguishing relatives in the stated pool, otherwise unresolved. Broad C2/C3 stay unverified; no test rule changed.
 - D6 approved; new final cutoffs/truth/splits still require review. Do not expand K4/K14 or lower-priority K9.
 ## Corrections:
 - 90/112 children have scoped measurements, but only 12/112 immediate-source decisions were tested. NOT TESTED is not an abstention or detector pass.

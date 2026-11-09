@@ -36,8 +36,8 @@ The merged plan remains the reference for methods detail.
   their lab targets. They do not establish all-edit source or order recovery.
 - The joined table exposes broader limits: adapter clues also match relatives,
   sampled refusal tests cannot resolve rank, and merge-entry shares overlap
-  controls. Most immediate-source decisions remain untested. D7 proposes
-  separating informative edit evidence from unique-source proof.
+  controls. Most immediate-source decisions remain untested. D7 approved
+  separating informative edit evidence from unique-source proof (Nov9).
 - Four priority comparison methods now have scoped results, with two recently
   matched on the quantization cases. Whole-benchmark and real-model coverage
   remain unfinished; lack of independent negatives restricts error claims.
@@ -60,9 +60,11 @@ properly:
 1. **Family, at scale.** Which base family a model descends from, with error
    rates measured against the hardest real look-alikes and against every
    published method. This is the question compliance and license checks ask.
-2. **Edits that leave a mark.** Some edits leave an exact fingerprint that
-   makes the parent, and sometimes the order, provable from the weights:
-   quantization, refusal removal, merges, and low-rank adapters. Ordinary
+2. **Edits that leave a mark.** Quantization, refusal removal, merges and
+   low-rank adapters may leave informative edit evidence. Under approved D7,
+   this supports source compatibility only when informative; a unique immediate
+   source requires tests distinguishing relatives within the stated candidate
+   pool, otherwise unresolved. Order is a separate hypothesis. Ordinary
    fine-tunes leave no exact mark. Their order may still come from a third
    family member (the "witness" method published as Witness Overlap) or from
    a spectral cue. We test both, and fall back to the Hub's upload times

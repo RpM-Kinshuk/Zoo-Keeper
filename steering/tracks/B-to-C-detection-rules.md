@@ -55,3 +55,36 @@ Unknown construction/export history stays unsupported. Do not fit another
 detector or launch fuller writer probes while these assumptions are unresolved.
 Native source-tiered model comparisons proceed independently. Witness contrast
 review is in B-to-C-witness-review.md; optional scoring deferred.
+
+Nov9: a conditional plain FP32 rank-one arithmetic/storage allowance is now
+derived and validated on the fixed sampled classic/control panel:
+`runs/track-b-classic-noise-20261109-v4/REPORT.md`.
+Per input model:12/12 classic blocks give informative within-allowance witnesses;
+0/18 eligible controls do, while18/36 controls are unresolved. No final decision
+rule adopted; sampled blocks are dependent, exposed and not source answers.
+FULL-normalized Heretic/rank3 is NOT covered by that proof.
+
+No new real weights were needed to forecast the same conditional plain-operator
+budget on your four saved scalar blocks: allowance/delta upper ratios0.185–0.207.
+That demonstrates possible nonvacuity, not applicability to unknown history.
+Do not reclassify the Qwen pair: actual operator/export/input source history
+and complete matching controls remain missing. Native model comparisons stay
+independent. A new real extraction needs a stated remaining question; the old
+vacuous bound alone is not sufficient justification for another read.
+
+## Nov9 joint classic-source development result
+
+B completed the predeclared fixed-pool joint test on four classic lab queries:
+all72 candidate pairs accounted for (33 inherited,39 new). Each input hypothesis
+separately returns4/4 useful source-present answers,0 wrong,0 abstentions;
+source removed gives0 answers and4/4 abstentions. The absent-source answered
+error denominator is empty, not a measured zero error rate. All four recovered
+Heretic competitors are excluded by the guarded shared-writer lower certificate.
+They are candidate controls here; Heretic positive-query detector cases remain
+untested. Panel uses known construction-active layers; roots are exposed.
+
+This meets the fixed conditional development criterion only. No final noise
+rule or source-proof claim is adopted. Unknown real-model operator/history and
+uninformative noise allowances retain C's existing unresolved verdicts. No
+retroactive reclassification or additional fingerprint collection follows.
+Report: `$ZOO_DATA/runs/track-b-joint-source-20261109-v3/REPORT.md`.

@@ -16,7 +16,7 @@ Scientific-necessity review: 2026-11-08. Mission: useful model-origin checks and
 - Four idle GPUs remain the shared ceiling, not a usage target. Last B/C host lacked driver access; useful CPU work completed. No GPU is reserved.
 
 ## Waiting for you
-- **[D7](cards/D7-edit-evidence-and-parent-claims.md): recommend A.** Say that informative edit clues can support a possible source, while a unique immediate source needs tests that distinguish relatives; inconclusive evidence remains unresolved. This qualifies the original categorical wording without declaring the full methods disproven. Dates and test rules stay unchanged.
+- **D7 approved (Nov9).** No decision remains on that card: informative edit evidence may support a possible source; a unique immediate source requires distinguishing relatives within the stated pool. Inconclusive evidence remains unresolved. Dates, test rules and claim status stay unchanged.
 - B can prepare its development proposal now; an empty approval-to-prepare request is unnecessary. Actual cutoff/split/truth changes still need concrete review.
 
 ## Next review and risks
@@ -31,4 +31,4 @@ Scientific necessity is explicit in DIRECTIVES.md D1.6 and the briefs: question 
 - You approved D5 research corrections and plain contextual updates; construction-record novelty remains open.
 - Holistic review aligned practical comparative outcomes; you approved D6 to separate open tests from verified claims without date changes.
 - You authorized four idle GPUs project-wide, initially A=0/B=2/C=2 with handoffs; large-run limits remain.
-- Scientific necessity is now explicit in the directives: existing-data-first evaluation, collection/storage deferred, concrete development proposals authorized. New negative findings and matched comparisons prompted D7's reviewed wording recommendation.
+- Scientific necessity is now explicit in the directives: existing-data-first evaluation, collection/storage deferred, concrete development proposals authorized. New negative findings and matched comparisons prompted D7; the overseer approved option A on Nov9.
