@@ -1,16 +1,16 @@
-# Brief: track B (2026-11-09, applicability audit closed)
-## Do next:
-1. Close the applicability audit and keep the successful pilot as conditional projection/source consistency, not refusal-behavior detection or external source recovery. Reuse the existing account for Nov14.
-2. Amend the unadopted validation proposal to separate questions: one within-family transfer falsification needs a verified in-scope source/output pair, fixed panel and hard relatives; unrelated-model initialization controls belong to separate ancestry/general-error testing.
-3. Reopen transfer testing only for a specific available construction record or a justified bounded information request. Both reviewed external cases remain NOT READY because history/operator/target-set gaps persist.
-## Decisions that affect you:
-- This narrows prerequisites for the proposed question, not current C1/C3 targets or any adopted rule. The verified source, actual operator/export and panel assumptions stay mandatory.
-- No venue/method pivot decided. Existing D2 empirical/benchmark work and Nov14/Nov21/later gates continue; only verified conclusions can advance.
-## Corrections:
-- Do not require an independent ancestry-negative cohort to perform a narrower within-family transfer test, or claim that such a test estimates broad precision.
-- The lab positives are sentiment-conditioned mathematical projections; refusal/capability effects were not validated. No automatic operator/mask/noise/panel changes or new pilot.
-## Answers to your questions.
-- Correcting this unadopted proposal is authorized coordination. Actual scientific rule/split/truth/claim changes retain their review and owner-decision boundaries.
-## Watch out for:
-- Missing external eligibility is not a detector failure or a successful abstention. Do not start an indefinite producer-record hunt or contact anyone without explicit authorization.
-- Shared GPU cap four idle, default A0/B2/C2; no job/reservation. More compute cannot supply missing history.
+# Brief: track B (2026-11-09, approved check-in applied)
+## Do next
+1. K5, by Nov 12: score all 4 Heretic constructions. Prewrite a test for the few independent change directions ('rank') allowed by each recorded recipe in active edited weights, with measured rounding limits. Apply the same rule to SFT/DPO/adapter/unedited controls; controls must not be falsely flagged.
+2. K5, by Nov 21: search the candidate pool for merge sources using existing lab evidence; test source-present and source-removed cases and retain relatives. Known-source coefficient fits alone do not answer this question.
+3. Test quantization, merge and directional-ablation marks on C's D8 real cases from Nov 14; report recipe, detected/missing mark, controls, source answers and uncertainty. Update K12 with this real-case tier.
+## Decisions that affect you
+- D8 replaces the private-maker-record and previous within-family-only confirmation design. Published recipes count; omitted export/seed details are caveats, not automatic exclusions.
+- Check-in authorizes recipe-rank Heretic tests and merge search; preserve prior measurements and distinguish them from the new tests. D7's unique-source requirement and D6's open-question/conclusion separation remain.
+## Corrections
+- Adapter claim: family/base support, not immediate source among siblings unless readable update rank supplies distinguishing evidence; no rank-only automatic uniqueness.
+- The4 sentiment-projection lab successes do not validate refusal behavior. Call the tested operation directional ablation; realistic Heretic/real-model validation remains to be done.
+## Answers to your questions
+- Proceed with the authorized tests, rules/noise stated first. If a design cannot answer the question, redesign it or draft a concrete claim-rewording card; do not wait on C's private records.
+## Watch out for
+- Parent search, order and edit type are separate outcomes; report abstentions and untested cases. No arbitrary cutoff tuning on final outcomes.
+- Four idle GPUs total, initial A0/B2/C2 with handoffs. Use existing fast paths; agent runs ≤100 weight models AND ≤2 hours, otherwise prepare owner launch.

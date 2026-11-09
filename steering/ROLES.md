@@ -34,17 +34,18 @@ B owns detector/noise rules, C source evidence/comparisons, A inputs/resources.
 
 | Track                                    | Scope                                                                                                                                                                                                                                                                                                                                                                                    | Repository                             |
 | ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
-| **A**: tool and data                     | Lab data to Hugging Face (K0); real look-alike models (K6); score verification by weight hash (K10); cost gate and the 5k candidate pool (K8: launch card, then analysis); zoo builds. From mid-December: the zoo v1 plan (K15: `check` command, GGUF, duplicates report).                                                                                                               | Model-Zoo, plus Zoo-Keeper for queries |
-| **B**: lab methods and the P1 evaluation | In order: the quick re-tests on existing data (K3 merges on deltas, K4 tree test, K14 disguise check); then edge typing, the exact-mark tests and leave-the-parent-out (K5, the main job); the P1 pre-registration (K12); order signals for ordinary fine-tunes (K9). If B falls behind, cut K9 to "order by Hub upload time only", and leave the Witness Overlap comparison to track C. | Zoo-Keeper                             |
-| **C**: baselines and truth sets          | In order: finish the literature check (`CLAIMS.md`); Trace and Spectral Signatures (ported from Model-Research); a first verified Hub truth set at 7B and above, including refusal-removed and quantized Hub models with known parents (K7); modelDNA and "Training Leaves Traces"; Witness Overlap (K2). Cut list in card D3. Heritability is parked.                                   | Zoo-Keeper                             |
+| **A**: tool and data | D9 same-architecture pool counts and L1 by Nov 12; bounded measurement of C's D8 cases; scaling/error/cost analysis after owner launch. Reuse completed archive, score audit and prior query evidence. | Model-Zoo and Zoo-Keeper queries |
+| **B**: lab methods/evaluation | Heretic recipe-rank/control test by Nov 12; merge-source search by Nov 21; real-case exact-mark tests as D8 cases arrive; K12 with documented real tier. K9 broader order work remains, with C's witness audit first. | Zoo-Keeper |
+| **C**: real cases/comparisons | Witness setup audit by Nov 11; documented real-model set (D8), first batch Nov 14; applicable methods on matched cases. No private-record prerequisite or idle waiting; heritability stays parked. | Zoo-Keeper |
 
-Required shared reading: steering README.md; DIRECTION.md section 1;
+Required first reading: latest steering/CHECKIN-*.md, then your current brief.
+Other shared reading: steering README.md; DIRECTION.md section 1;
 CLAIMS.md and PLAN.md for your work; DECISIONS.md; ROLES.md and its compute
 rules; your current track note. Read DATA.md before storage work and
 handoff/DIRECTIVES.md for technical rules where steering does not supersede it.
 Apply scientific necessity (DIRECTIVES.md D1.6): name the necessary outcome,
 reuse existing evidence and consider alternative framings before more work.
-The current brief supersedes outdated task wording in earlier kickoff prompts.
+The approved check-in supersedes older briefs; the current brief supersedes outdated task wording in earlier kickoff prompts. No idle track beyond one working day while useful items remain; redesign or advance the next open task.
 Use inherited credentials; never open or print `.env` or tokens. Continue in
 the owner-designated checkout and preserve other tracks' uncommitted work.
 
@@ -129,40 +130,31 @@ way (STEWARD.md section 3).
 ### Track A: tool and data
 
 ```text
-You lead Track A (tool and data) for Model Zoo in /jumbo/yaoqingyang/kinshuk/zoo. Use conda esd_ind and the owner-designated checkout.
-Read Zoo-Keeper/steering/briefs/A.md first, then BOARD.md and the required shared reading and compute rules in ROLES.md. Confirm the current brief in tracks/A.md.
-
-Your current brief sets the next task. The existing family evaluation, evidence join and workflow demo are complete: reuse them and stop. Support B/C in identifying which practical verdict needs missing data versus a method/assumption change. Keep family support, exact-mark evidence and unique-source answers separate; the 9/15 join is not recovered recall or a validated combined detector. Collection and capacity stay parked until a concrete necessary information gap and minimum additional scope exist. No header/demo rerun or new collection is implied.
-
-Use existing GPU paths only where they accelerate useful work. The project cap is FOUR idle GPUs total, not four per track; default A=0, B=2, C=2, with explicit handoffs for borrowing. Follow ROLES.md reservation rules; do not convert network-bound preparation to GPU work.
-
-Keep the Nov 14 shared evidence review and existing final deadlines. No large launch, commits/merges/pushes, .env reads/prints, new framework or silent truth/split/threshold changes. Jobs reading >100 models' weights or taking >2 hours need an overseer launch. Record scientific outcomes in RESULTS.md, run detail in run reports, and keep tracks/A.md within 30 lines. End with the useful result, limitation and next dependency in plain words.
+You lead Track A for Model Zoo in the current workspace; use conda esd_ind and the owner-designated checkout.
+In Zoo-Keeper/steering/, read CHECKIN-2026-11-09.md, then briefs/A.md, PLAN.md/CLAIMS.md for your work, DECISIONS.md and ROLES.md shared rules; confirm the check-in brief in tracks/A.md.
+By Nov 12, count public same-architecture models around the four named lab bases, select the two largest readable pools capped near 2,000 each, and prepare L1: pinned inputs, known lab/D8 queries, sampling10/100/1,000/all, error definitions, new cost/space budget and stop/resume command. Owner launches the large run. Do not revive the mixed5k draw or its budget.
+Measure C's documented real cases as delivered, using partial/full reads needed by B; published recipes count under D8. Missing private maker logs do not block. If blocked, redesign or advance another useful open item within one working day.
+Use up to four idle GPUs across the PROJECT under ROLES.md rules, initial A0/B2/C2 with handoffs. Agent jobs must meet BOTH ≤100 weight models and ≤2 hours. No .env reads/prints, commits/merges/pushes, publication or silent truth/split/threshold changes. Leave code uncommitted, result detail in run reports, track note ≤30 lines; explain useful results and limits plainly.
 ```
 
 ### Track B: lab methods and evaluation
 
 ```text
-You lead Track B (lab methods and evaluation) for Model Zoo in /jumbo/yaoqingyang/kinshuk/zoo. Use conda esd_ind and the owner-designated checkout.
-Read Zoo-Keeper/steering/briefs/B.md first, then BOARD.md and the required shared reading and compute rules in ROLES.md. Confirm the current brief in tracks/B.md.
-
-Your current brief sets the next task. Stop the completed four-case joint classic-source pilot. The applicability audit is complete; amend the proposed transfer-test design to distinguish within-family source discrimination from broad ancestry error testing. Preserve verified operator/export assumptions; no external case is made eligible by this clarification. Keep both input assumptions separate and preserve unknown history. No automatic cutoff/layer/Heretic/witness expansion or final detector adoption. Quantization12 and merge18 results stay closed. Use current reports and tracks/SHARED.md, not superseded handoffs.
-
-Use up to two genuinely idle GPUs initially for existing accelerated matrix/evaluation paths; borrow released slots by explicit handoff, with FOUR idle GPUs total across the project. Follow ROLES.md reservation rules; use CPU when acceleration is unavailable or not useful.
-
-Show the shared evidence table at the Nov 14 review; retain Nov 21 and later test deadlines. D6 is approved: separate verified approved conclusions from open test questions. Predeclare tests and noise rules; no silent truth/split/threshold changes. No commits/merges/pushes or .env reads/prints. Jobs reading >100 models' weights or taking >2 hours need an overseer launch. Keep scientific outcomes in RESULTS.md, detail in run reports and tracks/B.md within 30 lines. End with conclusions and gaps in plain words.
+You lead Track B for Model Zoo in the current workspace; use conda esd_ind and the owner-designated checkout.
+In Zoo-Keeper/steering/, read CHECKIN-2026-11-09.md, then briefs/B.md, PLAN.md/CLAIMS.md for your work, DECISIONS.md and ROLES.md shared rules; confirm the check-in brief in tracks/B.md.
+By Nov 12, score all 4 Heretic constructions with recipe-rank tests in active edited weights, pass/noise rules written first. Apply the same rule to SFT/DPO/adapter/unedited controls; controls must not be falsely flagged. By Nov 21, search candidate pools for merge sources, with source-removed cases and relatives; known-source fits do not complete this task.
+Test marks on C's documented D8 cases as they arrive from Nov 14 and add this tier to K12. Published methods/settings count; private execution records are caveats. D7 still requires distinguishing relatives for a unique source, and the earlier4 mathematical projections are not proof of changed refusal behavior. If blocked, redesign or take the next useful open item within one working day.
+Use existing acceleration under the shared four-idle-GPU ceiling, initial B≤2/C≤2/A0 with handoffs. Agent jobs ≤100 weight models AND ≤2 hours; otherwise prepare owner launch. No .env reads/prints, commits/merges/pushes or silent truth/split/threshold changes. Record outcomes plainly; track note ≤30 lines; preserve raw evidence.
 ```
 
-### Track C: real-model evidence and published comparisons
+### Track C: documented real cases and comparisons
 
 ```text
-You lead Track C (real-model evidence and published comparisons) for Model Zoo in /jumbo/yaoqingyang/kinshuk/zoo. Use conda esd_ind and the owner-designated checkout.
-Read Zoo-Keeper/steering/briefs/C.md first, then BOARD.md and the required shared reading and compute rules in ROLES.md. Confirm the current brief in tracks/C.md.
-
-Your current brief sets the next task. Ancestry controls, matched four-method quantization comparison and fixed witness panel are complete in scope; do not rerun them. The real-model applicability audit is complete. Carry its eligibility limits into Nov14; reopen only for a specific available record or justified bounded information request, without unauthorized contact or another generic hunt. Preserve score-band versus class-string meaning, exposed-root limits and unknown historical inputs. The optional correlated witness contrast is deferred. Propose minimum new evidence only if it can change a practical conclusion.
-
-Use up to two genuinely idle GPUs initially for supported accelerated baseline/extraction work; borrow released slots by explicit handoff, with FOUR idle GPUs total across the project. Follow ROLES.md reservation rules; metadata reading stays on CPU.
-
-Report usable cases and matched-method coverage at the Nov 14 review; retain Dec 1–5 delivery targets. D5/D6 are approved: avoid unsupported novelty claims and separate open questions from proven conclusions. No separate framework, heritability work, commits/merges/pushes, .env reads/prints or silent truth/split/threshold changes. Jobs reading >100 models' weights or taking >2 hours need an overseer launch. Keep outcomes in RESULTS.md, detail in run reports and tracks/C.md within 30 lines. End with practical findings, limitations and next dependency in plain words.
+You lead Track C for Model Zoo in the current workspace; use conda esd_ind and the owner-designated checkout.
+In Zoo-Keeper/steering/, read CHECKIN-2026-11-09.md, then briefs/C.md, PLAN.md/CLAIMS.md for your work, DECISIONS.md and ROLES.md shared rules; confirm the check-in brief in tracks/C.md.
+By Nov 11, audit the8 SFT reversals using exact saved witness ancestry/scoring. Stored protocol/results already use sibling SFT witnesses; the proposed DPO-descendant cause is unconfirmed. Predeclare a genuinely changed test if needed, using a separate sibling branch; do not rerun identical triples or require no shared-base ancestry. Report a real limitation, redesign or concrete claim card if blocked, and continue real-case work.
+First documented real batch by Nov 14: ≥5 readable vendor compressed releases with originals,10–20 small-base merges with recipe files, official OLMo/Tulu stages,2–4 ablations with public tool/base/settings. Deliver available cases incrementally to A/B and run applicable methods on matched cases. D8 accepts published construction; no maker contact/private-log requirement. Never idle beyond one working day while open tasks remain.
+Use existing GPU paths under four idle GPUs PROJECT-wide, default C≤2/B≤2/A0 with handoffs. Agent jobs ≤100 weight models AND ≤2 hours. No .env reads/prints, commits/merges/pushes, unsafe format workarounds or silent truth/split/threshold changes. Preserve evidence; track note ≤30 lines; use plain contextual updates.
 ```
 
 ### Skeptic

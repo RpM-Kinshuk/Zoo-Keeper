@@ -155,18 +155,22 @@ Each `[HUMAN]` item in `handoff/CHECKLIST.md` becomes one of these:
 | D5 | Nov 8 | Correct prior-work size/search comparisons; exact construction-record advantage remains to be verified. | overseer |
 | D6 | Nov 8 | Separate approved conclusions from prospective open tests. Later conclusions need verification and explicit owner approval; dates unchanged. | overseer |
 | D7 | Nov 9 | Informative evidence may support compatibility; a unique immediate source requires distinguishing relatives within the stated pool. Inconclusive stays unresolved. | overseer |
+| D8 | Nov 9 | Real Hub models with published construction (vendor quantized/FP8 releases, merges with recipe files, official training stages, refusal removals with recorded tool settings) count as documented truth. Declared-only cases are descriptive and never block. No maker contact. | overseer (check-in with the assistant) |
+| D9 | Nov 9 | Scaling uses same-architecture pools around 2 lab bases instead of a random mixed roster; launch card L1 from track A | overseer (check-in with the assistant) |
+| D10 | Nov 9 | Steward rules: plain language for everything the overseer reads; no track idle for more than a working day while items are open; "cannot verify" needs a redesign; necessity chooses the next test and is not a reason to stop | overseer (check-in with the assistant) |
 
 Closed card options/reviews and the full earlier log are preserved at Git
 `fbf40e0a5097bf243f1fcb162c0185c1e171e0f4` under `steering/cards/` and
-`steering/DECISIONS.md`. Cards now hold only actual open decisions or ready launches.
+`steering/DECISIONS.md`. Cards hold actual open decisions/ready launches and the current approved check-in decisions; older settled outcomes are summarized above.
 
 ## Current coordination and preferences
 
-- Nov 9, steward/fresh skeptic: close B/C applicability audits; treat the pilot as mathematical projection/source consistency without refusal-behavior validation. Separate within-family transfer from ancestry error-test prerequisites; no current rule/target/split changed. No indefinite producer-record hunt or unapproved contact.
-
-- Nov 9, steward: completed A/B/C results carried into one curated ledger and shared dependency note. Stop passed pilots; assess applicability/independent validation before expanding.
-- Nov 9, overseer cleanup request: remove superseded handoffs/cards and reduce old logs. Preserve raw evidence, protocols and unique data. Old documentation remains recoverable at the exact revision above.
-- Scientific necessity: every task/statement needs a necessary concrete outcome; reuse evidence, consider different framings and state the stopping point. No approval-to-prepare bureaucracy (overseer, Nov 8).
-- Four idle GPUs project-wide, initial A0/B2/C2 with explicit handoffs. Use only when faster/useful; owner launch rules still apply (overseer, Nov 8).
-- Broad collection and capacity are parked, not pending purchases. Only a concrete necessary information gap can revive them; no source/split/threshold changes implied (overseer direction, steward/A/B implementation).
-- Plain contextual updates, verified claims before solidification, short briefs and no repeated completed work remain in force. Historical class-2 sequencing choices are preserved in the cited revision.
+- Nov 9 steward run applied the approved check-in across board, plan, claims, shared note and all briefs/kickoff prompts. Earlier no-new-work/private-record stop instructions are removed.
+- Nov 9 approved check-in and D8–D10 govern current work. They replace the earlier blanket collection/measurement pause and private-maker-record requirement; do not leave contradictory stop instructions active.
+- A prepares the two same-architecture pools and L1 by Nov 12; B scores4 Heretic cases by Nov 12 and searches merge sources by Nov 21; C checks witness order by Nov 11 and supplies the first documented real batch by Nov 14.
+- Fresh source check: all 8 stored SFT protocol/scored rows use opposite-seed SFT witnesses, not DPO descendants. Fresh skeptic agrees; C must audit the setup and predeclare a genuinely changed test rather than repeat identical inputs. This is a factual correction to a proposed explanation, not a new score or threshold.
+- D8 accepts published construction evidence; unknown details are caveats and declared-only cases remain descriptive. New evaluation manifests record the changed truth standard; raw past reports/splits stay intact.
+- D10 requires plain language and active useful work or redesign within one working day. No private-record hunt, approval-to-prepare bureaucracy or broad “not eligible, stop” closure.
+- Scientific necessity selects the decisive test; claims needing absent data justify minimum collection within launch/compute rules. No arbitrary large roster, extra infrastructure or repeated passed test by habit.
+- Four idle GPUs project-wide, initial A0/B2/C2 with handoffs and existing admission/reservation rules. Owner launches >100-model weight or >2hour work; no publication, access or money rule changed.
+- Nov 9 cleanup removed superseded coordination only; prior text is recoverable at the revision above, raw evidence untouched. Current check-in cards D8–D10 remain authoritative alongside their settled log entries.

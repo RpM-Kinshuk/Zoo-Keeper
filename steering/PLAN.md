@@ -6,73 +6,48 @@ of every earlier plan and checklist item. Status words: **open**, **built**
 **decided** (claim settled), **dropped**. The steward keeps the status column
 current.
 
-## Current execution focus (Nov 9 evidence review)
+## Current execution focus (approved Nov 9 check-in)
 
-The collection/database and queries are an internal prototype; the controlled
-lab and its backup are valuable assets. Reliable real-world verdicts and the
-main paper still need broader evidence. Model-Zoo and Zoo-Keeper serve that
-same outcome; Model-Research is frozen, and selection and heritability work stay parked.
+`CHECKIN-2026-11-09.md` and decisions D8–D10 supersede the earlier stop/park
+instructions. They authorize the next tests and same-architecture scaling design;
+they do not report new measured success. No track remains idle while useful plan
+items are open. A blocked design needs another feasible test or a claim decision.
 
-**Next shared output, at the existing Nov 14 review:** one evaluation summary
-in RESULTS.md, linked to existing run reports: coverage of every planned lab
-edit group, the usable real-model cases and their evidence tiers, matched
-published-method progress, and A/B's proposed query protocol with actual costs
-and resource gaps. Include a trace through the existing query/scorer path to
-its evidence and uncertainty. This is a progress review, not a new pass gate,
-sample quota, interface feature, or earlier deadline for all K5/K7/K2 work.
+- **A, Nov 12:** metadata counts for four lab architectures; choose the two
+  largest readable pools near 2,000 candidates each. Prepare owner launch L1
+  with pinned inputs, comparable pool sizes, cost/space, stop and resume rules.
+  Measure C's incoming D8 cases within agent-run limits; owner starts larger runs.
+- **B, Nov 12:** all 4 Heretic recipe-rank tests against SFT/DPO/adapter/unedited
+  controls; prewrite rules and rounding limits. **Nov 21:** merge-source search
+  among candidates, not only fits with sources supplied. Test D8 cases as delivered.
+- **C, Nov 11:** check the SFT order setup and a justified sibling-witness test.
+  Saved Nov 8 SFT rows already name sibling SFTs, not DPO descendants; the
+  suggested explanation is a hypothesis, not a correction established by records.
+  **Nov 14:** first D8 batch, delivered incrementally to A/B, then matched methods.
+- **D8 real cases:** published vendor compression methods, merge recipes,
+  official training stages and public-tool ablations with recorded settings
+  count as documented truth. Missing private execution details are caveats.
+  Declared-only cases stay descriptive; they do not hold up other work.
+- **D9 scaling:** 10/100/1,000/all same-architecture rivals with repeated fixed
+  subsamples; report the largest pool reached and false-family/source answers.
+  Unknown matches remain unknown; metadata base declarations do not prove independence.
+- **D10:** plain language, a next useful task within one working day, and no
+  closure by “cannot verify.” Necessity chooses the decisive next test; it does
+  not shelve a claim whose required data can be collected or its test redesigned.
 
-- A/B's existing-artifact family evaluation and A's exact-evidence join are
-  complete. Reuse them; no further A run, header collection or storage action
-  is justified. A family answer after source removal is not a false parent.
-- B's four-case joint classic-source pilot meets its development target under
-  declared operator/input assumptions. Stop the pilot; assess applicability
-  and independent validation before any final rule, panel expansion or new
-  positive edit category. Both input assumptions reuse the same four cases.
-- C's ancestry controls and full four-method quantization comparison are now
-  complete in their recorded scope. B/C have completed the selected real-model applicability audit; neither
-  reviewed candidate is ready. Reuse those findings rather than repeat it.
-- C interleaves K2 with K7 whenever historical provenance is blocked. Missing
-  construction records restrict conclusions, not all descriptive evaluation.
-- Keep K4/K14 to the already-required bounded checks; record an inconclusive
-  outcome when appropriate. No new tree/disguise programme. Reopen completed
-  work only for contrary evidence or a gap that changes the next verdict.
-- Judge progress by coverage, wrong answers, useful answers/abstentions, real
-  model transfer, comparisons and full workflow cost. Routine unit-test counts,
-  per-file inventories and per-block diagnostics stay in linked run reports.
+Keep completed results and their caveats. Do not overwrite raw protocols, split
+assignments or historical labels; new D8/D9 evaluations record their own pinned
+inputs and prospective rules. D7 still requires distinguishing relatives before
+naming a unique source. The failed high-unchanged-share TIES/DARE shortcut is
+not revived by the new merge search.
 
-**Applicability audit closed (Nov 9):** neither reviewed external projection
-candidate qualifies under the unchanged joint rule. Lab positives are
-sentiment-conditioned mathematical projections, not behaviorally validated
-refusal removal. Carry this limit into the empirical benchmark summary; no
-indefinite producer-record hunt or new weight run is assigned. Reopen only for
-a specific available record or bounded decision-changing request, with external
-contact still requiring explicit authorization.
-The proposed within-family transfer falsification needs verified in-scope
-source/output, fixed panel and hard relatives; unrelated-model initialization
-controls belong to separate ancestry/error testing. This is clarification of
-an unadopted design, not a change to current targets, thresholds or splits.
-
-**Scientific necessity (owner instruction):** apply DIRECTIVES.md D1.6.
-Question → existing-evidence evaluation → necessary additional information →
-minimum collection → resources. Preparation, storage availability and round
-sample counts do not justify a run. Drafting a protocol is already authorized;
-bring a concrete scientific change, not permission to prepare one.
-
-**D6 approved (Nov 8):** the Dec 4 evaluation plan separates (1) verified
-conclusions explicitly approved by the overseer and (2) unanswered questions
-with tests, metrics, data partitions and pass rules fixed before final runs.
-Nov 25 solidifies only claims already verified; questions awaiting the Dec 1–5
-real-model evidence or Dec 10 scaling evidence remain open. Later conclusions
-require verification, a skeptic's review and explicit overseer approval before
-entering the paper claim list. Previously inspected cases remain development
-evidence. All dates, existing thresholds and truth/split rules are unchanged.
-
-**Compute (overseer update Nov 8):** use up to four idle GPUs across all tracks
-where existing accelerated paths improve time to useful evidence. Initial
-slots A=0/B=2/C=2, with explicit handoffs for borrowing; `ROLES.md` defines
-reservation, admission and logging. Metadata/network preparation stays on CPU
-when appropriate. GPU availability does not approve a large run or change
-scientific settings; re-budget a changed backend before a launch.
+**D6:** Dec 4 plan separates approved verified conclusions from open tests;
+later conclusions need verification, skeptic review and explicit overseer approval.
+Nov 25 can keep claims open when evidence is still arriving; no claim is solid yet.
+**Compute:** up to four idle GPUs project-wide, initial A0/B2/C2 with handoffs.
+Use existing accelerated paths when useful; metadata may stay CPU. Agent jobs
+must meet BOTH ≤100 weight models and ≤2 hours; larger work requires owner launch.
+Resource estimates must fit the new selection, not the retired mixed-pool budget.
 
 ## 1. Corrective actions
 
@@ -85,12 +60,12 @@ serve the corrected claims in `DIRECTION.md` section 6.
 | **K1** | **Start steering.** First steward run: fill `BOARD.md`, screen cards D1–D4, and confirm the track notes. | Steward | `BOARD.md` filled; cards screened, with skeptic lines | Nov 10 | tested: first run complete; all three leads acknowledged Nov 7 brief |
 | **K2** | **Run the published baselines on the same questions.** Without baselines, no P1 framing can be reviewed. Order: Trace and Spectral Signatures (ported from Model-Research), then modelDNA and "Training Leaves Traces" (2608.14929), then Witness Overlap (direction). MoTHer only if cheap. No black-box test for January. The initial documentary check is complete (D5); use its findings in `CLAIMS.md`, rather than repeating it. Continue targeted reading only for unresolved comparison questions. | C | Each baseline has same-family, parent and edge-type numbers (where it supports them) on the lab, plus bytes read per answer, in `RESULTS.md`. A one-page note on what the new papers already cover. | first two Nov 21; all four Dec 5 | tested (partial): four methods matched on quantization and small ancestry controls; fixed witness panel complete, correlated contrast deferred; full independent real-model comparison open |
 | **K3** | **Redo the merge fits on deltas.** Fit "child minus base" against "each parent minus base" (base term kept for SLERP). The old raw-weight design made the columns look identical. Compare with the published mergekit configs. | B | Coefficient error per merge type against each config; abstain only for exact-duplicate parents | Nov 14 | tested: 9 linear + 9 SLERP meet coefficient target; narrow lab scope only |
-| **K4** | **Redo the tree test with a tolerance set by measurement noise.** Run a simulated exact tree with the same noise as a check that the test can pass at all. Report how large the violations are, not only how many. | B | Violation sizes for real lab trees vs the simulated tree; a gate card if the pivot conclusion changes | Nov 14 | tested (partial): Smol360 partial-read repeat/control; other families and full reads open |
-| **K5** | **Edge typing and the exact edge tests on the lab** (claim C2). "What was done to this model?" is a distinctive, practical claim, and the code already exists. Add four exact tests: <br>• quantized child on a value grid (parent and order); <br>• refusal removal leaving one removed direction shared across layers (parent and order); <br>• a merge as a mix of parents and base (parents and order); <br>• an adapter as a low-rank difference (parent only). <br>Use the exact pass rules in `CLAIMS.md` (C2 table), including the identical-to-base pattern for TIES and DARE merges and identical untouched tensors for adapters. Calibrate parent decisions against close relatives, not unrelated models. Run **leave-the-parent-out**: remove each true parent from the pool to test the "parent not in pool" rule (C3). | B | A table of predicted vs true type over all edge types (LoRA, full SFT/DPO, merge, quantization, ablation, decision head). LoRA rank accuracy at 8/64/256. Per edge type: parent and direction coverage and precision. Ablation-detector precision and recall on the lab and on Hub models named "abliterated" or "uncensored" (name matching is the baseline to beat). | Nov 21; method check Dec 12 | tested development: scoped 90/112 measurement table plus completed four-case conditional joint source pilot; no final rule adopted or broad precision established; remaining edits/independent confirmation open |
+| **K4** | **Tree-distance retest.** Retain the measured noise/control comparison and scope limits; approved research direction does not resume tree recovery. Further checks need a concrete unresolved question, not repeated tests by habit. | B | Noise/control findings reported with violations; no unsupported claim that distance violations disprove ancestry trees. | review Nov 14 | tested in reported scope; check-in retains the pivot; not the priority over Heretic/merge/real cases |
+| **K5** | **Test edit marks and find sources.** By Nov 12 score the4 existing Heretic models against matched SFT/DPO/adapter/unedited controls, testing changes within each recipe's rank in active edited weights. Predeclare noise/pass rules. Add merge-source search among candidates by Nov 21, including absent-source trials and hard relatives. Test marks on D8 real cases; do not substitute known-source fits for source search. | B | Heretic pass/fail and control flags; lab edit/source table; merge-search errors, useful answers and abstentions; same tests on documented real cases. Adapters support family/base, not automatic sibling-source identity. | Heretic Nov 12; merge search Nov 21; method check Dec 12 | open next tests: Heretic and merge search authorized by check-in; previous4 projection cases and12 quantizer cases remain limited lab evidence |
 | **K6** | **Find real same-architecture independent models.** These are the hard negatives a compliance check meets in practice: same config, trained from scratch by someone else. | A (moved from C by card D3) | At least 30 pinned models with partial-read fingerprints; same-family false-positive rate against them | Nov 21 | tested: 30 publisher-supported scratch-trained BERT controls, 0/435 false matches; narrow diagnostic only, seed independence/recall/decoder transfer unresolved |
-| **K7** | **Build verified Hub truth at 7B and above.** The lab is ≤1.7B and reviewers will ask whether results transfer. Use vendor pipelines that publish their intermediates (OLMo-2 7B/13B SFT→DPO→RLVR, Tülu 3 8B, SmolLM2-1.7B) and at least 20 (stretch 50) merges that ship `mergekit_config.yml`. Include Hub models with known parents that were refusal-removed or quantized: the exact-mark tests (K5) must hold on real Hub models, not only on our lab. | C (launch card if over 100 models) | Truth table plus fingerprints; same-family, edge-type, exact-mark and merge results on it | first set Dec 1; complete Dec 5 | tested descriptive neighborhoods: Qwen/Tulu 8 snapshots/18 pairs/12 unresolved source verdicts; OLMo unsafe-format gap and unknown histories retained; independent real controls/verified construction open |
-| **K8** | **The 5k candidate pool and the cost gate.** This answers "does same-family detection hold as the pool grows?", which is the scaling plot. Also report bytes and seconds per model by size stratum, including the cost of checking a new 8B and a new 70B model. | A prepares a launch card; the overseer launches | Launch card by Nov 21; run finished and analyzed by Dec 10; false matches per query at each pool size; cost table | Dec 10 | tested descriptive reuse: source-present family119/134, removed112/134; A evidence join complete. Collection/capacity parked; broad 5k/confirmatory scaling target still unmet |
-| **K9** | **Parent ordering, done realistically.** Weights narrow the family and the closest candidates. Hub metadata (upload time, declared base, author, tokenizer and chat template) orders them. Test two order signals for ordinary fine-tunes: Witness Overlap's witness method, and the spectral-drift cue on full-read spectra (`CLAIMS.md`, C2 last row). Exploratory until Dec 4. Claim only what this shows. | B | Parent-ranking accuracy on the lab and on verified Hub truth, with and without metadata | Dec 5 | tested exploratory: witness SFT0/8, DPO8/8 on fixed exposed panel; alternate correlated contrast deferred; no general order claim |
+| **K7** | **Documented real-model set (D8).** First batch: ≥5 vendor quantized/FP8 releases with originals in readable formats,10–20 small-base merges with recipe files, official OLMo/Tulu stages and2–4 directional ablations with public tool/base/settings. Published construction counts; missing private records do not block. Declared-only cases are separate. Deliver cases to A/B as available. | C selects/records; A measures; B tests; C compares | Pinned model/source records, documented-versus-declared classification, readable-format coverage; real edit/source and applicable-method results with caveats. | first batch Nov 14; complete Dec 5 | open under D8: reclassify/admit from published construction; previous private-record rejection is superseded, old measurements preserved |
+| **K8** | **Same-architecture scaling (D9).** Count matches for Qwen2.5-0.5B, Qwen3-0.6B, SmolLM2-360M and OLMo-2-1B; select the two largest readable pools, capped near 2,000 each. Query lab plus D8 cases at 10/100/1,000/all with fixed subsamples. Record false-family/source answers, actual comparability, exclusions and cost; measured-versus-declared counts remain descriptive. | A prepares L1; overseer launches; B reviews analysis | Executable pinned owner command, new scope cost/space and stop/resume checks; post-run scaling curves at largest reached pools with label/unknown coverage. | L1 Nov 12; analysis Dec 10 | open redesign authorized; no new pool collected yet. Old mixed5k roster/space gate are superseded, not prerequisites |
+| **K9** | **Model order and witness setup.** C audits the8 SFT failures and exact witness ancestry/scoring by Nov 11; use a valid separate sibling branch and predeclare changed tests. Stored old triples already use sibling SFTs, so do not assume a DPO-descendant error. B keeps metadata/spectral work and the broader order evaluation. | C witness audit/retest; B broader order | Verified setup, predeclared pass rule and corrected result or documented limitation/redesign; order results remain separate from source retrieval. | witness check Nov 11; broader results Dec 5 | open approved check; old SFT0/8 and DPO8/8 remain historical until new evidence |
 | **K10** | **Verify scores by weight hash, not only by commit.** A leaderboard score applies to our pinned revision when the weight files' hashes match at both commits. New commits rarely change weights. | A | Verified score joins re-counted (was 24/150) | Nov 21 | tested: 144/150 weight-hash joins verified; six lack evaluation revision |
 | **K11** | **Heritability: parked.** Card D3: no paper target, and no workshop papers. If it is ever resumed, the rule fix stands: the benchmark's fixed question count is the sampling size, and the leaderboard commit is the identity for score-only analysis. | — | — | — | dropped (parked) |
 | **K12** | **P1 pre-registration.** One file lists the headline evaluations, metrics, splits, thresholds and baselines, frozen before the final runs. **Two separate sections: approved verified conclusions, and open questions with prospective test rules (D6).** Open questions are not established claims; later conclusions require explicit overseer approval after verification. It replaces the many small freezes. | B, with the steward | File frozen and its hash recorded in `RESULTS.md` | Dec 4 | open: D6 approved; prepare separate approved-conclusion and open-question sections, with tests fixed before final data inspection |
@@ -102,13 +77,13 @@ serve the corrected claims in `DIRECTION.md` section 6.
 
 | Date | Checkpoint | Card |
 | --- | --- | --- |
-| **Nov 14** | K3 and K4 results. Merge and tree claims are decided by Dec 5 (`DIRECTION.md` section 7). | gate card if any claim changes |
-| **Nov 21** | First baselines (K2); edge typing (K5); real independents (K6); score joins (K10); 5k launch card ready (K8) | L1 (5k pool launch) |
+| **Nov 11–14** | Nov 11 witness setup check; Nov 12 Heretic results and same-architecture L1; Nov 14 first documented real cases and shared evidence review. | L1; scientific cards only for actual unresolved decisions |
+| **Nov 21** | First baselines (K2); edge typing (K5); real independents (K6); score joins (K10); same-architecture launch preparation checked (K8, due Nov 12) | L1 (same-architecture pools) |
 | **Nov 25** | **Solidify gate:** each claim in `CLAIMS.md` is solidified only if verified, reworded, dropped or kept open for missing evidence, using the cheap tests (K3–K6, K14), the literature check and the skeptic (D6). Until then `DIRECTION.md` is the working direction, not a commitment. | G-card (solidify) |
 | **Dec 4** | **Revised G0.** Cost gate on the pilot; same-family false positives against real independents; edge typing; merges; first baselines; pre-registration frozen | G1 (revised G0) |
-| **Dec 10** | 5k pool analyzed (K8); verified Hub truth (K7, Dec 5); all four baselines (Dec 5) | — |
+| **Dec 10** | Two same-architecture pools analyzed at largest sizes reached (K8); documented real cases (K7, Dec 5); all four baselines (Dec 5) | — |
 | **Dec 12** | **Method check (claim C2):** typed-edge direction coverage ≥50% at ≥95% precision, and parent false matches ≤0.05 per query on the edits where the method answers (abstentions reported), on the lab; the exact-mark tests also hold on the real Hub examples from K7 | G-card |
-| **Dec 18** | **P1 go/no-go:** ICML (around Jan 22 abstract, Jan 28 paper) or COLM (around late March). Criteria in `DIRECTION.md` section 7, including the scale check (pool ≥5,000 and ≥200 labeled queries) before any freeze. | G2 (P1 venue) |
+| **Dec 18** | **P1 go/no-go:** ICML (around Jan 22 abstract, Jan 28 paper) or COLM (around late March). Criteria in `DIRECTION.md` section 7, with the D9 scaling curves at largest reached same-architecture pools and documented query coverage. The old mixed5k-count condition is superseded; report the existing ≥200 labeled-query target explicitly and flag any shortfall for the gate decision. | G2 (P1 venue) |
 | Jan 4–8 | Results frozen (if ICML) | — |
 | Jan 15 | Final ICML abstract go/no-go | G-card |
 | Feb–Mar | **Zoo v1 public (K15):** pip install and a `check` command (family, license chain, declared-base verdict, near-duplicates, "was refusal removed?") for safetensors and GGUF; a Hub duplicates report; a `diff` gallery. The lab benchmark goes public only after the P1 submission (January if ICML, late March if COLM). Each release is a decision card. | decision cards |
@@ -148,7 +123,7 @@ The steward adds them to this index.
 | S9 label audit | later, after the P1 decision |
 | R2, R5, R6 pilot manifests, calibration, smoke build | R2 and R6 done; calibration folds into the revised G0 |
 | G0, G0-a, G0-b | revised G0 on Dec 4 (G1 card); the method freeze becomes K12 |
-| H1 5k pool | K8 |
+| H1 old5k pool | K8, redesigned as D9 same-architecture pools |
 | H2 byte curves | part of K8 |
 | P-1218 pivot check | Dec 18 gate (G2 card) |
 | F1–F4 freeze and submit | unchanged, if Dec 18 says ICML |

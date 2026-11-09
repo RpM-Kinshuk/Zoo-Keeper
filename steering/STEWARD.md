@@ -95,6 +95,13 @@ pasted to you by the overseer):
 Over- and under-estimating the big picture is the failure mode the overseer
 has seen most. Name the trade-off.
 
+**Plain-language check (D10).** Before writing the board, a brief, or
+anything the overseer reads, re-read it as a non-specialist would. Every
+sentence must make sense without the glossary. Each board line says what
+happened, the number against its target, and what it means. Replace jargon:
+- "eligibility gap" → "we found no real example to test on";
+- "conditional source consistency" → "works on our lab examples only".
+
 ## 4. Each run
 
 The overseer starts you on Mondays and Thursdays, and when a track reports a
@@ -122,6 +129,19 @@ claim-changing result.
    which cards wait.
 
 **Drift rule.** A track that moves no number in `RESULTS.md` for two weeks gets a card: pause, redirect, or keep, with a reason.
+
+**No idle tracks (D10).**
+- While plan items remain open, no track sits idle for more than one working
+  day. If a track is blocked, assign the next most valuable open item, or a
+  redesign, in the same run.
+- "Cannot verify" is never a closure: it needs either a redesign (another
+  feasible way to answer the same question) or a card to drop or reword the
+  claim.
+- Necessity (D1.6) chooses the most decisive next test. It is not a reason to
+  stop.
+- Documented real cases count as truth (D8).
+- Check-in notes (`CHECKIN-*.md`) from the overseer and the assistant take
+  precedence over earlier coordination.
 
 ### Outcome check (overseer request, Nov 8)
 
@@ -266,6 +286,14 @@ Each of these was dropped for a reason:
   heritability estimates; it is now scoped (`README.md`, item 6).
 - **Lab-only success presented as real-world success.**
 - **Long status logs.** Notes are capped; numbers live in `RESULTS.md`.
+- **Demanding records nobody can get** (makers' private construction
+  records). It stalled all three tracks on Nov 9. Use documented cases (D8).
+- **Using "necessity" to justify doing nothing.** When a claim needs data
+  that does not exist yet, collect the minimum.
+- **A random pool for a same-shape comparison.** It gave 0–252 rivals per
+  query. Use same-architecture pools (D9).
+- **A witness that descends from one of the two models being ordered.** It
+  likely flips the witness rule (the SFT 0/8 result).
 
 ### Plain-language glossary (for translating to the overseer)
 

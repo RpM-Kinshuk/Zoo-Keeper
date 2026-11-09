@@ -29,33 +29,28 @@ The merged plan remains the reference for methods detail.
 - a 320-model random sample of the Hub;
 - a 166-model lab cohort: 112 formal constructed children plus bases and reference controls. Construction records apply to the built children; control provenance has separate limits.
 
-**Current evidence, updated Nov 9:**
-- The internal collector, queries and protected lab are useful assets; broad
-  practical reliability and the strongest paper claims remain unverified.
-- Existing-artifact family evaluation and A's evidence join are complete.
-  Family matches can remain after source removal; exact-mark evidence can be
-  informative where a fixed family-similarity rule misses a quantization.
-  This is not a validated combined source decision.
-- A joint mathematical-projection source rule works on four exposed cases in
-  its fixed pools under declared input/operator assumptions. Stop this pilot;
-  applicability and independent validation precede any final adoption.
-  The applicability audit now excludes neither history by inference nor adds
-  proof: neither reviewed external case is ready; lab refusal behavior was not
-  validated. Carry this as a conditional operator result, not safety-detection proof.
-- Four comparison methods have matched quantization and ancestry controls.
-  Small-root ancestry success and real-model source ambiguity must stay separate.
-- Fixed witness direction gives SFT0/8, DPO8/8; correlated witness follow-up is
-  deferred. This does not refute the method's differently sampled evaluation.
-- D7 is approved: unique-source wording requires informative distinction from
-  relatives, otherwise unresolved. No full claim or noise rule is promoted.
-- Collection and storage remain parked. The next question is what existing
-  cases can validate under defensible assumptions, not how to run the old5k.
+**Current evidence and approved next work, Nov 9:**
+- The internal tools, protected lab, quantizer tests, known-source merge fits
+  and matched comparisons are useful assets; broad real-world reliability is
+  still unverified. No new test passed merely because the check-in was approved.
+- The4 mathematical-projection cases are not refusal-behavior validation. Next
+  B tests the4 Heretic recipes by Nov 12, then searches for unknown merge sources.
+- Current adapter evidence supports family/base rather than unique immediate
+  source among siblings; readable-rank results need further discrimination.
+- Real tests no longer wait for private construction logs: D8 accepts published
+  vendor methods, merge recipes, official stages and recorded public-tool settings.
+  Missing marks count as measured limits under the documented recipe.
+- D9 replaces the random mixed roster with two same-architecture pools. A's
+  owner launch card is due Nov 12; measurements report the largest sizes reached.
+- C audits the SFT0/8 witness result by Nov 11. Saved triples already used sibling
+  SFTs, so a DPO-descendant error is an unconfirmed explanation, not a known fact.
+  A changed test needs a prospective rule; unchanged repeats answer nothing new.
+- D10: when blocked, redesign or advance another valuable open task within one
+  working day. Scientific necessity selects the next test; it does not stop research.
 
-**Execution emphasis:** scientific necessity (DIRECTIVES.md D1.6) governs
-more work. Use the completed comparisons, state limitations and stop resolved
-pilots. No round-count collection, new framework or repeated witness/control
-sweep. Current priorities are in the briefs and tracks/SHARED.md; targets and
-verification standards remain unchanged.
+Current briefs and CHECKIN-2026-11-09.md set execution. Public construction records
+count as documented truth (D8); unrelated declarations alone remain descriptive.
+Do not require private maker contact or leave open claims without a test/redesign.
 
 **The correction.** Claim what weights can actually show, and test it
 properly:
@@ -224,10 +219,10 @@ own, and robustness to disguise.
 
 | ID | Claim | Real-world use | Tested by |
 | --- | --- | --- | --- |
-| **C1** | From a small part of the weights, a model's base family is identified reliably. False-positive rates are measured against independently trained models of the same architecture (the hardest real look-alikes), at the largest pool reached (target 5,000), alongside every priority published method. | Compliance, licensing, de-duplication | K2, K6, K8 |
-| **C2** | Some edits make the parent, and sometimes the order, provable from weights. Each has its own test: <br>• quantized children sit on a value grid (parent and order); <br>• refusal removal leaves one removed direction shared across layers (parent and order); <br>• a merge is a mix of its parents and base (parents and order); <br>• adapters leave a low-rank difference (parent, but not order). <br>For ordinary fine-tunes, weights give the family and the closest candidates. Order is tested with a witness model (Witness Overlap) and a spectral cue; otherwise the method abstains and Hub metadata supplies the order (corrected). | "What was done to this model?"; refusal-removal checks; quantized-copy detection; merge-config verification | K3, K5, K9 (pass rules in `CLAIMS.md`) |
+| **C1** | From a small part of the weights, a model's base family is identified reliably. False-positive rates are measured against independently trained models of the same architecture (the hardest real look-alikes), at the largest pool reached (two same-architecture pools; target largest sizes reached, capped near 2,000 each (D9)), alongside every priority published method. | Compliance, licensing, de-duplication | K2, K6, K8 |
+| **C2** | Some edits make the parent, and sometimes the order, provable from weights. Each has its own test: <br>• quantized children sit on a value grid (parent and order); <br>• directional ablation leaves shared or recipe-specific low-rank changes, tested on Heretic and documented real cases; <br>• a merge is a mix of its parents and base (parents and order); <br>• adapters support family/base; immediate source among siblings needs readable rank and further distinguishing evidence, with no order claim. <br>For ordinary fine-tunes, weights give the family and the closest candidates. Order is tested with a witness model (Witness Overlap) and a spectral cue; otherwise the method abstains and Hub metadata supplies the order (corrected). | "What was done to this model?"; refusal-removal checks; quantized-copy detection; merge-config verification | K3, K5, K9 (pass rules in `CLAIMS.md`) |
 | **C3** | Parent decisions are calibrated against close relatives (siblings, grandparents, quantized variants), with coverage reported at the pool size reached. There are no guarantees beyond what the calibration set supports. | Trustworthy "consistent or not" verdicts | K5, K12 |
-| **C4** | The lab, plus a verified Hub tier at 7B and above, is released as a lineage benchmark with a scorer, with all priority methods measured on it. | Shared yardstick for the field | K2, K7 |
+| **C4** | The lab, plus a documented real-model tier (D8), including models beyond the small lab, is released as a lineage benchmark with a scorer, with all priority methods measured on it. | Shared yardstick for the field | K2, K7 |
 | **C5** | The Hub measured against what it declares: duplicates, quantized copies, tensor sharing, declared-base consistency and revision drift, with prevalence estimated from the random sample. | Hubs, publishers, researchers | zoo v1 and P3 |
 
 C2 becomes P1's headline only if it holds on real Hub examples as well as on
@@ -283,13 +278,13 @@ are reported as misses.
 | Dec 12 | Method: typed-edge direction coverage ≥50% at ≥95% precision, and immediate-parent false matches ≤0.05 per query on the edits where the method answers (the original target, with abstentions reported), on the lab; the exact-mark tests also hold on real Hub examples (refusal-removed and quantized models with known parents, from K7). Lab-only success does not make the headline: marks may blur on real models, for example refusal removal followed by more fine-tuning. | Drop the method framing for ICML. P1 becomes an empirical study plus benchmark (ICML), or moves to COLM. |
 | Nov 21 | Disguise check (K14): does the fingerprint survive the 8 existing disguises and one exact neuron reordering? | It is a limitation either way. Report it. Compliance is where disguise matters most. |
 | Dec 18 | At least 2 priority baselines run on the lab and the Hub tier | No ICML; target COLM |
-| Dec 18 | Pool of at least 5,000 and at least 200 labeled queries (checked before the January freeze) | Remove "scale" from the title and claims |
+| Dec 18 | D9 same-architecture scaling at largest reached pools, with labeled-query coverage and the existing200-query target explicitly assessed before the January freeze | Remove "scale" from the title and claims |
 | Jan 15 | Final go or no-go on the ICML abstract | COLM |
 
 ## 8. Risks
 
 1. **Losing the lab data.** It is in `/tmp` today. Card D1.
-2. **No baselines means no paper.** Card D3 and K2.
+2. **Real-model comparisons and source-search results are still required for the paper.** Card D3 and K2.
 3. **Overlap with new work:** provenance sets on pool size; the modelDNA
    Atlas; "Training Leaves Traces"; Cisco's provenance kit for the `check`
    product. Track C verifies before we claim.

@@ -22,46 +22,39 @@ tests; their inclusion does not verify or solidify them.
 - **solid:** verified and explicitly approved for the paper claim list;
 - **dropped:** with the reason.
 
-## Steward review (2026-11-09)
+## Current review: approved Nov 9 corrections
 
-D5/D6/D7 are approved (DECISIONS.md). Prior-work comparisons are corrected;
-prospective questions remain separate from approved conclusions; source
-compatibility requires informative support and a unique immediate source
-requires distinguishing relatives within the stated pool. Otherwise unresolved.
+CHECKIN-2026-11-09.md and D8–D10 supersede earlier coordination.
+- D8 accepts maker-published construction as documented real-model truth:
+  vendor compression methods, published merge recipes, official training stages,
+  and ablations with public tool/base/settings. Unknown private execution details
+  are caveats, not reasons to refuse testing. Declared-only relations stay separate.
+  Record new evaluation manifests; preserve all earlier frozen reports/labels.
+- C1 scaling now uses two same-architecture pools (D9), not a mixed5k roster.
+  A prepares L1 by Nov 12; owner launches. Report the actual largest pools reached,
+  labels and unknowns; do not infer independence from different model-card names.
+- B tests the4 Heretic constructions by Nov 12 with each recipe's permitted rank
+  and controls, then searches candidate pools for merge sources by Nov 21. Known-
+  source coefficient fits remain a separate successful result.
+- C checks the8 SFT order reversals by Nov 11. The proposed descendant-witness
+  explanation is unconfirmed: the saved protocol and scored SFT rows already
+  name opposite-seed SFT siblings. Audit ancestry/scoring before a changed test;
+  no repeat of identical triples disguised as a correction. Report the actual
+  limitation or a justified redesign if the explanation fails.
+- Directional ablation names the weight edit, not proven refusal behavior. The
+  old4 sentiment-projection cases remain limited evidence; Heretic and D8 real
+  tests are required before a practical claim. Adapters support family/base, not
+  immediate source among siblings without further distinguishing evidence.
+- D10 requires active work or redesign, not indefinite waiting for private logs.
 
-New results make those distinctions concrete:
-- B's saved family evaluation answers 119/134 source-present and 112/134
-  source-removed cases usefully, with no known-wrong family hits. This does
-  not evaluate general immediate-source decisions or new unseen roots.
-- A joins existing exact-mark success to 9/15 family misses in the original
-  quantizer pools; this is evidence coverage, not a validated combined rule.
-- The joint classic-source development pilot answers four present cases
-  correctly and abstains in all four removed cases under each declared input
-  model. Those are the same four exposed cases; the operator/export assumptions
-  and construction-aware panel prevent general or real-model claims. No final
-  rule is adopted; stop this pilot and assess applicability/independent controls.
-- Four methods discriminate ancestry on the small fixed control panel; source
-  ambiguity persists in the matched relative/real neighborhoods. Perfect
-  AUROC on two exposed roots per partition is not a future error guarantee.
-- Witness direction remains SFT0/8, DPO8/8 on correlated witnesses; the optional
-  correlated contrast is deferred. Heretic FULL/rank3 recipe expectations are
-  conditional, not observed rank or a new decision allowance.
-
-The applicability audit is now complete: neither of the two reviewed external
-projection candidates qualifies for the unchanged joint rule. The lab positives
-were sentiment-conditioned mathematical projections, with no refusal/capability
-behavior validation. That is conditional operator/source-consistency evidence,
-not a validated refusal-removal detector. Unknown historical construction and
-extra declared target edits remain explicit; lack of eligibility is not a scored
-failure. A within-family transfer test and a broad ancestry false-positive test
-must not be given identical control prerequisites. Current claims/tests remain
-unchanged; only the unadopted validation proposal is clarified.
-
-Closed quantization/replay and known-source merge-coefficient results stay in
-scope. The broader edit methods, independent real-model control tier and large
-scaling claim remain unfinished. C1–C5 stay checked; C6 stays a later hypothesis.
-No full claim is promoted by this review. RESULTS.md keeps the current outcome
-ledger; protocols, failed/incomplete versions and reviews remain in raw runs.
+Prior results remain:12/12 exact-quantizer sources in their original pools,
+18/18 known-source merge coefficients, and current family/benchmark findings.
+On the matched quantization source-ranking panel, the best of four published
+comparators places the true source first 7/12 versus our12/12 exact-replay source
+answers. This is a lab task result, not broad precision or every method's native
+claim. No new Heretic, corrected-witness, real-mark or scaling result is yet recorded.
+C1–C5 remain checked; C6 remains a later hypothesis. D6/D7 still protect against
+unverified conclusions and source claims that do not distinguish relatives.
 
 ## Literature check (Nov 7, documentary follow-up Nov 8)
 
@@ -104,7 +97,7 @@ size, with measured false positives.
   - Pass: no false "same family" at the chosen threshold.
   - Fail: any false positive the threshold cannot remove without losing more
     than 5% of true pairs.
-- **K8:** false matches per query at pool sizes 10² to 5×10³.
+- **K8/D9:** false family/source answers per query at 10,100,1,000/all in two same-architecture pools, capped near 2,000 per base; fixed subsamples and actual reached sizes reported.
 - **Baselines (K2):** Trace, Spectral Signatures, modelDNA, and "Training
   Leaves Traces", on the same pairs.
 
@@ -115,7 +108,7 @@ size, with measured false positives.
 Each edit type is its own hypothesis. Lab results count only together with
 real Hub examples (K7).
 
-**D7 approved (Nov9):** an edit mark supports source compatibility only when
+**D7 approved (Nov 9):** an edit mark supports source compatibility only when
 its evidence is informative. A unique immediate source requires tests that
 distinguish relatives within the stated candidate pool; otherwise the source
 is unresolved. Neither a shared mark nor an inconclusive test proves a source.
@@ -125,10 +118,10 @@ original scope. Existing pass/fail rules below are unchanged; no claim is promot
 | Edit                                       | Exact mark (theory)                                                                                                                                                                                                                                                                         | Parent?                            | Order?                                                                                 | Where it breaks                                                                                                                                                                                                                        | Cheap test (pass rule written first)                                                                                                                                     |
 | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Quantization** (quantize, then store)    | Within each quantization block, the child has at most 2^bits distinct values (16 for 4-bit). This survives bf16 storage, because each grid level maps to one stored value. Re-quantizing the true parent reproduces the child.                                                              | informative replay supports a candidate; unique only when relatives are distinguished in the stated pool | yes: the child is the one on the grid                                                  | **Native low-precision releases:** if the original was released in FP8, its bf16 copies are the children and also sit on the grid, so the order needs metadata. Quantize-then-fine-tune (QLoRA merged) erases the grid.                | 12 lab quantizations against 30 unquantized models. Pass: 12/12 detected, 0 false; re-quantizing the parent matches.                                                     |
-| **Refusal removal** (classic)              | The writer matrices lose one direction r (rᵀW′ ≈ 0, shared across layers). With the parent: a rank-1 change with the same left direction in every layer. Without the parent: an almost-zero smallest singular value in **wide** writer matrices (down-projections), which needs full reads. | informative removal evidence may support a candidate; unique source unresolved without relative discrimination | yes: the child has the missing direction                                               | **Heretic** varies strength, and possibly direction, by layer, so use a per-matrix rank-1 test. Further fine-tuning after removal blurs the mark. Square matrices give a weak signal. Partial reads cannot test it without the parent. | 8 lab removals (4 classic, 4 Heretic) and their parents, against 30 unremoved models. Pass: 8/8 with the parent; at least 6/8 without the parent on full reads; 0 false. |
+| **Directional ablation** (weight-edit operator) | Classic removes a shared direction; Heretic can apply recipe-specific low-rank changes separately per edited matrix. A weight signature does not establish refusal behavior. | informative edit evidence may support a source; unique source requires distinguishing relatives (D7) | test where operator evidence supports order; do not infer it from low rank alone | Noise, export and later edits can blur marks. Use the actual recorded recipe rank; do not force FULL/rank3 Heretic into rank1. | By Nov 12 score all 4 Heretic models under a prewritten recipe-rank/noise rule; SFT/DPO/adapter/unedited controls must not be flagged. Report four classic sentiment projections separately; then apply tests to D8 cases. |
 | **Merge**, linear or SLERP                 | Child minus base is a mix of each parent minus base (SLERP adds a small base term)                                                                                                                                                                                                          | informative coefficient fit supports candidate sources; unique sources require relative discrimination | yes, **only if** merge weights are non-negative: an affine relation alone is symmetric | Parents that are near-duplicates are not identifiable; report them as a group.                                                                                                                                                         | K3 refit on deltas. Pass: coefficient error ≤0.05 on most linear and SLERP merges (no more than 4 misses).                                                               |
 | **Merge**, TIES or DARE                    | Trimming or dropping leaves many entries **bit-identical to the base** in a random-looking pattern, an extra exact mark                                                                                                                                                                     | informative edit evidence may support candidate sources; unique sources require relative discrimination | yes                                                                                    | Small merges may have few trimmed entries                                                                                                                                                                                              | Pass: all TIES and DARE merges flagged by the identical-to-base share, with 0 false flags among the SFT and LoRA models                                                  |
-| **Adapter** (LoRA merged into the weights) | Tensors the adapter did not touch are **bit-identical to the parent**. Touched tensors change at low rank, but only above the bf16 noise floor.                                                                                                                                             | informative adapter evidence may support a candidate; shared untouched tensors alone do not identify the source | **no:** a low-rank difference looks the same in both directions                        | Small LoRA updates fall below the floor and the rank test abstains. Report each LoRA's update size first.                                                                                                                              | 24 lab LoRAs. Pass: parent found by identical tensors 24/24; rank within ±25% of the configured rank wherever above the floor.                                           |
+| **Adapter** (LoRA merged into the weights) | Tensors the adapter did not touch are **bit-identical to the parent**. Touched tensors change at low rank, but only above the bf16 noise floor.                                                                                                                                             | family/base support; not immediate source among sibling adapters unless readable rank and other evidence distinguish candidates | **no:** a low-rank difference looks the same in both directions                        | Small LoRA updates fall below the floor and the rank test abstains. Report each LoRA's update size first.                                                                                                                              | Report family/base support, sibling ambiguity and readable-rank coverage for 24 lab adapters. Where above rounding noise, retain configured-rank accuracy target ±25%; unchanged tensors alone are not a24/24 unique-source pass rule (approved check-in). |
 | **Ordinary fine-tune** (SFT, DPO)          | No exact mark. Two candidate signals for order: (a) the witness geometry (Witness Overlap); (b) a hypothesis from our own spectral work, that heavy-tail statistics shift in one direction with training. Spectral numbers need full reads (lab has them).                                  | family and closest candidates only | possibly, with a witness or spectral signal; otherwise from Hub upload time            | No witness in the pool; tiny updates (DPO); spectral drift may be too weak                                                                                                                                                             | 16 lab SFT/DPO edges. Report witness-method and spectral-cue order accuracy. No pass rule yet: this is exploratory until Dec 4.                                          |
 
 **Status:** checked overall. Quantization and known-source linear/SLERP tests have passed in the lab; the remaining edit tests and real-model checks are open. Each hypothesis moves separately; no parent/order guarantee follows from these subtests.
@@ -171,8 +164,8 @@ a separate comparison; size alone is not a novelty claim (D5).
 
 **Literature:** LineageBench has 15 suspect models; Witness Overlap evaluates
 176 checkpoints; MPS collects 455 models labeled from declared bases. Ours has
-a 166-entry cohort including 112 formal constructed children and bases/reference
-controls; the verified Hub tier is still being built (K7).
+a 166-entry cohort including112 formal constructed children and bases/reference
+controls; the documented real-model tier is being built under D8 (K7).
 Exact construction records and coverage of edit types need direct comparison.
 
 **Test:** at least 4 published methods run on it (K2), with the scorer

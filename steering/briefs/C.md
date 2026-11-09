@@ -1,15 +1,17 @@
-# Brief: track C (2026-11-09, reality check closed)
-## Do next:
-1. Close the completed reality check. For Nov14 retain declared family context, unknown historical input/operator records, unsupported transfer and absent independent-control evidence as distinct findings.
-2. With B, separate transfer falsification from ancestry error testing: relatives plus verified in-scope source/output are needed for the former; unrelated-model controls address the latter. Do not block one question on all prerequisites of the other.
-3. Reopen metadata qualification only for a specific available record or a bounded request whose answer could change the verdict. No global search, new writer probes, witness run or collection is assigned now.
-## Decisions that affect you:
-- Neither reviewed Qwen projection candidate is ready under the unchanged joint rule. Unknown shared span is not proved different; extra embedding/head edits cannot be silently omitted.
-- Existing Qwen/Tulu comparisons remain useful descriptive evidence; they cannot certify construction history. Current linked code is not historical execution proof.
-## Corrections:
-- Do not turn a need for exact source records into an indefinite task or an invitation to contact producers. External contact requires the overseer's explicit instruction.
-- Missing unrelated real-model controls limits ancestry/error claims; it is not itself a prerequisite for a single within-family transfer falsification. No case is made eligible by this clarification alone.
-## Answers to your questions.
-- Audit stopping condition is met. Preserve all source hashes; use the completed comparison/benchmark evidence for Nov14, not another duplicate report.
-## Watch out for:
-- Four idle GPUs project-wide remain available only for useful justified work, initial A0/B2/C2. No current allocation; truth/splits/thresholds/claims and dates stay unchanged.
+# Brief: track C (2026-11-09, approved check-in applied)
+## Do next
+1. K9, by Nov 11: audit the exact saved SFT triples, witness ancestry and scoring, then predeclare a genuinely changed test if needed. Stored Nov 8 rows already use opposite-seed SFT siblings, so the proposed DPO-descendant explanation is unconfirmed; do not replay identical triples as a correction.
+2. Use a separate sibling branch, excluding the queried child's descendants; state its relation to both endpoints explicitly. A sibling shares the base, so do not require impossible absence of base ancestry. Report the8-SFT order result or a feasible redesign/claim-limit card; no favorable-witness search.
+3. K7/D8, first batch Nov 14: ≥5 vendor quantized/FP8 releases with originals in readable formats;10–20 small-base merges with recipe files; official OLMo/Tulu stages;2–4 ablations with recorded tool/base/settings. Verify exact names and published sources; hand available cases to A/B incrementally.
+4. Run applicable published methods on the same cases/splits; retain Dec 1–5 completion targets. If the order audit is blocked, proceed on D8 cases in the same session.
+## Decisions that affect you
+- D8: maker-published construction counts as documented truth; unknown execution details are caveats. Declared-only relations stay descriptive and never block other cases. No maker contact.
+- D10: no track idle beyond one working day. New witness audit is authorized; the old failure and its exposure stay recorded.
+## Corrections
+- Do not demand private input/export logs or unrelated-model initialization proof to admit a documented case. Existing raw reports remain unchanged; record the new D8 evaluation separately.
+- Do not claim the witness setup cause is known: protocol and scored SFT rows show siblings. Confirm the facts before changing the experiment.
+## Answers to your questions
+- Reuse current sources and readable stages; count unsafe/unsupported formats as gaps and keep moving. A handles measurement; B handles edit/source tests; C owns records and comparisons.
+## Watch out for
+- Predeclare pass/fail/noise rules; a method not run is not zero accuracy. No silent crop, truth/split change or outcome-based selection.
+- Four idle GPUs project-wide, default A0/B2/C2 with handoffs; agent limits ≤100 weight models AND ≤2 hours. Use existing acceleration where useful.

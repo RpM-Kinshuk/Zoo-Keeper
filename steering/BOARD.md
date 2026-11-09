@@ -1,33 +1,35 @@
 # Board
-Reviewed 2026-11-09. Mission: useful model-origin checks and honest research.
+Updated 2026-11-09 after applying the approved check-in (D8–D10).
+Mission: useful checks of model origins, with honest evidence about their limits.
 
-## Current conclusion
-**The applicability check is complete, and neither reviewed external projection case qualifies.** This is an eligibility limit, not a detector failure. The successful lab result is conditional mathematical source consistency; refusal/capability behavior was not validated.
+## What works, and what it means
+- **Lab saved:** 139/139 checkpoints verified remotely against the full inventory target. The benchmark evidence is protected.
+- **Quantized lab copies:** 12/12 source answers correct, meeting the all 12 target;0/30 normal-model false flags. On the same 12 queries, the best source ranking among four published comparators is7/12. This is a narrow lab advantage, not general source precision.
+- **Known-source merge fits:** 18/18 within 0.05 coefficient error, with0 misses versus at most4 allowed. Finding unknown merge sources is still untested.
+- **Family checks:**119/134 useful source-present family answers,15 abstentions and0 known-wrong family hits in the saved catalog. Thirty trained BERT look-alikes give0/435 observed false matches; broader model accuracy remains unverified.
 
-| Track | Completed | Next |
+## Tests that now move the project forward
+| Track | Next result | Due |
 | --- | --- | --- |
-| A | Family evaluation and exact-evidence summary reused without new measurements | Carry evidence/limits into Nov14; no current collection or resource job |
-| B | Conditional four-case source pilot and applicability account | Clarify the proposed transfer design; keep operator/export assumptions and stop the pilot |
-| C | Published comparisons and source-history/control reality audit | Retain descriptive real-model evidence; reopen only for specific available, decision-changing records |
+| A | Count matching public models for 4 lab designs, select the two largest readable pools, prepare one owner launch command with measured resource budget; measure C's documented cases as they arrive | L1 Nov 12 |
+| B | Score all 4 Heretic edits against normal-training/adapter/unedited controls, then search for unknown merge sources and test documented real cases | Heretic Nov 12; merge search Nov 21 |
+| C | Check the eight reversed SFT order results; deliver published-recipe real cases and run matched comparisons | Order audit Nov 11; first real batch Nov 14 |
 
-## What this means for the research
-Family support, exact-source identification and order remain different questions. Empirical/benchmark evidence is usable in its scope; a broad source-recovery or safety-detection claim remains unsupported. No venue or paper pivot is decided now.
-A narrow within-family transfer test needs verified in-scope source/output and hard relatives. Unrelated-model controls address separate ancestry error rates. Do not demand every ancestry-test prerequisite for the narrower question; unknown operator/history still makes both reviewed cases ineligible.
-No indefinite producer-record hunt, unapproved contact, new pilot or weight collection is assigned. Reopen qualification only for a specific available record or a bounded request whose answer changes a decision.
+Published vendor methods, merge recipes, official training stages and public-tool settings count as documented truth. Missing private maker records are caveats; they no longer block testing. A missing mark under a documented recipe is a result to report.
+The previous4 projection examples did not validate refusal behavior. Realistic Heretic and real-model tests are pending, not newly passed. Existing real-model comparison scores are recorded; our exact marks on the new documented tier still need testing.
 
-## Decisions, dates and resources
-No new owner decision or launch waits; D1–D7 are settled in DECISIONS.md. Collection/storage remain parked. Four idle GPUs are the shared ceiling, not a usage target; no reservation.
-Nov14: empirical evidence and practical-limit review. Existing Nov21/Dec1–5 targets and Nov25/Dec4/12/18 gates remain; independent confirmation and historical input evidence are the main risks.
+## One factual check for C
+Saved SFT protocol/results already use sibling SFT witnesses, not DPO descendants. The proposed explanation for 0/8 is unconfirmed. C will audit the setup by Nov 11 and predeclare a changed test if needed; repeating identical triples is not a correction.
 
-## Coordination
-Current briefs and tracks/SHARED.md replace handoff chains. Applicability audits, witness panels and closed tests must not be restarted by stale prompts. Source reports/protocols remain; prior coordination history is recoverable from the revision in DECISIONS.md.
+## Waiting for you and risks
+D8–D10 are approved; no further decision is requested now. A prepares L1 by Nov 12; you launch only when its inputs, command, costs and safeguards are ready.
+Main risks: real cases may blur the marks; few public same-shape models may limit scale; source answers may remain ambiguous among relatives. Report misses/unknowns and redesign when needed. No track waits idle beyond one working day while useful plan items remain.
+Four idle GPUs remain the shared ceiling (initial A0/B2/C2, borrowing by handoff). Agent runs must be both ≤100 weight models and ≤2 hours; larger runs are yours to launch.
 
-## Since the last check-in (with the assistant): started 2026-11-07
-- Assistant established steering; you approved D1–D4. Steward shortened briefs, removed stale blockers and continued useful work during storage setup; no direction/date change.
-- Weekly arithmetic check matched; archive, narrow merge refit, score-link audit and first adapted comparisons were reconciled. Broad claims stayed unverified.
-- You approved D5 research corrections and plain contextual updates; construction-record novelty remains open.
-- Holistic review aligned practical comparative outcomes; you approved D6 to separate open tests from verified claims without date changes.
-- You authorized four idle GPUs project-wide, initially A=0/B=2/C=2 with handoffs; large-run limits remain.
-- Scientific necessity is now explicit in the directives: existing-data-first evaluation, collection/storage deferred, concrete development proposals authorized. New negative findings and matched comparisons prompted D7; the overseer approved option A on Nov9.
-- Nov9: fresh arithmetic check matched B's four-case development result; no claim promotion. Steward closed repeated tasks, aligned applicability/validation work and cleaned superseded documentation under the overseer's instruction.
-- Applicability/reality audit completed: no eligible reviewed external case; lab result is mathematical projection/source consistency, not behavior validation. Steward closed record hunts and separated proposed transfer/ancestry control requirements; no rule or date changed.
+## Dates
+Nov 14 shared results review; Nov 25 claim decisions; Dec 4 evaluation-plan freeze; Dec 12 method check including real cases; Dec 18 paper/venue decision. These dates remain.
+
+## Since the last check-in: started 2026-11-09
+- You approved D8 documented real cases, D9 same-architecture pools and D10 plain language/active-track rules. Prior check-in history is in Git revision3acda52.
+- Steward replaced contradictory stop/park instructions, refreshed all briefs and kickoff prompts, and aligned the claim/test descriptions. No new experiment result or full claim promotion.
+- Fresh source check and skeptic confirmed the old SFT witness records already name siblings; C's audit remains active with that qualification.
