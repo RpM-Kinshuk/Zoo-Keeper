@@ -1,23 +1,14 @@
-# Draft: Provide persistent space for the larger family-search test
-Status: draft, class 3 | Ask: choose persistent capacity or defer the large run
-Due: before L1 becomes ready | If no answer: keep L1 blocked; retain existing data
+# Draft: Storage assessment for a future justified collection
+Status: draft PARKED, class3 | No capacity decision requested now
 
-Recommendation: provide at least 52.98 GB free at the existing data root before launch (confidence: medium).
-Why: the selected pool's fingerprints are estimated at 19.70 GB, with a conservative planning reserve of 40.66 GB. Including the proposed margin requires 52.98 GB free; the recorded filesystem has 26.25 GB, a shortfall of 26.72 GB. These are estimates and current availability, not a reservation or quota guarantee.
+Owner correction: first choose the useful question, evaluate existing fingerprints, and size the minimum justified additional collection. **Storage is assessed after that.** Scientific review and existing-artifact evaluation do not need more space.
 
-Big-picture effect:
-- Real-world use: enables the larger candidate search and useful-error/cost evaluation.
-- Claims: no change; header eligibility and a mixed pool do not establish accuracy or independent hard negatives.
-- Papers and dates: existing targets unchanged; storage and B's scientific review block launch readiness.
-- Simplicity: use the existing collector and data root; no new storage or archive framework.
-- Cost: capacity price is unknown; no purchase is authorized. Collection plans 2.567 TB of tensor requests before retries, CPU only. Storage capacity alone does not approve the large run.
-- Safety/legal: preserve all local checkpoint copies and publication gates. No deletion, extra upload or repository publication is authorized; gated-family fingerprints stay local.
+Recommendation: park this capacity proposal while A/B evaluate existing evidence. Do not allocate, purchase, delete, relocate or upload anything to make the old5,000-model plan runnable. If no additional collection is justified, no storage action is needed.
 
-Options:
-- A: allocate persistent capacity to meet the free-space gate. Gain: unblocks the space prerequisite. Lose: capacity cost and availability must be confirmed.
-- B: defer the large run and use existing evidence for the November review. Gain: no storage action or spend. Lose: the larger-search result stays unmeasured.
+Historical scenario only: the unapproved5,000-model plan estimated19.70GB outputs/40.66GB reserve and52.98GB required free space; the last snapshot had19.44GB free. These are not the budget or gate for the next scientific step. Any later scoped collection needs a fresh size/cost/space assessment.
 
-Can it be undone? Capacity allocation depends on its terms; no data deletion or spending is delegated. The default is to defer.
-What we are unsure about: final output size, retry/runtime overhead, concurrent filesystem use and available persistent-capacity terms. /tmp free space is not a durable-storage plan.
-Second opinion (independent preparation skeptic): Agree: retain all existing data and hold the large launch until at least 52,977,254,828 bytes of persistent free space are available and B/steward scientific review is complete. This is an estimated planning gate, not a storage guarantee; recheck free space immediately before launch.
-Details for agents: [budget](../../../runs/track-a-k8-headers-20261108/budget.json), [resource rules](../../../runs/track-a-k8-headers-20261108/PREFLIGHT_RULES.md), [launch/resume draft](../../../runs/track-a-k8-launch-20261108/RESUME.md). Exact planning gate: 52,977,254,828 bytes = ceil(reserve × 1.25) + 2 GiB; recheck immediately before launch. Steward assigns the card number and decides when to bring it forward.
+Big-picture effect: protects attention and cost by establishing scientific value first; preserves honest scope, all unique data, existing publication gates and unchanged deadlines. No storage or archive framework is needed.
+
+Next: steward screens the scientific justification after existing-artifact results. Only a justified incremental collection can reactivate a capacity decision. Money/deletion/publication remain owner decisions.
+Prior independent storage opinion remains historical in the original resource/readiness evidence; it supported retaining data and withholding the old launch, not a scientific need to collect5,000.
+Details: [L1](L1-5k-pool.md), [historical budget](../../../runs/track-a-k8-headers-20261108/budget.json), [existing-input report](../../../runs/track-a-k8-readiness-20261108/REPORT.md).

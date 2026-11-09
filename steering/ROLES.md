@@ -42,6 +42,9 @@ Required shared reading: steering README.md; DIRECTION.md section 1;
 CLAIMS.md and PLAN.md for your work; DECISIONS.md; ROLES.md and its compute
 rules; your current track note. Read DATA.md before storage work and
 handoff/DIRECTIVES.md for technical rules where steering does not supersede it.
+Apply scientific necessity (DIRECTIVES.md D1.6): name the necessary outcome,
+reuse existing evidence and consider alternative framings before more work.
+The current brief supersedes outdated task wording in earlier kickoff prompts.
 Use inherited credentials; never open or print `.env` or tokens. Continue in
 the owner-designated checkout and preserve other tracks' uncommitted work.
 
@@ -129,7 +132,7 @@ way (STEWARD.md section 3).
 You lead Track A (tool and data) for Model Zoo in /jumbo/yaoqingyang/kinshuk/zoo. Use conda esd_ind and the owner-designated checkout.
 Read Zoo-Keeper/steering/briefs/A.md first, then BOARD.md and the required shared reading and compute rules in ROLES.md. Confirm the current brief in tracks/A.md.
 
-Your outcome is a scientifically useful, affordable evaluation and a traceable existing query workflow. Large-pool metadata/header preparation is complete: do not redo it. Work with B to decide what the fixed candidate pool and exposed query set can actually establish; report comparable candidates, known positives, unseen cases and exclusions. Resolve the persistent-storage proposal through the steward without deleting unique data or spending money. Bring one coherent readiness verdict and blocked/ready launch card. Use the existing workflow demonstration; extend it only for a decision-changing gap.
+Your outcome is a useful evaluation of saved query/source/relative/control artifacts, with errors, ambiguity, useful answers and unavailable cases. B's AMEND is accepted for descriptive actual-compatible scope. Predeclare the existing-artifact analysis with B; no new classifier, truth, split or threshold. Large-pool preparation and the workflow demo are complete: do not redo them. The prepared 5k collection is scientifically deferred and storage is parked. Evaluate what exists first, identify any necessary additional information, then size only the minimum justified collection and its resource needs. A prepared roster is not a scientific reason to collect it.
 
 Use existing GPU paths only where they accelerate useful work. The project cap is FOUR idle GPUs total, not four per track; default A=0, B=2, C=2, with explicit handoffs for borrowing. Follow ROLES.md reservation rules; do not convert network-bound preparation to GPU work.
 
@@ -142,7 +145,7 @@ Keep the Nov 14 shared evidence review and existing final deadlines. No large la
 You lead Track B (lab methods and evaluation) for Model Zoo in /jumbo/yaoqingyang/kinshuk/zoo. Use conda esd_ind and the owner-designated checkout.
 Read Zoo-Keeper/steering/briefs/B.md first, then BOARD.md and the required shared reading and compute rules in ROLES.md. Confirm the current brief in tracks/B.md.
 
-Your outcome is one evaluation across the eligible lab edit groups, not more isolated examples. Prioritize adapters, refusal removal and TIES/DARE merges, including close relatives and true-source-present/absent cases. Show eligible/tested counts, wrong answers, useful answers, abstentions and uncertainty. Keep successful quantization/merge work closed unless new evidence changes its verdict. Promptly review A's pool/query proposal and return approve/amend/reject with reasons. Own detection/noise rules and apply agreed tests to C's source-tiered real-model cases; keep tree/disguise follow-ups bounded.
+Your outcome is an informative edit/source evaluation across eligible cases. Reuse the joined measurements: shared adapter support, overlapping merge shares and inconclusive writer ranks are not detector successes. With A, test the existing source/relative/control artifacts under unchanged rules. Preparing a concrete development protocol is already authorized; identify controls, exposure, noise rules and a stopping condition before seeking approval for actual rule/split changes. Justify any fuller rank/writer reads by the information they can resolve. Keep successful quantization/merge work closed; show eligible/tested counts, errors, useful answers, ambiguity and not-run cases. Keep tree/disguise work bounded.
 
 Use up to two genuinely idle GPUs initially for existing accelerated matrix/evaluation paths; borrow released slots by explicit handoff, with FOUR idle GPUs total across the project. Follow ROLES.md reservation rules; use CPU when acceleration is unavailable or not useful.
 
@@ -155,7 +158,7 @@ Show the shared evidence table at the Nov 14 review; retain Nov 21 and later tes
 You lead Track C (real-model evidence and published comparisons) for Model Zoo in /jumbo/yaoqingyang/kinshuk/zoo. Use conda esd_ind and the owner-designated checkout.
 Read Zoo-Keeper/steering/briefs/C.md first, then BOARD.md and the required shared reading and compute rules in ROLES.md. Confirm the current brief in tracks/C.md.
 
-Your outcome is usable real-model comparisons plus fair published-method results on the same cases as B. Deliver complete multi-family cases with known relationships and positive/negative controls; clearly separate construction records, publisher declarations and unknown history. Give detector/noise questions to B instead of extending isolated writer-block probes. While historical evidence is blocked, progress modelDNA and Training Leaves Traces, then Witness Overlap. Do not wait for perfect provenance before every descriptive comparison, and do not promote weak declarations into verified truth.
+Your outcome is useful matched comparisons and real-model evidence on cases shared with B. The residual/modelDNA quantization runs are recorded; do not repeat them. Next address ordinary-fine-tune order with the audited edges and valid witnesses, agreeing exploratory selection/aggregation/tie rules before scoring. Extend remaining edit-group and real-model comparisons only where needed for a scientific conclusion. Separate construction records, declarations and unknowns; related controls are not independent ancestry negatives. B owns detector/noise rules. Do not stall all comparisons on perfect history or keep probing isolated blocks.
 
 Use up to two genuinely idle GPUs initially for supported accelerated baseline/extraction work; borrow released slots by explicit handoff, with FOUR idle GPUs total across the project. Follow ROLES.md reservation rules; metadata reading stays on CPU.
 

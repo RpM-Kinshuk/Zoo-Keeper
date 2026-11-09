@@ -13,33 +13,28 @@ Paths are relative to `$ZOO_DATA` unless they start with a repository name.
 Seeded on 2026-11-07 from the agents' own records. These numbers have not
 been re-run.
 
-## Current outcome summary (Nov 8 holistic review)
+## Current outcome summary (Nov 8 scientific-necessity review)
 
-This summarizes existing runs, not a new experiment. The dated ledger below
-retains the measurements and links; old failures and partial inventories are
-history, not a reason to repeat work already resolved.
+These are existing runs, not a new experiment or broad claim promotion.
+Use the dated rows for targets/provenance; old partial inventories and repaired
+failures are history, not reasons to repeat completed work.
 
-| Question | Evidence against its target | Still missing | Source |
+| Question | Current result against target | Scientific limit / next decision | Source |
 | --- | --- | --- | --- |
-| Can we detect a quantization made in the lab? | 12/12 detected and replayed from the known source; 0/30 controls flagged, matching the written targets | Other quantizers/formats and real published models; not general parent or order proof | `runs/track-b-k5-quantization-20261108/REPORT.md` |
-| Does it avoid naming a missing source? | Quantization subset: 12/12 answers correct with source present; 0/12 answers when absent; 100% present coverage versus ≥50% target | Other edit groups, broader relatives, independent test data and uncertainty | `runs/track-b-k5-parent-out-20261108/REPORT.md` |
-| Can we recover known merge proportions? | 18/18 linear/SLERP cases within 0.05 error; 0 misses versus allowance ≤4 | Unknown-parent search, direction and real-model transfer | `runs/track-b-k3-slerp-trig-20261107-v2/REPORT.md` |
-| Are unrelated same-design models confused? | 30 trained BERT controls versus ≥30 count target; 0/435 observed false matches versus 0 target | Seed independence unresolved; no positive recall or decoder transfer measured | `runs/track-a-k6-bert-20261108/REPORT.md`; `REVIEW.md` |
-| Do real published-model exact marks work? | 0 verified construction edges so far; selected-block refusal-removal test uninformative | Complete multi-family comparisons, informative controls and construction records for causal claims | Track C `docs/research/2026-11-08-k7-first-evidence.md`, `2026-11-08-k7-writer-diagnostic.md` |
-| Have published methods been compared fairly? | Two native adaptations on the small old cohort; four priority methods required | Remaining methods and matched full eligible lab/Hub comparison; Witness Overlap separately for order | Track C `docs/research/2026-11-07-k2-lab-results.md` |
-| Is larger-search evaluation ready? | 216 proposed query identities versus ≥200 labeled-query target; only 2 inherited held-out keys, 145 with known positive peers; preparation, not evaluation | B review; positive membership/comparable counts; final input, cost/storage plan; no 5k weight run | `runs/track-a-k8-protocol-20261108/catalog/REPORT.md`; `PROPOSAL.md` |
-| Is there a practical whole-workflow result? | Existing CLI smoke workflow works; verdict was uncalibrated | An interpretable real-model check with error/unknown handling and full extraction-plus-search cost | `Zoo-Keeper/README.md`; earlier query reports |
+| Quantization detection/source replay | 12/12 detected/replayed; 0/30 controls flagged, matching written targets | Narrow constructed-quantizer test; no general Hub/order proof | `runs/track-b-k5-quantization-20261108/REPORT.md` |
+| Missing source | 12/12 present answers correct; all 12 absent cases abstain, versus ≥50% present coverage and ≤0.05 wrong per answer targets | Only 12/112 lab immediate-source queries tested; absent-case precision undefined with no answers | `runs/track-b-k5-parent-out-20261108/REPORT.md`; joined report |
+| Known-source merge proportions | 18/18 within 0.05 coefficient error; 0 misses versus ≤4 allowed | Unknown-source/order/Hub questions open | `runs/track-b-k3-slerp-trig-20261107-v2/REPORT.md` |
+| Broader edit/source discrimination | Scoped measurements on 90/112 children; 24/24 adapter support sets ambiguous; sampled ranks resolve 8/24 adapters and no refusal writers; merge shares overlap controls | Measurement is not detector success. D7 flags isolated-mark sufficiency; develop only decision-changing rules/controls | `runs/track-b-k5-joined-20261108-v2/REPORT.md` |
+| Published comparisons | Residual and modelDNA cover 126/126 quantization pairs; source uniquely top 7/12 for residual; no definite modelDNA source answers | Same-family relatives are not independent negatives. Remaining edits/real cases/witness direction open | Track C `docs/research/2026-11-08-k2-matched-results.md` |
+| Same-design unrelated controls | 30 trained BERT models versus ≥30 count target, 0/435 observed false matches versus 0 target | Initialization, positive recall and decoder transfer unresolved; diagnostic stays closed in scope | `runs/track-a-k6-bert-20261108/REPORT.md`; `REVIEW.md` |
+| Is new collection necessary? | Selected roster has 0/216 documented exact-positive query matches and 0/134 known parents; saved anchors yield 226/226 finite comparisons covering 134 queries before dedup | Missing exact keys are not negative labels. Evaluate saved artifacts first; collection/storage deferred until a necessary information gap exists | `runs/track-a-k8-readiness-20261108/REPORT.md` |
+| Practical workflow | Saved info/similar/family/check demo retained with explicit missing-base abstention | Artifact-only timing is not full fresh-model cost; no rerun needed | `runs/track-a-workflow-20261108/REPORT.md` |
 
-The controlled lab is an asset, not yet a complete comparative benchmark.
-SFT/DPO, adapters, refusal removal, TIES/DARE and decision-head coverage must
-appear in B's consolidated table, including not-run or unsupported entries.
-K0 archive and K10 hash audit are complete in their recorded scope; do not
-keep reopening them as prerequisites for unrelated evaluations.
-The Nov 8 08:53 UTC storage snapshot projected about 41.27 GB reserved space
-for a hypothetical 5k cohort versus 30.59 GB free. That conditional estimate
-misses the available-space check; final headers/budget are still pending.
-Source: `runs/track-a-k8-headers-20261108/budget.json`, with dated snapshots.
-No file deletion or storage purchase follows from this observation.
+No new verified real-model construction edge or complete Hub detector verdict.
+K0 archive and K10 hash audit remain closed in recorded scope. Four GPUs are a
+shared ceiling; current B/C evidence used CPU because driver access failed.
+The previous large-pool byte/storage forecasts are historical for an unapproved
+scenario, not requirements for the existing-artifact evaluation.
 
 ## Dated measurements
 
@@ -486,3 +481,260 @@ declared-base models and pool curves through 100. No full claim promotion.
 | 11-08 | A | K8 Queries with5000 planned compatible candidates | 0 | report against global5000 target | none;global roster is not per-query5000 | tested | `runs/track-a-k8-protocol-20261108/geometry-coverage.json` |
 | 11-08 | A | K8 Production structural-guard differential checks | 15040 | all agree | pass structural logic only | tested | `runs/track-a-k8-protocol-20261108/geometry-coverage.json` |
 | 11-08 | A | K8 Planned compatible candidates for each K6 BERT query | 2 | report cohort scope | header geometry estimate;not retained numeric score count | tested | `runs/track-a-k8-protocol-20261108/geometry-coverage.csv` |
+| 11-08 | A | K8 Queries with documented positive peer/root exact key in fixed selected roster | 0 / 216 | report known-positive presence | exact-key join only; other revisions/unlabeled relations unknown | tested | `runs/track-a-k8-readiness-20261108/summary.json` |
+| 11-08 | A | K8 Queries with known direct-parent keys | 134 | report eligible positive-case scope | catalog parent labels retained; not independent roots | tested | `runs/track-a-k8-readiness-20261108/summary.json` |
+| 11-08 | A | K8 Known-parent queries with any parent exact key in fixed selected roster | 0 / 134 | report true-source presence | separate anchors needed for known-present evaluation | tested | `runs/track-a-k8-readiness-20261108/summary.json` |
+| 11-08 | A | K8 Known-parent queries with all parent keys in eligible catalog | 134 | report anchor availability | pointers retained; no pool addition or recall claim | tested | `runs/track-a-k8-readiness-20261108/summary.json` |
+| 11-08 | A | K8 Query self identities in fixed selected roster | 0 | exclude self before evaluation | exact pins only; group dedup remains required | tested | `runs/track-a-k8-readiness-20261108/summary.json` |
+| 11-08 | A | K8 Inherited heldout queries with documented positive exact key in fixed roster | 0 / 2 | report inherited-case positive presence | not proof of absent relatives or fresh blinded population | tested | `runs/track-a-k8-readiness-20261108/summary.json` |
+| 11-08 | A | K8 Proposed root/parent anchor pairs checked | 226 | account for every requested anchor | existing fingerprints only; before group removal | tested | `runs/track-a-k8-readiness-20261108/anchor-feasibility.json` |
+| 11-08 | A | K8 Proposed root/parent anchor pairs numerically comparable | 226 | finite existing strict k64 scores | comparability only; no threshold or recall test | tested | `runs/track-a-k8-readiness-20261108/anchor-feasibility.json` |
+| 11-08 | A | K8 Proposed root/parent anchor pairs unavailable | 0 | report exclusions explicitly | identities/settings/hashes pass; no final pool readiness | tested | `runs/track-a-k8-readiness-20261108/anchor-feasibility.json` |
+| 11-08 | A | K8 Queries with a comparable proposed anchor | 134 | report known-positive feasible cases | before duplicate/group removal; not unseen independent roots | tested | `runs/track-a-k8-readiness-20261108/anchor-feasibility.json` |
+| 11-08 | A | K8 Queries with a comparable proposed direct-parent anchor | 134 | report parent-present feasibility | no parent decision/coverage/recall test | tested | `runs/track-a-k8-readiness-20261108/anchor-feasibility.json` |
+| 11-08 | A | K8 Persistent available bytes at readiness snapshot | 19444793344 bytes | >=52977254828 bytes | FAIL current space; snapshot not quota/reservation | tested | `runs/track-a-k8-readiness-20261108/summary.json` |
+| 11-08 | A | K8 Persistent shortfall at readiness snapshot | 33532461484 bytes | 0 bytes | FAIL; existing storage draft to steward, default defer | tested | `runs/track-a-k8-readiness-20261108/summary.json` |
+
+## Track C — matched published comparisons, 2026-11-08
+
+| Measurement | Observed | Target/scope | Meaning | Source |
+| --- | ---: | --- | --- | --- |
+| Matched baseline models | 46 | 46 fixed distinct models | PASS completeness | `runs/track-c-k2-residual-20261108/REPORT.md` |
+| Matched baseline anchor families | 4 | four inherited anchors; not four independent test roots | descriptive coverage | `runs/track-c-k2-residual-20261108/REPORT.md` |
+| Training Leaves Traces matched scores | 126 | 126 B pairs | PASS completeness | `runs/track-c-k2-residual-20261108/REPORT.md` |
+| Training Leaves Traces unique true-parent top ranks | 7/12 | no scientific rank threshold; ancestry method | descriptive; not parent decisions | `runs/track-c-k2-residual-20261108/REPORT.md` |
+| Training Leaves Traces logical weight bytes | 28,003,270,656 | record full MLP payload | measured CPU read cost | `runs/track-c-k2-residual-20261108/REPORT.md` |
+| Training Leaves Traces verification scan bytes | 76,403,189,056 | record separately from payload | measured cost | `runs/track-c-k2-residual-20261108/REPORT.md` |
+| Training Leaves Traces elapsed seconds | 195.695743 | expected <3600s; stop6600s | within bounded-run limit | `runs/track-c-k2-residual-20261108/REPORT.md` |
+| modelDNA matched scores | 126 | 126 B pairs | PASS completeness | `runs/track-c-k2-modeldna-20261108/REPORT.md` |
+| modelDNA complete aggregate-signal pairs | 126/126 | all four aggregates present | no aggregate signal gap | `runs/track-c-k2-modeldna-20261108/REPORT.md` |
+| modelDNA source-present unresolved verdicts | 12/12 | no newly chosen accuracy target | no definite parent answer | `runs/track-c-k2-modeldna-20261108/REPORT.md` |
+| modelDNA source-absent unresolved verdicts | 12/12 | report unchanged native verdict | unresolved in both conditions | `runs/track-c-k2-modeldna-20261108/REPORT.md` |
+| modelDNA definite parent answers | 0/12 | descriptive coverage, not an error rate | error rate undefined with no answers | `runs/track-c-k2-modeldna-20261108/REPORT.md` |
+| modelDNA native source bytes | 8,680,734,831 | record native reader cost | measured CPU read cost | `runs/track-c-k2-modeldna-20261108/REPORT.md` |
+| modelDNA verification scan bytes | 76,442,069,366 | record separately from payload | measured cost | `runs/track-c-k2-modeldna-20261108/REPORT.md` |
+| modelDNA elapsed seconds | 124.358342 | expected <3600s; stop6600s | within bounded-run limit | `runs/track-c-k2-modeldna-20261108/REPORT.md` |
+| 11-08 | B | K5 joined formal constructed children | 112 | all112 visible | entire roster; not a full detector pass | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 joined scoped measurements across formal edit groups | 90 | 112 visible | partial measurements plus closed prior subsets;22 not run | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 joined children with no joined measurement | 22 | report every gap | six heads and16 disguise; bounded K14 separate | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 Adapters eligible children | 24 | full formal group | fixed roster; no split change | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 Adapters scoped measurement-tested children | 24 | 24 | measurement coverage; not complete detection/parent decision | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 Refusal removal eligible children | 8 | full formal group | fixed roster; no split change | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 Refusal removal scoped measurement-tested children | 8 | 8 | measurement coverage; not complete detection/parent decision | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 TIES merge eligible children | 6 | full formal group | fixed roster; no split change | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 TIES merge scoped measurement-tested children | 6 | 6 | measurement coverage; not complete detection/parent decision | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 DARE/TIES merge eligible children | 6 | full formal group | fixed roster; no split change | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 DARE/TIES merge scoped measurement-tested children | 6 | 6 | measurement coverage; not complete detection/parent decision | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 SFT/DPO eligible children | 16 | full formal group | fixed roster; no split change | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 SFT/DPO scoped measurement-tested children | 16 | 16 | measurement coverage; not complete detection/parent decision | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 Quantization eligible children | 12 | full formal group | fixed roster; no split change | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 Quantization scoped measurement-tested children | 12 | 12 | measurement coverage; not complete detection/parent decision | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 Linear merge eligible children | 9 | full formal group | fixed roster; no split change | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 Linear merge scoped measurement-tested children | 9 | 9 | measurement coverage; not complete detection/parent decision | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 SLERP merge eligible children | 9 | full formal group | fixed roster; no split change | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 SLERP merge scoped measurement-tested children | 9 | 9 | measurement coverage; not complete detection/parent decision | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 Decision heads eligible children | 6 | full formal group | fixed roster; no split change | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 Decision heads scoped measurement-tested children | 0 | 6 | measurement coverage; not complete detection/parent decision | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 Disguise eligible children | 16 | full formal group | fixed roster; no split change | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 Disguise scoped measurement-tested children | 0 | 16 | measurement coverage; not complete detection/parent decision | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 immediate-parent queries with decisions tested | 12 | 112 | closed quantization subset only; remaining100 NOT TESTED | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 immediate-parent queries not tested in each variant | 100 | report missingness | not counted as successful abstentions | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 adapter strict native untouched-tensor preservation | 12/24 | 24/24 in unchanged native layout | raw layout invariant incomplete; casts/aliases explicit | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 adapter separately measured bf16-cast untouched equivalence | 18/24 | report separately | not substituted for native byte equality | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 adapter native failures explained by source-storage cast | 6 | report gaps | all shared untouched tensors agree after explicit bf16 cast | tested | `runs/track-b-k5-joined-20261108-v2/verification.json` |
+| 11-08 | B | K5 adapter native failures explained by tied-head layout | 6 | report gaps | omitted parent lm_head equals parent embedding; shared untouched tensors exact | tested | `runs/track-b-k5-joined-20261108-v2/verification.json` |
+| 11-08 | B | K5 adapter ambiguous support with true source present | 24/24 | unique immediate source would be needed | untouched invariant alone does not identify parent | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 adapter nonparent support after true-source removal | 24/24 | reject unsupported source claims | descriptive support survives; not scored as parent answers | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 adapter resolved sampled target ranks | 8/24 | report resolved coverage | existing floor/confidence; sixteen unresolved | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 adapter resolved sampled ranks within configured ±25% | 8/8 | all resolved sampled blocks | not full-matrix rank or full-case C2 pass | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 refusal resolved sampled writer ranks | 0/24 | report unresolved coverage | all sampled writers unresolved under unchanged rules | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 matched nonremoved writer control cases | 40 | same selection as refusal positives | SFT/DPO and LoRA controls; no detector cutoff | tested | `runs/track-b-k5-joined-20261108-v2/verification.json` |
+| 11-08 | B | K5 matched nonremoved writer control blocks | 120 | three writers per control | diagnostics available; no calibrated classification | tested | `runs/track-b-k5-joined-20261108-v2/verification.json` |
+| 11-08 | B | K5 TIES/DARE minimum target-entry equal-to-anchor share | 0.015401840209960938 | descriptive; no cutoff | zero-tolerance stored values; overlap visible | tested | `runs/track-b-k5-joined-20261108-v2/results.json` |
+| 11-08 | B | K5 TIES/DARE maximum target-entry equal-to-anchor share | 0.3108605448404948 | descriptive; no cutoff | not full untouched-module share or classified detection | tested | `runs/track-b-k5-joined-20261108-v2/results.json` |
+| 11-08 | B | K5 LoRA controls minimum target-entry equal-to-anchor share | 1.1473894119262695e-06 | descriptive; no cutoff | zero-tolerance stored values; overlap visible | tested | `runs/track-b-k5-joined-20261108-v2/results.json` |
+| 11-08 | B | K5 LoRA controls maximum target-entry equal-to-anchor share | 0.4226670837402344 | descriptive; no cutoff | not full untouched-module share or classified detection | tested | `runs/track-b-k5-joined-20261108-v2/results.json` |
+| 11-08 | B | K5 SFT/DPO controls minimum target-entry equal-to-anchor share | 2.4065375328063965e-06 | descriptive; no cutoff | zero-tolerance stored values; overlap visible | tested | `runs/track-b-k5-joined-20261108-v2/results.json` |
+| 11-08 | B | K5 SFT/DPO controls maximum target-entry equal-to-anchor share | 0.45564292907714843 | descriptive; no cutoff | not full untouched-module share or classified detection | tested | `runs/track-b-k5-joined-20261108-v2/results.json` |
+| 11-08 | B | K5 C supplied real writer blocks with informative noise allowance | 0/4 | allowance smaller than whole delta | inconclusive; source tier stays declared | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 shared Hub candidate edges dpo:declared | 3 | source-tier accounting | zero complete exact-mark tests; no verified truth added | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 shared Hub candidate edges merge:declared | 2 | source-tier accounting | zero complete exact-mark tests; no verified truth added | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 shared Hub candidate edges merge_parent:declared | 1 | source-tier accounting | zero complete exact-mark tests; no verified truth added | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 shared Hub candidate edges posttraining:declared | 1 | source-tier accounting | zero complete exact-mark tests; no verified truth added | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 shared Hub candidate edges posttraining_unspecified:declared | 1 | source-tier accounting | zero complete exact-mark tests; no verified truth added | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 shared Hub candidate edges quantization:declared | 1 | source-tier accounting | zero complete exact-mark tests; no verified truth added | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 shared Hub candidate edges refusal_removal:declared | 2 | source-tier accounting | zero complete exact-mark tests; no verified truth added | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 shared Hub candidate edges rlvr:declared | 1 | source-tier accounting | zero complete exact-mark tests; no verified truth added | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 shared Hub candidate edges sft:declared | 2 | source-tier accounting | zero complete exact-mark tests; no verified truth added | tested | `runs/track-b-k5-joined-20261108-v2/summary.json` |
+| 11-08 | B | K5 joined CPU measurement elapsed | 394.34426659799647 | under7200s; agent limit | four threads; GPU unavailable; not isolated end-to-end cost | tested | `runs/track-b-k5-joined-20261108-v2/results.json` |
+
+## Track C — Witness Overlap ordinary fine-tunes, 2026-11-08
+
+| Measurement | Observed | Target/scope | Meaning | Source |
+| --- | ---: | --- | --- | --- |
+| Witness construction-record cases | 16/16 | all frozen proposed triples | PASS operational coverage | `runs/track-c-k2-witness-20261108-v3/REPORT.md` |
+| Witness distinct models | 20 | ≤100 models; fixed existing checkpoints | bounded local run | `runs/track-c-k2-witness-20261108-v3/REPORT.md` |
+| Witness correct orientations | 8/16 | exploratory; no accuracy gate | not a general direction success | `runs/track-c-k2-witness-20261108-v3/REPORT.md` |
+| Witness wrong orientations | 8/16 | report every error | all SFT edges reversed | `runs/track-c-k2-witness-20261108-v3/REPORT.md` |
+| Witness SFT correct | 0/8 | fixed opposite-seed SFT witnesses | witness construction fails here | `runs/track-c-k2-witness-20261108-v3/REPORT.md` |
+| Witness DPO correct | 8/8 | same fixed witness rule | conditional lab result only | `runs/track-c-k2-witness-20261108-v3/REPORT.md` |
+| Witness ties | 0/16 | exact ties abstain | no ties | `runs/track-c-k2-witness-20261108-v3/REPORT.md` |
+| Witness abstentions | 0/16 | no eligible role means abstain | all roles usable | `runs/track-c-k2-witness-20261108-v3/REPORT.md` |
+| Witness not-run cases | 0/16 | account for every frozen case | none missing | `runs/track-c-k2-witness-20261108-v3/REPORT.md` |
+| Witness each-family correct | 2/4 per family | four lab anchors, not independent pair trials | same SFT/DPO pattern | `runs/track-c-k2-witness-20261108-v3/REPORT.md` |
+| Witness BF16-view correct | 8/16 | predeclared storage control | same pattern | `runs/track-c-k2-witness-20261108-v3/REPORT.md` |
+| Witness BF16-view changed answers | 0/16 | compare frozen primary/control | storage equalization did not reverse answers | `runs/track-c-k2-witness-20261108-v3/REPORT.md` |
+| Witness nearest-witness distance correct | 8/16 | cheap same-input interpretation control | no causal order proof | `runs/track-c-k2-witness-20261108-v3/REPORT.md` |
+| Witness distance-control agreement | 16/16 | same eligible projections | all decisions agree | `runs/track-c-k2-witness-20261108-v3/REPORT.md` |
+| Witness full projection tensors | 2800/2800 | all required complete dense projections | no undefined tensor scores | `runs/track-c-k2-witness-20261108-v3/REPORT.md` |
+| Witness logical weight bytes | 24,012,914,688 | full tensors, reused for both modes | successful v3 read cost | `runs/track-c-k2-witness-20261108-v3/REPORT.md` |
+| Witness verification/input bytes | 32,653,895,960 | separate from payload | successful v3 hash-scan cost | `runs/track-c-k2-witness-20261108-v3/REPORT.md` |
+| Witness successful-run seconds | 146.637193 | expected<1800s; stop6600s | within run limit; failed setup IO excluded | `runs/track-c-k2-witness-20261108-v3/REPORT.md` |
+| 11-08 | B | K8 existing-artifact eligible catalog keys | 216 | all eligible existing keys | no new collection; seven original exclusions retained | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 existing-artifact observed row-block groups | 212 | self/group removal | not full-weight identity | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 existing-artifact scored unordered pairs | 23220 | account all finite/unavailable pairs | existing fixed k64 scorer; no weights | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 catalog queries | 216 | descriptive; no new pass target | family evidence only; not source inference | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 catalog roots | 82 | descriptive; no new pass target | family evidence only; not source inference | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 catalog scoreable | 216 | descriptive; no new pass target | family evidence only; not source inference | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 catalog known_positive_scoreable | 145 | descriptive; no new pass target | family evidence only; not source inference | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 catalog useful_family_queries | 130 | descriptive; no new pass target | family evidence only; not source inference | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 catalog family_abstentions | 86 | descriptive; no new pass target | family evidence only; not source inference | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 catalog unavailable | 0 | descriptive; no new pass target | family evidence only; not source inference | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 catalog known_false_query_answers | 0 | descriptive; no new pass target | family evidence only; not source inference | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 catalog unknown_query_answers | 0 | descriptive; no new pass target | family evidence only; not source inference | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 catalog known_false_hits | 0 | descriptive; no new pass target | family evidence only; not source inference | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 catalog unknown_hits | 0 | descriptive; no new pass target | family evidence only; not source inference | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 catalog returned_hits | 1887 | descriptive; no new pass target | family evidence only; not source inference | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 paired source present queries | 134 | descriptive; no new pass target | family evidence only; not source inference | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 paired source present roots | 11 | descriptive; no new pass target | family evidence only; not source inference | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 paired source present scoreable | 134 | descriptive; no new pass target | family evidence only; not source inference | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 paired source present known_positive_scoreable | 134 | descriptive; no new pass target | family evidence only; not source inference | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 paired source present useful_family_queries | 119 | descriptive; no new pass target | family evidence only; not source inference | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 paired source present family_abstentions | 15 | descriptive; no new pass target | family evidence only; not source inference | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 paired source present unavailable | 0 | descriptive; no new pass target | family evidence only; not source inference | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 paired source present known_false_query_answers | 0 | descriptive; no new pass target | family evidence only; not source inference | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 paired source present unknown_query_answers | 0 | descriptive; no new pass target | family evidence only; not source inference | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 paired source present known_false_hits | 0 | descriptive; no new pass target | family evidence only; not source inference | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 paired source present unknown_hits | 0 | descriptive; no new pass target | family evidence only; not source inference | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 paired source present returned_hits | 1786 | descriptive; no new pass target | family evidence only; not source inference | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 paired source removed queries | 134 | descriptive; no new pass target | family evidence only; not source inference | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 paired source removed roots | 11 | descriptive; no new pass target | family evidence only; not source inference | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 paired source removed scoreable | 133 | descriptive; no new pass target | family evidence only; not source inference | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 paired source removed known_positive_scoreable | 133 | descriptive; no new pass target | family evidence only; not source inference | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 paired source removed useful_family_queries | 112 | descriptive; no new pass target | family evidence only; not source inference | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 paired source removed family_abstentions | 21 | descriptive; no new pass target | family evidence only; not source inference | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 paired source removed unavailable | 1 | descriptive; no new pass target | family evidence only; not source inference | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 paired source removed known_false_query_answers | 0 | descriptive; no new pass target | family evidence only; not source inference | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 paired source removed unknown_query_answers | 0 | descriptive; no new pass target | family evidence only; not source inference | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 paired source removed known_false_hits | 0 | descriptive; no new pass target | family evidence only; not source inference | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 paired source removed unknown_hits | 0 | descriptive; no new pass target | family evidence only; not source inference | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 paired source removed returned_hits | 1628 | descriptive; no new pass target | family evidence only; not source inference | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 present-source known-positive misses | 15 | report failures | all are quantization cases; exact quantizer verdict unchanged | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 exact-source unique top-score identity diagnostic | 20/134 | rank only, not classifier accuracy | all20 single-source; ties and multi-source retained | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 paired single-source queries | 104 | report source cardinality | no joint-parent recovery inferred | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 paired multi-source queries | 30 | report source cardinality | family support is not complete parent-set recovery | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | B | K8 raw pair labels positive_total | 1706 | preserve explicit label coverage | unknown relationships never negatives | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 raw pair labels positive_finite | 1706 | preserve explicit label coverage | unknown relationships never negatives | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 raw pair labels positive_hits | 994 | preserve explicit label coverage | unknown relationships never negatives | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 raw pair labels negative_total | 180 | preserve explicit label coverage | unknown relationships never negatives | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 raw pair labels negative_finite | 180 | preserve explicit label coverage | unknown relationships never negatives | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 raw pair labels unknown_total | 21334 | preserve explicit label coverage | unknown relationships never negatives | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 raw pair labels unknown_finite | 523 | preserve explicit label coverage | unknown relationships never negatives | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 certified-independent support hits | 0/180 | original fixed rule | dependent same-architecture controls; no iid guarantee | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing BERT scratch controls abstain_present | 30 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing BERT scratch controls abstain_removed | 0 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing BERT scratch controls known_positive_available | 0 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing BERT scratch controls paired_source_removed | 0 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing BERT scratch controls queries | 30 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing BERT scratch controls unavailable_removed | 0 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing BERT scratch controls useful_present | 0 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing BERT scratch controls useful_removed | 0 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing SFT/DPO abstain_present | 0 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing SFT/DPO abstain_removed | 0 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing SFT/DPO known_positive_available | 18 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing SFT/DPO paired_source_removed | 18 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing SFT/DPO queries | 18 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing SFT/DPO unavailable_removed | 0 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing SFT/DPO useful_present | 18 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing SFT/DPO useful_removed | 18 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing adapter abstain_present | 0 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing adapter abstain_removed | 0 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing adapter known_positive_available | 30 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing adapter paired_source_removed | 30 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing adapter queries | 30 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing adapter unavailable_removed | 0 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing adapter useful_present | 30 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing adapter useful_removed | 30 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing bases / pretraining controls abstain_present | 41 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing bases / pretraining controls abstain_removed | 0 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing bases / pretraining controls known_positive_available | 11 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing bases / pretraining controls paired_source_removed | 0 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing bases / pretraining controls queries | 52 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing bases / pretraining controls unavailable_removed | 0 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing bases / pretraining controls useful_present | 11 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing bases / pretraining controls useful_removed | 0 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing decision head abstain_present | 0 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing decision head abstain_removed | 0 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing decision head known_positive_available | 7 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing decision head paired_source_removed | 7 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing decision head queries | 7 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing decision head unavailable_removed | 1 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing decision head useful_present | 7 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing decision head useful_removed | 6 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing disguise abstain_present | 0 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing disguise abstain_removed | 0 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing disguise known_positive_available | 18 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing disguise paired_source_removed | 18 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing disguise queries | 18 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing disguise unavailable_removed | 0 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing disguise useful_present | 18 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing disguise useful_removed | 18 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing merge dare_ties abstain_present | 0 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing merge dare_ties abstain_removed | 0 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing merge dare_ties known_positive_available | 6 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing merge dare_ties paired_source_removed | 6 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing merge dare_ties queries | 6 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing merge dare_ties unavailable_removed | 0 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing merge dare_ties useful_present | 6 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing merge dare_ties useful_removed | 6 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing merge linear abstain_present | 0 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing merge linear abstain_removed | 0 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing merge linear known_positive_available | 9 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing merge linear paired_source_removed | 9 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing merge linear queries | 9 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing merge linear unavailable_removed | 0 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing merge linear useful_present | 9 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing merge linear useful_removed | 9 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing merge slerp abstain_present | 0 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing merge slerp abstain_removed | 0 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing merge slerp known_positive_available | 9 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing merge slerp paired_source_removed | 9 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing merge slerp queries | 9 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing merge slerp unavailable_removed | 0 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing merge slerp useful_present | 9 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing merge slerp useful_removed | 9 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing merge ties abstain_present | 0 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing merge ties abstain_removed | 0 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing merge ties known_positive_available | 6 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing merge ties paired_source_removed | 6 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing merge ties queries | 6 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing merge ties unavailable_removed | 0 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing merge ties useful_present | 6 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing merge ties useful_removed | 6 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing quantization abstain_present | 15 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing quantization abstain_removed | 21 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing quantization known_positive_available | 23 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing quantization paired_source_removed | 23 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing quantization queries | 23 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing quantization unavailable_removed | 0 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing quantization useful_present | 8 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing quantization useful_removed | 2 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing refusal construction abstain_present | 0 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing refusal construction abstain_removed | 0 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing refusal construction known_positive_available | 8 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing refusal construction paired_source_removed | 8 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing refusal construction queries | 8 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing refusal construction unavailable_removed | 0 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing refusal construction useful_present | 8 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing refusal construction useful_removed | 8 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
+| 11-08 | B | K8 existing-artifact CPU elapsed | 13.527163679013029 | under7200s agent limit | one numerical thread; no acquisition or GPU timing | tested | `runs/track-b-existing-artifacts-20261108/results.json` |

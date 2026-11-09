@@ -33,24 +33,34 @@ unverified distinction. [Primary source, Appendices D/F](https://arxiv.org/html/
 C's primary-source note documents the other checked works; see D5. The
 correction changes research positioning, not claim status or paper dates.
 
-K3 now reports 9 linear and 9 SLERP coefficient-relation passes (0 misses
-against allowance ≤4). Fresh skeptic supports a narrow lab pilot only:
-selected views, related parents and three families; no unknown-parent,
-direction, historical implementation or Hub validation. Broad C2 stays checked;
-no full claim is promoted or made solid. K4/K14 remain partial diagnostics.
-K5 quantization now passes its existing lab criteria: 12 detections/replays,
-0 flags among 30 controls. Its parent-out subset answers all 12 present cases
-correctly and abstains on all 12 absent cases. Fresh skeptic agrees this is
-narrow lab evidence, not unique parenthood/order in general or a C3 guarantee.
-K6 now has 30 publisher-supported scratch-trained BERT controls and 0 false
-matches among 435 pairs; seed independence, positive recall and decoder
-transfer remain unresolved. Further seed forensics is not a prerequisite to
-reporting that narrow diagnostic honestly.
-The two baseline adaptations still cover only the small old cohort. C's real
-selected-block test is uninformative and verifies no construction edge.
-C1–C5 remain checked, C6 remains a later hypothesis; no full claim is promoted.
-The holistic review prioritizes comparative coverage and usable real-model
-verdicts over more selected-case diagnostics; RESULTS.md holds the summary.
+Current measurements (Nov 8): K3's 18 known-source linear/SLERP relations
+and the 12 quantization replays/parent-out cases remain successful in their
+narrow lab scope. No need to repeat those runs.
+
+The joined K5 table now covers scoped measurements for 90/112 formal children,
+not 90 complete detector passes. Immediate-source decisions were tested only
+for the 12 quantizations; 100 remain NOT TESTED, not successful abstentions.
+All 24 adapter support sets retain nonparents after removing the true source.
+Native untouched equality is 12/24, with cast and tied-alias gaps separately
+audited; these are not twelve substantive changes to untouched modules.
+Only 8/24 sampled adapter ranks resolve. Sampled refusal writer ranks do not
+resolve, and TIES/DARE shares overlap controls. These challenge the sufficiency
+of isolated marks, not every complete method. D7 proposes qualifying the
+categorical source-proof wording below; until decided, keep it hypothetical
+and do not report a unique source or affirmative compatibility from
+uninformative tests. Fresh skeptic agrees with that narrow interpretation.
+
+C's residual/modelDNA comparisons now use the same 126 quantization pairs;
+residual ranks the source uniquely first 7/12, while modelDNA gives no definite
+source answers. Related controls do not establish independent-negative error
+rates, and neither result is the complete benchmark or real-model validation.
+K6's trained BERT diagnostic remains narrow/caveated. The mixed K8 roster has
+no documented exact positive keys for its queries; this does not prove those
+families absent. Additional collection is deferred while saved anchors and
+controls are evaluated. Source truth, unseen-test exposure and discriminating
+rules are the gaps to resolve before resources.
+C1–C5 remain checked; C6 remains a later hypothesis. No full claim is promoted.
+RESULTS.md and the joined report hold the numbers, targets and provenance.
 
 ## Literature check (Nov 7, documentary follow-up Nov 8)
 

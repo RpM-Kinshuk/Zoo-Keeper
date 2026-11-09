@@ -30,28 +30,30 @@ The merged plan remains the reference for methods detail.
 - a 166-model lab cohort: 112 formal constructed children plus bases and reference controls. Construction records apply to the built children; control provenance has separate limits.
 
 **Current evidence, updated Nov 8:**
-- The collector, database and queries form a working internal prototype;
-  approved lab data is backed up. This is not yet a validated public service.
-- Family detection has encouraging small-cohort results and a thirty-model
-  trained BERT control; decoder-scale accuracy and recall remain unproven.
-- Quantization detections and exact known-source replays pass all twelve lab
-  cases with no flags among thirty controls. The absent-parent subset also
-  abstains correctly. Other edit categories still need systematic tests.
-- The merge retest now fits all eighteen linear/SLERP lab cases within the
-  allowed error; this does not establish unknown-parent recovery or order.
-- Two adapted published methods ran on the small old cohort; the full
-  comparative lab and real-model evaluation is unfinished.
-- No real Hub construction edge is yet verified. A selected-block refusal-
-  removal diagnostic is uninformative; it is not practical detection proof.
-- Larger-search inputs, extraction costs and a proposed query catalog now
-  exist; the search curve, adequate unseen evaluation and final budget do not.
-- Score links improve to 144/150 by weight identity; this does not revive
-  score-prediction or heritability work.
+- Tools and the protected lab are a working internal foundation; broad
+  real-world reliability and the paper's strongest claims remain unverified.
+- Quantization replay/source-absence tests and 18 known-source merge fits pass
+  their lab targets. They do not establish all-edit source or order recovery.
+- The joined table exposes broader limits: adapter clues also match relatives,
+  sampled refusal tests cannot resolve rank, and merge-entry shares overlap
+  controls. Most immediate-source decisions remain untested. D7 proposes
+  separating informative edit evidence from unique-source proof.
+- Four priority comparison methods now have scoped results, with two recently
+  matched on the quantization cases. Whole-benchmark and real-model coverage
+  remain unfinished; lack of independent negatives restricts error claims.
+- Additional collection of the prepared 5k is scientifically deferred; storage
+  is parked. Evaluate saved source/relative/control artifacts before defining
+  any minimum decision-changing data addition. Preparation is not a reason
+  to collect, and missing documented exact matches do not imply absent family.
+- Family detection/control results remain narrow; score-link improvements do
+  not revive prediction or heritability work.
 
-**Execution emphasis:** use the existing pipeline for a joined-up evaluation
-across edit groups, real models and published methods. Small pilots should
-resolve a named uncertainty, then feed that evaluation; they are not the end
-product. PLAN.md defines the Nov 14 review without changing final deadlines.
+**Execution emphasis:** every statement/task needs a strong scientific reason
+and a necessary outcome (DIRECTIVES.md D1.6). Challenge the framing, reuse
+existing evidence, consider simpler or different approaches, and stop when a
+useful uncertainty is resolved. Do not turn inconclusive tests into passes or
+launch another collection to fill a round count. Existing dates and scientific
+rules remain; PLAN.md and briefs hold the necessary next work.
 
 **The correction.** Claim what weights can actually show, and test it
 properly:

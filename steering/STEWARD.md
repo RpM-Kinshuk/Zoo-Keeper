@@ -125,12 +125,17 @@ claim-changing result.
 
 ### Outcome check (overseer request, Nov 8)
 
-Before assigning another small test, name the useful decision it resolves and
-when it stops. Review tool usefulness, full evaluation coverage, paper evidence,
-resources and later release needs together. Each track's next output must feed
-the same comparison; repeated examples and implementation checks do not stand
-in for real-model accuracy, independent tests or honest abstention. Keep the
-board about those outcomes; put low-level diagnosis in linked run reports.
+Apply `handoff/DIRECTIVES.md` D1.6: everything said or done needs a strong
+scientific reason and a necessary concrete outcome. Before another task, ask
+whether it is needed at all, whether existing evidence suffices, and whether
+a simpler or substantially different framing would answer the question.
+Name the useful decision, minimum evidence and stopping condition in existing
+notes; do not build another approval or bookkeeping process. Reassess after
+new evidence, not by habit after every mechanical step. Available GPUs, prepared
+rosters and past effort are not scientific justification. Review usefulness,
+evaluation coverage, papers, resources and release needs together; keep low-level
+diagnosis in run reports. The owner explicitly authorized the Nov 8 edit to
+DIRECTIVES.md; this does not grant a general exception to steering-only writes.
 
 ## 5. Guiding the tracks: briefs
 

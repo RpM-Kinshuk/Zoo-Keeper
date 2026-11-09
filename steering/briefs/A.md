@@ -1,17 +1,16 @@
-# Brief: track A (2026-11-08, current focus + GPU update)
+# Brief: track A (2026-11-08, scientific necessity review)
 ## Do next:
-1. K8 preparation is complete: do not repeat headers. With B, decide what the fixed pool/query set can establish; planned compatible counts are 0–252, not 5,000 per query. No large weight launch.
-2. With B, close one query/label/split review; 216 catalog identities are not 200 unseen tests. Put any new scientific freeze through the existing decision process.
-3. For Nov 14, carry forward the tested existing query workflow and its uncertainty/cost limits; extend it only for a decision-changing gap, not another demonstration.
+1. K8: with B, predeclare and evaluate saved query/source/relative/control artifacts under existing rules. Question: when is family/source retrieval useful, wrong, ambiguous or unavailable with the source present versus removed?
+2. Report actual comparable counts, known-positive retrieval, explicitly labeled errors, unresolved hits and test exposure. Anchor feasibility is not measured recall; unrelatedness is never inferred from a missing exact key.
+3. Stop after the eligible existing-artifact evaluation and identify any specific decision-changing gap. Propose only the minimum new comparable/labeled cases that can resolve it; collect none if existing evidence suffices.
 ## Decisions that affect you:
-- K0/K10 are closed in their recorded scope. K6's 30 trained BERT controls pass the narrow count/config/false-match diagnostic; keep initialization and missing-recall caveats.
-- Storage plan requires 52.98 GB free versus 26.25 GB recorded; use the existing draft with the steward. Do not delete unique data, purchase capacity or reopen archive work.
+- B's AMEND is accepted for descriptive, actual-compatible scope only; no broad scaling freeze. L1 remains deferred on scientific necessity; storage draft is parked, not an overseer capacity request.
+- K0/K10 and the workflow demo stay closed in scope; K6 remains narrow/caveated. No scientific target, threshold or split changed.
 ## Corrections:
-- Stop further K6 outlier/seed investigation unless it can change a current verdict; carry the limitation into the shared evaluation.
-- The mixed candidate roster is operational, not a random prevalence sample or 5,000 comparable hard negatives per query.
+- Do not collect the prepared 5k, rerun headers/demo, or seek space to make the old plan runnable. Its missing documented exact-positive matches do not prove family absence.
+- Storage/cost are assessed only after a necessary additional collection is sized. Available GPUs and past preparation are not reasons to run it.
 ## Answers to your questions.
-- A owns cost/input readiness, B owns scientific evaluation review. Shared handoff is sufficient; do not spend sessions retrying background messages.
+- Existing-artifact evaluation is authorized and not blocked by storage. B owns acceptance/detector rules; return concrete results before asking for more inputs.
 ## Watch out for:
-- L1 stays blocked until science, space, costs and permissions all work; report shortages, do not change eligibility to force a round count.
-- Next milestone is usable evidence for the product/paper, not another extractor or archive framework.
-- Compute: project-wide cap four idle GPUs; default A=0/B=2/C=2, borrowing only by explicit handoff. Apply ROLES.md admission/reservation rules; large-run launch limits still apply.
+- Apply DIRECTIVES.md D1.6; preserve unknowns and group identity. Keep dates; no collection or new freeze implied.
+- Compute: four idle GPUs project-wide, default A=0/B=2/C=2; borrowing by handoff under ROLES.md. No job active; larger-run rules still apply.

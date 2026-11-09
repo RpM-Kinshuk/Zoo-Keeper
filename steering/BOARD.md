@@ -1,39 +1,34 @@
 # Board
-Holistic review: 2026-11-08. Mission: a useful model index and honest evidence about what weights reveal.
+Scientific-necessity review: 2026-11-08. Mission: useful model-origin checks and honest research.
 
-## Overall position
-**Real progress, uneven maturity:** tools and data are ahead of proof of practical reliability. Successful lab tests now need broader, joined-up evaluation. More implementation alone will not settle the paper or the tool's usefulness.
-Model-Zoo collects/builds; Zoo-Keeper queries/evaluates. They serve one platform; the first paper and benchmark should share evidence.
+## What changed
+**Progress now includes useful negative findings, not just implementation.** Existing data is beginning to show which model-origin questions can be answered and which proposed clues are insufficient. Broad practical reliability and the paper headline remain unverified.
 
-| Area | Position | Next useful outcome |
+| Track | Current evidence | Necessary next outcome |
 | --- | --- | --- |
-| Tool/data | Working internal collector, database and queries; approved archive protected | A real-model check with traceable evidence, clear uncertainty and complete cost |
-| First paper/benchmark | Compression tests and merge fits pass in their lab scope; most edit categories, real-model transfer and published comparisons remain unfinished | One evaluation across eligible lab groups, real models and competing methods, including failures and unanswered cases |
-| Later release/ecosystem paper | Measured snapshot and random sample exist; maintained public tool and larger census remain planned | Reuse validated methods; keep Feb–Mar release and May paper targets conditional on evidence and cost |
-| Model selection | Historical prediction findings remain exploratory; selection and heritability work are parked | No parallel study now |
+| A | Prepared mixed pool has no documented exact positive keys for its 216 queries; known source anchors already have saved comparable artifacts. Other revisions/relatives remain unknown. | Evaluate existing labeled cases with source present/removed; collect more only for a specific unresolved decision. |
+| B | Scoped measurements cover 90/112 constructed children, but immediate-source decisions are tested only for 12/112. Shared adapter clues remain ambiguous; sampled refusal tests and merge-share clues do not establish a detector. | Determine which existing rules distinguish sources/edits; report ambiguity and limits. Prepare concrete development rules before any final change. |
+| C | Two more published methods ran on the same quantization cases: one ranks the source first in 7/12; the other makes no definite source answer. Neither supplies a general error rate here. | Test the ordinary-fine-tune order question with valid witnesses; extend useful matched comparisons and real-model cases. |
 
-## Next shared review: Nov 14
-- **A:** finish input/resource preparation and a concrete evaluation proposal; demonstrate the existing question-to-evidence workflow. No large launch yet.
-- **B:** cover remaining edit/missing-source tests; own detector/noise rules and review A's protocol promptly.
-- **C:** provide usable, source-tiered real-model cases; continue remaining comparison methods while historical evidence is blocked.
-Existing Nov 21/Dec 1–5 test targets stay. Finish bounded tree/disguise checks without expanding them. Reopen completed work only for a decision-changing gap.
+## Work stopped or kept bounded
+- The prepared 5k collection is **deferred for lack of scientific justification**. Extra storage is parked; it is not blocking existing-artifact evaluation. No purchase, deletion or large launch requested.
+- Passed quantization/merge tests, archive/score audit and the existing workflow demo stay closed unless contrary evidence matters. Tree/disguise checks stay bounded; selection/heritability work stays parked.
+- Four idle GPUs remain the shared ceiling, not a usage target. Last B/C host lacked driver access; useful CPU work completed. No GPU is reserved.
 
 ## Waiting for you
-- **No decision waits. D6 approved:** the Dec 4 plan separates approved conclusions from unanswered questions and their tests. Later conclusions still need verification and your explicit approval; dates stay unchanged.
-- **No launch request:** the large-run card remains blocked on scientific review and feasible storage. A has completed the fixed header/input preparation and a CPU launch-budget draft.
+- **[D7](cards/D7-edit-evidence-and-parent-claims.md): recommend A.** Say that informative edit clues can support a possible source, while a unique immediate source needs tests that distinguish relatives; inconclusive evidence remains unresolved. This qualifies the original categorical wording without declaring the full methods disproven. Dates and test rules stay unchanged.
+- B can prepare its development proposal now; an empty approval-to-prepare request is unnecessary. Actual cutoff/split/truth changes still need concrete review.
 
-## Risks and dates
-The 216-query catalog contains only two inherited unseen-test identities; more entries do not establish independent validation. Header preparation is complete; its 52.98 GB free-space gate exceeds the recorded 26.25 GB available; the storage draft awaits steward screening. Real-model construction records and informative controls remain incomplete.
-Nov 25: verified-claim review. Dec 4: test-plan freeze. Dec 12: method check. Dec 18: paper/venue decision. No broad claim is newly verified.
+## Next review and risks
+Nov 14: one shared coverage/error/unknown summary using current artifacts. Existing Nov 21/Dec 1–5 tests and Nov 25/Dec 4/12/18 reviews remain. Few independent unseen roots, incomplete real-model truth and undiscriminating tests are the main scientific risks; more collection alone does not fix them.
 
 ## For your information (class 2)
-Steward aligned briefs around the shared evaluation and capped repeated-case work; fresh skeptic agrees. No target, split, threshold or date changed. Test counts and block-level detail stay in run reports.
+Scientific necessity is explicit in DIRECTIVES.md D1.6 and the briefs: question first, reuse evidence, justify minimum extra information, then assess resources. B's AMEND is accepted only for descriptive actual-compatible evaluation; no new scientific freeze or broad claim is approved. Fresh skeptic agrees.
 
 ## Since the last check-in (with the assistant): started 2026-11-07
-- Assistant established steering; you approved D1–D4. Steward shortened briefs, cleared stale blockers and allowed useful work while storage setup waited; no direction/date change.
-- Independent weekly arithmetic check matched; broad claims remained unchanged.
-- Tracks completed archive, narrow merge retest, score-link audit and first adapted comparisons; steward reconciled partial versus complete work.
-- You approved D5's research corrections and requested plain, contextual updates; guidance changed. Construction-record novelty remains unverified.
-- Holistic review recognizes new lab edit/control/cost evidence, aligns tracks around practical comparative outcomes and raises D6's freeze conflict.
-- You approved D6: open test questions and approved conclusions are separated; no claim, date or test rule changed.
-- You authorized four idle GPUs project-wide where useful; initial slots are A=0/B=2/C=2 with handoff-based borrowing and refreshed the three kickoff prompts. Large-run launch limits remain.
+- Assistant established steering; you approved D1–D4. Steward shortened briefs, removed stale blockers and continued useful work during storage setup; no direction/date change.
+- Weekly arithmetic check matched; archive, narrow merge refit, score-link audit and first adapted comparisons were reconciled. Broad claims stayed unverified.
+- You approved D5 research corrections and plain contextual updates; construction-record novelty remains open.
+- Holistic review aligned practical comparative outcomes; you approved D6 to separate open tests from verified claims without date changes.
+- You authorized four idle GPUs project-wide, initially A=0/B=2/C=2 with handoffs; large-run limits remain.
+- Scientific necessity is now explicit in the directives: existing-data-first evaluation, collection/storage deferred, concrete development proposals authorized. New negative findings and matched comparisons prompted D7's reviewed wording recommendation.

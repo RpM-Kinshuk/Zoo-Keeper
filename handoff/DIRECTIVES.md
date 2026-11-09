@@ -4,6 +4,12 @@ These rules apply to every agent working on the Model Zoo. "Must" and "never"
 are literal. When a rule and a plan disagree, the rule wins. When you are
 unsure whether a rule applies, treat it as applying and ask.
 
+## Owner session directive: scientific necessity (2026-11-08)
+
+Everything we say or do must have a strong scientific reason and serve a
+necessary, concrete outcome. Apply **D1.6** before work and reporting; it is
+not enough that a task was planned, is possible, or has resources available.
+
 ## D1. Scope
 
 1. Work only on items in `CHECKLIST.md`, in the committed order (merged plan,
@@ -27,6 +33,29 @@ unsure whether a rule applies, treat it as applying and ask.
 5. Prefer the simplest design that works. Adopt anything more advanced only
    after an experiment shows the simple version fails, and record that
    experiment in `STATUS.md`.
+6. **Scientific purpose and necessity come first (owner instruction).**
+   Everything we say or do must have a strong scientific reason tied to a
+   concrete outcome. Before proposing, executing or reporting work, ask:
+   - What useful question, decision or research outcome does this serve?
+   - Why is this step necessary, what evidence could change the answer,
+     and what result will let us stop?
+   - Can existing data, fingerprints, code or results answer it already?
+   - Is there a simpler, cheaper or different approach, including reframing
+     the question or doing nothing? Think out of the box; challenge the
+     assumptions and framing rather than only refining the current method.
+   Do not treat a prepared roster, available compute, a round sample count
+   or completed infrastructure as a scientific justification. Define the
+   question first, reuse existing evidence, justify the minimum additional
+   work, then assess compute, storage and cost. A hypothesis may be unproven;
+   the reason to test it must still be clear. If work cannot resolve a useful
+   uncertainty or enable a necessary outcome, stop or defer it. Support
+   statements with evidence and distinguish findings from hypotheses and
+   plans. Keep this reasoning brief in the existing plan, card or run report;
+   do not create another approval or bookkeeping process. A clear purpose
+   already stated there need not be re-proved for every mechanical step;
+   revisit it when evidence or scope changes. Preparing a proposal is not
+   itself a reason to ask permission; seek a decision only when a concrete
+   change reaches an existing authority boundary.
 
 ## D2. Credentials
 

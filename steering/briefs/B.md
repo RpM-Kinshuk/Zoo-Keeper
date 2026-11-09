@@ -1,17 +1,17 @@
-# Brief: track B (2026-11-08, current focus + GPU update)
+# Brief: track B (2026-11-08, scientific necessity review)
 ## Do next:
-1. K5: complete the existing edit/missing-parent tests across the eligible lab cohort, prioritizing adapters, refusal removal and TIES/DARE merges; retain the Nov 21 target.
-2. By the Nov 14 review, expose one table across all planned edit groups: eligible/tested counts, errors, abstentions and gaps. Not-run cells stay visible; no extra per-model narrative.
-3. Review A's K8 proposal once promptly and return approve/amend/reject with reasons; propose any new split/threshold/truth rule separately before final testing.
-4. Own detection/noise rules; apply the same prewritten tests to C's real-model handoff and suitable positive/negative controls. C should not independently develop another detector.
+1. K5: reuse the joined measurements to state which proposed marks actually distinguish edits/sources from relatives and which cannot. Keep source support, a unique source answer and an unresolved test separate.
+2. Prepare a concrete development-only proposal only for unresolved decision rules needed by that question: controls, exposure/root grouping, statistic, noise allowance, informative-rule check and stopping criterion. Inspect saved controls first; no cutoff fishing.
+3. With A, score eligible saved family/source-present/removed cases under unchanged rules; report ambiguity, useful answers/errors and unavailable cases. Descriptive exposed-data evaluation does not require inventing an untouched test set.
+4. For fuller rank/writer reads, first explain what missing information they could resolve; run only a justified bounded addition. Keep Nov14 summary and Nov21 targets; decision heads/full tests stay explicit gaps.
 ## Decisions that affect you:
-- The quantization subtest and its parent-out subset pass in the lab; broad C2/C3 remain unverified. Do not reopen those runs without new contrary evidence.
-- K4/K14 retain existing bounded checks and dates; conclude pass/fail/inconclusive rather than expanding into new programmes. K9 remains lower priority.
+- Quantization/merge lab results stay closed. D7 asks the overseer to qualify categorical source-proof wording; broad C2/C3 stay unverified.
+- D6 approved; new final cutoffs/truth/splits still require review. Do not expand K4/K14 or lower-priority K9.
 ## Corrections:
-- Do not let numerical diagnosis on one model replace full edit coverage; a noise allowance that accepts any change is uninformative, not a pass.
-- Reuse the existing scorer/commands. Fix implementation only when it blocks the next evaluation; test counts are not scientific outcomes.
+- 90/112 children have scoped measurements, but only 12/112 immediate-source decisions were tested. NOT TESTED is not an abstention or detector pass.
+- Shared adapter support and overlapping merge shares do not establish unique sources; inconclusive rank tests do not support an affirmative compatibility verdict.
 ## Answers to your questions.
-- K8 review is a named dependency for A; do it without surrendering K5. D6 approved: K12 separates approved verified conclusions from open questions/test rules; later claims still require evidence and overseer approval.
+- Drafting the development protocol is already authorized: no approval-to-prepare card is needed. Keep the draft internal until actual rule/split changes and evidence are concrete and reviewable.
 ## Watch out for:
-- Never tune on final outcomes or relabel previously inspected data as unseen; separate missing parent from missing family and unsupported edit type.
-- Compute: project-wide cap four idle GPUs; default A=0/B=2/C=2, borrowing only by explicit handoff. Apply ROLES.md admission/reservation rules; large-run launch limits still apply.
+- Scientific necessity (DIRECTIVES.md D1.6) applies before more measurement. No unseen-test label for exposed roots.
+- Compute: four idle GPUs total, default A=0/B=2/C=2, borrowing by handoff. No current reservation; driver unavailable on last host, CPU work may proceed.

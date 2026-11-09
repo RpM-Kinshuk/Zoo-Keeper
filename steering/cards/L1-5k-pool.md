@@ -1,27 +1,21 @@
-# L1: Test family matching as the search grows
-Status: draft BLOCKED | Plan: K8 | Ready-card target: Nov 21
+# L1: Additional fingerprints — scientific justification required
+Status: draft BLOCKED on collection justification | Plan: K8 | Ready-card target: Nov21
 
-Purpose: measure useful answers, mistakes and costs as the search grows. Preparation is tested; the large weight run has not started.
+No useful question requiring collection of the selected5,000 has yet been established. **Scientific review and existing-artifact evaluation can proceed without more space.** The prepared roster is an available input, not a collection target.
 
-Ready inputs: 5,000 pinned, distinct header/resource-eligible candidates plus 154 reserve; 70 exclusions retained. The 216-query catalog includes only two inherited held-out keys. Planned compatible counts range 0–252 per query; 12 have zero. These header estimates precede value-dependent view removal, self/duplicate removal and numeric checks; they are not bounds on final score eligibility or 5,000 independent distractors per query.
+The order, corrected by the owner:
+1. State the useful unresolved question and what answer would change a decision.
+2. Evaluate existing fingerprints first, with rules written before execution.
+3. Identify the minimum additional comparable, labeled cases needed for any remaining gap; request none if existing evidence suffices.
+4. Size that justified collection, then assess storage, cost and owner launch approval.
 
-Still blocked:
-- B/steward must review whether this pool and the exposed query catalog answer the scientific question. No new truth, split, threshold or scientific freeze is applied.
-- Persistent free space must reach 52,977,254,828 bytes (about 52.98 GB). The budget snapshot records 26.25 GB free, a 26.72 GB shortfall. No deletion, extra upload or purchase is authorized. See [storage draft](draft-k8-storage.md).
-If no answer: retain data and keep this card blocked; use existing evidence for the November review.
+Next with B: evaluate the existing pinned query/anchor artifacts and already fingerprinted controls. Report actual comparability, known-positive retrieval, errors on explicitly labeled negatives, unresolved hits and existing missing-source behavior. Separate exposed/inherited-heldout cases and family retrieval from immediate-parent decisions. Preserve existing truth/splits/thresholds; no invented negatives or new parent classifier. B owns scientific acceptance and detector rules.
 
-Prepared command, OWNER ONLY after this card becomes ready, from the workspace root:
-```bash
-set -a; . ./.env; set +a
-bash "$ZOO_DATA/runs/track-a-k8-launch-20261108/collect.sh"
-```
-The verifier checks pinned inputs/source and current space before invoking the existing collector: CPU, four workers, one numerical thread each, k64/row256, sampled experts, no parents or parent cache. No large launch is authorized by this draft.
+B returned AMEND, accepted by A: descriptive results at actual comparable pool sizes are legitimate; broad unseen/5k-comparable claims are unsupported. That review does **not** justify collecting5,000. Existing root/parent anchors are comparable in226 pairs for134 queries before duplicate-group removal. Their known-positive cases can be evaluated now. [B review](../tracks/B-to-A-k8-review.md), [existing-input report](../../../runs/track-a-k8-readiness-20261108/REPORT.md).
 
-Expected cost: 0 GPU-hours; 2.567 TB planned tensor requests before retries; 19.70 GB fingerprint estimate / 40.66 GB planning reserve. Dense-anchor scaling predicts 112.44 serial elapsed hours, or 28.11 ideal four-worker wall hours. Historical mixed-host bins predict 505.91 serial hours, or 126.48 ideal wall hours, omitting 91 models without a historical bin. Neither is a measured CPU time, runtime guarantee or uncertainty interval; file/request overhead and concurrency can dominate. The hard timeout is seven days. Peak process RAM and fresh-model end-to-end latency remain unmeasured.
+Collection remains deferred until the question, existing-artifact result and minimal incremental scope are concrete. Steward coordinates the scientific review; no storage decision is requested now. [Storage draft parked](draft-k8-storage.md). Existing Nov14 review and final deadlines remain.
 
-Success: all intended distinct identities have valid, correctly pinned artifacts; then B's reviewed analysis reports usable/compatible counts, label/test exposure, known-present recall, false-hit bounds including unknowns, abstention and cost at each pool size. Missing size or truth stays a miss, not a successful benchmark.
-Stop if free space approaches 2 GiB, memory threatens the host, access is denied or systematic errors appear. Preserve completed artifacts/logs and wait for all workers to exit before rerunning the same command. Completed-artifact resume was tested on one real 8B model with zero new reader calls; interrupted models may reread data. [Resume details](../../../runs/track-a-k8-launch-20261108/RESUME.md).
+Historical preparation only: selected5,000 plus154 reserve, operational exclusions and planned compatibility0–252/query; only2 exact inherited heldout keys. No candidate weight collection occurred. The old2.567TB request estimate and52.98GB free-space gate apply only to that unapproved scenario; they are not prerequisites for the current evaluation.
+The original owner-only command, input hashes, costs and resume evidence remain in [prepared package](../../../runs/track-a-k8-launch-20261108/RESUME.md) and [resource report](../../../runs/track-a-k8-headers-20261108/REPORT.md). Do not execute the old collect.sh as the next step. A justified new scope must replace the launch package/budget before approval.
 
-Second opinion: independent preparation review found a header-boundary guard gap, reproduced and fixed with RED/GREEN regression; original review and lead disposition preserved. Storage-card skeptic agrees to retain data and hold launch. Neither substitutes for B's pending scientific review.
-Details: [resource report](../../../runs/track-a-k8-headers-20261108/REPORT.md), [per-query planned counts](../../../runs/track-a-k8-protocol-20261108/geometry-coverage.csv), [proposal](../../../runs/track-a-k8-protocol-20261108/PROPOSAL.md), [paired costs](../../../runs/track-a-k8-cost-20261108/REPORT.md).
-After a ready launch finishes: tell the steward; no publication or deletion follows automatically.
+Prior preparation/header-guard review and storage skeptic evidence remain preserved in the linked reports. No new freeze, claim, launch, deletion, spending, commit, merge or push follows from this card.

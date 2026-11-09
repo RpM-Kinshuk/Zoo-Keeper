@@ -1,22 +1,27 @@
-# Track C: baselines and truth sets
-Brief of 2026-11-08 read; D3/D5 approved; no largest/first-search-size claim.
+# Track C: real-model evidence and published comparisons
+Brief of 2026-11-08 read; D5/D6 and owner scientific-necessity rule confirmed.
 
-**Now:** requested local integration complete; K7 real Hub diagnostic recorded.
+**Now:** published-method evidence now includes ordinary-fine-tune direction.
+Owner checkout `worktrees/Zoo-Keeper-track-c`, branch `track-c`; uncommitted.
+GPU slots C≤2/B≤2/A=0; no borrowing/reservations or C jobs remain.
+CPU8threads on eniac.cs.dartmouth.edu; GPU driver unavailable.
+
 **Results since the last steward run:**
-- Prior seven-file C batch merged into main as 51aec90; merged suite 668 passed.
-- Fixed test environment: loopback allowed; orphan fsspec metadata quarantined,
-  valid installed 2026.2.0 code/metadata unchanged; backup retained in /tmp.
-- Four selected writer-block deltas measured on pinned Qwen 7B parent/candidate.
-- Rank-one residuals small, but cast-noise bound exceeds whole delta in every case:
-  consistency check uninformative; no C2 pass or verified construction edge.
-- v2 payload: 46,137,344 weight bytes + 107,782 metadata/header bytes.
-- Report: `Zoo-Keeper/docs/research/2026-11-08-k7-writer-diagnostic.md`.
-- Earlier K7: 18/20 repository names pinned; 13/14 declared edges have parent snapshots.
-- One mergekit recipe; two refusal-removal candidates; official GGUF build gaps retained.
-**Next:** informative noise controls with B; complete fingerprints and construction
-provenance; more merge recipes. Then remaining K2 priority methods.
-**Blocked or needs:** producer experiment→public weight mapping; GGUF build inputs.
-B evidence: `tracks/C-to-B-k7-evidence.md`; existing tier-loader issue resolves on main.
-Class 1: bounded two-model row reads, no raw blocks retained, truth stays declared.
-Diagnostic/integration notes and C result updates included in requested follow-up merge.
-Inherited heritability edits and unrelated main changes preserved; nothing running.
+- Witness cosine:8/16 correct; DPO8/8, SFT0/8; all2800 projections measured.
+- BF16-view control changes0/16 answers; nearest-witness distance agrees16/16.
+- Opposite-seed same-task witness is insufficient here; no general order claim.
+- [Witness report](../../../worktrees/Zoo-Keeper-track-c/docs/research/2026-11-08-k2-witness-results.md); RESULTS ledger updated.
+- Earlier matched quantization:126 pairs/method; residual parent-top7/12;
+  modelDNA unresolved12/12 with and without parent. Not whole-benchmark coverage.
+- K7 pinned declarations retained; no new verified construction edge/Hub verdict.
+
+**Next:** scientifically different training-branch witnesses, if available, and
+complete source-tiered multi-family real comparisons with appropriate controls.
+Stop repeated tests on unchanged triples; SVD needs a discriminating purpose.
+Nov14 usable-case/method review; Dec1–5 targets unchanged.
+
+**Blocked or needs:** C source selection/B shared panel needs suitable witnesses;
+B owns real detector/control rules. Historical construction/GGUF gaps retained.
+Class1: cosine equation adaptation, full tensors; documented pre-score dtype/schema
+correction plus rounding control. D1.6 synced into C directives;23checks pass.
+No new detector, truth/split/threshold change, commit/merge/push or heritability.
