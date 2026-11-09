@@ -30,9 +30,11 @@ def _digest(path):
 
 def hill_alpha(eigs):
     values = np.sort(np.asarray(eigs, dtype=np.float64))
-    if values.ndim != 1 or len(values) < 2 or not np.isfinite(values).all() or (values <= 0).any():
+    if values.ndim != 1 or len(values) < 2 or not np.isfinite(values).all() or (values < 0).any():
         raise ValueError('Invalid full spectrum')
     k = len(values) // 2
+    if values[-k-1] <= 0:
+        raise ValueError('Invalid zero Hill threshold')
     denominator = np.log(values[-k:] / values[-k-1]).sum()
     if denominator <= 0 or not np.isfinite(denominator):
         raise ValueError('Flat or invalid Hill tail')

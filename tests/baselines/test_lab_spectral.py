@@ -73,7 +73,15 @@ def test_hill_formula_and_scale_invariance():
     assert hill_alpha(eigs * 17) == pytest.approx(expected, abs=1e-12)
 
 
-@pytest.mark.parametrize('eigs', [[1, 1, 1, 1], [0, 1, 2, 3], [1, np.nan], [-1, 2], [1]])
+@pytest.mark.parametrize('eigs, expected', [
+    ([0, 1, 2, 3], 1 + 2/np.log(6)),
+    ([0, 0, 1, 2, 4], 1 + 2/np.log(8)),
+])
+def test_hill_preserves_lower_zeros_and_full_length(eigs, expected):
+    assert hill_alpha(eigs) == pytest.approx(expected, abs=1e-12)
+
+
+@pytest.mark.parametrize('eigs', [[1, 1, 1, 1], [0, 0, 1, 2], [1, np.nan], [-1, 2], [1]])
 def test_invalid_spectra_abstain(eigs):
     with pytest.raises(ValueError):
         hill_alpha(eigs)
