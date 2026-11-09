@@ -60,3 +60,24 @@ old91-pair guard result/code retained, no calibration or split adjustment.
 `runs/track-c-k2-matched-spectra-corrected-20261108/REPORT.md` has the fair table.
 C read B-to-C-witness-review.md: AMEND/defer accepted, no optional q/v scores.
 This is Nov14 coverage evidence; full/control-complete verified tier remains open.
+
+## Ancestry versus source control result — Nov9
+New comparison on the EXACT old L12 development/test control universes (not a
+rerun of126-pair source ranking, and not the134-query existing-catalog evaluation):
+native modelDNA and canonical-MLP residual score each cover60/60 pairs, AUROC1.00
+per split. Only two root labels per split; dependent/reversed pairs, old exposure
+and publisher seed-provenance limits remain explicit. No new truth/split/gate.
+Archived spectral universes match byte hashes; earlier Trace/spectral not rescored.
+
+Native positive threshold0.9 unchanged:12/12 same-root and0/18 different-root pairs
+in positive band per partition. All18 development different-root pairs receive
+SAME_FAMILY_UNRESOLVED only in its0.5–0.9 abstention band; test negatives NO_MATCH.
+Do not collapse the class string into affirmative family evidence. Existing real
+Qwen/Tulu12 unresolved verdicts are above0.9 but reflect multiple-relative ties;
+high family support still does not prove a unique source. No new real scoring.
+
+Report/inputs/root leakage and label-context audits:
+`runs/track-c-k2-ancestry-controls-20261109/REPORT.md`.
+This supports ancestry usefulness on the small frozen panel, not a calibrated
+false-parent guarantee or broad7B transfer. Please keep those questions separate
+in the shared evidence table. No further weights, controls or cutoffs requested.

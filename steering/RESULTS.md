@@ -818,3 +818,30 @@ declared-base models and pool curves through 100. No full claim promotion.
 |Native new v2 source bytes|1,743,026,409|reuse two earlier fingerprints|no duplicate payload for saved inputs|`runs/track-c-k7-native-20261108-v2/REPORT.md`|
 |Initial native acquisition/comparison seconds|198.377763|bounded initial eight-snapshot attempt|stopped at unsupported OLMo format|`runs/track-c-k7-native-20261108-v2/REPORT.md`|
 |Native v2 acquisition/comparison seconds|863.483332|six new supported payloads; expected<3600s|within authorized combined time/model boundary|`runs/track-c-k7-native-20261108-v2/REPORT.md`|
+
+## Track C — frozen ancestry controls, 2026-11-09
+
+| Measurement | Observed | Target/scope | Meaning | Source |
+| --- | ---: | --- | --- | --- |
+|Frozen-control identities|12/12|exact existing checkpoint pins|operational identity check passed|`runs/track-c-k2-ancestry-controls-20261109/REPORT.md`|
+|Independent-root labels per partition|2|inherited roots, not30 independent trials|small exposed panel; no broad confidence bound|`runs/track-c-k2-ancestry-controls-20261109/REPORT.md`|
+|Same-root pairs per partition|12|unchanged frozen universe|ordered dependent comparisons|`runs/track-c-k2-ancestry-controls-20261109/REPORT.md`|
+|Different-root pairs per partition|18|unchanged frozen universe|ordered dependent comparisons|`runs/track-c-k2-ancestry-controls-20261109/REPORT.md`|
+|modelDNA development scores|30/30|all frozen rows|complete coverage|`runs/track-c-k2-ancestry-controls-20261109/REPORT.md`|
+|modelDNA inherited-test scores|30/30|all frozen rows|complete coverage|`runs/track-c-k2-ancestry-controls-20261109/REPORT.md`|
+|Residual development scores|30/30|all frozen rows|complete coverage|`runs/track-c-k2-ancestry-controls-20261109/REPORT.md`|
+|Residual inherited-test scores|30/30|all frozen rows|complete coverage|`runs/track-c-k2-ancestry-controls-20261109/REPORT.md`|
+|modelDNA development ancestry AUROC|1.00|descriptive; no new gate|separation on two-root development panel|`runs/track-c-k2-ancestry-controls-20261109/REPORT.md`|
+|modelDNA inherited-test ancestry AUROC|1.00|descriptive; prior exposure retained|separation on two-root inherited test|`runs/track-c-k2-ancestry-controls-20261109/REPORT.md`|
+|Residual development ancestry AUROC|1.00|descriptive; no calibration fitted|separation on two-root development panel|`runs/track-c-k2-ancestry-controls-20261109/REPORT.md`|
+|Residual inherited-test ancestry AUROC|1.00|descriptive; no new gate|separation on two-root inherited test|`runs/track-c-k2-ancestry-controls-20261109/REPORT.md`|
+|Native same-root positive-band pairs|12/12 per partition|unchanged published positive threshold0.9|relatedness support; not unique-source proof|`runs/track-c-k2-ancestry-controls-20261109/REPORT.md`|
+|Native different-root positive-band pairs|0/18 per partition|unchanged published positive threshold0.9|observed count; not an independent-trial FPR bound|`runs/track-c-k2-ancestry-controls-20261109/REPORT.md`|
+|Native development negative unresolved-band cases|18/18|published abstention band0.5–0.9|class name is not affirmative ancestry|`runs/track-c-k2-ancestry-controls-20261109/REPORT.md`|
+|Native inherited-test negative NO_MATCH cases|18/18|published below-abstention band|class-name behavior varies with score context|`runs/track-c-k2-ancestry-controls-20261109/REPORT.md`|
+|Native complete four-feature pairs|60/60|all new fixed pairs|no silent native feature gaps|`runs/track-c-k2-ancestry-controls-20261109/REPORT.md`|
+|Prior real unresolved cases in native positive band|12/12|existing Qwen/Tulu verdict audit only|multiple-relative ambiguity; no rescoring|`runs/track-c-k2-ancestry-controls-20261109/REPORT.md`|
+|Native local-reader logical bytes|52,784,484|local extraction only|not network or full end-to-end cost|`runs/track-c-k2-ancestry-controls-20261109/REPORT.md`|
+|Residual full-MLP logical bytes|18,874,368|complete factors, all layers|local feature-read count|`runs/track-c-k2-ancestry-controls-20261109/REPORT.md`|
+|Input verification scan bytes|641,462,368|separate counted SHA256 scans|OS-level physical I/O unmeasured|`runs/track-c-k2-ancestry-controls-20261109/REPORT.md`|
+|Frozen-control extraction/scoring seconds|62.156887|expected<300s,12local models|within bounded CPU run; installation/tests excluded|`runs/track-c-k2-ancestry-controls-20261109/REPORT.md`|

@@ -1,28 +1,27 @@
 # Track C: real-model evidence and published comparisons
-Brief of 2026-11-08 scientific necessity review read; D1.6 and D5/D6 applied.
+Brief scientific necessity review reread Nov9; D1.6/D5/D6 retained.
 
-**Now:** two usable declared-tier real neighborhoods; four matched lab methods.
-Owner checkout `worktrees/Zoo-Keeper-track-c`, branch `track-c`; all uncommitted.
-GPU slots C≤2/B≤2/A=0; no borrowing/reservations or C jobs remain.
-CPU8threads on eniac.cs.dartmouth.edu; no admitted GPU, no large launch.
+**Now:** completed C progress merged locally into main; nothing pushed.
+Track branch/worktree retained and synced for continued C work; no jobs or GPUs.
+Project GPU slots remain A=0/B≤2/C≤2; no reservations or borrowing.
 
 **Results since the last steward run:**
-- Qwen7B/Tulu8B:8/12 snapshots and18/27 pairs; OLMo bin-only group not_run.
-- Real modelDNA:6/6 unresolved with declared-source snapshot,6/6 without; no
-  definite source answers or verified construction edge. All four signals present.
-- [Real report](../../../worktrees/Zoo-Keeper-track-c/docs/research/2026-11-08-k7-native-results.md); original OLMo gap retained, Tulu explicit extension.
-- Four lab methods now share all126 B pairs. Unique true-source top:Trace3/12,
-  spectral0/12,residual7/12;modelDNA unresolved. These are not calibrated parents.
-- [Matched report](../../../worktrees/Zoo-Keeper-track-c/docs/research/2026-11-08-k2-four-method-matched-results.md); Hill guard/test-spec repaired explicitly,
-  n/k/tail rule unchanged; original91-pair result and code retained;31checks pass.
-- Witness audit0/24 adapters qualifies for full-panel independence; B AMEND/defers
-  correlated q/v contrast. No new witness scoring; prior16-edge result stays closed.
+- Frozen ancestry controls: native modelDNA/residual AUROC1.00 in each partition;
+  only2 exposed roots per partition, not a broad error guarantee.
+- Native development negatives say unresolved in abstention band; class names
+  alone are not affirmative ancestry. No calibrated immediate-source result.
+- [Control report](../../docs/research/2026-11-09-k2-ancestry-controls-results.md); original rows/root partitions preserved.
+- Prior Qwen/Tulu real source neighborhoods and four-method126-pair comparison
+  remain scoped evidence; OLMo unsafe-format gap/unknown history stay explicit.
+- B deferred the correlated witness contrast; no additional witness scoring.
+- [Integration](../../docs/research/2026-11-09-track-c-integration.md): main/worktree runner paths corrected;
+  C checks pass, full suite retains two numerical failures reproduced on old main.
 
-**Next:** Nov14 shared evidence review: usable cases, method coverage, costs/gaps.
-B can assess whether existing agreed controls make a stronger answer on these
-exact neighborhoods; no additional reads merely to fill cells. Dec1–5 unchanged.
+**Next:** Nov14 shared summary separates ancestry support, source resolution,
+missing inputs and score bands; B's agreed validation proposal guides any next test.
+No seed/weight expansion merely for counts. Dec1–5 full-tier targets unchanged.
 
-**Blocked or needs:** no independent ancestry negatives or historical input pins;
-OLMo SFT/DPO snapshots need safe upstream weights for this comparison.
-Class1: reuse saved spectra/fingerprints; mathematical guard fix, not a fitted
-threshold. No truth/split/claim change, detector, commit/merge/push or heritability.
+**Blocked or needs:** few exposed roots; no independent real7B controls or exact
+historical inputs. Existing distributed-training numerical failures remain open.
+Class1: missing pinned test dependencies restored --no-deps; no existing versions
+changed. No scientific rerun, truth/split/threshold/claim change or new detector.
