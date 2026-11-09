@@ -29,8 +29,8 @@ sample quota, interface feature, or earlier deadline for all K5/K7/K2 work.
   and independent validation before any final rule, panel expansion or new
   positive edit category. Both input assumptions reuse the same four cases.
 - C's ancestry controls and full four-method quantization comparison are now
-  complete in their recorded scope. B/C map existing real-model inputs to the
-  proposed method assumptions and missing independent controls first.
+  complete in their recorded scope. B/C have completed the selected real-model applicability audit; neither
+  reviewed candidate is ready. Reuse those findings rather than repeat it.
 - C interleaves K2 with K7 whenever historical provenance is blocked. Missing
   construction records restrict conclusions, not all descriptive evaluation.
 - Keep K4/K14 to the already-required bounded checks; record an inconclusive
@@ -39,6 +39,18 @@ sample quota, interface feature, or earlier deadline for all K5/K7/K2 work.
 - Judge progress by coverage, wrong answers, useful answers/abstentions, real
   model transfer, comparisons and full workflow cost. Routine unit-test counts,
   per-file inventories and per-block diagnostics stay in linked run reports.
+
+**Applicability audit closed (Nov 9):** neither reviewed external projection
+candidate qualifies under the unchanged joint rule. Lab positives are
+sentiment-conditioned mathematical projections, not behaviorally validated
+refusal removal. Carry this limit into the empirical benchmark summary; no
+indefinite producer-record hunt or new weight run is assigned. Reopen only for
+a specific available record or bounded decision-changing request, with external
+contact still requiring explicit authorization.
+The proposed within-family transfer falsification needs verified in-scope
+source/output, fixed panel and hard relatives; unrelated-model initialization
+controls belong to separate ancestry/error testing. This is clarification of
+an unadopted design, not a change to current targets, thresholds or splits.
 
 **Scientific necessity (owner instruction):** apply DIRECTIVES.md D1.6.
 Question → existing-evidence evaluation → necessary additional information →

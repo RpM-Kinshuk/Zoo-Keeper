@@ -1,23 +1,22 @@
-# Current cross-track dependencies — 2026-11-09
-This replaces resolved handoffs, not the source reports or frozen protocols.
+# Current evidence and dependencies — 2026-11-09
+Use the saved reports below for Nov14; completed audits/tests are not recurring tasks.
 
-- **A/B complete:** family/source-present/removed evaluation and A's evidence-coverage join. Reuse them; no rerun, collection or storage action.
-- Family answers after source removal remain family evidence, not false parent answers. Quantization misses and original exact-mark results use different tests/pools; no combined detector is validated.
-- **B next:** assess where the four-case joint classic-source rule's operator, export and construction-aware selection assumptions hold. Stop that pilot; no automatic cutoff/layer/Heretic expansion or final adoption.
-- **C with B:** map existing real Qwen/Tulu cases to those assumptions, historical-input gaps and independent-control requirements before proposing the next test. Unknown construction history stays unknown.
-- **Heretic:** recorded FULL normalization/rank3 qualifies a universal rank1 expectation only conditionally on historical implementation. It is not observed stored rank or a new allowance; prepare a concrete card only if a necessary changed test requires it.
-- **Comparisons complete in scope:** four methods on the fixed quantization panel and frozen ancestry controls. Native score bands/notes, not class strings alone, determine affirmative support versus abstention.
-- **Witness result closed:** SFT0/8 and DPO8/8 with correlated witnesses; shared-BF16 control unchanged. Optional q/v witness contrast deferred by B/C; do not restart it by reading an old prompt.
-- **No present collection/space request:** old K8 preparation, proposed pools and resource estimates remain historical evidence. Additional inputs need a named decision-changing gap and minimum scope first.
-- **GPU policy:** four idle project-wide, initial A0/B2/C2 with handoffs. Last B test used one reserved GPU briefly, found CPU faster for that workload and released it. No current reservation.
+- **A complete:** existing family evaluation and exact-evidence join. Family support119/134 present and112/134 removed;9/15 family misses have successful exact tests in their ORIGINAL pools. No combined classifier or recovered recall.
+- **B complete:** conditional four-case projection/source pilot and applicability account. Lab positives are sentiment-conditioned mathematical projections; refusal/capability behavior was not validated.
+- **C complete:** source-tier/history/control reality check. Neither reviewed Qwen projection candidate qualifies under B's unchanged rule; no verified historical construction input or untouched confirmation case in the selection.
+- **Meaning:** eligibility gaps are not measured detector failures. Existing declared real-model relationships remain useful descriptive comparisons, not verified source truth.
+- **Next B clarification:** separate one within-family transfer falsification (verified in-scope source/output, fixed panel, hard relatives) from ancestry/general-error testing (unrelated controls). Certified unrelated initialization is not a prerequisite to the former. Original C1/C3 targets stay unchanged.
+- **Stop here unless evidence changes:** no open-ended producer-record search, contact, weights or new pilot. Reopen only for a specific available record or a bounded decision-changing request; external contact requires explicit owner authorization.
+- **Nov14 outcome:** current empirical/benchmark evidence and practical limits, including ancestry versus exact source, operator assumptions, unknown history and validation requirements. No premature venue or paper pivot.
+- **Comparisons/witness closed:** four-method quantization/control panels; SFT0/8/DPO8/8 correlated-witness result and deferred alternate contrast. No rerun or variant sweep.
+- **Resources:** collection/storage parked. Four idle GPUs project-wide, initial A0/B2/C2 with handoffs; no reservation. Compute cannot certify unknown history.
 
 Sources:
+- `worktrees/Zoo-Keeper-track-b/docs/steering/K5-applicability-validation.md`
+- `runs/track-c-reality-check-20261109/REPORT.md`
+- `runs/track-b-joint-source-20261109-v3/REPORT.md`
 - `runs/track-b-existing-artifacts-20261108/REPORT.md`
 - `runs/track-a-existing-evidence-join-20261108/REPORT.md`
-- `runs/track-b-joint-source-20261109-v3/REPORT.md`
 - `Zoo-Keeper/docs/research/2026-11-09-k2-ancestry-controls-results.md`
 - `runs/track-c-k7-native-20261108-v2/REPORT.md`
 - `runs/track-c-k2-witness-20261108-v3/REPORT.md`
-- `worktrees/Zoo-Keeper-track-b/docs/steering/K5-development-proposal.md`
-
-All prior coordination text is recoverable from Git `fbf40e0a5097bf243f1fcb162c0185c1e171e0f4`; RESULTS.md retains outcome-level findings and links. No scientific freeze changed.

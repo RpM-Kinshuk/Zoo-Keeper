@@ -47,6 +47,16 @@ New results make those distinctions concrete:
   correlated contrast is deferred. Heretic FULL/rank3 recipe expectations are
   conditional, not observed rank or a new decision allowance.
 
+The applicability audit is now complete: neither of the two reviewed external
+projection candidates qualifies for the unchanged joint rule. The lab positives
+were sentiment-conditioned mathematical projections, with no refusal/capability
+behavior validation. That is conditional operator/source-consistency evidence,
+not a validated refusal-removal detector. Unknown historical construction and
+extra declared target edits remain explicit; lack of eligibility is not a scored
+failure. A within-family transfer test and a broad ancestry false-positive test
+must not be given identical control prerequisites. Current claims/tests remain
+unchanged; only the unadopted validation proposal is clarified.
+
 Closed quantization/replay and known-source merge-coefficient results stay in
 scope. The broader edit methods, independent real-model control tier and large
 scaling claim remain unfinished. C1–C5 stay checked; C6 stays a later hypothesis.

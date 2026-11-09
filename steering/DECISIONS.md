@@ -162,6 +162,8 @@ Closed card options/reviews and the full earlier log are preserved at Git
 
 ## Current coordination and preferences
 
+- Nov 9, steward/fresh skeptic: close B/C applicability audits; treat the pilot as mathematical projection/source consistency without refusal-behavior validation. Separate within-family transfer from ancestry error-test prerequisites; no current rule/target/split changed. No indefinite producer-record hunt or unapproved contact.
+
 - Nov 9, steward: completed A/B/C results carried into one curated ledger and shared dependency note. Stop passed pilots; assess applicability/independent validation before expanding.
 - Nov 9, overseer cleanup request: remove superseded handoffs/cards and reduce old logs. Preserve raw evidence, protocols and unique data. Old documentation remains recoverable at the exact revision above.
 - Scientific necessity: every task/statement needs a necessary concrete outcome; reuse evidence, consider different framings and state the stopping point. No approval-to-prepare bureaucracy (overseer, Nov 8).

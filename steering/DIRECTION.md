@@ -36,9 +36,12 @@ The merged plan remains the reference for methods detail.
   Family matches can remain after source removal; exact-mark evidence can be
   informative where a fixed family-similarity rule misses a quantization.
   This is not a validated combined source decision.
-- A joint classic refusal-removal source rule works on four exposed cases in
+- A joint mathematical-projection source rule works on four exposed cases in
   its fixed pools under declared input/operator assumptions. Stop this pilot;
   applicability and independent validation precede any final adoption.
+  The applicability audit now excludes neither history by inference nor adds
+  proof: neither reviewed external case is ready; lab refusal behavior was not
+  validated. Carry this as a conditional operator result, not safety-detection proof.
 - Four comparison methods have matched quantization and ancestry controls.
   Small-root ancestry success and real-model source ambiguity must stay separate.
 - Fixed witness direction gives SFT0/8, DPO8/8; correlated witness follow-up is

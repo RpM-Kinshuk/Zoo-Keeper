@@ -1,16 +1,15 @@
-# Brief: track A (2026-11-09, progress and cleanup)
+# Brief: track A (2026-11-09, applicability audit closed)
 ## Do next:
-1. Carry the completed B family evaluation and A evidence join into Nov14; show family support, exact-mark support, unique-source answers and unknowns as separate outcomes, with their original pools/exposure.
-2. With B, identify whether any user-relevant failure needs missing data or a method/assumption change. Propose new inputs only for a concrete unresolved decision and minimum necessary scope.
-3. Use tracks/SHARED.md for current dependencies; do not replay retired handoffs or re-create their logs.
+1. Keep the Nov14 practical evidence summary current from saved reports. Family support, original exact-mark results, conditional projection-source consistency and unknown history remain separate outcomes.
+2. Immediate A measurement/input work is complete. Support a specific B/C validation request only when it names available evidence and a decision-changing gap; no make-work data collection.
 ## Decisions that affect you:
-- D7 is approved; K0/K10, saved workflow, K6 diagnostic and the A join stay closed in their recorded scope. No combined fallback/detector is validated by the 9/15 evidence join.
-- Collection and capacity remain parked. No large launch, space request, header/demo rerun or extra fingerprint collection is currently justified.
+- B/C applicability audit complete: 0/2 reviewed external projection candidates ready; existing-data work is not blocked on storage. Collection and capacity remain parked.
+- D5–D7 approved. The lab source pilot does not establish refusal behavior; the evidence join does not validate a combined classifier or recover recall.
 ## Corrections:
-- 119/134 present and 112/134 removed-source family answers are not immediate-source accuracy. Nine covered misses are existing evidence, not newly recovered recall.
-- Do not duplicate B's scored results or C's comparisons; reuse pinned result reports and their input records.
+- Do not repeat summaries, demos, headers or exact-result joins as new measurements. No open-ended search for producer records or larger roster is assigned.
+- Scientific necessity precedes resource plans; more unlabeled models cannot resolve undocumented historical operations.
 ## Answers to your questions.
-- A's bounded evaluation/join is complete. Support B's applicability/validation question; no further A measurement is automatically required.
+- No current A run is necessary. A remains responsible for reusable inputs/costs if a concrete, reviewed follow-up is justified.
 ## Watch out for:
-- Scientific necessity and existing truth/split/threshold rules remain. Retired docs are recoverable from the revision in DECISIONS.md; raw evidence stays intact.
-- Compute: shared cap four idle GPUs, initial A0/B2/C2, borrowing by handoff; no current allocation. GPU availability is not a reason to create work.
+- Keep current truth/split/threshold rules and exposed-case limits; no new broad claim or deadline change.
+- Four idle GPUs remain a shared ceiling, initial A0/B2/C2 with handoffs. No allocation is needed to complete this phase.

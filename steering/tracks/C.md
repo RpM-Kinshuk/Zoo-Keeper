@@ -1,27 +1,24 @@
-# Track C: real-model evidence and published comparisons
-Brief scientific necessity review reread Nov9; D1.6/D5/D6 retained.
+# Track C: real-model history and control applicability
+Brief of 2026-11-09 progress/cleanup confirmed; D1.6 and D5–D7 retained.
 
-**Now:** completed C progress merged locally into main; nothing pushed.
-Track branch/worktree retained and synced for continued C work; no jobs or GPUs.
-Project GPU slots remain A=0/B≤2/C≤2; no reservations or borrowing.
+**Now:** metadata-only reality check complete; comparisons/witness remain closed.
+Report: `runs/track-c-reality-check-20261109/REPORT.md`.
+Owner code/docs: `worktrees/Zoo-Keeper-track-c`; shared steering here.
 
-**Results since the last steward run:**
-- Frozen ancestry controls: native modelDNA/residual AUROC1.00 in each partition;
-  only2 exposed roots per partition, not a broad error guarantee.
-- Native development negatives say unresolved in abstention band; class names
-  alone are not affirmative ancestry. No calibrated immediate-source result.
-- [Control report](../../docs/research/2026-11-09-k2-ancestry-controls-results.md); original rows/root partitions preserved.
-- Prior Qwen/Tulu real source neighborhoods and four-method126-pair comparison
-  remain scoped evidence; OLMo unsafe-format gap/unknown history stay explicit.
-- B deferred the correlated witness contrast; no additional witness scoring.
-- [Integration](../../docs/research/2026-11-09-track-c-integration.md): main/worktree runner paths corrected;
-  C checks pass, full suite retains two numerical failures reproduced on old main.
+**Findings:** six Qwen/Tulu edges retain DECLARED history, unknown actual inputs.
+Neither Qwen refusal candidate is ready for B's unchanged joint rule: per-layer
+shared direction unestablished; other candidate changes embeddings/untied head.
+Tulu stages supply related competitors, not independent ancestry negatives.
+No strict independent full-architecture real control or untouched confirmation
+qualifies in audited selection. Beagle/Llama projection geometry is conditional:
+config compatibility does not establish complete ancestry or full-tensor eligibility.
+Current linked code is pinned static evidence, not historical execution proof.
 
-**Next:** Nov14 shared summary separates ancestry support, source resolution,
-missing inputs and score bands; B's agreed validation proposal guides any next test.
-No seed/weight expansion merely for counts. Dec1–5 full-tier targets unchanged.
-
-**Blocked or needs:** few exposed roots; no independent real7B controls or exact
-historical inputs. Existing distributed-training numerical failures remain open.
-Class1: missing pinned test dependencies restored --no-deps; no existing versions
-changed. No scientific rerun, truth/split/threshold/claim change or new detector.
+**Next dependency:** B names the decision requiring a different operator model;
+obtain a producer-linked input/output/operator/export construction packet for an
+in-scope independently produced case before proposing weights. Confirmation needs
+unused root groups, source-present/removed pools, relatives and independent controls.
+No new scoring/collection/witness probe justified by metadata gaps alone.
+Nov14: support/band/source ambiguity/missing inputs separate; Dec1–5 retained.
+No model payloads, jobs or GPU reservation; no truth/split/threshold changes.
+Work remains uncommitted; current dependency in SHARED, detail in run report.

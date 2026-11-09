@@ -1,17 +1,15 @@
-# Brief: track C (2026-11-09, progress and cleanup)
+# Brief: track C (2026-11-09, reality check closed)
 ## Do next:
-1. Keep the completed ancestry controls, four-method quantization table and fixed witness results closed. For Nov14, report ancestry support, score/abstention band, source ambiguity and missing inputs separately.
-2. With B, map the existing Qwen/Tulu cases to B's joint rule assumptions and independent-control needs; identify which histories/operators are supported versus unknown before requesting any new measurement.
-3. If existing cases cannot validate a proposed rule, state the precise missing evidence and minimum justified confirmation design; no automatic seed, weight, writer-panel or collection expansion.
+1. Close the completed reality check. For Nov14 retain declared family context, unknown historical input/operator records, unsupported transfer and absent independent-control evidence as distinct findings.
+2. With B, separate transfer falsification from ancestry error testing: relatives plus verified in-scope source/output are needed for the former; unrelated-model controls address the latter. Do not block one question on all prerequisites of the other.
+3. Reopen metadata qualification only for a specific available record or a bounded request whose answer could change the verdict. No global search, new writer probes, witness run or collection is assigned now.
 ## Decisions that affect you:
-- D5/D6/D7 approved; no broad claim promoted. Native verdict strings alone are not confirmed-family decisions; the score band/notes matter.
-- B/C deferred the correlated witness contrast. SFT0/8 and DPO8/8 remains exploratory evidence, not a reason for another witness or SVD sweep.
+- Neither reviewed Qwen projection candidate is ready under the unchanged joint rule. Unknown shared span is not proved different; extra embedding/head edits cannot be silently omitted.
+- Existing Qwen/Tulu comparisons remain useful descriptive evidence; they cannot certify construction history. Current linked code is not historical execution proof.
 ## Corrections:
-- AUROC1 on two exposed roots per partition is narrow discrimination evidence, not a future error guarantee or unique-source result.
-- Existing real neighborhoods have declared histories and no matched independent real7B negatives; preserve unsafe-format exclusions and don't substitute convenient revisions.
+- Do not turn a need for exact source records into an indefinite task or an invitation to contact producers. External contact requires the overseer's explicit instruction.
+- Missing unrelated real-model controls limits ancestry/error claims; it is not itself a prerequisite for a single within-family transfer falsification. No case is made eligible by this clarification alone.
 ## Answers to your questions.
-- Loader/integration handoffs are resolved; numerical training-test failures are recorded implementation gaps, not scientific results to keep rerunning.
-- Current dependencies are in tracks/SHARED.md. Detailed scientific development stays in the existing proposal/reports, not new handoff chains.
+- Audit stopping condition is met. Preserve all source hashes; use the completed comparison/benchmark evidence for Nov14, not another duplicate report.
 ## Watch out for:
-- Keep Nov14/Dec1–5 targets and scientific-necessity/unchanged truth, split and threshold rules. No new detector or claim without review.
-- Shared GPU cap four idle, initial A0/B2/C2 with handoffs. No C job/reservation; use existing acceleration only where useful.
+- Four idle GPUs project-wide remain available only for useful justified work, initial A0/B2/C2. No current allocation; truth/splits/thresholds/claims and dates stay unchanged.

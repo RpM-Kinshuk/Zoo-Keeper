@@ -1,27 +1,27 @@
 # Track B: lab methods and P1 evaluation
-Brief of 2026-11-08 scientific necessity review read; D6 approved.
+Brief of2026-11-09 progress/cleanup read; D6/D7 approved.
 
-**Now:** joint source development test completed; [report](../../../runs/track-b-joint-source-20261109-v3/REPORT.md).
-No final rule adopted; B work integrated into main, uncommitted.
-No jobs/GPU reservations remain; esd_ind CPU1thread on voyager.
+**Now:** applicability account and focused independent validation prepared.
+[Account](../../../worktrees/Zoo-Keeper-track-b/docs/steering/K5-applicability-validation.md).
+No jobs/GPU reservations, weight reads or new scoring; pilot stopped.
 
 **Results since the last steward run:**
-- All72/72 fixed candidate pairs evaluated:33 inherited,39 new;4 exposed queries.
-- fp32_input source-present: useful4, wrong0, abstain0 /4.
-- fp32_input source-removed: useful0, wrong0, abstain4 /4.
-- bf16_input source-present: useful4, wrong0, abstain0 /4.
-- bf16_input source-removed: useful0, wrong0, abstain4 /4.
-- These conditional results do not establish general precision or unknown-history
-  real-model transfer. Heretic positive-query and other edit detectors stay open.
-- Original v2 incomplete record preserved; exact4 missing checkpoints restored.
-- GPU test:0.257s CPU vs3.737s GPU on fixed SVD; released GPU, used CPU.
-- Runtime1439.30s; SVD3.50s; hashing1431.93s dominates.
-- Quantization12 and coefficient18 successes remain closed; no collection justified.
+- 0/2 reviewed external refusal candidates ready for independent confirmation.
+- C's14 declared edges have0 recorded construction-input revisions (inherited).
+- sci4ai: shared span UNKNOWN from per-layer extraction; not proved different.
+- knoveleng: declared embedding/head edits outside pilot writer set;
+  both cases lack historical-input and arithmetic/export evidence; already exposed.
+- All4 lab positives are sentiment-conditioned mathematical projections;
+  refusal/capability behavior was not validated. Their metadata matches pilot pins.
+- Pilot remains4/4 correct present,4/4 abstain removed per assumption;
+  12 closed quantization cases separate; no broader reliability or claim lift.
 
-**Next:** review applicability and independent source/control validation;
-no automatic panel/cutoff expansion. Nov14/Nov21/later deadlines retained.
+**Next:** C identifies a producer-verified in-scope case with independent
+source/control evidence before weights. Freeze original panel without inspecting
+new outcomes. One case is a transfer falsification, not precision calibration.
+Nov14 uses curated RESULTS/SHARED; Nov21/later dates retained.
 
-**Blocked or needs:** final noise/detector approval and generalization evidence.
-Class1: main checks694pass;2 known SFT failures retained; new B tests pass.
-Class2: distinguish12 closed source cases from4 conditional development cases.
-No truth/split/threshold changes, commits, merges or pushes.
+**Blocked or needs:** eligible independent construction packet and controls.
+Class1: metadata source hashes checked; no original verdict or rule changed.
+Class2: fresh skeptic agrees; shared span corrected to UNKNOWN in audit.
+Uncommitted on B; no commits/merges/pushes or collection request.
