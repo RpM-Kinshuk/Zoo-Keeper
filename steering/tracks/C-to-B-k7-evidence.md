@@ -39,3 +39,24 @@ Full protocol, errors, margins and successful-run costs in
 This supplies K9 exploratory evidence for the shared table, not a new freeze.
 Different training-branch witnesses are the useful next input; repeating these
 same triples or adding SVD without a discriminating question is deferred.
+
+## Complete supported native neighborhoods and four-method lab table — Nov8
+Qwen2.5-7B and Llama3.1/Tulu3-8B now have all four pinned native modelDNA
+fingerprints per group, all9 pair comparisons and6 source-present/removed native
+verdicts per group. All12 verdicts SAME_FAMILY_UNRESOLVED. Labels stay declared;
+historical construction pins unknown, no calibrated parent/type/order claim.
+OLMo SFT/DPO pins are bin-only: entire four-node neighborhood stays not_run.
+No unpickling, conversion or alternate revision used. Tulu was an explicit
+additional case, not a rewritten successful OLMo plan. Reports/pools/input hashes:
+`runs/track-c-k7-native-20261108-v2/REPORT.md` and protocol/results.json.
+Native fingerprints cannot be converted to Zoo row sketches; any new extraction
+needs a named discriminating question and your agreed controls first.
+
+Cached spectra additionally close the old matched-cohort gap: all126 B pairs
+for Trace-native and corrected Spectral-Signatures-native, zero new weights.
+Unique source top3/12 and0/12; residual earlier7/12; modelDNA earlier unresolved.
+Correction preserves n/k/fixed-tail threshold, accepts irrelevant lower zeros;
+old91-pair guard result/code retained, no calibration or split adjustment.
+`runs/track-c-k2-matched-spectra-corrected-20261108/REPORT.md` has the fair table.
+C read B-to-C-witness-review.md: AMEND/defer accepted, no optional q/v scores.
+This is Nov14 coverage evidence; full/control-complete verified tier remains open.

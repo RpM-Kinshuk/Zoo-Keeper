@@ -1,27 +1,28 @@
 # Track C: real-model evidence and published comparisons
-Brief of 2026-11-08 read; D5/D6 and owner scientific-necessity rule confirmed.
+Brief of 2026-11-08 scientific necessity review read; D1.6 and D5/D6 applied.
 
-**Now:** published-method evidence now includes ordinary-fine-tune direction.
-Owner checkout `worktrees/Zoo-Keeper-track-c`, branch `track-c`; uncommitted.
+**Now:** two usable declared-tier real neighborhoods; four matched lab methods.
+Owner checkout `worktrees/Zoo-Keeper-track-c`, branch `track-c`; all uncommitted.
 GPU slots C≤2/B≤2/A=0; no borrowing/reservations or C jobs remain.
-CPU8threads on eniac.cs.dartmouth.edu; GPU driver unavailable.
+CPU8threads on eniac.cs.dartmouth.edu; no admitted GPU, no large launch.
 
 **Results since the last steward run:**
-- Witness cosine:8/16 correct; DPO8/8, SFT0/8; all2800 projections measured.
-- BF16-view control changes0/16 answers; nearest-witness distance agrees16/16.
-- Opposite-seed same-task witness is insufficient here; no general order claim.
-- [Witness report](../../../worktrees/Zoo-Keeper-track-c/docs/research/2026-11-08-k2-witness-results.md); RESULTS ledger updated.
-- Earlier matched quantization:126 pairs/method; residual parent-top7/12;
-  modelDNA unresolved12/12 with and without parent. Not whole-benchmark coverage.
-- K7 pinned declarations retained; no new verified construction edge/Hub verdict.
+- Qwen7B/Tulu8B:8/12 snapshots and18/27 pairs; OLMo bin-only group not_run.
+- Real modelDNA:6/6 unresolved with declared-source snapshot,6/6 without; no
+  definite source answers or verified construction edge. All four signals present.
+- [Real report](../../../worktrees/Zoo-Keeper-track-c/docs/research/2026-11-08-k7-native-results.md); original OLMo gap retained, Tulu explicit extension.
+- Four lab methods now share all126 B pairs. Unique true-source top:Trace3/12,
+  spectral0/12,residual7/12;modelDNA unresolved. These are not calibrated parents.
+- [Matched report](../../../worktrees/Zoo-Keeper-track-c/docs/research/2026-11-08-k2-four-method-matched-results.md); Hill guard/test-spec repaired explicitly,
+  n/k/tail rule unchanged; original91-pair result and code retained;31checks pass.
+- Witness audit0/24 adapters qualifies for full-panel independence; B AMEND/defers
+  correlated q/v contrast. No new witness scoring; prior16-edge result stays closed.
 
-**Next:** scientifically different training-branch witnesses, if available, and
-complete source-tiered multi-family real comparisons with appropriate controls.
-Stop repeated tests on unchanged triples; SVD needs a discriminating purpose.
-Nov14 usable-case/method review; Dec1–5 targets unchanged.
+**Next:** Nov14 shared evidence review: usable cases, method coverage, costs/gaps.
+B can assess whether existing agreed controls make a stronger answer on these
+exact neighborhoods; no additional reads merely to fill cells. Dec1–5 unchanged.
 
-**Blocked or needs:** C source selection/B shared panel needs suitable witnesses;
-B owns real detector/control rules. Historical construction/GGUF gaps retained.
-Class1: cosine equation adaptation, full tensors; documented pre-score dtype/schema
-correction plus rounding control. D1.6 synced into C directives;23checks pass.
-No new detector, truth/split/threshold change, commit/merge/push or heritability.
+**Blocked or needs:** no independent ancestry negatives or historical input pins;
+OLMo SFT/DPO snapshots need safe upstream weights for this comparison.
+Class1: reuse saved spectra/fingerprints; mathematical guard fix, not a fitted
+threshold. No truth/split/claim change, detector, commit/merge/push or heritability.

@@ -36,3 +36,22 @@ calibrated refusal-detector pass. q_proj samples are separate adapter diagnostic
 Read scalar results and selections in `runs/track-b-k5-joined-20261108-v2/results.json`
 and the joined REPORT.md. Complete real matched controls, full/shared-direction
 coverage and the scientific decision cutoff remain open before final testing.
+
+Scientific-necessity follow-up: the old Heretic sample contained11/12 inactive
+writers. A separate bounded correction now uses each construction's first three
+numeric active down layers and identical indices in40 same-anchor controls.
+All12 active positives remain low confidence under the ORIGINAL gate; no rank1
+or compatibility verdict follows. Actual FULL-normalized Heretic configs use
+configured rank3; do not force that branch into a rank1 expectation or silently
+apply a new rank target. The scientific-expectation draft is pending review.
+
+Saved-control and construction interpretation:
+`runs/track-b-k5-control-audit-20261108/REPORT.md`.
+Concrete internal development proposal:
+`worktrees/Zoo-Keeper-track-b/docs/steering/K5-development-proposal.md`.
+Candidate rounding-cell bounds need a separately justified arithmetic term and
+must be smaller than the whole delta; neither is a validated decision rule yet.
+Unknown construction/export history stays unsupported. Do not fit another
+detector or launch fuller writer probes while these assumptions are unresolved.
+Native source-tiered model comparisons proceed independently. Witness contrast
+review is in B-to-C-witness-review.md; optional scoring deferred.

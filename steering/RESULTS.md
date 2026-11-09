@@ -738,3 +738,83 @@ declared-base models and pool curves through 100. No full claim promotion.
 | 11-08 | B | K8 existing refusal construction useful_present | 8 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
 | 11-08 | B | K8 existing refusal construction useful_removed | 8 | fixed construction stratum | truth stratum, not detected edit; removed variant paired only | tested | `runs/track-b-existing-artifacts-20261108/report-tables.json` |
 | 11-08 | B | K8 existing-artifact CPU elapsed | 13.527163679013029 | under7200s agent limit | one numerical thread; no acquisition or GPU timing | tested | `runs/track-b-existing-artifacts-20261108/results.json` |
+| 11-08 | A | K8 Family misses with identity-matched original-pool exact-mark evidence | 9 / 15 | account for every miss | original-pool successful replay/source evidence; not larger-catalog recovery | tested | `runs/track-a-existing-evidence-join-20261108/results.json` |
+| 11-08 | A | K8 Family misses outside original exact-mark test scope | 6 / 15 | account for every miss | already-fingerprinted auxiliary cases; not failed exact replays | tested | `runs/track-a-existing-evidence-join-20261108/results.json` |
+| 11-08 | A | K8 Original exact-test identities bound to catalog and recorded weight pins | 12 | all original cases | PASS metadata provenance join; no fresh weight reads or rerun | tested | `runs/track-a-existing-evidence-join-20261108/results.json` |
+
+## Track C — alternate witness qualification, 2026-11-08
+
+| Measurement | Observed | Target/scope | Meaning | Source |
+| --- | ---: | --- | --- | --- |
+| Existing adapter witness candidates audited |24/24|All formal instruction/dialogue adapters; metadata only|No name-based witness substitution|`runs/track-c-witness-branch-audit-20261108/AUDIT.md`|
+| Metadata-qualified independent witnesses for unchanged seven-role panel |0/24|Different/disjoint branch evidence and supported roles|No new full-panel witness run justified; narrower contrast needs B agreement|`runs/track-c-witness-branch-audit-20261108/AUDIT.md`|
+| 11-08 | B | K5 pooled minimum merge target-entry share | 0.015401840209960938 | must exceed maximum control for all/zero high-share rule | exposed scalar-rule envelope, no cutoff selected | tested | `runs/track-b-k5-control-audit-20261108/results.json` |
+| 11-08 | B | K5 pooled maximum control target-entry share | 0.45564292907714843 | below minimum positive required | all measured scopes overlap | tested | `runs/track-b-k5-control-audit-20261108/results.json` |
+| 11-08 | B | K5 pooled share envelope margin | -0.4402410888671875 | strictly positive for feasible threshold | negative: simple higher-share threshold cannot meet all/zero target | tested | `runs/track-b-k5-control-audit-20261108/results.json` |
+| 11-08 | B | K5 q25-05 minimum merge target-entry share | 0.015401840209960938 | must exceed maximum control for all/zero high-share rule | exposed scalar-rule envelope, no cutoff selected | tested | `runs/track-b-k5-control-audit-20261108/results.json` |
+| 11-08 | B | K5 q25-05 maximum control target-entry share | 0.19056524549211776 | below minimum positive required | all measured scopes overlap | tested | `runs/track-b-k5-control-audit-20261108/results.json` |
+| 11-08 | B | K5 q25-05 share envelope margin | -0.17516340528215682 | strictly positive for feasible threshold | negative: simple higher-share threshold cannot meet all/zero target | tested | `runs/track-b-k5-control-audit-20261108/results.json` |
+| 11-08 | B | K5 q25-05 envelope merge cases | 4 | all existing TIES/DARE in anchor | fixed exposed cohort | tested | `runs/track-b-k5-control-audit-20261108/results.json` |
+| 11-08 | B | K5 q25-05 envelope controls | 10 | same-anchor SFT/DPO/LoRA | does not infer independent ancestry | tested | `runs/track-b-k5-control-audit-20261108/results.json` |
+| 11-08 | B | K5 q3-06 minimum merge target-entry share | 0.022730339141119094 | must exceed maximum control for all/zero high-share rule | exposed scalar-rule envelope, no cutoff selected | tested | `runs/track-b-k5-control-audit-20261108/results.json` |
+| 11-08 | B | K5 q3-06 maximum control target-entry share | 0.240304810660226 | below minimum positive required | all measured scopes overlap | tested | `runs/track-b-k5-control-audit-20261108/results.json` |
+| 11-08 | B | K5 q3-06 share envelope margin | -0.2175744715191069 | strictly positive for feasible threshold | negative: simple higher-share threshold cannot meet all/zero target | tested | `runs/track-b-k5-control-audit-20261108/results.json` |
+| 11-08 | B | K5 q3-06 envelope merge cases | 4 | all existing TIES/DARE in anchor | fixed exposed cohort | tested | `runs/track-b-k5-control-audit-20261108/results.json` |
+| 11-08 | B | K5 q3-06 envelope controls | 10 | same-anchor SFT/DPO/LoRA | does not infer independent ancestry | tested | `runs/track-b-k5-control-audit-20261108/results.json` |
+| 11-08 | B | K5 smol-360 minimum merge target-entry share | 0.11036308288574219 | must exceed maximum control for all/zero high-share rule | exposed scalar-rule envelope, no cutoff selected | tested | `runs/track-b-k5-control-audit-20261108/results.json` |
+| 11-08 | B | K5 smol-360 maximum control target-entry share | 0.45564292907714843 | below minimum positive required | all measured scopes overlap | tested | `runs/track-b-k5-control-audit-20261108/results.json` |
+| 11-08 | B | K5 smol-360 share envelope margin | -0.3452798461914062 | strictly positive for feasible threshold | negative: simple higher-share threshold cannot meet all/zero target | tested | `runs/track-b-k5-control-audit-20261108/results.json` |
+| 11-08 | B | K5 smol-360 envelope merge cases | 4 | all existing TIES/DARE in anchor | fixed exposed cohort | tested | `runs/track-b-k5-control-audit-20261108/results.json` |
+| 11-08 | B | K5 smol-360 envelope controls | 10 | same-anchor SFT/DPO/LoRA | does not infer independent ancestry | tested | `runs/track-b-k5-control-audit-20261108/results.json` |
+| 11-08 | B | K5 saved-control monotone-share feasibility | 0/3 anchors | all/zero target | FAIL scalar high-share threshold family within each measured anchor | tested | `runs/track-b-k5-control-audit-20261108/results.json` |
+| 11-08 | B | K5 original sampled Heretic construction-active writers | 1/12 | edited writers for positive control | old fixed sampling mostly selected inactive layers | tested | `runs/track-b-k5-control-audit-20261108/results.json` |
+| 11-08 | B | K5 original sampled Heretic construction-inactive writers | 11/12 | report coverage error | not edited-writer positives; graph truth unchanged | tested | `runs/track-b-k5-control-audit-20261108/results.json` |
+| 11-08 | B | K5 original sampled classic construction-active writers | 12/12 | all sampled positive writers active | shared-direction metadata retained | tested | `runs/track-b-k5-control-audit-20261108/results.json` |
+| 11-08 | B | K5 classic records declaring shared-direction construction | 4/4 | verify construction contract | metadata evidence, not stored-noise or behavioral proof | tested | `runs/track-b-k5-control-audit-20261108/results.json` |
+| 11-08 | B | K5 Heretic FULL-normalized configured-rank3 records | 4/4 | test actual operator branch | rank1-only expectation unsupported; no stored-rank target changed | tested | `runs/track-b-k5-control-audit-20261108/construction-contract.json` |
+| 11-08 | B | K5 corrected active-writer positive_blocks | 12 | unchanged gate and fixed active selection | descriptive correction; no whole-case detector/source pass | tested | `runs/track-b-k5-active-writers-20261108/results.json` |
+| 11-08 | B | K5 corrected active-writer control_blocks | 120 | unchanged gate and fixed active selection | descriptive correction; no whole-case detector/source pass | tested | `runs/track-b-k5-active-writers-20261108/results.json` |
+| 11-08 | B | K5 corrected active-writer positive_resolved | 0 | unchanged gate and fixed active selection | descriptive correction; no whole-case detector/source pass | tested | `runs/track-b-k5-active-writers-20261108/results.json` |
+| 11-08 | B | K5 corrected active-writer positive_rank_one | 0 | unchanged gate and fixed active selection | descriptive correction; no whole-case detector/source pass | tested | `runs/track-b-k5-active-writers-20261108/results.json` |
+| 11-08 | B | K5 corrected active-writer control_resolved | 36 | unchanged gate and fixed active selection | descriptive correction; no whole-case detector/source pass | tested | `runs/track-b-k5-active-writers-20261108/results.json` |
+| 11-08 | B | K5 corrected active-writer control_rank_one | 0 | unchanged gate and fixed active selection | descriptive correction; no whole-case detector/source pass | tested | `runs/track-b-k5-active-writers-20261108/results.json` |
+| 11-08 | B | K5 corrected active-writer model_weight_identities | 48 | unchanged gate and fixed active selection | descriptive correction; no whole-case detector/source pass | tested | `runs/track-b-k5-active-writers-20261108/results.json` |
+| 11-08 | B | K5 corrected active-writer elapsed_seconds | 79.23684777400922 | unchanged gate and fixed active selection | descriptive correction; no whole-case detector/source pass | tested | `runs/track-b-k5-active-writers-20261108/results.json` |
+
+## Track C — matched cached spectral methods, 2026-11-08
+
+| Measurement | Observed | Target/scope | Meaning | Source |
+| --- | ---: | --- | --- | --- |
+|Trace matched scores|126/126|B fixed pairs|complete cached comparison|`runs/track-c-k2-matched-spectra-20261108/REPORT.md`|
+|Trace unique true-source top|3/12|descriptive; no parent-decision gate|limited discrimination among relatives|`runs/track-c-k2-matched-spectra-20261108/REPORT.md`|
+|Initial spectral strict-guard scores|91/126|original unchanged guard|retained historical partial coverage|`runs/track-c-k2-matched-spectra-20261108/REPORT.md`|
+|Initial spectral complete pools|3/12|all candidates required|partial, not comparable as full ranking accuracy|`runs/track-c-k2-matched-spectra-20261108/REPORT.md`|
+|Corrected spectral scores|126/126|same B fixed pairs|complete after mathematical guard repair|`runs/track-c-k2-matched-spectra-corrected-20261108/REPORT.md`|
+|Corrected spectral unique true-source top|0/12|descriptive; no calibrated parent guarantee|no unique source-first ranks|`runs/track-c-k2-matched-spectra-corrected-20261108/REPORT.md`|
+|Corrected spectral source tied for top|1/12|exact scores, full pools|tie is not unique source identification|`runs/track-c-k2-matched-spectra-corrected-20261108/REPORT.md`|
+|Corrected spectral tied-top pools|4/12|record all ties|ambiguous rankings retained|`runs/track-c-k2-matched-spectra-corrected-20261108/REPORT.md`|
+|Cached spectral distinct models|46|exact B source hashes|identity matched|`runs/track-c-k2-matched-spectra-corrected-20261108/REPORT.md`|
+|Cached eigenvalue payload per analysis|32,808,960|full-SVD cached values|zero new weights; historical extraction unknown|`runs/track-c-k2-matched-spectra-corrected-20261108/REPORT.md`|
+|Initial spectral/Trace hash-scan bytes|60,357,261|separate metadata/file verification|cached read cost only|`runs/track-c-k2-matched-spectra-20261108/REPORT.md`|
+|Corrected spectral hash-scan bytes|60,358,723|separate metadata/file verification|cached read cost only|`runs/track-c-k2-matched-spectra-corrected-20261108/REPORT.md`|
+|Initial cached two-method seconds|5.016714|expected<300s|within budget; no fresh extraction timing|`runs/track-c-k2-matched-spectra-20261108/REPORT.md`|
+|Corrected cached spectral seconds|14.590953|expected<300s|within budget; shared host|`runs/track-c-k2-matched-spectra-corrected-20261108/REPORT.md`|
+
+## Track C — real-model native neighborhoods, 2026-11-08
+
+| Measurement | Observed | Target/scope | Meaning | Source |
+| --- | ---: | --- | --- | --- |
+|Usable real source neighborhoods|2/3|Qwen,Tulu,OLMo fixed groups|two complete declared-tier neighborhoods; OLMo blocked|`runs/track-c-k7-native-20261108-v2/REPORT.md`|
+|Pinned native real fingerprints|8/12|all fixed selected snapshots incl explicit Tulu extension|partial original-roster coverage retained|`runs/track-c-k7-native-20261108-v2/REPORT.md`|
+|Real matched pair comparisons|18/27|all-other-member fixed pools|all supported Qwen/Tulu pairs; OLMo gaps retained|`runs/track-c-k7-native-20261108-v2/REPORT.md`|
+|Real pool verdicts|12/18|declared-source snapshot present/removed|complete supported cases; missing inputs not abstentions|`runs/track-c-k7-native-20261108-v2/REPORT.md`|
+|Real four-signal complete measured pairs|18/18|all four native aggregate features|no missing signal in tested pairs|`runs/track-c-k7-native-20261108-v2/REPORT.md`|
+|Real source-present unresolved verdicts|6/6|usable declared-source cases|no definite immediate-source answer|`runs/track-c-k7-native-20261108-v2/REPORT.md`|
+|Real source-removed unresolved verdicts|6/6|same cases after removing declared-source snapshot|same-family uncertainty persists|`runs/track-c-k7-native-20261108-v2/REPORT.md`|
+|Real definite source answers|0/6|no fitted accuracy target|source error rate undefined, not zero|`runs/track-c-k7-native-20261108-v2/REPORT.md`|
+|OLMo selected bin-only snapshots|2|safe-format requirement; no conversion/unpickling|blocks the complete four-member neighborhood|`runs/track-c-k7-native-20261108-v2/REPORT.md`|
+|New verified real construction edges|0|construction-input revision required|all labels remain declared|`runs/track-c-k7-native-20261108-v2/REPORT.md`|
+|Native cumulative unique-fingerprint source bytes|2,261,064,484|eight fingerprints, initial plus v2|configs/headers/tokenizers/samples; not full model downloads|`runs/track-c-k7-native-20261108-v2/REPORT.md`|
+|Native new v2 source bytes|1,743,026,409|reuse two earlier fingerprints|no duplicate payload for saved inputs|`runs/track-c-k7-native-20261108-v2/REPORT.md`|
+|Initial native acquisition/comparison seconds|198.377763|bounded initial eight-snapshot attempt|stopped at unsupported OLMo format|`runs/track-c-k7-native-20261108-v2/REPORT.md`|
+|Native v2 acquisition/comparison seconds|863.483332|six new supported payloads; expected<3600s|within authorized combined time/model boundary|`runs/track-c-k7-native-20261108-v2/REPORT.md`|

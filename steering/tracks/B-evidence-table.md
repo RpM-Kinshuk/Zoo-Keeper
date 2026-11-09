@@ -54,3 +54,23 @@ Current recommendation: collect nothing. First resolve the observed source-rule,
 noise/control and validation gaps using existing evidence. Extra unrelated
 fingerprints cannot change a missed known source's fixed score. The prepared5k
 roster is not a target; scientific evaluation does not wait for storage.
+
+## Saved controls and active-writer correction
+
+[Audit and proposal rationale](../../../runs/track-b-k5-control-audit-20261108/REPORT.md).
+The high-share scalar rule cannot meet all-positive/zero-false targets within
+any of the three measured merge anchors. No cutoff is selected or changed.
+
+Eleven of12 original Heretic writer samples were construction-inactive. The
+bounded correction samples12 recorded active writers with120 matching control
+blocks; all12 positive ranks remain unresolved under the unchanged gate.
+Four recorded Heretic constructions use FULL normalization/configured rank3;
+a rank1-only expectation is not justified for that branch. A separate draft
+qualifies this without silently changing tests or claiming observed rank3.
+
+The concrete internal development proposal fixes controls, exposed-root handling,
+statistics, conditional noise allowance/nonvacuity and stopping criteria. It is
+not an adopted detector. No full-read expansion or new collection is justified
+until the operator/storage allowance can be made informative. The earlier
+0/24 sampled-writer result is not a valid removal-recall statistic; its raw
+measurements remain preserved. Only12/112 source decisions have been tested.
