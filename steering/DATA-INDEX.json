@@ -1,0 +1,255 @@
+{
+  "description": "Shared access map. Paths relative to data_root; original manifests remain authoritative. No dependency on agents, worktrees or chat.",
+  "checked_on": "2026-11-10",
+  "data_root": "/jumbo/yaoqingyang/kinshuk/zoo",
+  "environment": "esd_ind",
+  "checks": {
+    "formal_map_models": 166,
+    "formal_map_existing_readable_references": 498,
+    "archive_stage_size_checks": [
+      {
+        "inventory": "runs/track-a-k0-20261107/inventory-irreplaceable.json",
+        "staged_root": "runs/track-a-k0-20261107/stage-irreplaceable",
+        "expected_and_size_matched_files": 338
+      },
+      {
+        "inventory": "runs/track-a-k0-20261107/inventory-rebuildable.json",
+        "staged_root": "runs/track-a-k0-20261107/stage-rebuildable",
+        "expected_and_size_matched_files": 345
+      },
+      {
+        "inventory": "runs/track-a-k0-20261107/inventory-nonformal.json",
+        "staged_root": "runs/track-a-k0-20261107/stage-nonformal",
+        "expected_and_size_matched_files": 196
+      },
+      {
+        "inventory": "runs/track-a-k0-20261107/inventory-evidence.json",
+        "staged_root": "runs/track-a-k0-20261107/stage-evidence",
+        "expected_and_size_matched_files": 448
+      },
+      {
+        "inventory": "runs/track-a-k0-20261107/inventory-db.json",
+        "staged_root": "runs/track-a-k0-20261107/stage-db-with-retrieval",
+        "expected_and_size_matched_files": 18
+      },
+      {
+        "inventory": "runs/track-a-k0-20261107/inventory-metadata.json",
+        "staged_root": "runs/track-a-k0-20261107/stage-metadata",
+        "expected_and_size_matched_files": 4
+      }
+    ],
+    "query_smoke": "Existing find command succeeded without weights/GPU.",
+    "limits": "Metadata/existence/readability/sizes only; no weight hashes/scoring rerun or new remote verification."
+  },
+  "records": [
+    {
+      "id": "query_database",
+      "path": "runs/track-a-expanded-r6-20261105/zoo",
+      "kind": "directory",
+      "purpose_and_limits": "Existing mixed Hub/lab database, not public-release clearance or broad validation."
+    },
+    {
+      "id": "lab_archive_database",
+      "path": "runs/track-a-k0-20261107/stage-db-with-retrieval/lab",
+      "kind": "directory",
+      "purpose_and_limits": "112 permitted lab identities;111 retrieval entries."
+    },
+    {
+      "id": "formal_models",
+      "path": "runs/track-b-pivot-unblock-a-20261105/active-roster-v2/models.csv",
+      "kind": "file",
+      "purpose_and_limits": "166-entry roster. Temporary checkpoint paths need recovery aliases.",
+      "sha256": "0c3f52b38afbb71af6e59c2a22b61e59ccaa8d1d624c28ee64b69ae961ade691"
+    },
+    {
+      "id": "formal_edges",
+      "path": "runs/track-b-pivot-unblock-a-20261105/active-roster-v2/edges.csv",
+      "kind": "file",
+      "purpose_and_limits": "Construction graph; absent edges do not imply independence.",
+      "sha256": "2ee055145c01047ce1ee2b03e4a748558d182045a35128caacaa68383cf13887"
+    },
+    {
+      "id": "formal_measurement_map",
+      "path": "runs/track-b-pivot-unblock-a-20261105/active-roster-v2/artifact-map166.json",
+      "kind": "file",
+      "purpose_and_limits": "166 models;498 existing/readable manifest/fingerprint/full-spectrum references; payload hashes not rerun.",
+      "sha256": "9450fb9107d423f7c114f84d08695de70c0c9638d52a6f0b03fc5d124a79fb84"
+    },
+    {
+      "id": "construction_pins",
+      "path": "Zoo-Keeper/lab/pins.json",
+      "kind": "file",
+      "purpose_and_limits": "External model pins; independence caveats remain.",
+      "sha256": "9358973d1d91bded4300e4992198736d20445b9c1198c02a2eeca323419b735f"
+    },
+    {
+      "id": "reference_labels",
+      "path": "Zoo-Keeper/lab/REFERENCE-LABELS.md",
+      "kind": "file",
+      "purpose_and_limits": "Reference label/independent-null cautions.",
+      "sha256": "0d024a0aa70ef9ce8c18228e364694a0452ac1ee5b48aa8fb1f7bc3188e0be31"
+    },
+    {
+      "id": "heretic_weights",
+      "path": "lab-restored-heretic/models",
+      "kind": "directory",
+      "purpose_and_limits": "Four model.safetensors files local and size-matched;24 companion recipe/config/lineage/direction files absent here. Restore required companions or verified saved equivalents before next tests."
+    },
+    {
+      "id": "joined_measurements",
+      "path": "runs/track-b-k5-joined-20261108-v2/shared-evidence.csv",
+      "kind": "file",
+      "purpose_and_limits": "Scoped measurements, not detector successes; adjacent protocol/results/verification retained.",
+      "sha256": "b9e44374ddb0f19a7817ab6fdbddcb88922e427ee4aabb9c588d7b6984425390"
+    },
+    {
+      "id": "family_results",
+      "path": "runs/track-b-existing-artifacts-20261108/results.json",
+      "kind": "file",
+      "purpose_and_limits": "216-query descriptive catalog, not fresh confirmation.",
+      "sha256": "1f4a89f25f458fd22030910edd748085f66add04b53535b1faa858d6de26897f"
+    },
+    {
+      "id": "family_input_index",
+      "path": "runs/track-b-existing-artifacts-20261108/inputs.json",
+      "kind": "file",
+      "purpose_and_limits": "Original input hashes. Old worktree names are historical; aliases require matching hashes.",
+      "sha256": "764adfc6d350c05ad11413ff5d282c705a14ac1a7e71827c4d0a2ec6f17192a3"
+    },
+    {
+      "id": "real_model_cases",
+      "path": "runs/track-c-k7-native-20261108-v2",
+      "kind": "directory",
+      "purpose_and_limits": "Saved real-model native comparisons; D8 governs new admission."
+    },
+    {
+      "id": "matched_baselines",
+      "path": "runs/track-c-k2-matched-spectra-corrected-20261108",
+      "kind": "directory",
+      "purpose_and_limits": "Matched comparator outputs, protocols and source records."
+    },
+    {
+      "id": "archive_manifest",
+      "path": "runs/track-a-k0-20261107/release-manifest.json",
+      "kind": "file",
+      "purpose_and_limits": "Recorded archive pins/inventory linkage, verified Nov7.",
+      "sha256": "82e123d4cea33015d69c44f981a3f0d57eb7693b7b7e446b0b4990cdf0af75fd"
+    },
+    {
+      "id": "archive_proof",
+      "path": "runs/track-a-k0-20261107/final-remote-check.json",
+      "kind": "file",
+      "purpose_and_limits": "Historical1430-file/404-safetensors remote verification; no fresh network check.",
+      "sha256": "95795f949bcb1a590b5e9a3fd68697c14574a7529584f33aadfc06f3569dc847"
+    },
+    {
+      "id": "historical_research",
+      "path": "Model-Research",
+      "kind": "directory",
+      "purpose_and_limits": "Historical source/corpus and comparison dependency; exploratory limits remain."
+    },
+    {
+      "id": "collector_outputs",
+      "path": "Model-Zoo/analysis_runs",
+      "kind": "directory",
+      "purpose_and_limits": "Retained collector measurements/diagnostics; use per-run contracts."
+    },
+    {
+      "id": "parked_study",
+      "path": "studies/heritability",
+      "kind": "directory",
+      "purpose_and_limits": "Parked, not a new work instruction."
+    }
+  ],
+  "checkpoint_recovery": {
+    "inventory": "runs/track-a-k0-20261107/inventory.json",
+    "original_temporary_staging_root": "/tmp/zoo-k0-upload-20261107",
+    "original_temporary_staging_present": false,
+    "local_heretic_weight_model_ids": [
+      "olmo-1b-abliteration-heretic",
+      "q25-05-abliteration-heretic",
+      "q3-06-abliteration-heretic",
+      "smol-360-abliteration-heretic"
+    ],
+    "missing_heretic_companion_files": [
+      "models/olmo-1b-abliteration-heretic/abliteration.json",
+      "models/olmo-1b-abliteration-heretic/config.json",
+      "models/olmo-1b-abliteration-heretic/diagnostics/directions.safetensors",
+      "models/olmo-1b-abliteration-heretic/generation_config.json",
+      "models/olmo-1b-abliteration-heretic/lineage.json",
+      "models/olmo-1b-abliteration-heretic/recipe.json",
+      "models/q25-05-abliteration-heretic/abliteration.json",
+      "models/q25-05-abliteration-heretic/config.json",
+      "models/q25-05-abliteration-heretic/diagnostics/directions.safetensors",
+      "models/q25-05-abliteration-heretic/generation_config.json",
+      "models/q25-05-abliteration-heretic/lineage.json",
+      "models/q25-05-abliteration-heretic/recipe.json",
+      "models/q3-06-abliteration-heretic/abliteration.json",
+      "models/q3-06-abliteration-heretic/config.json",
+      "models/q3-06-abliteration-heretic/diagnostics/directions.safetensors",
+      "models/q3-06-abliteration-heretic/generation_config.json",
+      "models/q3-06-abliteration-heretic/lineage.json",
+      "models/q3-06-abliteration-heretic/recipe.json",
+      "models/smol-360-abliteration-heretic/abliteration.json",
+      "models/smol-360-abliteration-heretic/config.json",
+      "models/smol-360-abliteration-heretic/diagnostics/directions.safetensors",
+      "models/smol-360-abliteration-heretic/generation_config.json",
+      "models/smol-360-abliteration-heretic/lineage.json",
+      "models/smol-360-abliteration-heretic/recipe.json"
+    ],
+    "not_found_at_known_local_checkpoint_paths": [
+      "olmo-1b-laundering-mlp_permutation-drift-v2",
+      "olmo-1b-laundering-value_rotation-drift-v2",
+      "q25-05-laundering-mlp_permutation-drift-v2",
+      "q25-05-laundering-value_rotation-drift-v2",
+      "q25-15-decision-s0",
+      "q3-06-laundering-mlp_permutation-drift-v2",
+      "q3-06-laundering-value_rotation-drift-v2",
+      "smol-360-laundering-mlp_permutation-drift-v2",
+      "smol-360-laundering-value_rotation-drift-v2"
+    ],
+    "repo": "RpM-Kinshuk/zoo-lab",
+    "repo_type": "dataset",
+    "revision": "a69530b2930700dba1aa551ddd0fafcc050711f8",
+    "restore_companions_allow_patterns": [
+      "models/olmo-1b-abliteration-heretic/abliteration.json",
+      "models/olmo-1b-abliteration-heretic/config.json",
+      "models/olmo-1b-abliteration-heretic/diagnostics/directions.safetensors",
+      "models/olmo-1b-abliteration-heretic/generation_config.json",
+      "models/olmo-1b-abliteration-heretic/lineage.json",
+      "models/olmo-1b-abliteration-heretic/recipe.json",
+      "models/q25-05-abliteration-heretic/abliteration.json",
+      "models/q25-05-abliteration-heretic/config.json",
+      "models/q25-05-abliteration-heretic/diagnostics/directions.safetensors",
+      "models/q25-05-abliteration-heretic/generation_config.json",
+      "models/q25-05-abliteration-heretic/lineage.json",
+      "models/q25-05-abliteration-heretic/recipe.json",
+      "models/q3-06-abliteration-heretic/abliteration.json",
+      "models/q3-06-abliteration-heretic/config.json",
+      "models/q3-06-abliteration-heretic/diagnostics/directions.safetensors",
+      "models/q3-06-abliteration-heretic/generation_config.json",
+      "models/q3-06-abliteration-heretic/lineage.json",
+      "models/q3-06-abliteration-heretic/recipe.json",
+      "models/smol-360-abliteration-heretic/abliteration.json",
+      "models/smol-360-abliteration-heretic/config.json",
+      "models/smol-360-abliteration-heretic/diagnostics/directions.safetensors",
+      "models/smol-360-abliteration-heretic/generation_config.json",
+      "models/smol-360-abliteration-heretic/lineage.json",
+      "models/smol-360-abliteration-heretic/recipe.json"
+    ],
+    "restore_missing_models_allow_patterns": [
+      "models/olmo-1b-laundering-mlp_permutation-drift-v2/**",
+      "models/olmo-1b-laundering-value_rotation-drift-v2/**",
+      "models/q25-05-laundering-mlp_permutation-drift-v2/**",
+      "models/q25-05-laundering-value_rotation-drift-v2/**",
+      "models/q25-15-decision-s0/**",
+      "models/q3-06-laundering-mlp_permutation-drift-v2/**",
+      "models/q3-06-laundering-value_rotation-drift-v2/**",
+      "models/smol-360-laundering-mlp_permutation-drift-v2/**",
+      "models/smol-360-laundering-value_rotation-drift-v2/**"
+    ],
+    "suggested_restore_root": "lab-restored-archive",
+    "preserve_original_tables": true
+  },
+  "backup_limits": "Archive covers139 constructed checkpoints and112 permitted lab-evidence identities, not all Hub/restricted data or later runs. Those retained local assets have no offsite coverage established by this audit."
+}

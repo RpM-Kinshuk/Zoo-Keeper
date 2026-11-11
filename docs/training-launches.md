@@ -1,4 +1,6 @@
-# Frozen training launch bundles
+# Frozen training provenance
+
+Historical completed/preparation records, not a live launch queue. The current checklist/directives govern new work; preserve original run/config/source hashes when reproducing. Do not launch these commands merely because they are recorded. The historical80% admission figures are provenance, not current permission to share an occupied device; current work needs genuinely idle/unallocated GPUs, existing reservations and a project-wide cap of four.
 
 The extra GPU cohort completed on2026-11-02:11 real checkpoints,3,379,938,264 output-weight bytes,0.743 aggregate worker wall-hours and scoped verification PASS. The held-out classifier scored71.48% on256 excluded examples (majority baseline53.52%). See `$ZOO_DATA/runs/track-b-training-gpu-v1/TRAINING-REPORT.md` and `decision-heldout-score.json`. A's merged selector repair and completed six LoRA fingerprints are consumed in the new36-model analysis; see `docs/l12-evaluation.md`. Trained checkpoints remain intact.
 
@@ -119,7 +121,7 @@ These are measured preprocessing times, not training benchmarks.
 Use the existing Python environment, without upgrades:
 
 ```bash
-cd "$ZOO_DATA/worktrees/Zoo-Keeper-track-b"
+# From the main Zoo-Keeper checkout
 PY=/scratch/kinshuk/anaconda3/envs/esd_ind/bin/python
 BUNDLE="$ZOO_DATA/runs/track-b-training-launches-v1"
 "$PY" -m lab.launches --config "$BUNDLE/configs/smol-135-launch-sft-s0.json" --data-root "$ZOO_DATA" --load-model

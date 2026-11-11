@@ -31,7 +31,7 @@ retired. New Heretic, corrected-witness and real-mark results are NOT YET MEASUR
 | Nov 8 | Witness-based order, fixed ordinary-fine-tune panel | 16/16 edges scored: SFT 0/8 correct, DPO 8/8; shared-BF16 control changes 0 answers. Exploratory, no pass gate. | Correlated witness construction, four exposed lab families; no general chronology claim. Nov 9 check-in reopens the setup audit. Saved SFT protocol/scored rows already name opposite-seed SFT witnesses; a DPO-descendant explanation is unconfirmed. A changed test must be predeclared; do not repeat identical triples. | `runs/track-c-k2-witness-20261108-v3/REPORT.md`; `runs/track-c-witness-branch-audit-20261108/AUDIT.md` |
 | Nov 8 | Full lab measurement coverage | 90/112 formal children have scoped measurements; decision heads and disguise groups not measured in that joined run. | Measurement coverage is not detector success. Formal cohort and exposed auxiliary cases remain separate. | `runs/track-b-k5-joined-20261108-v2/REPORT.md` |
 | Nov 8 | Adapter source clues | All 24 support sets retain nonparents after true-source removal. Native untouched equality 12/24; explicit BF16-cast equivalence 18/24. Sampled ranks resolve 8/24, all 8 within ±25% rank target. | Casts/tied aliases explain layout gaps; not twelve substantive untouched-module edits. Shared support alone cannot identify an immediate source. No full-case rank pass. | `runs/track-b-k5-joined-20261108-v2/REPORT.md` |
-| Nov 8–9 | Refusal and merge-share limitations | TIES/DARE shares overlap controls; scalar high-share threshold cannot meet all-positive/zero-control target even per measured anchor. Writer-only inputs also have nonparent equivalents. | Stop those insufficient single-feature source rules. Conditional joint evidence is a separate development result above. The check-in authorizes all 4 Heretic recipe-rank/control tests by Nov 12; their results are pending. Stored rank or source uniqueness is not inferred from configuration. | `worktrees/Zoo-Keeper-track-b/docs/steering/K5-development-proposal.md`; `runs/track-b-classic-noise-20261109-v4/REPORT.md` |
+| Nov 8–9 | Refusal and merge-share limitations | TIES/DARE shares overlap controls; scalar high-share threshold cannot meet all-positive/zero-control target even per measured anchor. Writer-only inputs also have nonparent equivalents. | Stop those insufficient single-feature source rules. Conditional joint evidence is a separate development result above. The approved direction authorizes all 4 Heretic recipe-rank/control tests; their results are pending. Stored rank or source uniqueness is not inferred from configuration. | `Zoo-Keeper/docs/steering/K5-development-proposal.md`; `runs/track-b-classic-noise-20261109-v4/REPORT.md` |
 | Nov 8 | Exact lab quantization marks | 12/12 grid detections and bit-exact known-parent replays; 0/30 unquantized control flags, matching written targets. | Closed constructed-quantizer result; native low precision, subsequent fine-tuning and general source/order claims remain outside scope. | `runs/track-b-k5-quantization-20261108/REPORT.md` |
 | Nov 8 | Exact quantizer source removal | Original pools: 12/12 correct present-source answers, 12/12 absent-source abstentions; target ≥50% present coverage and ≤0.05 wrong/answered. | Closed small-pool result, not the larger 216-key evaluation. Absent-setting precision is undefined because no query is answered. | `runs/track-b-k5-parent-out-20261108/REPORT.md` |
 | Nov 7 | Known-source linear/SLERP mix | 18/18 within 0.05 coefficient error; 0 misses against allowance ≤4. | Closed relation test on three small families; not unknown-source search, order or historical implementation reconstruction. | `runs/track-b-k3-slerp-trig-20261107-v2/REPORT.md` |
@@ -53,7 +53,7 @@ retired. New Heretic, corrected-witness and real-mark results are NOT YET MEASUR
 | Nov 7 | Disguise limitation | Original eight behavior checks still fail; exact tensor permutation breaks sketch invariance. Full-network retrieval robustness untested; no disguise claim. | `runs/track-b-k14-20261107/REPORT.md` |
 
 The family control/scaling and full real-model benchmark claims remain unverified.
-C6/heritability and prediction studies stay parked; their historical results are
+C6/heritability and weight-prediction studies stay parked; the broader query/model-choice goal remains active in DIRECTION.md; their historical results are
 exploratory, not revived by score-identity improvements. No new rule, split, truth,
 threshold or broad claim was approved by this curation.
 
@@ -62,7 +62,7 @@ threshold or broad claim was approved by this curation.
 The saved protocol and all 8 stored SFT score rows in
 `runs/track-c-k2-witness-20261108-v3/` name opposite-seed SFT siblings, not
 DPO descendants. Fresh skeptic confirmed this metadata finding. The check-in's
-suggested cause is therefore unconfirmed; C's approved Nov 11 audit/retest must
+suggested cause is therefore unconfirmed; the approved audit/retest must
 verify the setup and define a genuinely changed test if needed. No scoring was
 rerun and the original SFT0/8/DPO8/8 result remains unchanged.
 

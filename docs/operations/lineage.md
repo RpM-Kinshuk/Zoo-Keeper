@@ -103,13 +103,11 @@ index API; loading an explicit index and pair scoring need only the extractor.
 
 ## Local validation
 
-Make the committed Model-Zoo main checkout and collector sources importable;
-do not use another track's uncommitted checkout. From this Track B worktree in
-the prepared `esd_ind` environment:
+Use the main sibling Model-Zoo checkout and the preserved Model-Research comparison helpers. From the main Zoo-Keeper checkout in conda `esd_ind`:
 
 ```bash
-MODEL_ZOO_ROOT="$(cd ../../Model-Zoo && pwd)"
-export PYTHONPATH="$MODEL_ZOO_ROOT:$MODEL_ZOO_ROOT/esd_experiment/src${PYTHONPATH:+:$PYTHONPATH}"
+MODEL_ZOO_ROOT="$(cd ../Model-Zoo && pwd)"
+export PYTHONPATH="$MODEL_ZOO_ROOT:$(cd ../Model-Research && pwd):$MODEL_ZOO_ROOT/esd_experiment/src${PYTHONPATH:+:$PYTHONPATH}"
 CUDA_VISIBLE_DEVICES='' HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 \
   OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 \
   NUMEXPR_NUM_THREADS=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
@@ -174,12 +172,10 @@ incomplete freezes are rejected rather than silently upgraded.
 All22 models have measured row-block tensor reads and parent-read breakdowns. Full
 preparation/cold-reference/cached-inference IO remains incomplete, so complete
 bytes-per-answer is unavailable. Missing baselines are `not_run`; absent
-full-weight/5k-pool/baseline results leave gates `NOT_EVALUABLE`. A's queued incremental
-k128/full-weight launch uses committed extractor code and separate output; see the main
-checkout's `handoff/track-b-incremental-l12.md`. Whole-lab L12 remains pending.
+full-weight/5k-pool/baseline results leave gates `NOT_EVALUABLE`. These are historical scoped coverage figures. Current complete-cohort coverage and next tests are in steering/RESULTS.md and CHECKLIST.md; do not replay retired incremental queues.
 
 Training launches are in `$ZOO_DATA/runs/track-b-training-launches-v1`, documented
 in `docs/training-launches.md`: nine scoped Smol jobs are human-ready, two DPO
 jobs need actual SFT parents, and official batches need anchor-specific inputs.
-No optimizer step was run. Use each run's frozen runner/config hashes; changed
+This paragraph records the original preparation checkpoint; later completed training is documented in docs/training-launches.md. Use each run's frozen runner/config hashes; changed
 code/configuration requires a new version. Release staging remains deferred.

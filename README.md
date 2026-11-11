@@ -5,11 +5,13 @@ open models. [Model-Zoo](https://github.com/RpM-Kinshuk/Model-Zoo) collects the
 measurements and builds the database; Zoo-Keeper queries it and holds the
 research that builds on it.
 
-- `handoff/`: start here. Guidance, directives, the checklist, agent prompts,
-  and the live status.
-- `docs/research/`: the merged research plan and its two source plans.
-- `docs/plans/`: implementation plans, added as the tracks write them.
-- `scripts/`: small utilities (Hugging Face access checks).
+The end product is the database **and its query framework**, for finding, comparing, understanding and choosing models. The long-term ambition is50k–100k+ models; expansion follows useful query results and measured costs.
+
+- Start with [steering/README.md](steering/README.md): one doer, independent reviewer, one checklist.
+- [steering/DIRECTION.md](steering/DIRECTION.md): product/research goals and paper readiness.
+- [steering/BOARD.md](steering/BOARD.md): concise current outlook.
+- [docs/README.md](docs/README.md): technical contracts and preserved scientific references.
+- `scripts/`: scientific reproduction drivers and current access checks, not a second queue.
 
 **Setup on a server:**
 1. Clone this repository next to `Model-Zoo/` in one workspace.
@@ -60,8 +62,7 @@ from predictions, which are empty in v0. `diff` reports measured changes,
 without predicting skill changes. Lineage records carry `verified`,
 `detected`, or `declared` evidence tiers. `diff` and `check` remain
 `uncalibrated` without matching empirical calibration; supply `--null FILE`
-to apply one. This smoke workflow does not complete R6: the R3/R4 pilot
-outputs and R5 G0 calibration are still pending.
+to apply one. Current result scope and remaining calibration work are recorded in steering/RESULTS.md; a smoke workflow does not establish broad reliability.
 
 ### Validated example (2026-11-02)
 

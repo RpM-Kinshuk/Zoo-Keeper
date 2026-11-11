@@ -1,10 +1,10 @@
 # Frozen heritability and exchange-rate study
 
-Run from the Zoo-Keeper Track C worktree in the existing `esd_ind` environment. Source the workspace `.env` without opening or printing it when data paths are needed. The commands read selected CSV/JSON tables only: no weights, model evaluation, downloads, paid APIs or predictor refits.
+This study is parked, not a current task. Run reproduction from the main Zoo-Keeper checkout in the existing `esd_ind` environment. Source the workspace `.env` without opening or printing it when data paths are needed. The commands read selected CSV/JSON tables only: no weights, model evaluation, downloads, paid APIs or predictor refits.
 
 ## First frozen audit (2026-10-31)
 
-The completed first pass is `$ZOO_DATA/studies/heritability/track-c-first-pass-v1/final/report.md`, status `PARTIAL`. Its protocol SHA256 is `4f3b6d804608d77e0ed96efa661219f8a70e04782cab7d1360f3695baed7146a`. It retains 3,288 score observations, excludes 2,316 conflicting identities, and explicitly quarantines six metadata self-parent declarations. Supplied inputs support no independently verified deployment joins or known sampling variances; historical prediction targets also lack eligible Raw semantics/provenance. The resulting unavailable estimates are deliberate coverage results. See the [workshop draft](../papers/heritability-workshop.md) for the audit table and source-field references.
+The completed first pass is `$ZOO_DATA/studies/heritability/track-c-first-pass-v1/final/report.md`, status `PARTIAL`. Its protocol SHA256 is `4f3b6d804608d77e0ed96efa661219f8a70e04782cab7d1360f3695baed7146a`. It retains 3,288 score observations, excludes 2,316 conflicting identities, and explicitly quarantines six metadata self-parent declarations. Supplied inputs support no independently verified deployment joins or known sampling variances; historical prediction targets also lack eligible Raw semantics/provenance. The resulting unavailable estimates are deliberate coverage results. See the [parked methods/audit](../research/heritability-audit.md) for the audit table and source-field references.
 
 The run includes its portable `config.json`, assembly/audit snapshots and frozen inputs. Resume its verified analysis from this worktree:
 
@@ -29,7 +29,7 @@ The output contains `config.json`, `sources/`, `assembly/`, optional `synthetic_
 ## Source assembly
 
 ```bash
-python -m studies.heritability.cli assemble   --config configs/heritability_v1.json   --source-root ../../Model-Research   --out "$ZOO_DATA/studies/heritability/assembly-v1"
+python -m studies.heritability.cli assemble   --config configs/heritability_v1.json   --source-root ../Model-Research   --out "$ZOO_DATA/studies/heritability/assembly-v1"
 ```
 
 Source names in the config must be relative, remain inside their source root, and avoid symlinks and environment files. The root is the config's directory (its parent repository for `configs/`); `--source-root` is an explicit fallback for the same relative names, not a recursive search. The provided config points to approved repository snapshots and their source manifest. Every selected source, registry, evidence document, pinned manifest, duplicate table and historical provenance config is hashed and copied under `source_inputs/` before use; any supplied source-manifest digest must match. Missing sources are retained in the inventory and exclusions.
@@ -75,6 +75,6 @@ Bootstrap units are entire split groups. Each repeated draw is an independent la
 
 ## Compute and launch boundaries
 
-Inputs are the approved small table/graph snapshots plus audited historical CSV/JSON artifacts; no weights or GPU-hours are needed. Before a final 2,000-replicate run, time 20 replicates on representative eligible support in a separately labeled timing protocol and extrapolate without changing the paper freeze. Expected initial assembly reads about 12 MB; measure actual inventory bytes and output storage. If the projected final run exceeds two hours, the person launches it. Queue the exact command, pinned hashes, measured bytes/time estimate, storage, 0 GPU-hours, verification and the same `--resume` command in the main handoff; do not silently lower the final bootstrap count.
+Inputs are the approved small table/graph snapshots plus audited historical CSV/JSON artifacts; no weights or GPU-hours are needed. Before a final 2,000-replicate run, time 20 replicates on representative eligible support in a separately labeled timing protocol and extrapolate without changing the paper freeze. Expected initial assembly reads about 12 MB; measure actual inventory bytes and output storage. If the projected final run exceeds two hours, the person launches it. Queue the exact command, pinned hashes, measured bytes/time estimate, storage, 0 GPU-hours, verification and the same `--resume` command in a concrete launch card only if this parked work is authorized; do not silently lower the final bootstrap count.
 
 The lead runs task/package/batch checks in the sequence required by D7. Task-level validation is `python -m pytest tests/heritability/test_cli.py -q`; the coordinated package check is `python -m pytest tests/heritability -q`, and the batch check is `python -m pytest tests -q`.

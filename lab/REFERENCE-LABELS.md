@@ -1,6 +1,6 @@
-# L2 table handoff for Track A
+# Lab table contract and reference labels
 
-Prepared on 2026-11-01 in Track B:
+Original inventory snapshot, 2026-11-01. Current priorities and completed coverage are in ../steering/CHECKLIST.md and RESULTS.md; the label cautions below still apply.
 
 - `lab/models.csv`: 166 models (seven bases, 112 planned local derivatives,
   45 independent pretrains, and two published sibling references).
@@ -12,15 +12,10 @@ Prepared on 2026-11-01 in Track B:
 - `lab/table_manifest.json`: schema version, counts, content hashes, and the
   immutable table snapshot path relative to `$ZOO_DATA`.
 
-The CSV schema remains `LAB_SCHEMA_VERSION = "1"`. Track A can pass
-`worktrees/Zoo-Keeper-track-b/lab/edges.csv` to `lineage_pairs`; its adjacent
-`models.csv` supplies the ID mapping. Neither Track A nor Track B needs to be
-merged for this file handoff. No Track A Python code was imported to produce it.
+The CSV schema remains `LAB_SCHEMA_VERSION = "1"`. Pass the main checkout's `lab/edges.csv` to `lineage_pairs`; its adjacent `models.csv` supplies the ID mapping. No separate track checkout or merge is needed.
 
 These are the final **planned L2 inventory tables**, not an assertion that the
-local checkpoints, manifests, or fingerprints have been generated. X9
-implementation can use this contract now; real calibration and G0 metrics need
-the corresponding measured outputs. Do not treat an inventory row as completed
+local checkpoints, manifests, or fingerprints have been generated. Real calibration/performance metrics need the corresponding measured outputs. Do not treat an inventory row as completed
 measurement coverage.
 
 ## Reference labels and the independent null
@@ -41,5 +36,4 @@ are recorded in `lineage_evidence`.
 
 Sibling/grandparent pairs within the constructed lab still come from the exact
 construction edge graph. Published-reference evidence stays separate from lab
-construction truth. The blind subset remains C's responsibility and is absent
-from these tables.
+construction truth. Any reserved final subset is absent from these tables; preserve its exposure boundary and use independent scoring under WORKFLOW.md.

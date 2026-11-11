@@ -1,297 +1,56 @@
-# Direction: reassessment and correction (2026-11-07)
+# Direction: a measured model database and query framework
 
-**Status:** the overseer approved this as the working direction on 2026-11-07
-(card D2). Claims remain hypotheses until verified and explicitly approved
-by the overseer in `CLAIMS.md`, at Nov 25 or a later review. Under D6 (approved
-Nov 8), the Dec 4 plan separates approved conclusions from unanswered questions
-and the tests that will settle them; dates and evidence standards are unchanged. A literature check on 2026-11-07 already
-corrected two points; they are marked "(corrected)".
+## End goal
 
-This document re-checks every claim, promise and plan against the real world,
-the research frontier, and the evidence so far. It then sets the corrected
-course. It supersedes the claims and paper plan in
-`docs/research/2026-10-27-merged-research-plan.md` (sections 1.1, 3.3 and 11)
-where they conflict.
+Build a framework people can use to query a large, measured database of open models. Someone should be able to find candidates, compare them, understand their origins and changes, and make a better model choice. The database and the query framework are joint deliverables. Collecting models or writing papers alone is not enough.
 
-Inputs:
-- the agents' recorded results (`RESULTS.md`);
-- two independent reviews written for this reassessment: a skeptical
-  area-chair view, and a real-world practitioner view;
-- a web search for new work.
+The owner's original ambition is **50k–100k models or more**, with practically useful research that attracts attention at top venues and helps frontier companies and other users. Keep that ambition. Expand when query value, coverage, measurement quality and maintainable costs justify it; do not confuse model count with progress. The earlier 10–20k zoo-paper scope is a near-term planning envelope, not a permanent ceiling. No 100k collection run is authorized merely by restating the ambition.
 
-The merged plan remains the reference for methods detail.
+## What research contributes
 
-## 1. In one minute
-
-**What we have.** The infrastructure is strong:
-- a fingerprint extractor for every model type;
-- a queryable zoo of 703 models;
-- a 320-model random sample of the Hub;
-- a 166-model lab cohort: 112 formal constructed children plus bases and reference controls. Construction records apply to the built children; control provenance has separate limits.
-
-**Current evidence and approved next work, Nov 9:**
-- The internal tools, protected lab, quantizer tests, known-source merge fits
-  and matched comparisons are useful assets; broad real-world reliability is
-  still unverified. No new test passed merely because the check-in was approved.
-- The4 mathematical-projection cases are not refusal-behavior validation. Next
-  B tests the4 Heretic recipes by Nov 12, then searches for unknown merge sources.
-- Current adapter evidence supports family/base rather than unique immediate
-  source among siblings; readable-rank results need further discrimination.
-- Real tests no longer wait for private construction logs: D8 accepts published
-  vendor methods, merge recipes, official stages and recorded public-tool settings.
-  Missing marks count as measured limits under the documented recipe.
-- D9 replaces the random mixed roster with two same-architecture pools. A's
-  owner launch card is due Nov 12; measurements report the largest sizes reached.
-- C audits the SFT0/8 witness result by Nov 11. Saved triples already used sibling
-  SFTs, so a DPO-descendant error is an unconfirmed explanation, not a known fact.
-  A changed test needs a prospective rule; unchanged repeats answer nothing new.
-- D10: when blocked, redesign or advance another valuable open task within one
-  working day. Scientific necessity selects the next test; it does not stop research.
-
-Current briefs and CHECKIN-2026-11-09.md set execution. Public construction records
-count as documented truth (D8); unrelated declarations alone remain descriptive.
-Do not require private maker contact or leave open claims without a test/redesign.
-
-**The correction.** Claim what weights can actually show, and test it
-properly:
-1. **Family, at scale.** Which base family a model descends from, with error
-   rates measured against the hardest real look-alikes and against every
-   published method. This is the question compliance and license checks ask.
-2. **Edits that leave a mark.** Quantization, refusal removal, merges and
-   low-rank adapters may leave informative edit evidence. Under approved D7,
-   this supports source compatibility only when informative; a unique immediate
-   source requires tests distinguishing relatives within the stated candidate
-   pool, otherwise unresolved. Order is a separate hypothesis. Ordinary
-   fine-tunes leave no exact mark. Their order may still come from a third
-   family member (the "witness" method published as Witness Overlap) or from
-   a spectral cue. We test both, and fall back to the Hub's upload times
-   (corrected). This is new science and a practical "what was done to this
-   model?" tool.
-3. **The lab as a benchmark.** A 166-model cohort with 112 constructed
-   children across seven edit groups, plus bases/reference controls. Earlier
-   work includes a 455-model collection labeled from declared
-   bases. We do not claim the largest collection; the value of our exact
-   construction records across edit types still needs direct comparison (D5).
-4. **The ecosystem measured.** Duplicates, quantized copies, tensor sharing,
-   and whether declared bases are right, on 10–20k models (down from 50–100k).
-
-**What we stop:**
-- tree recovery;
-- exact-parent and order claims for ordinary fine-tunes, unless the witness
-  or spectral tests support them;
-- per-query guarantees at 10,000 candidates;
-- "reads fewer bytes" as a selling point;
-- robustness to deliberate disguise;
-- spectral science from partial reads;
-- the 50–100k census by May;
-- weight-based score predictions in `recommend`.
-
-**Papers:**
-- **P1** is decided on Dec 18: ICML, only if the edge tests and baselines are
-  in, otherwise COLM in late March.
-- **Zoo v1** goes public Feb–Mar, with a `check` command and GGUF support.
-- **The zoo paper** is due in May, at 10–20k models.
-
-## 2. Original reassessment: promises versus evidence (Nov 7)
-
-This table records the original diagnosis; use section 1 and RESULTS.md for
-current evidence. Do not re-run a resolved repair because its old failure is
-still recorded here.
-
-| What the plan promised (P1 and around it) | Evidence at reassessment | Verdict |
+| User question | Research contribution to test | Present position |
 | --- | --- | --- |
-| Published methods give many false parents as the pool grows | No baselines run; pool about 700 | **untested.** It is also close to a statistical truism, so on its own it is weak. |
-| Our method keeps false parents at or below 0.05 per query at 10^4 | 8.28 per query on a small pool | **undermined** |
-| Same family is detected | AUROC 1.00, but 2 held-out families | **supported, thin, not new** |
-| Immediate parent; ancestor | Parent fails; ancestor not tried | **undermined; untested** |
-| Direction (which came first) | 0% coverage | **untested** |
-| Edge typing (LoRA, full fine-tune, quantization, merge, ablation) | Code exists, never run on the lab | **untested** |
-| Merge recipe recovery | 30/30 refused because of how the fit was set up | **untested (broken test)** |
-| Per-query error control | 15 null pairs with 0 false alarms; that still allows a false-alarm rate up to about 20%. And it is the wrong comparison: a parent is confused with its relatives, not with unrelated models. | **unsupported** |
-| Reads a few percent of the bytes | 27% on a tiny model; modelDNA reads about 1–2% | **undermined, and not our edge** |
-| Robust to disguise | 0/8 disguises built; a row-block sketch is not robust to neuron reordering | **untested; a real weak spot** |
-| Model evolution is "not tree-like" | 82–96% of quartets fail, at a tolerance with no noise model | **undermined as measured.** The pivot rests on uninformative evidence. |
-| One pipeline for every model type | Extraction supports it; science tested on small LLMs only | **untested as a claim** |
-| Heritability per skill and edge type | 0 estimates under the strict rules | **blocked** |
-| Weights as a priced prior for scores | About 3–39 benchmark questions' worth; within a family, worse than no weights | **sobering and useful** |
+| “Find models that meet my needs.” | Filters, measured scores and useful retrieval; later validate clustering or task-based recommendations against simple alternatives. | Search and information commands exist. End-to-end model-choice usefulness is still unproven. |
+| “What is this model based on?” | Family identification with explicit uncertainty, difficult same-shape controls and realistic candidate pools (C1/C3). | Useful small-catalog results; broad reliability and scaling remain open. |
+| “What changed, and is the declared origin consistent?” | Measured differences, duplicate detection and informative edit/source evidence (C2/C5). | Strong narrow quantizer and known-source merge results; real-model source discrimination remains open. |
+| “Which model should I choose?” | Comparable measured evaluations and, later, a quick test on the user's examples. Predict scores from weights only if this beats strong no-weight alternatives. | Recommendation is a product goal, not an established weight-prediction result. Selection research follows evidence readiness. |
+| “Can others test these answers?” | A reproducible lab benchmark, documented real-model cases and applicable published comparisons (C4). | 166 cohort entries, including 112 formal constructed children; evidence protected, comparison coverage incomplete. |
 
-## 3. The real-world check
+Prefer research that improves an actual query answer or establishes an important limit. Simple, mathematical, statistical or learned approaches are all allowed when the useful question warrants them. Do not add a technique just because it is sophisticated. Scientific necessity applies to everything said and done.
 
-Who would use this, ranked by value:
-1. **Compliance and legal teams** adopting open models. "Is this renamed
-   fine-tune or GGUF derived from Llama, Gemma, Qwen or DeepSeek, and which
-   license applies?" High stakes, asked monthly. *Partly supported:* family
-   detection works; it is untested on real look-alikes and on GGUF.
-2. **Hubs and model publishers.** "Is this upload a re-upload, re-shard or
-   quantized copy? Is its declared base right? What derives from our model?"
-   Asked continuously. *Mostly supported* by file and block hashes, which are
-   cheap.
-3. **Safety teams.** "Was refusal removed?" *Untested,* but probably the
-   easiest win. Refusal removal leaves an exact mark, and the lab has eight
-   examples. The baseline to beat is just "the name contains 'abliterated'".
-4. **Researchers and fine-tuners.** "What did this fine-tune change?" The most
-   shareable output (a diff gallery). *Works, but uncalibrated.*
-5. **Model choice.** The largest audience, and the weakest fit for weights.
-   Leaderboards and model-profiling services already answer it, and our own
-   data says weights add little. Measure, do not predict.
+## Current research strategy
 
-**Almost nobody needs the exact parent from weights alone.** In practice the
-order comes from upload times and declared bases. Users need "family X, these
-closest candidates, declared base consistent or not".
+1. Finish decisive tests using existing lab assets: the four realistic directional-ablation edits (Heretic) with normal-training controls, and merge-source search among candidates. Known-source coefficient fits are a separate successful result.
+2. Establish transfer on documented real models and compare applicable methods on the same cases. A public vendor method, merge recipe, official training stage or public tool/base/settings is documented truth. Missing private execution details are caveats; a missing expected mark is a reported result. Declared-only relations remain descriptive.
+3. Test search at scale with two same-architecture candidate pools, selected from metadata around the actual pinned lab bases, capped near 2,000 each for this experiment. Measure 10/100/1,000/all with fixed subsamples, actual sizes, unknowns and costs. This replaces the uninformative mixed 5k roster, not the long-term database goal.
+4. Demonstrate useful query journeys, including a fresh model, honest “not sure” answers, measured score filters, comparisons and total cost. Evaluate model-choice usefulness before adding prediction or a larger recommendation system.
+5. Grow the database and prepare papers/releases when these results justify them. Revisit breadth, methods, query usefulness and cost together, rather than optimizing one small exposed panel repeatedly.
 
-**Missing for real use:**
-- GGUF (16% of top repositories, and half of the top decision models);
-- Hub metadata as evidence;
-- a published cost per query for a model not yet in the zoo;
-- standard integration points (a pip command, a Space, a GitHub Action).
+## Claims and limits
 
-## 4. The frontier check
+C1: family at scale; C2: informative edit evidence and source discrimination; C3: decisions tested against close relatives and missing sources; C4: benchmark; C5: measured-versus-declared ecosystem; C6: later score/selection hypotheses. Detailed tests and status are in CLAIMS.md. C1–C5 remain checked, not broadly verified or approved as solid conclusions.
 
-**Related work, checked on 2026-11-07.** The full table and its effect on
-each claim are in `CLAIMS.md`. In short:
-- **Verified:**
-  - **modelDNA** with **LineageBench** (15 suspect models) and the **modelDNA
-    Atlas** (68 Hub models);
-  - **TrFP** (activation fingerprints; runs the model; robust to disguise);
-  - **provenance sets (MPS)**: source-set coverage and set-size curves for
-    5–100 candidates; 455 models labeled from declared bases (D5).
-- **Corrections:**
-  - **Witness Overlap** is arXiv only (NeurIPS acceptance not confirmed). It
-    orients ordinary fine-tunes using a witness model, so order is not
-    hopeless from weights (corrected).
-  - Two works were missing from our plan:
-    - **"Training Leaves Traces"** (2608.14929): weight-only relatedness, but
-      symmetric, with no type or direction. It is now a C1 baseline.
-    - **Cisco's `model-provenance-kit`:** a practical provenance tool with
-      edit types, and a real-world competitor for `check`.
-- **Not found:** any weight-only detector for refusal removal.
-- **Documentary follow-up complete (Nov 8):** C checked AttnPrint/DistillTrace,
-  SCOUT, BULLPEN and the GGUF reproducibility paper; see its K2 primary-source
-  note and CLAIMS.md. This is reading, not new method-performance evidence.
+An edit mark may establish compatibility with an operation under stated assumptions. A unique immediate source requires distinguishing relatives in the stated pool; inconclusive evidence stays unresolved (D7). A directional weight edit does not establish a behavioral loss of refusal. Ordinary fine-tunes do not have a general exact-parent/order guarantee. Published method rankings and calibrated parent answers are not interchangeable.
 
-**Where we can lead:**
-- **Construction records across many kinds of edit:** 112 formal constructed
-  children within the 166-model cohort. Earlier work includes 455 models with declared bases; our possible
-  distinction is exact construction records across edit types, not size (D5).
-- **Edge-type identifiability:** which edits make the parent and order
-  provable from weights, and which provably do not.
-- **Calibration against relatives.**
-- **The measured Hub, with a random sample** for honest prevalence estimates.
+Retain the lab successes, failures and limits in RESULTS.md. Do not require a single method to answer every query. Combine signals only under a justified, prospectively tested rule; do not claim recovered accuracy from a metadata join.
 
-Whether exact construction records across edit types distinguish this lab
-from earlier benchmarks remains unverified. Track C must compare them before
-we claim novelty (D5, approved Nov 8).
+## Papers, releases and readiness
 
-**Where we do not lead:** reading fewer bytes, same-family detection on its
-own, and robustness to disguise.
+- **P1, “What model weights reveal about lineage” (working title):** useful source/family/edit answers, real-model transfer, fair comparisons and honest limits. A method framing requires the existing target: typed-edit direction coverage ≥50% at ≥95% precision, immediate-parent false matches ≤0.05 per answered query on the relevant edits, abstentions reported, plus documented real-model tests. These thresholds do not redefine each other.
+- **P1 venue:** ICML 2027 if evidence and comparisons are ready; otherwise COLM. Prior schedule estimates were January and late March; verify official deadlines before any submission decision. No arbitrary internal dated gate is required. An empirical-study/benchmark framing is legitimate if the method headline fails. The owner decides framing and venue.
+- **Scaling claim:** report largest reached same-architecture pools and explicitly assess the existing ≥200 labeled-query target. A coverage shortfall is a shortfall, not a reason to relabel unknowns. Remove a scale claim only by an owner decision.
+- **Zoo v1:** installable library/CLI with useful `check`, GGUF lineage, duplicates and comparison examples; validate fresh-query cost, supported scope and user usefulness. Earlier public target February–March remains an aim, conditional on readiness and owner release approval.
+- **Zoo/ecosystem paper:** database plus query framework, useful measurements and measured-versus-declared findings; earlier target around May at 10–20k models, with expansion supported by throughput and quality. A sound sampling design is required for prevalence claims; selected same-shape scaling pools are not a population census.
+- **Selection paper:** later, once end-to-end query/model-choice evaluation supports a distinctive contribution. Clustering and performance prediction are possible tools to test, not assumed solutions. Heritability remains parked. No workshop papers.
 
-## 5. Over- and under-estimates
+Approved conclusions and open questions stay separate (D6). Every final evaluation has prospective rules, held-out/root/duplicate separation and an independent review. Only the owner promotes a verified conclusion into the paper's approved claim list.
 
-**Oversold:**
-- "Typed, calibrated lineage scales";
-- per-query error control;
-- 10^4+ pools by January;
-- direction from weights for every kind of edit (we test it only for edits
-  that leave an exact mark);
-- byte efficiency;
-- one validated pipeline across modalities;
-- tree-likeness as a finding;
-- the 50–100k census by May;
-- `recommend` with weight-based predictions.
+## Do not revive by habit
 
-**Undersold:**
-- **The lab** (the strongest asset).
-- **The honest split** between "family is easy, parent is hard", which
-  reframes the field.
-- **Within a family, weights do not tell which sibling is better.** A crisp,
-  sobering result.
-- **The random Hub sample,** which makes honest prevalence estimates possible.
-- **Refusal-removal detection,** a practical win.
-- **Score verification:** weight identity now supports 144/150 score links,
-  compared with 24/150 matching revision names alone; six remain unknown.
-  This is not a verification of every evaluation setting.
-- **The tool itself:** an interpretable model-origin check using the existing
-  queries. Whole-workflow latency and real-world accuracy still need measurement.
+Tree recovery; exact parent/order guarantees for ordinary fine-tunes; 10k-candidate guarantees; byte-efficiency novelty; robustness to adversarial disguise; spectra inferred from partial reads; a 50–100k census promised by May; paid/black-box evaluation for the current P1; unvalidated weight-based score prediction; workshop or heritability papers. A broader database and query framework remain the goal; these cuts constrain unsupported claims and premature work, not ambition.
 
-## 6. The corrected course
+## Assets and main risks
 
-### Claims we will test, and make only if they hold
+Model-Zoo holds collection/evidence/database building; Zoo-Keeper holds queries, the lab, methods and studies. Model-Research remains a historical source and comparison dependency. Reuse these assets before new code. The lab archive is already verified, not awaiting storage setup.
 
-| ID | Claim | Real-world use | Tested by |
-| --- | --- | --- | --- |
-| **C1** | From a small part of the weights, a model's base family is identified reliably. False-positive rates are measured against independently trained models of the same architecture (the hardest real look-alikes), at the largest pool reached (two same-architecture pools; target largest sizes reached, capped near 2,000 each (D9)), alongside every priority published method. | Compliance, licensing, de-duplication | K2, K6, K8 |
-| **C2** | Some edits make the parent, and sometimes the order, provable from weights. Each has its own test: <br>• quantized children sit on a value grid (parent and order); <br>• directional ablation leaves shared or recipe-specific low-rank changes, tested on Heretic and documented real cases; <br>• a merge is a mix of its parents and base (parents and order); <br>• adapters support family/base; immediate source among siblings needs readable rank and further distinguishing evidence, with no order claim. <br>For ordinary fine-tunes, weights give the family and the closest candidates. Order is tested with a witness model (Witness Overlap) and a spectral cue; otherwise the method abstains and Hub metadata supplies the order (corrected). | "What was done to this model?"; refusal-removal checks; quantized-copy detection; merge-config verification | K3, K5, K9 (pass rules in `CLAIMS.md`) |
-| **C3** | Parent decisions are calibrated against close relatives (siblings, grandparents, quantized variants), with coverage reported at the pool size reached. There are no guarantees beyond what the calibration set supports. | Trustworthy "consistent or not" verdicts | K5, K12 |
-| **C4** | The lab, plus a documented real-model tier (D8), including models beyond the small lab, is released as a lineage benchmark with a scorer, with all priority methods measured on it. | Shared yardstick for the field | K2, K7 |
-| **C5** | The Hub measured against what it declares: duplicates, quantized copies, tensor sharing, declared-base consistency and revision drift, with prevalence estimated from the random sample. | Hubs, publishers, researchers | zoo v1 and P3 |
-
-C2 becomes P1's headline only if it holds on real Hub examples as well as on
-the lab (section 7).
-| **C6** (later) | Weights are worth only a few to a few dozen benchmark questions as a score predictor, and do not separate siblings. So measure, do not predict. | Model choice | selection paper |
-
-### Stop
-
-- Tree recovery. "How tree-like" is reported only if the K4 retest makes it
-  meaningful.
-- Parent and order claims for ordinary fine-tunes from weights alone, unless
-  the K9 witness or spectral tests support them.
-- Per-query guarantees at 10^4 candidates.
-- Byte-efficiency claims.
-- Robustness to disguise. We state that we assume no adversary, and run one
-  exact neuron-reordering test to show the limit honestly.
-- Spectral numbers from partial reads.
-- Validating every modality before LLM lineage is solid. Extraction support
-  stays, but makes no claim.
-- The 50–100k census by May. Instead: 10–20k plus checks on request.
-- The black-box test for January.
-- Weight-based score prediction in `recommend`, unless it beats a no-weights
-  baseline, including question-profiling services.
-
-### Start
-
-The K-actions in `PLAN.md`, plus:
-- the exact edge tests (grid, removed direction, merge mix, rank) inside K5;
-- the relatives comparison set inside K5 and K12;
-- one exact neuron-reordering test (part of card D4);
-- reading and verifying the new papers inside K2.
-
-### Papers and releases
-
-| What | Target | Odds as judged now |
-| --- | --- | --- |
-| **P1:** "What model weights reveal about lineage" (working title). Family at scale, exact-mark edits, honest limits, and the benchmark with baselines. | ICML (Jan 22/28) if Dec 18 says go; otherwise COLM (late March) | ICML plausible if the edge tests and baselines land by about Dec 12; COLM likely |
-| **Zoo v1:** pip install, a `check` command, GGUF, a duplicates report, a diff gallery (planned in K15) | Public Feb–Mar. The tool can go public before P1. The lab data goes public only after the P1 submission: January if ICML, late March if COLM. | likely |
-| **Measured-vs-declared note** (tensor sharing, re-uploads, revision drift) | arXiv, Feb–Mar | likely |
-| **P3:** the zoo paper, the lab plus 10–20k measured models | NeurIPS E&D, around May | plausible |
-| ~~Heritability workshop paper~~ | Dropped (card D3: no workshop papers) | — |
-| **Selection paper** | Decided after zoo v1 | too early to judge |
-
-## 7. Kill criteria and checkpoints
-
-Each line is decided on its date with a gate card. Results that miss a target
-are reported as misses.
-
-| Date | Check | If it fails |
-| --- | --- | --- |
-| Nov 14 → Dec 5 | Merge fits on deltas: coefficient error ≤0.05 on most linear and SLERP merges (no more than 4 misses) | Drop recipe recovery. Keep only "the published config is consistent with the weights". |
-| Nov 14 → Dec 5 | Tree test with a tolerance set by repeat-measurement noise, on subtrees without merges | Keep the pivot if violations stay large against the simulated exact tree; reopen it if not |
-| Dec 12 | Method: typed-edge direction coverage ≥50% at ≥95% precision, and immediate-parent false matches ≤0.05 per query on the edits where the method answers (the original target, with abstentions reported), on the lab; the exact-mark tests also hold on real Hub examples (refusal-removed and quantized models with known parents, from K7). Lab-only success does not make the headline: marks may blur on real models, for example refusal removal followed by more fine-tuning. | Drop the method framing for ICML. P1 becomes an empirical study plus benchmark (ICML), or moves to COLM. |
-| Nov 21 | Disguise check (K14): does the fingerprint survive the 8 existing disguises and one exact neuron reordering? | It is a limitation either way. Report it. Compliance is where disguise matters most. |
-| Dec 18 | At least 2 priority baselines run on the lab and the Hub tier | No ICML; target COLM |
-| Dec 18 | D9 same-architecture scaling at largest reached pools, with labeled-query coverage and the existing200-query target explicitly assessed before the January freeze | Remove "scale" from the title and claims |
-| Jan 15 | Final go or no-go on the ICML abstract | COLM |
-
-## 8. Risks
-
-1. **Losing the lab data.** It is in `/tmp` today. Card D1.
-2. **Real-model comparisons and source-search results are still required for the paper.** Card D3 and K2.
-3. **Overlap with new work:** provenance sets on pool size; the modelDNA
-   Atlas; "Training Leaves Traces"; Cisco's provenance kit for the `check`
-   product. Track C verifies before we claim.
-4. **Results support only the empirical framing by Dec 12.** That is still
-   publishable, at COLM or as a benchmark.
-5. **Releasing data** under gated licenses, ablated models, naming model
-   authors, and the institution's policy: each release is a decision card with
-   a license check and prior notice to named parties.
-6. **One person cannot keep a 100k census fresh.** The product is an index of
-   important bases, plus a `check` on request.
+The main risks are real-model marks failing, source ambiguity among relatives, limited independently trained controls, inflated counts from dependent cases, narrow format coverage, unfair comparisons and database growth outrunning useful queries. Report these plainly and choose a decisive test or a useful redesign.

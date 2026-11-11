@@ -2,14 +2,13 @@
 
 The lab records exact construction truth for model-lineage experiments. Code,
 recipes, and the small pin registry live here; checkpoints and evidence live
-under `$ZOO_DATA/lab`. The approved L1 plan is in the main checkout's
-`docs/plans/2026-10-31-genealogy-lab.md`.
+under `$ZOO_DATA/lab`. Current work is in [the shared checklist](../steering/CHECKLIST.md); [technical contracts](../docs/reference/CONTRACTS.md) replace the retired implementation plan.
 
 The final planned inventory contains 166 models and 187 construction edges:
 112 public derivatives, seven bases, and 47 references. All 54 external models
 are frozen in `pins.json`. The tables describe planned construction; they do
-not establish checkpoint or measurement completion. See [HANDOFF.md](HANDOFF.md)
-for Track A's file contract and the reference labels used for calibration;
+not establish checkpoint or measurement completion. See [REFERENCE-LABELS.md](REFERENCE-LABELS.md)
+for the table contract and the reference labels used for calibration;
 `table_manifest.json` records counts and content hashes.
 
 Run commands from this repository in `esd_ind`, with the workspace environment
@@ -19,9 +18,9 @@ as described in [the lineage runbook](../docs/operations/lineage.md).
 No existing package version was changed for this work. Additional packages
 were installed with `--no-deps`; mergekit declares a newer pydantic minimum
 than the existing environment, although its exercised backend tests pass.
-Heretic is not runnable under the required safety policy. Do not let a default
+The original unprepared Heretic CLI is not runnable under the safety policy; the reviewed safe binding is described below. Do not let a default
 dependency resolution upgrade the collector environment; clean-environment
-compatibility remains a recorded handoff item.
+compatibility remains an environment limitation.
 
 ```bash
 python -m lab.cli validate
@@ -40,7 +39,7 @@ Tiny runs use synthetic local fixtures; they do not count toward the real lab.
 | `merge` | `lab/configs/merge.json` | 30 linear, SLERP, TIES, and DARE-TIES merges |
 | `abliteration` | `lab/configs/abliteration.json` | Classic and Heretic variants |
 | `quantization_sim` | `lab/configs/quantization_sim.json` | 12 quantize/dequantize simulations, stored bf16 |
-| `laundering` | `lab/configs/laundering.json` | 16 public transforms; C manages the blind contribution |
+| `laundering` | `lab/configs/laundering.json` | 16 public transforms; reserved final cases need independent scoring |
 | `decision` | `lab/configs/decision.json` | Four decoder and two encoder decision heads |
 
 For example, an offline tiny LoRA run writes only to a chosen scratch lab:
@@ -61,12 +60,10 @@ Real LoRA/SFT/DPO batches require the person's authorization. Runs require a
 measured projection within both limits: at most100 weight models and two hours,
 within the authorized scope. Select an allocated
 device explicitly and obey the shared-GPU checks. Completed runs, exact pins,
-counts and artifact locations are recorded in the main handoff status.
+counts and artifact locations are recorded in steering/RESULTS.md and original run reports.
 
 Full SFT/DPO can use two or four GPUs through `lab.scripts.distributed_training`.
-Its caller must reserve all physical UUID locks and check each GPU's
-utilization and occupied-memory fraction below80% twice, at least5s apart,
-with enough free memory for the measured recipe. Freeze a new config with
+Its caller must first verify every GPU is genuinely idle and unallocated to another user, reserve all physical UUID locks through existing admission mechanisms, and recheck immediately before launch, with enough free memory for the measured recipe. A below80% load check alone does not authorize using an occupied GPU. The shared cap is four devices across the project. Freeze a new config with
 `recipe.distributed` containing `world_size=2` or `4`, `backend="nccl"`, the original
 `global_batch`, `local_batch=global_batch/world_size`, and
 `partition_policy="contiguous_global_step_batch_v1"`. Keep global batch,
@@ -101,9 +98,7 @@ the recipe. Omitting the field preserves the existing CPU invocation. Record
 device/runtime and measured pilot costs; floating-point results and seeded
 DARE masks can differ between CPU and GPU execution.
 
-The installed Heretic 1.4.0 loader lacks the required safe local-loading
-controls. Its adapter refuses execution; synthetic dispatch tests are not
-genuine Heretic results. Classic ablation remains available. Permutation,
+The original installed Heretic 1.4.0 loader lacks required safe local-loading controls. Its unprepared adapter refuses execution; use only the reviewed `lab.heretic_safe` binding below. Synthetic dispatch tests are not genuine Heretic results. Classic ablation remains available. Permutation,
 rescaling, and value rotation have architecture-specific equivalence checks;
 targeted perturbation is not labeled function-preserving. Simulated
 quantization is not a claim of equivalence to a packed quantization format.
@@ -120,9 +115,7 @@ python -m lab.cli verify --tables-root "$ZOO_DATA/lab/tables" \
 ```
 
 The materialization command reproduces the checked-in planned inventory.
-The minimum checker reports missing outputs rather than launching jobs. The
-combined laundering target stays pending C's aggregate attestation; it never
-opens the blind directory or declares G1 itself.
+The minimum checker reports missing outputs rather than launching jobs. Any reserved final evaluation remains separate; the minimum checker does not open it or establish a scientific claim.
 
 `lab.cli export-models` writes an invocation-only CSV for the extractor. Local
 paths are absolute only in that temporary CSV; durable manifests use portable
@@ -151,9 +144,7 @@ development threshold gives frozen-threshold metrics. An all-abstention cutoff
 is represented as the JSON string `"-inf"`, and undefined metrics are null.
 
 The planned inventory needs matching manifests for every row before real lab
-scoring. No metrics are claimed from the checked-in inventory alone. Local
-benchmark release staging remains the next lab tooling task; all publication
-remains a person's action.
+scoring. No metrics are claimed from the checked-in inventory alone. Release preparation follows the shared checklist; publication remains the owner's decision.
 
 
 The completed L12 delivery and real depth-three-chain evaluation are described
@@ -178,5 +169,4 @@ recipes and unchanged numerical checks, then requires exact finite BF16 state,
 safe reload, complete matching token audits, and immutable checkpoint files.
 Its version-2 `cohort.json` separates verified construction from functional
 failure. New IDs end in `-drift-v2`; original formal slots and G1 credit are
-unchanged. See the public-transform-equivalence-v2 protocol in the main
-checkout's `docs/plans/` for the owner's approval boundary.
+unchanged. The original approval/protocol is recoverable at Git170c068, docs/plans/2026-11-05-public-transform-equivalence-v2.md; current direction permits no robustness claim.

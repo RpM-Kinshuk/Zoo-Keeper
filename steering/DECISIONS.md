@@ -1,176 +1,34 @@
-# Decisions
+# Decisions and owner authority
 
-This protocol fixes two failure modes:
+Routine reversible work inside the approved direction belongs to the doer. The independent reviewer challenges consequential scientific choices and evidence. The owner decides direction/venues, promotion of claims, scientific gates/thresholds/splits, frozen shared interfaces, large launches, money, external contact, publication and loss of sole/uncertain scientific data. Do not ask again for authority already given.
 
-- the overseer receives choices with too little or too much detail, and has
-  to hand them back;
-- agents decide alone and miss the big picture.
+For an actual decision, prepare a short card in `cards/`: answer/recommendation first, purpose and reason in plain words, up to three options with gain/loss, reversibility, default or what is blocked, independent opinion and evidence link. A launch card must be concrete and pasteable. No generic “permission to prepare” cards or cards for closed decisions. Retire a closed card after its outcome is summarized here; retain raw scientific evidence.
 
-The split: **agents supply the technical knowledge and a recommendation; the
-overseer decides on the big picture** (the compass in `README.md`). The steward sits between them and makes every card readable and honest.
+## Settled owner decisions
 
-## 1. Who decides what
+| ID | Decision still in force |
+| --- | --- |
+| D1 | Public, manually gated archives for approved lab/evidence/database material; preserve restricted-data exclusions and local scientific copies. Archive already verified. DATA.md holds revisions. |
+| D2 | Test what model weights actually reveal; real-model evidence is required for practical claims. The database and query framework remain the core product. |
+| D3 | Heritability parked; no workshop papers. Old track assignments are superseded by D11. |
+| D4 | No disguise-robustness claim; retain the bounded limitation findings, not an expanding robustness project. |
+| D5 | Prior source-set work already studies pool-size curves and includes 455 declared-base models. No “largest/first” or generic scaling novelty. Exact construction records across edit types need a direct comparison before a novelty claim. |
+| D6 | Keep approved verified conclusions separate from prospective open tests. Later claim promotion needs verification, independent review and explicit owner approval. Internal calendar gates are superseded by D11; scientific evidence standards are retained. |
+| D7 | Informative marks can support operation/source compatibility; a unique immediate source requires distinguishing relatives within the stated candidate pool. Inconclusive stays unresolved. |
+| D8 | Published vendor compression methods, merge recipes, official training stages and public-tool/base/settings ablations count as documented real truth. Missing private execution details are caveats; declared-only links are descriptive. No maker contact required or authorized. |
+| D9 | Scaling tests use two same-architecture pools around actual pinned lab bases, near 2,000 candidates each at most, at 10/100/1,000/all with fixed subsamples. Replace the mixed5k roster; prepare a new measured budget and owner launch. This experiment's cap does not cap the eventual database. |
+| D10 | Plain language with context. A blocked item gets a feasible redesign or next useful item within a working day; “cannot verify” alone is not a closure. Necessity chooses useful work, not idleness. |
+| D11 | Owner approved a complete move to one doer plus independent reviewer, one ordered checklist and readiness checks; no trial. Remove obsolete track coordination, handover logs/plans, unnecessary code/caches and audited worktrees after preserving useful work and scientific evidence. No commits or model runs requested by this cleanup. |
 
-| Class | Who decides                                                     | When it applies                                                                                                                                                                                            | How it is recorded                                               |
-| ----- | --------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
-| **1** | The track agent alone                                           | Reversible within a day; inside its own track; no change to claims, papers, dates, money, shared formats, or another track                                                                                 | One line in the track's note                                     |
-| **2** | The track agent, then the steward checks it against the compass | Reversible, but touches another track, the order of `PLAN.md`, a shared file format, or more than 20 GPU-hours                                                                                             | A one-line "for your information" entry on `BOARD.md`            |
-| **3** | The overseer                                                    | Changes a claim, paper, venue, or date; spends money; cannot be undone or is outward-facing (making anything public, contacting anyone); decides a gate or a pivot; deletes data that may be the only copy | A card in `cards/`, listed under "Waiting for you" on `BOARD.md` |
+Original approvals D1–D10 were Nov7–9; D11 is the latest session instruction. The owner subsequently restated the original grounding: a practically useful **database and query framework**, a long-term 50k–100k+ ambition, frontier research and top-venue impact. DIRECTION.md and CHECKLIST.md preserve that aim without turning it into an immediate collection authorization.
 
-**When unsure, pick the higher class.** An agent that is unsure which class
-applies asks the steward, not the overseer.
+Four genuinely idle GPUs are permitted project-wide, with no permanent role split. Agent-run jobs must stay within both 100 weight models and 2 hours; the owner launches larger work. DATA.md preserves the limited archive-upload authorization; other outward-facing actions remain the owner's.
 
-**Handing a decision back.** The overseer may answer a class-3 card with "you
-decide". The steward then decides by the compass, after a skeptic's check, and writes the reasoning in the log.
+## Scientific corrections carried forward
 
-- This is allowed only when the choice is reversible and not outward-facing.
-- Money, publishing, deleting a sole copy, and the P1 venue call are never
-  handed back.
+- The four development projection positives changed a sentiment direction. They do not validate refusal behavior. Four realistic Heretic edits still need scoring with recipe-specific rank and controls.
+- Saved witness protocols/scored rows already use sibling SFT witnesses. The proposed DPO-descendant explanation for 0/8 is unconfirmed; verify facts and change a test only for a justified reason.
+- All existing failures, original truth/split exposure and narrow quantizer/merge successes remain intact. D8 changes future evaluation admission, not historical raw labels or results.
+- The scientific-necessity rule applies to everything said/done: identify a useful outcome, minimum evidence, alternative framing and stopping condition. Do not create a new bureaucracy around it.
 
-**Batching.** Cards reach the overseer in batches, at most twice a week
-(Monday and Thursday). The exceptions: work blocked for more than a day, a
-safety or data-loss risk, or a deadline within 48 hours.
-
-## 2. Rules for anything sent to the overseer
-
-- Lead with the question and the recommendation. Put reasons after.
-- Use plain words. Explain any technical term in a few words in parentheses,
-  or leave it out.
-- Put every number next to its target, then say in one line what it means
-  for the claims or papers.
-- Offer at most three options. If the agent cannot recommend one, it says
-  what information would let it.
-- Fit everything on one screen, with technical detail behind a link
-  ("Details for agents").
-
-Overseer preference (Nov 8): keep language plain and detail low, but include
-one short sentence saying what the work is for and why the update matters.
-Do not assume the overseer remembers task IDs, method names or research terms.
-Use a plain description first; explain any necessary unfamiliar term where it
-appears. Put technical IDs in parentheses or links, not in place of context.
-
-- Always name a default for when no answer arrives. A choice that cannot be
-  undone has no default: the card says what it blocks.
-
-## 3. Card templates
-
-Cards live in `cards/` as `D<n>-<short-name>.md` (decision),
-`G<n>-<short-name>.md` (gate), or `L<n>-<short-name>.md` (launch). The
-steward numbers them and marks them `open` or `decided` at the top.
-
-### Decision card (class 3)
-
-```
-# D<n>: <the question in plain words, 15 words or fewer>
-Status: open | Ask: <the exact answer needed, e.g. "approve" or "pick A or B">
-Due: <date> | If no answer: <default action, or "none: blocks X">
-
-Recommendation: <option> (confidence: high / medium / low)
-Why: <three lines at most, plain words>
-
-Big-picture effect (write "no change" where none):
-- Claims: …
-- Papers and dates: …
-- Real-world use: …
-- Cost (compute, money, your time): …
-- Risk: …
-
-Options:
-- A: <one line>. Gain: … Lose: …
-- B: <one line>. Gain: … Lose: …
-
-Can it be undone? <yes, and the cost of undoing / no>
-What we are unsure about: <one line>
-Second opinion (skeptic): <agree or disagree, plus one line>
-Details for agents: <link to the run report or plan section>
-```
-
-### Gate card (a planned checkpoint, or a pivot trigger)
-
-```
-# G<n>: <gate name>, <date>
-Status: open | Ask: "pass", "fail", or "pass with conditions"
-
-| Check (plain words) | Measured | Target | Result | What it means |
-| --- | --- | --- | --- | --- |
-| …                   | …        | …      | PASS / FAIL / NOT MEASURED | one line |
-
-Recommendation: <pass / fail / conditions>, and the consequence of each answer.
-Is any check unfair or broken? <yes or no; if yes, say why in one line>
-Second opinion (skeptic): <one line>
-Details for agents: <link>
-```
-
-"NOT MEASURED" is never counted as a pass.
-
-### Launch card (a large run the overseer starts)
-
-```
-# L<n>: <what the run does, in plain words>
-Status: ready | Why now: <one line, linked to a PLAN item>
-
-Command (paste as is, from the workspace root):
-    <one block>
-
-Expected cost: <GPU-hours> · <wall-clock hours> · <data read> · <storage written>
-You will know it worked when: <one line, e.g. "REPORT.md says 5,000/5,000 done">
-Stop it if: <one line>   Safe to stop and resume: <yes / no>
-After it finishes: tell the steward. No other action is needed from you.
-```
-
-The overseer needs no technical judgment to run a launch card. If running it
-safely needs judgment, it is a decision card first.
-
-## 4. The second opinion (the skeptic)
-
-Every class-3 card, and every result that would change a claim, gets a
-skeptic's opinion before it reaches the overseer.
-
-- The skeptic is a fresh agent session that did not do the work (`ROLES.md`).
-- It reads the card and the linked evidence, and writes one or two lines:
-  agree or disagree, and the single most important thing the card misses.
-- Disagreement stays on the card and is never smoothed over.
-
-For science questions, the overseer is not expected to judge the math. They
-choose on the compass, with both opinions in view.
-
-## 5. The old `[HUMAN]` items
-
-Each `[HUMAN]` item in `handoff/CHECKLIST.md` becomes one of these:
-
-- **Launches** (large runs): a launch card.
-- **Gate and pivot calls:** a gate card, with the steward's recommendation and the skeptic's opinion.
-- **Money, publishing, and outside contact:** a decision card.
-
-"Track agent decides and asks for approval later" is not one of the options.
-
-## 6. Settled decisions
-
-| ID | Approved | Effective decision | By |
-| --- | --- | --- | --- |
-| D1 | Nov 7 | Public, manually gated storage for the approved lab/evidence/database scope; preserve restricted-data exclusions. Archive verified; no storage setup remains. | overseer |
-| D2 | Nov 7 | Corrected research direction; test what weights reveal, with real-model evidence before practical claims. | overseer |
-| D3 | Nov 7 | C owns comparisons/real-model truth; heritability parked; no workshop papers. | overseer |
-| D4 | Nov 7 | Drop disguise robustness claim; retain the bounded limitation check. | overseer |
-| D5 | Nov 8 | Correct prior-work size/search comparisons; exact construction-record advantage remains to be verified. | overseer |
-| D6 | Nov 8 | Separate approved conclusions from prospective open tests. Later conclusions need verification and explicit owner approval; dates unchanged. | overseer |
-| D7 | Nov 9 | Informative evidence may support compatibility; a unique immediate source requires distinguishing relatives within the stated pool. Inconclusive stays unresolved. | overseer |
-| D8 | Nov 9 | Real Hub models with published construction (vendor quantized/FP8 releases, merges with recipe files, official training stages, refusal removals with recorded tool settings) count as documented truth. Declared-only cases are descriptive and never block. No maker contact. | overseer (check-in with the assistant) |
-| D9 | Nov 9 | Scaling uses same-architecture pools around 2 lab bases instead of a random mixed roster; launch card L1 from track A | overseer (check-in with the assistant) |
-| D10 | Nov 9 | Steward rules: plain language for everything the overseer reads; no track idle for more than a working day while items are open; "cannot verify" needs a redesign; necessity chooses the next test and is not a reason to stop | overseer (check-in with the assistant) |
-
-Closed card options/reviews and the full earlier log are preserved at Git
-`fbf40e0a5097bf243f1fcb162c0185c1e171e0f4` under `steering/cards/` and
-`steering/DECISIONS.md`. Cards hold actual open decisions/ready launches and the current approved check-in decisions; older settled outcomes are summarized above.
-
-## Current coordination and preferences
-
-- Nov 9 steward run applied the approved check-in across board, plan, claims, shared note and all briefs/kickoff prompts. Earlier no-new-work/private-record stop instructions are removed.
-- Nov 9 approved check-in and D8–D10 govern current work. They replace the earlier blanket collection/measurement pause and private-maker-record requirement; do not leave contradictory stop instructions active.
-- A prepares the two same-architecture pools and L1 by Nov 12; B scores4 Heretic cases by Nov 12 and searches merge sources by Nov 21; C checks witness order by Nov 11 and supplies the first documented real batch by Nov 14.
-- Fresh source check: all 8 stored SFT protocol/scored rows use opposite-seed SFT witnesses, not DPO descendants. Fresh skeptic agrees; C must audit the setup and predeclare a genuinely changed test rather than repeat identical inputs. This is a factual correction to a proposed explanation, not a new score or threshold.
-- D8 accepts published construction evidence; unknown details are caveats and declared-only cases remain descriptive. New evaluation manifests record the changed truth standard; raw past reports/splits stay intact.
-- D10 requires plain language and active useful work or redesign within one working day. No private-record hunt, approval-to-prepare bureaucracy or broad “not eligible, stop” closure.
-- Scientific necessity selects the decisive test; claims needing absent data justify minimum collection within launch/compute rules. No arbitrary large roster, extra infrastructure or repeated passed test by habit.
-- Four idle GPUs project-wide, initial A0/B2/C2 with handoffs and existing admission/reservation rules. Owner launches >100-model weight or >2hour work; no publication, access or money rule changed.
-- Nov 9 cleanup removed superseded coordination only; prior text is recoverable at the revision above, raw evidence untouched. Current check-in cards D8–D10 remain authoritative alongside their settled log entries.
+Historical closed card details are recoverable from Git, including revision `fbf40e0a5097bf243f1fcb162c0185c1e171e0f4`; recent pre-migration documents are at `170c068e02024378e914f8ed9bc99db7bc584f52`. No claim is promoted by this process migration.

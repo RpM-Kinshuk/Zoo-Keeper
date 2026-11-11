@@ -8,10 +8,7 @@ No claim in `DIRECTION.md` is frozen until it passes four checks:
    before running.
 4. **A skeptic's review.**
 
-Claims about real-world use must also hold on real Hub models, not only on our lab. The steward keeps this file. Only the overseer moves a claim to
-**solid**, at the Nov 25 gate or an explicit later review after verification
-(D6). The Dec 4 plan may separately list unanswered questions and prospective
-tests; their inclusion does not verify or solidify them.
+Claims about real-world use must also hold on real Hub models. The doer updates this file after independent review. Only the owner makes a verified claim **solid** for a paper. The final evaluation plan lists approved conclusions separately from open questions; a scheduled date or completed checklist never verifies a claim. The end product is the database plus query framework, not a lineage result alone. Model-choice/clustering/prediction ideas need practical evaluation before claims.
 
 **Status ladder:**
 
@@ -22,39 +19,13 @@ tests; their inclusion does not verify or solidify them.
 - **solid:** verified and explicitly approved for the paper claim list;
 - **dropped:** with the reason.
 
-## Current review: approved Nov 9 corrections
+## Current scientific position
 
-CHECKIN-2026-11-09.md and D8–D10 supersede earlier coordination.
-- D8 accepts maker-published construction as documented real-model truth:
-  vendor compression methods, published merge recipes, official training stages,
-  and ablations with public tool/base/settings. Unknown private execution details
-  are caveats, not reasons to refuse testing. Declared-only relations stay separate.
-  Record new evaluation manifests; preserve all earlier frozen reports/labels.
-- C1 scaling now uses two same-architecture pools (D9), not a mixed5k roster.
-  A prepares L1 by Nov 12; owner launches. Report the actual largest pools reached,
-  labels and unknowns; do not infer independence from different model-card names.
-- B tests the4 Heretic constructions by Nov 12 with each recipe's permitted rank
-  and controls, then searches candidate pools for merge sources by Nov 21. Known-
-  source coefficient fits remain a separate successful result.
-- C checks the8 SFT order reversals by Nov 11. The proposed descendant-witness
-  explanation is unconfirmed: the saved protocol and scored SFT rows already
-  name opposite-seed SFT siblings. Audit ancestry/scoring before a changed test;
-  no repeat of identical triples disguised as a correction. Report the actual
-  limitation or a justified redesign if the explanation fails.
-- Directional ablation names the weight edit, not proven refusal behavior. The
-  old4 sentiment-projection cases remain limited evidence; Heretic and D8 real
-  tests are required before a practical claim. Adapters support family/base, not
-  immediate source among siblings without further distinguishing evidence.
-- D10 requires active work or redesign, not indefinite waiting for private logs.
+D8 admits published construction as documented real truth; private execution details are caveats. New evaluations keep pinned recipes, prospective rules and unknowns explicit. D9 uses two same-architecture pools, not the mixed5k roster. CHECKLIST.md orders work; D11 retires old track/date machinery without loosening evidence standards.
 
-Prior results remain:12/12 exact-quantizer sources in their original pools,
-18/18 known-source merge coefficients, and current family/benchmark findings.
-On the matched quantization source-ranking panel, the best of four published
-comparators places the true source first 7/12 versus our12/12 exact-replay source
-answers. This is a lab task result, not broad precision or every method's native
-claim. No new Heretic, corrected-witness, real-mark or scaling result is yet recorded.
-C1–C5 remain checked; C6 remains a later hypothesis. D6/D7 still protect against
-unverified conclusions and source claims that do not distinguish relatives.
+The four Heretic edits need recipe-rank/control scoring; merge-source search and documented real-mark tests remain open. The four sentiment projections do not establish refusal behavior. Saved SFT witness rows already use siblings; the proposed descendant-witness explanation for0/8 is unconfirmed. A changed test needs a scientific reason.
+
+Prior12/12 exact-quantizer source results and18/18 known-source merge fits retain their narrow scopes. The best comparator source ranking7/12 versus our12/12 exact-replay answers is a lab task result, not general precision or every method's native claim. C1–C5 remain checked; C6 is a later hypothesis. No broad claim is promoted by this workflow change.
 
 ## Literature check (Nov 7, documentary follow-up Nov 8)
 
@@ -101,7 +72,7 @@ size, with measured false positives.
 - **Baselines (K2):** Trace, Spectral Signatures, modelDNA, and "Training
   Leaves Traces", on the same pairs.
 
-**Status:** checked; promising on 6 queries.
+**Status:** checked. Current family coverage and exposure limits are in RESULTS.md; broad scaling remains unverified.
 
 ### C2: edits that leave an exact mark
 
@@ -118,11 +89,11 @@ original scope. Existing pass/fail rules below are unchanged; no claim is promot
 | Edit                                       | Exact mark (theory)                                                                                                                                                                                                                                                                         | Parent?                            | Order?                                                                                 | Where it breaks                                                                                                                                                                                                                        | Cheap test (pass rule written first)                                                                                                                                     |
 | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Quantization** (quantize, then store)    | Within each quantization block, the child has at most 2^bits distinct values (16 for 4-bit). This survives bf16 storage, because each grid level maps to one stored value. Re-quantizing the true parent reproduces the child.                                                              | informative replay supports a candidate; unique only when relatives are distinguished in the stated pool | yes: the child is the one on the grid                                                  | **Native low-precision releases:** if the original was released in FP8, its bf16 copies are the children and also sit on the grid, so the order needs metadata. Quantize-then-fine-tune (QLoRA merged) erases the grid.                | 12 lab quantizations against 30 unquantized models. Pass: 12/12 detected, 0 false; re-quantizing the parent matches.                                                     |
-| **Directional ablation** (weight-edit operator) | Classic removes a shared direction; Heretic can apply recipe-specific low-rank changes separately per edited matrix. A weight signature does not establish refusal behavior. | informative edit evidence may support a source; unique source requires distinguishing relatives (D7) | test where operator evidence supports order; do not infer it from low rank alone | Noise, export and later edits can blur marks. Use the actual recorded recipe rank; do not force FULL/rank3 Heretic into rank1. | By Nov 12 score all 4 Heretic models under a prewritten recipe-rank/noise rule; SFT/DPO/adapter/unedited controls must not be flagged. Report four classic sentiment projections separately; then apply tests to D8 cases. |
+| **Directional ablation** (weight-edit operator) | Classic removes a shared direction; Heretic can apply recipe-specific low-rank changes separately per edited matrix. A weight signature does not establish refusal behavior. | informative edit evidence may support a source; unique source requires distinguishing relatives (D7) | test where operator evidence supports order; do not infer it from low rank alone | Noise, export and later edits can blur marks. Use the actual recorded recipe rank; do not force FULL/rank3 Heretic into rank1. | Score all 4 Heretic models under a prewritten recipe-rank/noise rule; SFT/DPO/adapter/unedited controls must not be flagged. Report four classic sentiment projections separately; then apply tests to D8 cases. |
 | **Merge**, linear or SLERP                 | Child minus base is a mix of each parent minus base (SLERP adds a small base term)                                                                                                                                                                                                          | informative coefficient fit supports candidate sources; unique sources require relative discrimination | yes, **only if** merge weights are non-negative: an affine relation alone is symmetric | Parents that are near-duplicates are not identifiable; report them as a group.                                                                                                                                                         | K3 refit on deltas. Pass: coefficient error ≤0.05 on most linear and SLERP merges (no more than 4 misses).                                                               |
 | **Merge**, TIES or DARE                    | Trimming or dropping leaves many entries **bit-identical to the base** in a random-looking pattern, an extra exact mark                                                                                                                                                                     | informative edit evidence may support candidate sources; unique sources require relative discrimination | yes                                                                                    | Small merges may have few trimmed entries                                                                                                                                                                                              | Pass: all TIES and DARE merges flagged by the identical-to-base share, with 0 false flags among the SFT and LoRA models                                                  |
 | **Adapter** (LoRA merged into the weights) | Tensors the adapter did not touch are **bit-identical to the parent**. Touched tensors change at low rank, but only above the bf16 noise floor.                                                                                                                                             | family/base support; not immediate source among sibling adapters unless readable rank and other evidence distinguish candidates | **no:** a low-rank difference looks the same in both directions                        | Small LoRA updates fall below the floor and the rank test abstains. Report each LoRA's update size first.                                                                                                                              | Report family/base support, sibling ambiguity and readable-rank coverage for 24 lab adapters. Where above rounding noise, retain configured-rank accuracy target ±25%; unchanged tensors alone are not a24/24 unique-source pass rule (approved check-in). |
-| **Ordinary fine-tune** (SFT, DPO)          | No exact mark. Two candidate signals for order: (a) the witness geometry (Witness Overlap); (b) a hypothesis from our own spectral work, that heavy-tail statistics shift in one direction with training. Spectral numbers need full reads (lab has them).                                  | family and closest candidates only | possibly, with a witness or spectral signal; otherwise from Hub upload time            | No witness in the pool; tiny updates (DPO); spectral drift may be too weak                                                                                                                                                             | 16 lab SFT/DPO edges. Report witness-method and spectral-cue order accuracy. No pass rule yet: this is exploratory until Dec 4.                                          |
+| **Ordinary fine-tune** (SFT, DPO)          | No exact mark. Two candidate signals for order: (a) the witness geometry (Witness Overlap); (b) a hypothesis from our own spectral work, that heavy-tail statistics shift in one direction with training. Spectral numbers need full reads (lab has them).                                  | family and closest candidates only | possibly, with a witness or spectral signal; otherwise from Hub upload time            | No witness in the pool; tiny updates (DPO); spectral drift may be too weak                                                                                                                                                             | 16 lab SFT/DPO edges. Report witness-method and spectral-cue order accuracy. No pass rule yet: this is exploratory until a prospective final protocol is fixed.                                          |
 
 **Status:** checked overall. Quantization and known-source linear/SLERP tests have passed in the lab; the remaining edit tests and real-model checks are open. Each hypothesis moves separately; no parent/order guarantee follows from these subtests.
 

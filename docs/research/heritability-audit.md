@@ -1,10 +1,6 @@
 # Which skills move after post-training? A measurement-aware study protocol
 
-Status: internal methods and data-audit draft, 2026-10-31. Empirical estimates
-remain unavailable. The analysis distinguishes supported results
-from missing evidence; synthetic validation is not an empirical finding.
-Intended target: an ICLR 2027 workshop. The person verifies the venue, deadline,
-and submission requirements under checklist F5 before submitting.
+Status: parked methods and data-audit reference. No empirical heritability estimates are established and no workshop paper is planned. Preserved because it explains existing analysis/data, not as an active deliverable. See the current direction and checklist before resuming.
 
 ## Abstract
 
@@ -27,8 +23,7 @@ floor-clipped normalizations can manufacture this pattern. We therefore compare
 Raw per-task accuracy and scale-free prediction errors on shared support.
 
 Prior work includes PhyloLM, Tamura et al., and Laufer et al.; our source ledger
-and intended comparisons are recorded in the [merged plan](../research/2026-10-27-merged-research-plan.md),
-sections 3.3, 5.4 and 9. We do not claim novelty for familial similarity, network
+and intended comparisons are recorded in the pre-migration research plan (Zoo-Keeper Git170c068, docs/research/2026-10-27-merged-research-plan.md), sections3.3,5.4 and9. We do not claim novelty for familial similarity, network
 Brownian models, or the prior effective sample-size formula. The intended
 contribution is a measurement-aware comparison per skill and supported edge
 type, with identity, variance and coverage audits alongside every estimate.
