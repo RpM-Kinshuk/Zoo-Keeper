@@ -93,7 +93,7 @@
       "id": "heretic_weights",
       "path": "lab-restored-heretic/models",
       "kind": "directory",
-      "purpose_and_limits": "Four model.safetensors files local and size-matched;24 companion recipe/config/lineage/direction files absent here. Restore required companions or verified saved equivalents before next tests."
+      "purpose_and_limits": "Four model.safetensors files local and size-matched, without fresh weight hashes. All24 companion files restored and inventory-hash-verified under lab-restored-archive/models; use explicit split roots. Recipe-rank/noise test still open."
     },
     {
       "id": "joined_measurements",
@@ -159,6 +159,27 @@
       "path": "studies/heritability",
       "kind": "directory",
       "purpose_and_limits": "Parked, not a new work instruction."
+    },
+    {
+      "id": "heretic_companion_verification",
+      "path": "runs/heretic-companion-recovery-20261110/verification.json",
+      "kind": "file",
+      "purpose_and_limits": "24 companions;1,297,366 bytes match original archive SHA256/size; independent review. No weights scored.",
+      "sha256": "48a4a4eb530613413f4e48efcdb98a7b3550e792071fb2b5fc868c8881ed9ef5"
+    },
+    {
+      "id": "scaling_pool_discovery",
+      "path": "runs/scaling-pool-discovery-20261110/summary.json",
+      "kind": "file",
+      "purpose_and_limits": "Corrected metadata discovery only; source records/pinned-header pilot adjacent. Not final same-shape/readable pools or a frozen evaluation.",
+      "sha256": "5bf595ba299f28cb19c21aafdfcf7042dea5c83d90e9e853f4d2e71af4fdad4e"
+    },
+    {
+      "id": "scaling_header_pilot",
+      "path": "runs/scaling-pool-discovery-20261110/pilot-results.json",
+      "kind": "file",
+      "purpose_and_limits": "12 pinned metadata/config/header cases;7 header-compatible incl2 anchors. No tensor payload or large-pool yield claim.",
+      "sha256": "a00437f7071bcac9250d261ad808cf8e428af1a4bad969f3b073122273cecff7"
     }
   ],
   "checkpoint_recovery": {
@@ -170,32 +191,6 @@
       "q25-05-abliteration-heretic",
       "q3-06-abliteration-heretic",
       "smol-360-abliteration-heretic"
-    ],
-    "missing_heretic_companion_files": [
-      "models/olmo-1b-abliteration-heretic/abliteration.json",
-      "models/olmo-1b-abliteration-heretic/config.json",
-      "models/olmo-1b-abliteration-heretic/diagnostics/directions.safetensors",
-      "models/olmo-1b-abliteration-heretic/generation_config.json",
-      "models/olmo-1b-abliteration-heretic/lineage.json",
-      "models/olmo-1b-abliteration-heretic/recipe.json",
-      "models/q25-05-abliteration-heretic/abliteration.json",
-      "models/q25-05-abliteration-heretic/config.json",
-      "models/q25-05-abliteration-heretic/diagnostics/directions.safetensors",
-      "models/q25-05-abliteration-heretic/generation_config.json",
-      "models/q25-05-abliteration-heretic/lineage.json",
-      "models/q25-05-abliteration-heretic/recipe.json",
-      "models/q3-06-abliteration-heretic/abliteration.json",
-      "models/q3-06-abliteration-heretic/config.json",
-      "models/q3-06-abliteration-heretic/diagnostics/directions.safetensors",
-      "models/q3-06-abliteration-heretic/generation_config.json",
-      "models/q3-06-abliteration-heretic/lineage.json",
-      "models/q3-06-abliteration-heretic/recipe.json",
-      "models/smol-360-abliteration-heretic/abliteration.json",
-      "models/smol-360-abliteration-heretic/config.json",
-      "models/smol-360-abliteration-heretic/diagnostics/directions.safetensors",
-      "models/smol-360-abliteration-heretic/generation_config.json",
-      "models/smol-360-abliteration-heretic/lineage.json",
-      "models/smol-360-abliteration-heretic/recipe.json"
     ],
     "not_found_at_known_local_checkpoint_paths": [
       "olmo-1b-laundering-mlp_permutation-drift-v2",
@@ -249,7 +244,38 @@
       "models/smol-360-laundering-value_rotation-drift-v2/**"
     ],
     "suggested_restore_root": "lab-restored-archive",
-    "preserve_original_tables": true
+    "preserve_original_tables": true,
+    "restored_heretic_companion_files": [
+      "models/olmo-1b-abliteration-heretic/abliteration.json",
+      "models/olmo-1b-abliteration-heretic/config.json",
+      "models/olmo-1b-abliteration-heretic/diagnostics/directions.safetensors",
+      "models/olmo-1b-abliteration-heretic/generation_config.json",
+      "models/olmo-1b-abliteration-heretic/lineage.json",
+      "models/olmo-1b-abliteration-heretic/recipe.json",
+      "models/q25-05-abliteration-heretic/abliteration.json",
+      "models/q25-05-abliteration-heretic/config.json",
+      "models/q25-05-abliteration-heretic/diagnostics/directions.safetensors",
+      "models/q25-05-abliteration-heretic/generation_config.json",
+      "models/q25-05-abliteration-heretic/lineage.json",
+      "models/q25-05-abliteration-heretic/recipe.json",
+      "models/q3-06-abliteration-heretic/abliteration.json",
+      "models/q3-06-abliteration-heretic/config.json",
+      "models/q3-06-abliteration-heretic/diagnostics/directions.safetensors",
+      "models/q3-06-abliteration-heretic/generation_config.json",
+      "models/q3-06-abliteration-heretic/lineage.json",
+      "models/q3-06-abliteration-heretic/recipe.json",
+      "models/smol-360-abliteration-heretic/abliteration.json",
+      "models/smol-360-abliteration-heretic/config.json",
+      "models/smol-360-abliteration-heretic/diagnostics/directions.safetensors",
+      "models/smol-360-abliteration-heretic/generation_config.json",
+      "models/smol-360-abliteration-heretic/lineage.json",
+      "models/smol-360-abliteration-heretic/recipe.json"
+    ],
+    "missing_heretic_companion_files": [],
+    "companion_recovery_verification": "runs/heretic-companion-recovery-20261110/verification.json",
+    "companion_recovery_bytes": 1297366,
+    "local_heretic_weight_root": "lab-restored-heretic/models",
+    "local_heretic_companion_root": "lab-restored-archive/models"
   },
   "backup_limits": "Archive covers139 constructed checkpoints and112 permitted lab-evidence identities, not all Hub/restricted data or later runs. Those retained local assets have no offsite coverage established by this audit."
 }

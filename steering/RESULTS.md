@@ -1,5 +1,5 @@
 # Results ledger
-Updated 2026-11-09. Curated outcomes, targets and limits; detailed rows, protocols,
+Updated 2026-11-10. Curated outcomes, targets and limits; detailed rows, protocols,
 failures and source hashes stay in the linked immutable run reports. Paths below
 are relative to `$ZOO_DATA` unless they begin `Zoo-Keeper/`.
 
@@ -41,6 +41,8 @@ retired. New Heretic, corrected-witness and real-mark results are NOT YET MEASUR
 
 | Date | Outcome | Measured versus target / meaning | Source |
 | --- | --- | --- | --- |
+| Nov10 | Comparable-pool discovery/header feasibility | Safetensors nonadapter discoveries: Qwen2.5 9,962;Qwen3 7,446;Smol584;OLMo342. Fixed12-case header pilot:7 compatible including2 anchors (5/10 derived);6.13s,591,363 reader bytes;0 tensor payloads. | Names/declared bases and safetensors format overestimate comparable pools; compressed/changed-task cases expose gaps. Convenience pilot is not pool yield, payload readability, independence or lineage accuracy. Final pools/budget/launch remain open. | `runs/scaling-pool-discovery-20261110/REPORT.md`; `REVIEW.md` |
+| Nov10 | Heretic recovery/test feasibility | 24/24 companions,1,297,366 bytes match original hashes/sizes. Reused132 saved blocks: rank3 tail diagnostics available on9/12 positives and48/120 controls;0 new method flags. | Historical FULL/rank3 source evidence strengthened; arithmetic must account for BF16 update cast plus addition. Recipe-specific test remains open; old0/12 resolved positives are not rerun or promoted. No refusal-behavior result. | `runs/heretic-companion-recovery-20261110/REPORT.md`; `REVIEW.md` |
 | Nov 9 | GPU usefulness on B's fixed small SVD | CPU 0.257s versus GPU 3.737s including transfer; CPU selected and GPU released. Total job 1439.30s, of which hashing 1431.93s and SVD 3.50s. One workload, not a general hardware result. | `runs/track-b-joint-source-20261109-v3/REPORT.md` |
 | Nov 8 | Retired mixed-pool design | Prepared 5k mixed roster has 0/216 documented exact positive query keys and 0/134 known parents; unknown revisions/relatives remain unknown. Existing anchors are available. D9 replaces this design with justified same-architecture pools; size and budget that new run. | `runs/track-a-k8-readiness-20261108/REPORT.md` |
 | Nov 8 | Historical operational preparation | 5,224 terminal inputs, 5,000 selected and 154 reserve under resource rules; 70 excluded. Planned comparability 0–252/query, not 5k comparable negatives. Old 2.567 TB tensor/52.98 GB free-space estimates are not current prerequisites. | `runs/track-a-k8-headers-20261108/REPORT.md` |
