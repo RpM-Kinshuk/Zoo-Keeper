@@ -30,6 +30,10 @@ That read-only query succeeded in the Nov10 audit, without weights, credentials 
 | Current findings and their exact reports | [RESULTS.md](RESULTS.md); paths beginning `runs/` are relative to the data root |
 | Saved real-model/comparator measurements | `real_model_cases` and `matched_baselines` entries in DATA-INDEX.json |
 | Checkpoint/evidence/database archives and local stages | `runs/track-a-k0-20261107/release-manifest.json`, `inventory*.json`, `final-remote-check.json`; stage roots in DATA-INDEX.json |
+| Pinned same-architecture candidate pools | `runs/scaling-pools-20261111-v2/{q25-05,q3-06}-pool.csv`; summary/outcomes/manifests/review adjacent;2,000 header-compatible distinct inventories each, not completed weight measurements |
+| Current small-model extraction cost | `runs/scaling-cost-probe-20261111/{freeze,verification}.json`, `row_blocks/summary.json`; two fresh F32 fingerprints, exact payload/range checks, no broad lineage claim |
+| Rank3 synthetic arithmetic and its limit | `runs/heretic-rank3-noise-20261111/{results.json,REPORT.md,proof-review.md}`; known-factor bound, not pair-only scoring |
+| Draft large-launch material | `runs/scaling-launch-20261111/{launch-plan.json,README.md,COMMAND.txt}`;4,000 pinned inputs/metadata budget; scientific scoring not ready, no large job launched |
 | Historical collector data and baseline sources | `Model-Zoo/analysis_runs/` and `Model-Research/`; preserve per-run provenance and exploratory limits |
 
 **Verified locally Nov10 (independently checked against the access index):** all 498 manifest/fingerprint/full-spectrum references for 166 mapped models exist and can be opened; 1,349 staged archive files match their recorded sizes. This is an access/metadata check, not a fresh scientific score, full payload-hash audit or remote backup verification.

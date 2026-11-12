@@ -180,6 +180,34 @@
       "kind": "file",
       "purpose_and_limits": "12 pinned metadata/config/header cases;7 header-compatible incl2 anchors. No tensor payload or large-pool yield claim.",
       "sha256": "a00437f7071bcac9250d261ad808cf8e428af1a4bad969f3b073122273cecff7"
+    },
+    {
+      "id": "scaling_pinned_pools",
+      "path": "runs/scaling-pools-20261111-v2/summary.json",
+      "kind": "file",
+      "purpose_and_limits": "Two2000-inventory header-compatible candidate pools; all selected/duplicate manifests independently verified. No tensor payload/lineage/independent-control validation in metadata preparation.",
+      "sha256": "743fcea56824646b7d60cc056eaa0f34acd71d48b933069766911e2ea8fe4939"
+    },
+    {
+      "id": "heretic_rank3_noise",
+      "path": "runs/heretic-rank3-noise-20261111/results.json",
+      "kind": "file",
+      "purpose_and_limits": "45-case known-factor synthetic bound only; no four-checkpoint/pair-only verdict. Adjacent proof/results review and report preserve applicability limit.",
+      "sha256": "55b1bae7de717e378805bcf08c64dd5a58545f0d7a3d4a80cf5866b95817bae5"
+    },
+    {
+      "id": "scaling_cost_probe",
+      "path": "runs/scaling-cost-probe-20261111/verification.json",
+      "kind": "file",
+      "purpose_and_limits": "Two fresh F32 CPU row-block measurements, exact prospective bytes/ranges; fingerprints/sourcepins adjacent; extraction cost only.",
+      "sha256": "84d8c40568fcd02b531d118617aad93d89b9c7cb8f7188c4ca0cb671df6a7874"
+    },
+    {
+      "id": "scaling_launch_draft",
+      "path": "runs/scaling-launch-20261111/launch-plan.json",
+      "kind": "file",
+      "purpose_and_limits": "4000pinned models and operational budget/command; scientific query/scoring/control/label readiness not established; no large launch.",
+      "sha256": "a70598e877120427259eb685fa88f3d2459e64f1a91e8d74303be4b908837297"
     }
   ],
   "checkpoint_recovery": {
@@ -277,5 +305,6 @@
     "local_heretic_weight_root": "lab-restored-heretic/models",
     "local_heretic_companion_root": "lab-restored-archive/models"
   },
-  "backup_limits": "Archive covers139 constructed checkpoints and112 permitted lab-evidence identities, not all Hub/restricted data or later runs. Those retained local assets have no offsite coverage established by this audit."
+  "backup_limits": "Archive covers139 constructed checkpoints and112 permitted lab-evidence identities, not all Hub/restricted data or later runs. Those retained local assets have no offsite coverage established by this audit.",
+  "latest_update_on": "2026-11-11"
 }
