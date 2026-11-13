@@ -10,6 +10,8 @@ State this briefly in the checklist or protocol, not in a new approval process. 
 
 The end product is both the model database and its query framework. Research, scale and papers must contribute to practical answers for users. No unsolicited features or infrastructure; reuse existing helpers/entrypoints before new code.
 
+Retain research substance rather than a detailed record of every step: question, assumptions, method/controls, decisive evidence, limits and reproduction path. Follow WORKFLOW.md's lean-record rule; new code and separate documents need a concrete scientific or reuse benefit. Existing raw evidence and necessary prospective records remain protected.
+
 ## Credentials and access
 
 Never open, print, copy, edit or commit `.env`. Use inherited environment credentials; never print/log tokens or expose them in command arguments, reports or agent messages. No environment dumps, shell tracing or real credentials in tests. If a credential is missing, ask the owner to set it without asking for its value.

@@ -17,6 +17,12 @@ Use the main `Zoo-Keeper/` and `Model-Zoo/` checkouts in conda `esd_ind`. `Model
 
 Use one checklist, not parallel status logs. Every open item gives its purpose, next action, completion criterion and evidence/blocker. Add small substeps only while needed; remove resolved coordination notes. Do not recreate a long handover or a separate plan for a task that fits here.
 
+## Keep the research substance
+
+Keep the question, essential assumptions, fixed method/controls, decisive results, limitations and a reproduction command or existing-code pointer. Preserve original inputs, pins, raw results and necessary prospective records. Consolidate this into a short research record where practical; routine steps do not each need a plan, driver, freeze file, replay harness or report. Create those only when they close a concrete scientific or reproduction gap.
+
+Reuse existing commands and helpers before writing code. Tests and verification should address changed logic or a real uncertainty; avoid cloned harnesses and repeated full-weight hashing without a new reason. Record the substantive finding once in RESULTS.md; BOARD.md and CHECKLIST.md need only brief changes to status, priority or next action. Keep prior scientific records intact. Documentation volume and case counts are not research progress.
+
 ## Research coverage
 
 Review the whole chain: user question → documented truth → method and comparison → error/abstention → real-model transfer → runtime/storage → usable query output → paper/release. Do not spend successive cycles improving one exposed case while this chain is untested. Use case counts to describe coverage, never as proof by themselves.

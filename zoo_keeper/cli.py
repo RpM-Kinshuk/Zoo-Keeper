@@ -40,9 +40,11 @@ def _parser():
             sub.add_argument("--format", dest="weight_format")
             sub.add_argument("--access")
             sub.add_argument("--text")
-            sub.add_argument("--skill")
-            sub.add_argument("--min_score", type=_finite_float)
-            sub.add_argument("--include_unverified", dest="verified_only", action="store_false")
+            sub.add_argument("--skill", help="score skill label; inspect benchmark and harness with info")
+            sub.add_argument("--min_score", type=_finite_float,
+                             help="minimum mean of matching score rows; results sort by downloads, not score")
+            sub.add_argument("--include_unverified", dest="verified_only", action="store_false",
+                             help="include rows without verified evaluation revisions; verification does not match evaluation settings")
             sub.add_argument("--decision", action="store_const", const=True)
             sub.add_argument("--system_one", action="store_const", const=True)
             sub.add_argument("--architecture")

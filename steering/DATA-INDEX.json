@@ -208,6 +208,237 @@
       "kind": "file",
       "purpose_and_limits": "4000pinned models and operational budget/command; scientific query/scoring/control/label readiness not established; no large launch.",
       "sha256": "a70598e877120427259eb685fa88f3d2459e64f1a91e8d74303be4b908837297"
+    },
+    {
+      "id": "documented_slerp_case",
+      "path": "runs/documented-slerp-20261112/results.json",
+      "kind": "file",
+      "purpose_and_limits": "One public SLERP recipe; four fixed source-present/removed pools with lab relatives. Native compatibility and Zoo ambiguity are not historical-source calibration. Inputs, protocol, manifests, row/native artifacts and REPORT adjacent.",
+      "sha256": "a181373c988f0d767f64bd8d0debe509b99509d7a8dcadfbdba5e758a0ca8862"
+    },
+    {
+      "id": "documented_slerp_verification",
+      "path": "runs/documented-slerp-20261112/verification.json",
+      "kind": "file",
+      "purpose_and_limits": "Independent and doer offline reproduction; source/artifact hashes, runtime and checks. Full package suite706pass2numericalDDPfail, focused24pass. Adjacent REVIEW/reproduction retain limits.",
+      "sha256": "0370938d19f4ee01c0c2971960d57767a23fa91d13ed3f150c3753c15527a6ed"
+    },
+    {
+      "id": "merge_source_search",
+      "path": "runs/merge-source-search-20261112/results.json",
+      "kind": "file",
+      "purpose_and_limits": "Three exposed center linear merges plus6SFT/DPO controls; fixed retained-sibling/removal pools and suppliedreference. Actualpair ranks1/2/3; all9removals retain excellent sibling fits. Pairranking, not calibrated historicalsource precision. Protocol/freeze/report/reviews adjacent.",
+      "sha256": "6a981d5d90973154a3be3da3e43d66dae808fd5551427c7f78cd119fa2ff588e"
+    },
+    {
+      "id": "merge_source_search_verification",
+      "path": "runs/merge-source-search-20261112/verification.json",
+      "kind": "file",
+      "purpose_and_limits": "137boundfile checks,53cachedFPs, independent unreducedLS checks and matched doer replay.5focusedpass; fullsuite711pass2numericalDDPfail with documentedPYTHONPATH. No model/network reads; no claim promotion.",
+      "sha256": "2242eb6638aec1026f37a7a6c6d2798333830f8a831b2a880519167117a1531a"
+    },
+    {
+      "id": "query_journey",
+      "path": "runs/query-journey-20261112/results.json",
+      "kind": "file",
+      "purpose_and_limits": "One actually fresh0.494Bquery with2cachedreferences, new isolated3modelcatalog, explicitframe and7CLIcalls.62.13s cold driver and115277824newtensorbytes. Scope/metadata/score limits in REPORT, commands and timing adjacent; old703catalog unchanged.",
+      "sha256": "62249ef869d1f4978d894a458b1befc785a4b8bb98fdab34472a7e216ae17cbb"
+    },
+    {
+      "id": "query_journey_verification",
+      "path": "runs/query-journey-20261112/verification.json",
+      "kind": "file",
+      "purpose_and_limits": "49frozenhashes and independent/doer cached CLI reproduction, table filters and exactscore preservation;93relevant tests pass. Prior fullsuite still2DDPnumericalfailures. Cached headers/references excluded from acquisition timer; no performance recommendation.",
+      "sha256": "da3c4c93382bb4f0b2781cb0eeda0a4bf361c107363718c100870c0f72483a32"
+    },
+    {
+      "id": "model_choice_candidate_evidence",
+      "path": "runs/model-choice-20261112/candidate-evidence.json",
+      "kind": "file",
+      "purpose_and_limits": "25original evaluation records/22model keys,150exactRawvalues,K10joins,reported size/downloads and published metric context. Sidecar only; originalcatalog/scorefields unchanged;13primarymodels.",
+      "sha256": "098b89ec2eb2b1cac388fb2c7c1f888ec55e250f226fb7f0974445cbb6a101a2"
+    },
+    {
+      "id": "model_choice_results",
+      "path": "runs/model-choice-20261112/results.json",
+      "kind": "file",
+      "purpose_and_limits": "18retrospective fixed target/budget cases on2/7/13candidate pools; other-five mean equals largest under frozen ties. Choices/regrets/exports/review adjacent; no newweights/taskruns or general model-choice benefit.",
+      "sha256": "8fa4a5b1097a548f1463f7bf8cfd1ee9412dc701a0e5f555e92646dfce5412cd"
+    },
+    {
+      "id": "model_choice_verification",
+      "path": "runs/model-choice-20261112/verification.json",
+      "kind": "file",
+      "purpose_and_limits": "16inputhashes and independent/doer reproduction of joins,eligibility,choices,ties,regrets,exports.3focusedpass; fullsuite714pass2existingnumericalDDPfail. Reported sizes and historical evaluation-setting uncertainty retained.",
+      "sha256": "6aec4a48ff06281952dd45d1e7da5df2acf359d41384412af2878aad56a4fd62"
+    },
+    {
+      "id": "task_choice_failed_acquisition",
+      "path": "runs/task-choice-20261112/REPORT.md",
+      "kind": "file",
+      "purpose_and_limits": "Stopped3-model acquisition,0model answers; preserved attempt/runtime/freeze/partials, NO_BENEFIT transfer check, original resource limits. Not a completed task test.",
+      "sha256": "78543ff35a20e989fffa6379945a9b1cff0fb6a62c7dacbbdff07139149926de"
+    },
+    {
+      "id": "available_task_choice_report",
+      "path": "runs/task-choice-available-20261112/REPORT.md",
+      "kind": "file",
+      "purpose_and_limits": "Reviewed two-cached-model workflow pilot; probe=downloads on both tasks, strict-format failures dominate, BoolQ unsuitable.57.64s cached run/77.76min original clock with failed acquisition/setup; no general benefit/C6 claim.",
+      "sha256": "5c80d57f1c88c58243a25d6da57c030c36bf263bfa80808f195200fc445d438a"
+    },
+    {
+      "id": "available_task_choice_results",
+      "path": "runs/task-choice-available-20261112/results.json",
+      "kind": "file",
+      "purpose_and_limits": "70source/8trace/1152row verified;32probe+256validation groups per task, probe-only choices, paired bootstrap/costs/invalid counts. Availability-selected2-model scope and public contamination limits.",
+      "sha256": "99bbc3fc0ba0985569fccc9ba2100e42755800c1f32cd9285bd5f6bff503ffa5"
+    },
+    {
+      "id": "available_task_workflow_scores",
+      "path": "runs/task-choice-available-20261112/workflow-scores.csv",
+      "kind": "file",
+      "purpose_and_limits": "4custom exact A/B8-token greedy/native-template score rows with exact dataset/model pins, invalids/sample sizes/protocol SHA; separate from official benchmark/catalog Raw rows.",
+      "sha256": "8626d55720ff18de22dcaa08be9847d392c0def582df3820707e36fe25cf7a9d"
+    },
+    {
+      "id": "available_task_choice_verification",
+      "path": "runs/task-choice-available-20261112/verification.json",
+      "kind": "file",
+      "purpose_and_limits": "70frozen hashes,10focused tests, byte-identical independent/doer reproduction, CSV checks and stopped acquisition preservation. Full-SHA receipt/immutable-cache assumption; no evaluator weight/network/inference job.",
+      "sha256": "0926d7e11b0f9654ff4f324a4adf046ede432c5a35542b36919d73fe0aab2d87"
+    },
+    {
+      "id": "documented_fp8_report",
+      "path": "runs/documented-fp8-20261112/REPORT.md",
+      "kind": "file",
+      "purpose_and_limits": "One officialFP8 query with cached source/SFT/DPO/LoRA relatives: both exact hypotheses0matches present/removed; nearest-reference rank not historical-source proof; numeric modelDNA uses explicit decoded input.260.51sCPU/237.75MBresponse with cached-input/prior-prep exclusions.",
+      "sha256": "f5ff01299eda56164a1b5239cc7243cd55184489e804f2fab13d88511a284094"
+    },
+    {
+      "id": "documented_fp8_bands",
+      "path": "runs/documented-fp8-20261112/bands.json",
+      "kind": "file",
+      "purpose_and_limits": "196private raw-band artifacts,2240tiles/36,700,160codes and candidate values with SHA hashes; immutable frozen plan/source pins. Reproduction inputs only, no raw-band publication or full-checkpoint equality claim.",
+      "sha256": "d081b57de9b1cfa7afec4d6fb27ba03620b82d6c94a5819f75f8dcf33447144f"
+    },
+    {
+      "id": "documented_fp8_results",
+      "path": "runs/documented-fp8-20261112/results.json",
+      "kind": "file",
+      "purpose_and_limits": "All4candidate totals/pool decisions, exact code/scale mismatches, decoded-band ranks and native structured verdicts/costs. Native probabilities/text notFP8-calibrated historical guarantees;0scale mismatch is not a posthoc source rule.",
+      "sha256": "36bf8b9d23ea77e3036378cfcfccfd46c1c41b872926e4a482e3386aadf15d0c"
+    },
+    {
+      "id": "documented_fp8_query_answer",
+      "path": "runs/documented-fp8-20261112/query-answer.json",
+      "kind": "file",
+      "purpose_and_limits": "Standalone documented-source repository plus unresolved measured immediate-source result; exact historical revision unknown. Candidate-summary.csv adjacent; no public API/schema change.",
+      "sha256": "dd00a0d44463e7b59830c3ab82b4369a2558b512cd244112de5dac70b3be1f5f"
+    },
+    {
+      "id": "documented_fp8_verification",
+      "path": "runs/documented-fp8-20261112/verification.json",
+      "kind": "file",
+      "purpose_and_limits": "81input/source hashes,196band replay,byte-identical independent/doer reports,4CSVrows and66configured checks including4new. Saved native pair/decision replay, not independent full native-sample re-extraction; no evaluator full-weight/network/inference job.",
+      "sha256": "7ae38be544f71ba2c0a1479fb1a23dffe1c674b137ca58c0f275ba9aaae8f730"
+    },
+    {
+      "id": "catalog_weight_budget_report",
+      "path": "runs/catalog-budget-20261112/REPORT.md",
+      "kind": "file",
+      "purpose_and_limits": "One fixed703-entry selected-weight-file budget journey:95eligible at2GB under recorded predicates; not full-package/RAM/VRAM/loadability, live access or performance.",
+      "sha256": "aa782c07cbc778ddb53d9ce35849fefd82e4882ed27226ddad51bc3b07d32409"
+    },
+    {
+      "id": "catalog_weight_budget_inventory",
+      "path": "runs/catalog-budget-20261112/inventory.csv",
+      "kind": "file",
+      "purpose_and_limits": "All703exactkeys, selectedfilebyte inventories/provenance and original metadata/score-row counts.702known selected-file totals/1empty; no weight payloads or parameter guesses.",
+      "sha256": "8e4ccca077c97302300b0616d9ba301689358a4fd4dbb306dbd0a851511a8ec9"
+    },
+    {
+      "id": "catalog_weight_budget_answer",
+      "path": "runs/catalog-budget-20261112/query-answer.json",
+      "kind": "file",
+      "purpose_and_limits": "Fixed top10storage shortlist; original download/key ordering, selectedfilebytes/hash sources, no score or source inference. Complete95eligiblekeys, fixed info/diff, protocol and replay adjacent.",
+      "sha256": "9d1965ddb3383fcf11f295b3fdfbbf1fd3acc75ad5ba8d993e39efabb079106a"
+    },
+    {
+      "id": "independent_decoder_baselines",
+      "path": "runs/track-c-k2-ancestry-controls-20261109/REPORT.md",
+      "kind": "file",
+      "purpose_and_limits": "Existing exposed four-root Pythia14m+q4/q8 comparator study, all four methods already measured.60ordered dependent pairs per method, no broadFPR/decoder-scale/immediate-source guarantee. Native abstention-label context preserved; do not repeat as new research.",
+      "sha256": "85e8bb50ab43d67632358f8ccca4515042dcad4b35cf98bb4ca957ae18737bc1"
+    },
+    {
+      "id": "catalog_weight_budget_verification",
+      "path": "runs/catalog-budget-20261112/verification.json",
+      "kind": "file",
+      "purpose_and_limits": "Reviewed one703-entry selected-file budget query.748frozen hashes,51checks,independent/doer byte-identical replay;95eligible inventory entries, no full-model/skill/popularity guarantee or new weights.",
+      "sha256": "55e2adc4de0cc6909f6e02a8abb7c6d984a468790ada9bc60d291a01a50802d8"
+    },
+    {
+      "id": "documented_lora_research",
+      "path": "runs/documented-lora-20261112/RESEARCH.md",
+      "kind": "file",
+      "sha256": "769140ed7317bb491f82eea3767ae06cd8cee4c56b2812e766e770c834e00a86",
+      "purpose_and_limits": "One reviewed public-adapter-informed construction check: all169sampled bands compatible only with measured Instruct reference among four candidates; source removal leaves none. Exact FP32 replay also matches; no envelope-gain/general historical-parent claim. Inputs/results/raw bands and offline score-only command adjacent; controls are pretrained-base relatives, not demonstrated immediate Instruct siblings. Reconstructive evidence stays private."
+    },
+    {
+      "id": "public_task_evidence_audit",
+      "path": "runs/task-evidence-20261113/RESEARCH.md",
+      "kind": "file",
+      "sha256": "d0f943be31cf72e8bbfa56293e15cfc4cc704727d2fe0a9e24d3a91b82bd35b7",
+      "purpose_and_limits": "Reviewed recount of400paired publisher predictions for a documented ten-intent task.243/391correct,151wins3losses; two context-bound score-evidence rows have null evaluated model keys/revisions and remain unverified. No generation/weight reads/catalog import. Pinned sources, official CSVs, context/results and a core recount command adjacent; declared split reconstruction is not historical training/pretraining verification."
+    },
+    {
+      "id": "common_benchmark_coverage_note",
+      "path": "runs/benchmark-coverage-20261113/RESEARCH.md",
+      "kind": "file",
+      "sha256": "f4838146b96cff497a84f73e9dacccb815d7c2526969c5b57b982db029557696",
+      "purpose_and_limits": "Independently reviewed checked subset; common evidence/contracts and next batch, not new measurements or claim promotion."
+    },
+    {
+      "id": "common_benchmark_coverage",
+      "path": "runs/benchmark-coverage-20261113/coverage.json",
+      "kind": "file",
+      "sha256": "ad864ccab397f496b69c8173c2ace10db298593ac1936c7916ff1d5385eb943e",
+      "purpose_and_limits": "Exact row/pool identity and label joins across existing lab/real cases; source hashes, exposure, native information contracts. FP8 decoder adaptation explicit."
+    },
+    {
+      "id": "stopped_task_probe",
+      "path": "runs/task-probe-20261113/RESEARCH.md",
+      "kind": "file",
+      "sha256": "bdbcc88f6ab0dae27f261c11f30be1b5735b2e5c11b8a9031cbe7fbd355c167a",
+      "purpose_and_limits": "Fixed three-model CPU campaign engineering failure after partial probes; no selections/validation/retry. Original source/logs retained; offline serialization fix only."
+    },
+    {
+      "id": "real_comparison_fixed_input_scope",
+      "path": "runs/benchmark-coverage-20261113/real-comparison-inputs.json",
+      "kind": "file",
+      "sha256": "cead420847db4448c1c9b40bf2b79def8545e4c62b23a3ba526fc3f080ca0e52",
+      "purpose_and_limits": "Independently reviewed next-batch identities/pools/complete matrix and scale ranges/physical bytes;11checkpoints,7local-by-size. Trace/TLT information contracts and numerical fixtures. Metadata input scope only; no model reads/scores or launch clearance."
+    },
+    {
+      "id": "shared_real_comparison_note",
+      "path": "runs/real-comparison-20261113/RESEARCH.md",
+      "kind": "file",
+      "sha256": "b1c1e68be17bbf4b1fec6d168deaee5220b25b540f49b4cec5dcd852829d4108",
+      "purpose_and_limits": "Independently reviewed fixed complete-matrix comparison:3exposed queries/11profiles,24pair scores/16rankings, costs/limits. Structural collision in the chosen MLP-only representation; no calibrated source accuracy."
+    },
+    {
+      "id": "shared_real_comparison_results",
+      "path": "runs/real-comparison-20261113/results.json",
+      "kind": "file",
+      "sha256": "ab23d22389cfb31057cb5a487bbc8c42e3062e9edf58155509fa6701dfd773ae",
+      "purpose_and_limits": "Exact pair scores/pool top sets/ranks; binds input/runtime hashes and all11private profile hashes. Reuse existing lab/native/operator evidence with separate information contracts; source decisions unsupported."
+    },
+    {
+      "id": "shared_real_mlp_feature_equality",
+      "path": "runs/real-comparison-20261113/feature-equality.json",
+      "kind": "file",
+      "sha256": "464c310b8a50c3b7a9afa4efa372681f988379a12e77cbb5c7a8096ff97692aa",
+      "purpose_and_limits": "Post-run explanatory exact vector/concentration equality for Q25base/attnLoRAr8 andQ3base/attnLoRAr64; differing Trace roles and recipe pins. No new threshold or held-out claim."
     }
   ],
   "checkpoint_recovery": {
@@ -306,5 +537,5 @@
     "local_heretic_companion_root": "lab-restored-archive/models"
   },
   "backup_limits": "Archive covers139 constructed checkpoints and112 permitted lab-evidence identities, not all Hub/restricted data or later runs. Those retained local assets have no offsite coverage established by this audit.",
-  "latest_update_on": "2026-11-11"
+  "latest_update_on": "2026-11-13"
 }

@@ -23,7 +23,7 @@ Claims about real-world use must also hold on real Hub models. The doer updates 
 
 D8 admits published construction as documented real truth; private execution details are caveats. New evaluations keep pinned recipes, prospective rules and unknowns explicit. D9 uses two same-architecture pools, not the mixed5k roster. CHECKLIST.md orders work; D11 retires old track/date machinery without loosening evidence standards.
 
-The four Heretic edits need recipe-rank/control scoring; merge-source search and documented real-mark tests remain open. The four sentiment projections do not establish refusal behavior. Saved SFT witness rows already use siblings; the proposed descendant-witness explanation for0/8 is unconfirmed. A changed test needs a scientific reason.
+The four Heretic edits need recipe-rank/control scoring; calibrated merge-source search and broader documented real-mark tests remain open. One real SLERP pilot shows that a strong native mixture fit can substitute close relatives after source removal; Zoo reports individual-source ambiguity. This is compatibility evidence in one exposed family, not a C2/C3 promotion (see RESULTS.md). The next three-family lab pair-search diagnostic ranks the actual ingredients1/2/3, with sibling mixtures still fitting after source removal. Minimum residual alone is insufficient for historical-source decisions; C3 precision/coverage remains unmeasured without a calibrated decision gate. Broader query usefulness proceeds in CHECKLIST item7 without dropping the source research goals. One fresh0.494Bacquisition-to-query journey now works in an isolated3modelcatalog (62.13s/115.28MB requested tensorbytes); this establishes a practical path, not model-choice benefit,703-way retrieval or source precision. Missing metadata/score comparability remain explicit (RESULTS.md). A retrospective13-candidate choice diagnostic now sets a no-weight baseline: the other-five Raw mean makes the same18choices as the specified largest-model rule, with task-specific misses up to12.23pp. This is not C6, independent user benefit or a new predictor; direct task-specific choice evaluation remains open. The four sentiment projections do not establish refusal behavior. Saved SFT witness rows already use siblings; the proposed descendant-witness explanation for0/8 is unconfirmed. A changed test needs a scientific reason.
 
 Prior12/12 exact-quantizer source results and18/18 known-source merge fits retain their narrow scopes. The best comparator source ranking7/12 versus our12/12 exact-replay answers is a lab task result, not general precision or every method's native claim. C1–C5 remain checked; C6 is a later hypothesis. No broad claim is promoted by this workflow change.
 
@@ -41,6 +41,8 @@ Prior12/12 exact-quantizer source results and18/18 known-source merge fits retai
 | AttnPrint/DistillTrace, SCOUT, BULLPEN and GGUF reproducibility | C completed the primary-source access/modality checks; detailed findings in its Nov 7 K2 primary-check note | Do not repeat that completed documentary check. Exact reconstruction needs build inputs; output-based approaches do not establish weight-only edit detection. |
 
 ## Claims
+
+Nov12 practical query observation: a selected-weight-file budget query now accounts for all703existing catalog identities, with95eligible inventories at≤2GB under fixed recorded metadata predicates. All top10lack scores; the fixed first-two diff has0shared views. This avoids nominal-size guessing but establishes neither complete deployment fit nor model-choice benefit. No scientific threshold, score/schema or claim ladder changes. See `runs/catalog-budget-20261112/REPORT.md`.
 
 ### C1: family at scale
 
@@ -96,6 +98,8 @@ original scope. Existing pass/fail rules below are unchanged; no claim is promot
 | **Ordinary fine-tune** (SFT, DPO)          | No exact mark. Two candidate signals for order: (a) the witness geometry (Witness Overlap); (b) a hypothesis from our own spectral work, that heavy-tail statistics shift in one direction with training. Spectral numbers need full reads (lab has them).                                  | family and closest candidates only | possibly, with a witness or spectral signal; otherwise from Hub upload time            | No witness in the pool; tiny updates (DPO); spectral drift may be too weak                                                                                                                                                             | 16 lab SFT/DPO edges. Report witness-method and spectral-cue order accuracy. No pass rule yet: this is exploratory until a prospective final protocol is fixed.                                          |
 
 **Status:** checked overall. Quantization and known-source linear/SLERP tests have passed in the lab; the remaining edit tests and real-model checks are open. Each hypothesis moves separately; no parent/order guarantee follows from these subtests.
+
+Nov12 documented-format observation: one official Qwen3-0.6B-FP8 query leaves both exact construction checks unresolved with the reference present/removed. The pinned standard-converter replay matches all sampled stored scale bytes but differs on3.0197% of code bytes. Decoded similarity ranks the documented reference first; an explicit decoded-input modelDNA comparison reports a family match with parent unresolved. Unknown arithmetic/source-snapshot details remain caveats, not evidence against the published origin. No scale-only rule, FP8 calibration or claim promotion follows. See `runs/documented-fp8-20261112/REPORT.md`; the per-row lab quantizer result does not establish this block-FP8 result.
 
 
 ### C3: parent decisions calibrated against relatives
@@ -168,8 +172,10 @@ and nothing within a family.
 - the data is old and unpinned.
 
 **Test before claiming:** pinned scores (K10), and strong no-weights baselines
-(family averages, and question-profiling services such as BULLPEN once it is
-verified).
+(family averages, task probes and behavioral-profile embeddings such as
+[BULLPEN](https://arxiv.org/abs/2610.41375v1)). Its preprint/code description
+are located; no numeric reproduction or fair comparison has run here. See
+`runs/task-choice-20261112/RESEARCH-CONTEXT.md` for primary sources and limits.
 
 **Status:** hypothesis.
 
